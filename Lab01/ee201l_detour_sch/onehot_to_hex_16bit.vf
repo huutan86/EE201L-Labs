@@ -1,0 +1,89 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : onehot_to_hex_16bit.vf
+// /___/   /\     Timestamp : 01/24/2014 21:08:23
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Xilinx_projects/ee201l_detour_sch/onehot_to_hex_16bit.vf -w C:/Xilinx_projects/ee201l_detour_sch/onehot_to_hex_16bit.sch
+//Design Name: onehot_to_hex_16bit
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module OR8_HXILINX_onehot_to_hex_16bit (O, I0, I1, I2, I3, I4, I5, I6, I7);
+    
+
+   output O;
+
+   input I0;
+   input I1;
+   input I2;
+   input I3;
+   input I4;
+   input I5;
+   input I6;
+   input I7;
+
+assign O = (I0 || I1 || I2 || I3 || I4 || I5 || I6 || I7);
+
+endmodule
+`timescale 1ns / 1ps
+
+module onehot_to_hex_16bit(one_hot, 
+                           hex);
+
+    input [15:0] one_hot;
+   output [3:0] hex;
+   
+   
+   (* HU_SET = "XLXI_9_0" *) 
+   OR8_HXILINX_onehot_to_hex_16bit  XLXI_9 (.I0(one_hot[15]), 
+                                           .I1(one_hot[13]), 
+                                           .I2(one_hot[11]), 
+                                           .I3(one_hot[9]), 
+                                           .I4(one_hot[7]), 
+                                           .I5(one_hot[5]), 
+                                           .I6(one_hot[3]), 
+                                           .I7(one_hot[1]), 
+                                           .O(hex[0]));
+   (* HU_SET = "XLXI_19_1" *) 
+   OR8_HXILINX_onehot_to_hex_16bit  XLXI_19 (.I0(one_hot[15]), 
+                                            .I1(one_hot[14]), 
+                                            .I2(one_hot[11]), 
+                                            .I3(one_hot[10]), 
+                                            .I4(one_hot[7]), 
+                                            .I5(one_hot[6]), 
+                                            .I6(one_hot[3]), 
+                                            .I7(one_hot[2]), 
+                                            .O(hex[1]));
+   (* HU_SET = "XLXI_20_2" *) 
+   OR8_HXILINX_onehot_to_hex_16bit  XLXI_20 (.I0(one_hot[15]), 
+                                            .I1(one_hot[14]), 
+                                            .I2(one_hot[13]), 
+                                            .I3(one_hot[12]), 
+                                            .I4(one_hot[7]), 
+                                            .I5(one_hot[6]), 
+                                            .I6(one_hot[5]), 
+                                            .I7(one_hot[4]), 
+                                            .O(hex[2]));
+   (* HU_SET = "XLXI_21_3" *) 
+   OR8_HXILINX_onehot_to_hex_16bit  XLXI_21 (.I0(one_hot[15]), 
+                                            .I1(one_hot[14]), 
+                                            .I2(one_hot[13]), 
+                                            .I3(one_hot[12]), 
+                                            .I4(one_hot[11]), 
+                                            .I5(one_hot[10]), 
+                                            .I6(one_hot[9]), 
+                                            .I7(one_hot[8]), 
+                                            .O(hex[3]));
+endmodule

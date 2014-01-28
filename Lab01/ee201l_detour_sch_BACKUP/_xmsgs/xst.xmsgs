@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 381: Assignment to <arg fmt="%s" index="1">GR</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 382: Assignment to <arg fmt="%s" index="1">G1</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 383: Assignment to <arg fmt="%s" index="1">G2</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 385: Assignment to <arg fmt="%s" index="1">L</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 389: Assignment to <arg fmt="%s" index="1">R</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 70: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 42: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 457: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 459: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 461: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 463: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 465: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 467: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 469: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 471: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 474: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 476: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 478: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 480: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 482: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 484: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 486: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\Xilinx_projects\ee201l_detour_sch\ee201l_detour_top.vf" Line 488: Assignment to <arg fmt="%s" index="1">state_onehot</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">377</arg>: Output port &lt;<arg fmt="%s" index="3">GR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">377</arg>: Output port &lt;<arg fmt="%s" index="3">G1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">377</arg>: Output port &lt;<arg fmt="%s" index="3">G2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">377</arg>: Output port &lt;<arg fmt="%s" index="3">L</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">377</arg>: Output port &lt;<arg fmt="%s" index="3">R</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">394</arg>: Output port &lt;<arg fmt="%s" index="3">Q</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">394</arg>: Output port &lt;<arg fmt="%s" index="3">TC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">401</arg>: Output port &lt;<arg fmt="%s" index="3">Q</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">401</arg>: Output port &lt;<arg fmt="%s" index="3">TC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">490</arg>: Output port &lt;<arg fmt="%s" index="3">CEO</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_185</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf</arg>&quot; line <arg fmt="%s" index="2">490</arg>: Output port &lt;<arg fmt="%s" index="3">TC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">XLXI_185</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_185</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_185</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_185</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_185</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_185</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Q_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">XLXI_185</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+

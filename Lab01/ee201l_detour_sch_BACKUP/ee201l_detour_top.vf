@@ -1,0 +1,558 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : ee201l_detour_top.vf
+// /___/   /\     Timestamp : 01/24/2014 15:20:12
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.vf -w C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.sch
+//Design Name: ee201l_detour_top
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module CB16CE_HXILINX_ee201l_detour_top(CEO, Q, TC, C, CE, CLR);
+   
+   parameter TERMINAL_COUNT = 16'b1111_1111_1111_1111;
+   
+   output             CEO;
+   output [15:0]      Q;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg    [15:0]      Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 16'b0000_0000_0000_0000;
+	else if (CE)
+	  Q <= Q + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : (Q == TERMINAL_COUNT);
+   
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB8CE_HXILINX_ee201l_detour_top(CEO, Q, TC, C, CE, CLR);
+   
+   parameter TERMINAL_COUNT = 8'b1111_1111;
+   
+   output             CEO;
+   output [7:0]       Q;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg   [7:0]        Q;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 8'b0000_0000;
+	else if (CE)
+	  Q <= Q + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : (Q == TERMINAL_COUNT);
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_ee201l_detour_top (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module mux8bit_2x1_MUSER_ee201l_detour_top(A, 
+                                           B, 
+                                           S, 
+                                           O);
+
+    input [7:0] A;
+    input [7:0] B;
+    input S;
+   output [7:0] O;
+   
+   
+   (* HU_SET = "XLXI_1_8" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_1 (.D0(A[0]), 
+                                          .D1(B[0]), 
+                                          .S0(S), 
+                                          .O(O[0]));
+   (* HU_SET = "XLXI_2_9" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_2 (.D0(A[1]), 
+                                          .D1(B[1]), 
+                                          .S0(S), 
+                                          .O(O[1]));
+   (* HU_SET = "XLXI_3_10" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_3 (.D0(A[2]), 
+                                          .D1(B[2]), 
+                                          .S0(S), 
+                                          .O(O[2]));
+   (* HU_SET = "XLXI_4_11" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_4 (.D0(A[3]), 
+                                          .D1(B[3]), 
+                                          .S0(S), 
+                                          .O(O[3]));
+   (* HU_SET = "XLXI_5_12" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_5 (.D0(A[4]), 
+                                          .D1(B[4]), 
+                                          .S0(S), 
+                                          .O(O[4]));
+   (* HU_SET = "XLXI_10_13" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_10 (.D0(A[5]), 
+                                           .D1(B[5]), 
+                                           .S0(S), 
+                                           .O(O[5]));
+   (* HU_SET = "XLXI_14_14" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_14 (.D0(A[6]), 
+                                           .D1(B[6]), 
+                                           .S0(S), 
+                                           .O(O[6]));
+   (* HU_SET = "XLXI_15_15" *) 
+   M2_1_HXILINX_ee201l_detour_top  XLXI_15 (.D0(A[7]), 
+                                           .D1(B[7]), 
+                                           .S0(S), 
+                                           .O(O[7]));
+endmodule
+`timescale 1ns / 1ps
+
+module ee201l_detour_MUSER_ee201l_detour_top(CLK, 
+                                             LR_BAR, 
+                                             RESET, 
+                                             GL, 
+                                             GR, 
+                                             G1, 
+                                             G2, 
+                                             I, 
+                                             L, 
+                                             L1, 
+                                             L12, 
+                                             L123, 
+                                             R, 
+                                             R1, 
+                                             R12, 
+                                             R123);
+
+    input CLK;
+    input LR_BAR;
+    input RESET;
+   output GL;
+   output GR;
+   output G1;
+   output G2;
+   output I;
+   output L;
+   output L1;
+   output L12;
+   output L123;
+   output R;
+   output R1;
+   output R12;
+   output R123;
+   
+   wire QI;
+   wire QL1;
+   wire QL12;
+   wire QL123;
+   wire QR1;
+   wire QR12;
+   wire QR123;
+   wire XLXN_160;
+   wire XLXN_174;
+   wire XLXN_210;
+   wire XLXN_211;
+   wire XLXN_214;
+   wire L_DUMMY;
+   wire R_DUMMY;
+   
+   assign L = L_DUMMY;
+   assign R = R_DUMMY;
+   FDC  XLXI_39 (.C(CLK), 
+                .CLR(RESET), 
+                .D(XLXN_211), 
+                .Q(QL1));
+   FDC  XLXI_40 (.C(CLK), 
+                .CLR(RESET), 
+                .D(QL1), 
+                .Q(QL12));
+   FDC  XLXI_41 (.C(CLK), 
+                .CLR(RESET), 
+                .D(QL12), 
+                .Q(QL123));
+   FDP  XLXI_42 (.C(CLK), 
+                .D(XLXN_160), 
+                .PRE(RESET), 
+                .Q(QI));
+   OR2  XLXI_48 (.I0(QR123), 
+                .I1(QL123), 
+                .O(XLXN_160));
+   OR2  XLXI_49 (.I0(QL12), 
+                .I1(QL123), 
+                .O(XLXN_174));
+   OR4  XLXI_50 (.I0(QR123), 
+                .I1(QR12), 
+                .I2(QR1), 
+                .I3(XLXN_174), 
+                .O(G1));
+   BUF  XLXI_52 (.I(QL123), 
+                .O(GL));
+   BUF  XLXI_53 (.I(QR123), 
+                .O(GR));
+   OR4  XLXI_55 (.I0(QL123), 
+                .I1(QL12), 
+                .I2(QL1), 
+                .I3(XLXN_210), 
+                .O(G2));
+   BUF  XLXI_57 (.I(LR_BAR), 
+                .O(L_DUMMY));
+   INV  XLXI_58 (.I(LR_BAR), 
+                .O(R_DUMMY));
+   BUF  XLXI_59 (.I(QI), 
+                .O(I));
+   BUF  XLXI_76 (.I(QR1), 
+                .O(R1));
+   BUF  XLXI_77 (.I(QR12), 
+                .O(R12));
+   BUF  XLXI_78 (.I(QR123), 
+                .O(R123));
+   BUF  XLXI_79 (.I(QL1), 
+                .O(L1));
+   BUF  XLXI_80 (.I(QL12), 
+                .O(L12));
+   BUF  XLXI_81 (.I(QL123), 
+                .O(L123));
+   FDC  XLXI_82 (.C(CLK), 
+                .CLR(RESET), 
+                .D(XLXN_214), 
+                .Q(QR1));
+   FDC  XLXI_83 (.C(CLK), 
+                .CLR(RESET), 
+                .D(QR1), 
+                .Q(QR12));
+   FDC  XLXI_84 (.C(CLK), 
+                .CLR(RESET), 
+                .D(QR12), 
+                .Q(QR123));
+   AND2  XLXI_85 (.I0(QI), 
+                 .I1(L_DUMMY), 
+                 .O(XLXN_211));
+   AND2  XLXI_86 (.I0(QI), 
+                 .I1(R_DUMMY), 
+                 .O(XLXN_214));
+   OR2  XLXI_87 (.I0(QR12), 
+                .I1(QR123), 
+                .O(XLXN_210));
+endmodule
+`timescale 1ns / 1ps
+
+module ee201l_detour_top(BtnC, 
+                         CLKPORT, 
+                         SW0, 
+                         An0, 
+                         An1, 
+                         An2, 
+                         An3, 
+                         Ca, 
+                         Cb, 
+                         Cc, 
+                         Cd, 
+                         Ce, 
+                         Cf, 
+                         Cg, 
+                         Dp, 
+                         FlashCS, 
+                         LD0, 
+                         LD1, 
+                         LD2, 
+                         LD3, 
+                         LD4, 
+                         LD5, 
+                         LD6, 
+                         LD7, 
+                         MemOE, 
+                         MemWR, 
+                         QuadSpiFlashCS, 
+                         RamCS);
+
+    input BtnC;
+    input CLKPORT;
+    input SW0;
+   output An0;
+   output An1;
+   output An2;
+   output An3;
+   output Ca;
+   output Cb;
+   output Cc;
+   output Cd;
+   output Ce;
+   output Cf;
+   output Cg;
+   output Dp;
+   output FlashCS;
+   output LD0;
+   output LD1;
+   output LD2;
+   output LD3;
+   output LD4;
+   output LD5;
+   output LD6;
+   output LD7;
+   output MemOE;
+   output MemWR;
+   output QuadSpiFlashCS;
+   output RamCS;
+   
+   wire CLK;
+   wire [31:0] DIVCLK;
+   wire GL;
+   wire GR;
+   wire G1;
+   wire G2;
+   wire I;
+   wire L;
+   wire LR_BAR;
+   wire L1;
+   wire L12;
+   wire L123;
+   wire R;
+   wire RESET;
+   wire R1;
+   wire R12;
+   wire R123;
+   wire [7:0] SSD_L;
+   wire [7:0] SSD_out;
+   wire [7:0] SSD_R;
+   wire [15:0] state_onehot;
+   wire XLXN_1;
+   wire XLXN_11;
+   wire XLXN_197;
+   wire XLXN_200;
+   wire XLXN_418;
+   wire XLXN_522;
+   wire XLXN_747;
+   wire XLXN_749;
+   wire XLXN_751;
+   wire XLXN_752;
+   wire XLXN_753;
+   wire XLXN_809;
+   wire XLXN_810;
+   
+   ee201l_detour_MUSER_ee201l_detour_top  UUT (.CLK(XLXN_809), 
+                                              .LR_BAR(LR_BAR), 
+                                              .RESET(RESET), 
+                                              .GL(GL), 
+                                              .GR(GR), 
+                                              .G1(G1), 
+                                              .G2(G2), 
+                                              .I(I), 
+                                              .L(L), 
+                                              .L1(L1), 
+                                              .L12(L12), 
+                                              .L123(L123), 
+                                              .R(R), 
+                                              .R1(R1), 
+                                              .R12(R12), 
+                                              .R123(R123));
+   (* HU_SET = "XLXI_1_16" *) 
+   CB8CE_HXILINX_ee201l_detour_top  XLXI_1 (.C(CLK), 
+                                           .CE(XLXN_11), 
+                                           .CLR(RESET), 
+                                           .CEO(XLXN_1), 
+                                           .Q(DIVCLK[7:0]), 
+                                           .TC());
+   (* HU_SET = "XLXI_2_18" *) 
+   CB16CE_HXILINX_ee201l_detour_top  XLXI_2 (.C(CLK), 
+                                            .CE(XLXN_1), 
+                                            .CLR(RESET), 
+                                            .CEO(XLXN_522), 
+                                            .Q(DIVCLK[23:8]), 
+                                            .TC());
+   VCC  XLXI_4 (.P(XLXN_11));
+   BUFGP  XLXI_5 (.I(CLKPORT), 
+                 .O(CLK));
+   VCC  XLXI_7 (.P(QuadSpiFlashCS));
+   VCC  XLXI_9 (.P(RamCS));
+   VCC  XLXI_10 (.P(MemOE));
+   VCC  XLXI_13 (.P(MemWR));
+   BUF  XLXI_14 (.I(DIVCLK[25]), 
+                .O(XLXN_809));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_27 (.I(GL), 
+                 .O(LD7));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_28 (.I(GL), 
+                 .O(LD6));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_29 (.I(XLXN_747), 
+                 .O(LD5));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_30 (.I(XLXN_747), 
+                 .O(LD4));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_31 (.I(XLXN_749), 
+                 .O(LD3));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_32 (.I(XLXN_749), 
+                 .O(LD2));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_33 (.I(XLXN_751), 
+                 .O(LD1));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_34 (.I(XLXN_751), 
+                 .O(LD0));
+   BUF  XLXI_79 (.I(XLXN_200), 
+                .O(SSD_L[0]));
+   BUF  XLXI_80 (.I(XLXN_200), 
+                .O(SSD_L[1]));
+   BUF  XLXI_81 (.I(XLXN_200), 
+                .O(SSD_L[2]));
+   BUF  XLXI_82 (.I(XLXN_197), 
+                .O(SSD_L[3]));
+   BUF  XLXI_83 (.I(XLXN_197), 
+                .O(SSD_L[4]));
+   BUF  XLXI_84 (.I(XLXN_197), 
+                .O(SSD_L[5]));
+   BUF  XLXI_85 (.I(XLXN_200), 
+                .O(SSD_L[6]));
+   GND  XLXI_89 (.G(XLXN_197));
+   VCC  XLXI_91 (.P(XLXN_200));
+   BUF  XLXI_111 (.I(I), 
+                 .O(state_onehot[0]));
+   BUF  XLXI_112 (.I(L1), 
+                 .O(state_onehot[1]));
+   BUF  XLXI_113 (.I(L12), 
+                 .O(state_onehot[2]));
+   BUF  XLXI_114 (.I(L123), 
+                 .O(state_onehot[3]));
+   BUF  XLXI_115 (.I(R1), 
+                 .O(state_onehot[4]));
+   BUF  XLXI_116 (.I(R12), 
+                 .O(state_onehot[5]));
+   BUF  XLXI_117 (.I(R123), 
+                 .O(state_onehot[6]));
+   BUF  XLXI_118 (.I(XLXN_418), 
+                 .O(state_onehot[7]));
+   GND  XLXI_119 (.G(XLXN_418));
+   BUF  XLXI_120 (.I(XLXN_418), 
+                 .O(state_onehot[8]));
+   BUF  XLXI_121 (.I(XLXN_418), 
+                 .O(state_onehot[9]));
+   BUF  XLXI_122 (.I(XLXN_418), 
+                 .O(state_onehot[10]));
+   BUF  XLXI_123 (.I(XLXN_418), 
+                 .O(state_onehot[11]));
+   BUF  XLXI_124 (.I(XLXN_418), 
+                 .O(state_onehot[12]));
+   BUF  XLXI_125 (.I(XLXN_418), 
+                 .O(state_onehot[13]));
+   BUF  XLXI_126 (.I(XLXN_418), 
+                 .O(state_onehot[14]));
+   BUF  XLXI_127 (.I(XLXN_418), 
+                 .O(state_onehot[15]));
+   (* HU_SET = "XLXI_185_17" *) 
+   CB8CE_HXILINX_ee201l_detour_top  XLXI_185 (.C(CLK), 
+                                             .CE(XLXN_522), 
+                                             .CLR(RESET), 
+                                             .CEO(), 
+                                             .Q(DIVCLK[31:24]), 
+                                             .TC());
+   VCC  XLXI_273 (.P(FlashCS));
+   VCC  XLXI_297 (.P(An1));
+   VCC  XLXI_298 (.P(An2));
+   BUF  XLXI_301 (.I(XLXN_752), 
+                 .O(SSD_R[0]));
+   BUF  XLXI_302 (.I(XLXN_752), 
+                 .O(SSD_R[1]));
+   BUF  XLXI_303 (.I(XLXN_752), 
+                 .O(SSD_R[2]));
+   BUF  XLXI_304 (.I(XLXN_753), 
+                 .O(SSD_R[3]));
+   BUF  XLXI_305 (.I(XLXN_752), 
+                 .O(SSD_R[4]));
+   BUF  XLXI_306 (.I(XLXN_752), 
+                 .O(SSD_R[5]));
+   BUF  XLXI_307 (.I(XLXN_752), 
+                 .O(SSD_R[6]));
+   BUF  XLXI_325 (.I(XLXN_200), 
+                 .O(SSD_L[7]));
+   BUF  XLXI_326 (.I(XLXN_753), 
+                 .O(SSD_R[7]));
+   GND  XLXI_328 (.G(XLXN_752));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_357 (.I(SSD_out[7]), 
+                  .O(Dp));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_358 (.I(SSD_out[6]), 
+                  .O(Cg));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_359 (.I(SSD_out[5]), 
+                  .O(Cf));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_360 (.I(SSD_out[4]), 
+                  .O(Ce));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_361 (.I(SSD_out[3]), 
+                  .O(Cd));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_362 (.I(SSD_out[2]), 
+                  .O(Cc));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_363 (.I(SSD_out[1]), 
+                  .O(Cb));
+   (* IOSTANDARD = "DEFAULT" *) (* SLEW = "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_364 (.I(SSD_out[0]), 
+                  .O(Ca));
+   BUF  XLXI_382 (.I(BtnC), 
+                 .O(RESET));
+   VCC  XLXI_383 (.P(An3));
+   GND  XLXI_384 (.G(An0));
+   GND  XLXI_385 (.G(XLXN_751));
+   GND  XLXI_387 (.G(XLXN_749));
+   GND  XLXI_388 (.G(XLXN_747));
+   BUF  XLXI_390 (.I(SW0), 
+                 .O(LR_BAR));
+   VCC  XLXI_391 (.P(XLXN_753));
+   mux8bit_2x1_MUSER_ee201l_detour_top  XLXI_414 (.A(SSD_L[7:0]), 
+                                                 .B(SSD_R[7:0]), 
+                                                 .S(XLXN_810), 
+                                                 .O(SSD_out[7:0]));
+   INV  XLXI_415 (.I(LR_BAR), 
+                 .O(XLXN_810));
+endmodule

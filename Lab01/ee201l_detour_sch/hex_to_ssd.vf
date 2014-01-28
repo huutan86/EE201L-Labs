@@ -1,0 +1,70 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : hex_to_ssd.vf
+// /___/   /\     Timestamp : 01/24/2014 21:08:23
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Xilinx_projects/ee201l_detour_sch/hex_to_ssd.vf -w C:/Xilinx_projects/ee201l_detour_sch/hex_to_ssd.sch
+//Design Name: hex_to_ssd
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module hex_to_ssd(hex, 
+                  ssd);
+
+    input [3:0] hex;
+   output [7:0] ssd;
+   
+   
+   ROM16X1 #( .INIT(16'h2812) ) Ca (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[0]));
+   ROM16X1 #( .INIT(16'hD860) ) Cb (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[1]));
+   ROM16X1 #( .INIT(16'hD004) ) Cc (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[2]));
+   ROM16X1 #( .INIT(16'h8492) ) Cd (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[3]));
+   ROM16X1 #( .INIT(16'h02BA) ) Ce (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[4]));
+   ROM16X1 #( .INIT(16'h208E) ) Cf (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[5]));
+   ROM16X1 #( .INIT(16'h1083) ) Cg (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[6]));
+   ROM16X1 #( .INIT(16'hffff) ) Dp (.A0(hex[0]), 
+               .A1(hex[1]), 
+               .A2(hex[2]), 
+               .A3(hex[3]), 
+               .O(ssd[7]));
+endmodule

@@ -1,0 +1,8 @@
+Release 13.2 Drc O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Fri Jan 24 15:21:06 2014
+
+drc -z ee201l_detour_top.ncd ee201l_detour_top.pcf
+
+DRC detected 0 errors and 0 warnings.
