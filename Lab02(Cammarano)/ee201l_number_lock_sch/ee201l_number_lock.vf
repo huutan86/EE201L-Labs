@@ -1,0 +1,314 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : ee201l_number_lock.vf
+// /___/   /\     Timestamp : 01/31/2014 14:04:07
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock.vf -w C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock.sch
+//Design Name: ee201l_number_lock
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module CB4CE_HXILINX_ee201l_number_lock(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR);
+   
+   parameter TERMINAL_COUNT = 4'b1111;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (CE)
+	  {Q3, Q2, Q1,Q0} <= {Q3, Q2, Q1,Q0} + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT);
+   
+endmodule
+`timescale 1ns / 1ps
+
+module ee201l_number_lock(reset, 
+                          sysclk, 
+                          u, 
+                          z, 
+                          state);
+
+    input reset;
+    input sysclk;
+    input u;
+    input z;
+   output [10:0] state;
+   
+   wire bad;
+   wire bad_d;
+   wire g1;
+   wire g1get;
+   wire g1get_d;
+   wire g1_d;
+   wire g10;
+   wire g10get;
+   wire g10get_d;
+   wire g10_d;
+   wire g101;
+   wire g101get;
+   wire g101get_d;
+   wire g101_d;
+   wire g1011;
+   wire g1011get;
+   wire g1011get_d;
+   wire g1011_d;
+   wire initial_d;
+   wire initial_state;
+   wire opening;
+   wire opening_d;
+   wire timerout;
+   wire timerout_n;
+   wire u_n;
+   wire XLXN_275;
+   wire XLXN_276;
+   wire XLXN_289;
+   wire XLXN_291;
+   wire XLXN_379;
+   wire XLXN_381;
+   wire XLXN_388;
+   wire XLXN_390;
+   wire XLXN_397;
+   wire XLXN_399;
+   wire XLXN_402;
+   wire XLXN_403;
+   wire XLXN_409;
+   wire XLXN_410;
+   wire XLXN_411;
+   wire XLXN_412;
+   wire XLXN_470;
+   wire XLXN_474;
+   wire XLXN_475;
+   wire XLXN_476;
+   wire XLXN_477;
+   wire XLXN_494;
+   wire XLXN_496;
+   wire z_n;
+   
+   FDC  XLXI_23 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g1get_d), 
+                .Q(g1get));
+   FDC  XLXI_24 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g1_d), 
+                .Q(g1));
+   FDC  XLXI_25 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g10get_d), 
+                .Q(g10get));
+   FDC  XLXI_26 (.C(sysclk), 
+                .CLR(reset), 
+                .D(bad_d), 
+                .Q(bad));
+   FDC  XLXI_27 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g10_d), 
+                .Q(g10));
+   FDC  XLXI_28 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g101get_d), 
+                .Q(g101get));
+   FDC  XLXI_29 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g1011get_d), 
+                .Q(g1011get));
+   FDC  XLXI_30 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g1011_d), 
+                .Q(g1011));
+   FDC  XLXI_31 (.C(sysclk), 
+                .CLR(reset), 
+                .D(opening_d), 
+                .Q(opening));
+   FDC  XLXI_32 (.C(sysclk), 
+                .CLR(reset), 
+                .D(g101_d), 
+                .Q(g101));
+   BUF  XLXI_53 (.I(initial_state), 
+                .O(state[0]));
+   BUF  XLXI_54 (.I(g1get), 
+                .O(state[1]));
+   BUF  XLXI_55 (.I(g1), 
+                .O(state[2]));
+   BUF  XLXI_56 (.I(g10get), 
+                .O(state[3]));
+   BUF  XLXI_57 (.I(g10), 
+                .O(state[4]));
+   BUF  XLXI_58 (.I(g101get), 
+                .O(state[5]));
+   BUF  XLXI_59 (.I(g101), 
+                .O(state[6]));
+   BUF  XLXI_60 (.I(g1011get), 
+                .O(state[7]));
+   BUF  XLXI_61 (.I(g1011), 
+                .O(state[8]));
+   BUF  XLXI_62 (.I(opening), 
+                .O(state[9]));
+   BUF  XLXI_63 (.I(bad), 
+                .O(state[10]));
+   INV  XLXI_64 (.I(u), 
+                .O(u_n));
+   INV  XLXI_65 (.I(z), 
+                .O(z_n));
+   (* HU_SET = "XLXI_66_0" *) 
+   CB4CE_HXILINX_ee201l_number_lock  XLXI_66 (.C(sysclk), 
+                                             .CE(opening), 
+                                             .CLR(reset), 
+                                             .CEO(timerout), 
+                                             .Q0(), 
+                                             .Q1(), 
+                                             .Q2(), 
+                                             .Q3(), 
+                                             .TC());
+   INV  XLXI_67 (.I(timerout), 
+                .O(timerout_n));
+   AND2  XLXI_100 (.I0(u), 
+                  .I1(g1get), 
+                  .O(XLXN_275));
+   AND3  XLXI_101 (.I0(z_n), 
+                  .I1(initial_state), 
+                  .I2(u), 
+                  .O(XLXN_276));
+   OR2  XLXI_102 (.I0(XLXN_276), 
+                 .I1(XLXN_275), 
+                 .O(g1get_d));
+   AND2  XLXI_103 (.I0(u_n), 
+                  .I1(g1get), 
+                  .O(XLXN_289));
+   OR2  XLXI_104 (.I0(XLXN_291), 
+                 .I1(XLXN_289), 
+                 .O(g1_d));
+   AND3  XLXI_105 (.I0(u_n), 
+                  .I1(z_n), 
+                  .I2(g1), 
+                  .O(XLXN_291));
+   AND2  XLXI_133 (.I0(u), 
+                  .I1(g101get), 
+                  .O(XLXN_379));
+   OR2  XLXI_134 (.I0(XLXN_381), 
+                 .I1(XLXN_379), 
+                 .O(g101get_d));
+   AND3  XLXI_135 (.I0(g10), 
+                  .I1(u), 
+                  .I2(z_n), 
+                  .O(XLXN_381));
+   AND2  XLXI_136 (.I0(g101get), 
+                  .I1(u_n), 
+                  .O(XLXN_388));
+   OR2  XLXI_137 (.I0(XLXN_390), 
+                 .I1(XLXN_388), 
+                 .O(g101_d));
+   AND3  XLXI_138 (.I0(g101), 
+                  .I1(z_n), 
+                  .I2(u_n), 
+                  .O(XLXN_390));
+   AND2  XLXI_139 (.I0(g1011get), 
+                  .I1(u), 
+                  .O(XLXN_397));
+   OR2  XLXI_140 (.I0(XLXN_399), 
+                 .I1(XLXN_397), 
+                 .O(g1011get_d));
+   AND3  XLXI_141 (.I0(g101), 
+                  .I1(z_n), 
+                  .I2(u), 
+                  .O(XLXN_399));
+   AND2  XLXI_145 (.I0(u_n), 
+                  .I1(g1011get), 
+                  .O(g1011_d));
+   FDP  XLXI_150 (.C(sysclk), 
+                 .D(initial_d), 
+                 .PRE(reset), 
+                 .Q(initial_state));
+   AND2  XLXI_151 (.I0(opening), 
+                  .I1(timerout), 
+                  .O(XLXN_403));
+   AND3  XLXI_152 (.I0(z_n), 
+                  .I1(u_n), 
+                  .I2(bad), 
+                  .O(XLXN_402));
+   OR4  XLXI_158 (.I0(XLXN_412), 
+                 .I1(XLXN_411), 
+                 .I2(XLXN_410), 
+                 .I3(XLXN_409), 
+                 .O(bad_d));
+   AND2  XLXI_163 (.I0(u), 
+                  .I1(g1), 
+                  .O(XLXN_409));
+   AND2  XLXI_164 (.I0(z), 
+                  .I1(g10), 
+                  .O(XLXN_410));
+   AND2  XLXI_165 (.I0(z), 
+                  .I1(g101), 
+                  .O(XLXN_411));
+   NOR2  XLXI_169 (.I0(z), 
+                  .I1(u), 
+                  .O(XLXN_470));
+   AND2  XLXI_170 (.I0(XLXN_470), 
+                  .I1(bad), 
+                  .O(XLXN_412));
+   AND3  XLXI_171 (.I0(z), 
+                  .I1(u_n), 
+                  .I2(g1), 
+                  .O(XLXN_475));
+   AND3  XLXI_172 (.I0(u_n), 
+                  .I1(z_n), 
+                  .I2(g10), 
+                  .O(XLXN_477));
+   AND2  XLXI_173 (.I0(z_n), 
+                  .I1(g10get), 
+                  .O(XLXN_476));
+   AND2  XLXI_174 (.I0(z), 
+                  .I1(g10get), 
+                  .O(XLXN_474));
+   OR2  XLXI_175 (.I0(XLXN_475), 
+                 .I1(XLXN_474), 
+                 .O(g10get_d));
+   OR2  XLXI_176 (.I0(XLXN_477), 
+                 .I1(XLXN_476), 
+                 .O(g10_d));
+   AND2B1  XLXI_178 (.I0(timerout), 
+                    .I1(g1011), 
+                    .O(opening_d));
+   OR3  XLXI_180 (.I0(XLXN_496), 
+                 .I1(XLXN_402), 
+                 .I2(XLXN_403), 
+                 .O(initial_d));
+   AND2  XLXI_181 (.I0(XLXN_494), 
+                  .I1(initial_state), 
+                  .O(XLXN_496));
+   NAND2B1  XLXI_183 (.I0(z), 
+                     .I1(u), 
+                     .O(XLXN_494));
+endmodule

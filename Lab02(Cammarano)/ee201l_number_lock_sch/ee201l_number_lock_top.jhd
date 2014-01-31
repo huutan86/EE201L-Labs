@@ -1,0 +1,11 @@
+MODULE ee201l_number_lock_top
+	SUBMODULE onehot_to_hex_16bit
+		INSTANCE XLXI_109
+	SUBMODULE hex_to_ssd
+		INSTANCE XLXI_108
+	SUBMODULE mux4bit_4x1
+		INSTANCE XLXI_131
+	SUBMODULE clock_divider
+		INSTANCE XLXI_139
+	SUBMODULE ee201l_number_lock
+		INSTANCE XLXI_141
