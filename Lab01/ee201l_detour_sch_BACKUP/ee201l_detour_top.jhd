@@ -1,5 +1,0 @@
-MODULE ee201l_detour_top
-	SUBMODULE ee201l_detour
-		INSTANCE UUT
-	SUBMODULE mux8bit_2x1
-		INSTANCE XLXI_414
