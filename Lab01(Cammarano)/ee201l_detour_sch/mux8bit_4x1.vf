@@ -1,0 +1,147 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : mux8bit_4x1.vf
+// /___/   /\     Timestamp : 01/31/2014 15:35:05
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/mux8bit_4x1.vf -w C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/mux8bit_4x1.sch
+//Design Name: mux8bit_4x1
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module M4_1E_HXILINX_mux8bit_4x1 (O, D0, D1, D2, D3, E, S0, S1);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  D2;
+   input  D3;
+   input  E;
+   input  S0;
+   input  S1;
+
+   reg O;
+
+   always @ ( D0 or D1 or D2 or D3 or E or S0 or S1)
+   begin
+      if(!E)
+      O <= 1'b0;
+      else 
+      begin
+        case({S1,S0})
+        2'b00 : O <= D0;
+        2'b01 : O <= D1;
+        2'b10 : O <= D2;
+        2'b11 : O <= D3;
+        endcase
+      end
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module mux8bit_4x1(A, 
+                   B, 
+                   C, 
+                   D, 
+                   S0, 
+                   S1, 
+                   O);
+
+    input [7:0] A;
+    input [7:0] B;
+    input [7:0] C;
+    input [7:0] D;
+    input S0;
+    input S1;
+   output [7:0] O;
+   
+   wire XLXN_53;
+   
+   (* HU_SET = "XLXI_16_5" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_16 (.D0(A[0]), 
+                                      .D1(B[0]), 
+                                      .D2(C[0]), 
+                                      .D3(D[0]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[0]));
+   (* HU_SET = "XLXI_17_4" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_17 (.D0(A[1]), 
+                                      .D1(B[1]), 
+                                      .D2(C[1]), 
+                                      .D3(D[1]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[1]));
+   (* HU_SET = "XLXI_18_6" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_18 (.D0(A[2]), 
+                                      .D1(B[2]), 
+                                      .D2(C[2]), 
+                                      .D3(D[2]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[2]));
+   (* HU_SET = "XLXI_19_7" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_19 (.D0(A[3]), 
+                                      .D1(B[3]), 
+                                      .D2(C[3]), 
+                                      .D3(D[3]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[3]));
+   (* HU_SET = "XLXI_30_8" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_30 (.D0(A[4]), 
+                                      .D1(B[4]), 
+                                      .D2(C[4]), 
+                                      .D3(D[4]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[4]));
+   (* HU_SET = "XLXI_31_9" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_31 (.D0(A[5]), 
+                                      .D1(B[5]), 
+                                      .D2(C[5]), 
+                                      .D3(D[5]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[5]));
+   (* HU_SET = "XLXI_32_10" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_32 (.D0(A[6]), 
+                                      .D1(B[6]), 
+                                      .D2(C[6]), 
+                                      .D3(D[6]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[6]));
+   (* HU_SET = "XLXI_33_11" *) 
+   M4_1E_HXILINX_mux8bit_4x1  XLXI_33 (.D0(A[7]), 
+                                      .D1(B[7]), 
+                                      .D2(C[7]), 
+                                      .D3(D[7]), 
+                                      .E(XLXN_53), 
+                                      .S0(S0), 
+                                      .S1(S1), 
+                                      .O(O[7]));
+   VCC  XLXI_34 (.P(XLXN_53));
+endmodule

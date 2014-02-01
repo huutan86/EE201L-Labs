@@ -48,8 +48,6 @@
         <signal name="BtnC" />
         <signal name="DIVCLK(23:8)" />
         <signal name="XLXN_522" />
-        <signal name="An1" />
-        <signal name="An2" />
         <signal name="LD6" />
         <signal name="LD7" />
         <signal name="LD3" />
@@ -104,8 +102,6 @@
         <signal name="SSD_R(6)" />
         <signal name="SSD_R(7)" />
         <signal name="XLXN_809" />
-        <signal name="An0" />
-        <signal name="An3" />
         <signal name="DIVCLK(15)" />
         <signal name="SSD_L(7:0)" />
         <signal name="SSD_R(7:0)" />
@@ -114,6 +110,27 @@
         <signal name="XLXN_843" />
         <signal name="XLXN_856(3:0)" />
         <signal name="SSD_num(7:0)" />
+        <signal name="DIVCLK(14)" />
+        <signal name="XLXN_866" />
+        <signal name="XLXN_867" />
+        <signal name="XLXN_868" />
+        <signal name="XLXN_869" />
+        <signal name="XLXN_870" />
+        <signal name="An0" />
+        <signal name="An3" />
+        <signal name="An1" />
+        <signal name="An2" />
+        <signal name="SSD_OFF(7:0)" />
+        <signal name="XLXN_908(7:0)" />
+        <signal name="XLXN_910" />
+        <signal name="SSD_OFF(0)" />
+        <signal name="SSD_OFF(1)" />
+        <signal name="SSD_OFF(2)" />
+        <signal name="SSD_OFF(3)" />
+        <signal name="SSD_OFF(4)" />
+        <signal name="SSD_OFF(5)" />
+        <signal name="SSD_OFF(6)" />
+        <signal name="SSD_OFF(7)" />
         <port polarity="Output" name="Ca" />
         <port polarity="Output" name="Cb" />
         <port polarity="Output" name="Cc" />
@@ -124,8 +141,6 @@
         <port polarity="Output" name="Dp" />
         <port polarity="Input" name="CLKPORT" />
         <port polarity="Input" name="BtnC" />
-        <port polarity="Output" name="An1" />
-        <port polarity="Output" name="An2" />
         <port polarity="Output" name="LD6" />
         <port polarity="Output" name="LD7" />
         <port polarity="Output" name="LD3" />
@@ -142,6 +157,8 @@
         <port polarity="Input" name="SW0" />
         <port polarity="Output" name="An0" />
         <port polarity="Output" name="An3" />
+        <port polarity="Output" name="An1" />
+        <port polarity="Output" name="An2" />
         <blockdef name="cb8ce">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="320" y1="-128" y2="-128" x1="384" />
@@ -275,6 +292,33 @@
             <rect width="64" x="320" y="-44" height="24" />
             <line x2="0" y1="-64" y2="-64" x1="64" />
             <rect width="64" x="0" y="-76" height="24" />
+        </blockdef>
+        <blockdef name="d2_4e">
+            <timestamp>2000-1-1T10:10:10</timestamp>
+            <rect width="256" x="64" y="-384" height="320" />
+            <line x2="64" y1="-128" y2="-128" x1="0" />
+            <line x2="64" y1="-256" y2="-256" x1="0" />
+            <line x2="64" y1="-320" y2="-320" x1="0" />
+            <line x2="320" y1="-128" y2="-128" x1="384" />
+            <line x2="320" y1="-192" y2="-192" x1="384" />
+            <line x2="320" y1="-256" y2="-256" x1="384" />
+            <line x2="320" y1="-320" y2="-320" x1="384" />
+        </blockdef>
+        <blockdef name="mux8bit_4x1">
+            <timestamp>2014-1-31T3:58:49</timestamp>
+            <rect width="256" x="64" y="-384" height="384" />
+            <line x2="0" y1="-352" y2="-352" x1="64" />
+            <rect width="64" x="0" y="-364" height="24" />
+            <line x2="0" y1="-288" y2="-288" x1="64" />
+            <rect width="64" x="0" y="-300" height="24" />
+            <line x2="0" y1="-224" y2="-224" x1="64" />
+            <rect width="64" x="0" y="-236" height="24" />
+            <line x2="0" y1="-160" y2="-160" x1="64" />
+            <rect width="64" x="0" y="-172" height="24" />
+            <line x2="384" y1="-352" y2="-352" x1="320" />
+            <rect width="64" x="320" y="-364" height="24" />
+            <line x2="0" y1="-96" y2="-96" x1="64" />
+            <line x2="0" y1="-32" y2="-32" x1="64" />
         </blockdef>
         <block symbolname="buf" name="XLXI_79">
             <blockpin signalname="XLXN_200" name="I" />
@@ -479,12 +523,6 @@
         <block symbolname="vcc" name="XLXI_7">
             <blockpin signalname="QuadSpiFlashCS" name="P" />
         </block>
-        <block symbolname="vcc" name="XLXI_297">
-            <blockpin signalname="An1" name="P" />
-        </block>
-        <block symbolname="vcc" name="XLXI_298">
-            <blockpin signalname="An2" name="P" />
-        </block>
         <block symbolname="buf" name="XLXI_301">
             <blockpin signalname="XLXN_752" name="I" />
             <blockpin signalname="SSD_R(0)" name="O" />
@@ -571,24 +609,6 @@
             <blockpin signalname="LR_BAR" name="I" />
             <blockpin signalname="XLXN_841" name="O" />
         </block>
-        <block symbolname="inv" name="XLXI_418">
-            <blockpin signalname="An3" name="I" />
-            <blockpin signalname="An0" name="O" />
-        </block>
-        <block symbolname="buf" name="XLXI_419">
-            <blockpin signalname="DIVCLK(15)" name="I" />
-            <blockpin signalname="An3" name="O" />
-        </block>
-        <block symbolname="mux8bit_2x1" name="XLXI_420">
-            <blockpin signalname="XLXN_837(7:0)" name="A(7:0)" />
-            <blockpin signalname="SSD_num(7:0)" name="B(7:0)" />
-            <blockpin signalname="SSD_out(7:0)" name="O(7:0)" />
-            <blockpin signalname="XLXN_843" name="S" />
-        </block>
-        <block symbolname="inv" name="XLXI_421">
-            <blockpin signalname="DIVCLK(15)" name="I" />
-            <blockpin signalname="XLXN_843" name="O" />
-        </block>
         <block symbolname="mux8bit_2x1" name="XLXI_414">
             <blockpin signalname="SSD_L(7:0)" name="A(7:0)" />
             <blockpin signalname="SSD_R(7:0)" name="B(7:0)" />
@@ -602,6 +622,78 @@
         <block symbolname="hex_to_ssd" name="XLXI_437">
             <blockpin signalname="SSD_num(7:0)" name="ssd(7:0)" />
             <blockpin signalname="XLXN_856(3:0)" name="hex(3:0)" />
+        </block>
+        <block symbolname="inv" name="XLXI_439">
+            <blockpin signalname="XLXN_867" name="I" />
+            <blockpin signalname="An0" name="O" />
+        </block>
+        <block symbolname="inv" name="XLXI_442">
+            <blockpin signalname="XLXN_870" name="I" />
+            <blockpin signalname="An3" name="O" />
+        </block>
+        <block symbolname="vcc" name="XLXI_443">
+            <blockpin signalname="XLXN_866" name="P" />
+        </block>
+        <block symbolname="d2_4e" name="XLXI_438">
+            <blockpin signalname="DIVCLK(14)" name="A0" />
+            <blockpin signalname="DIVCLK(15)" name="A1" />
+            <blockpin signalname="XLXN_866" name="E" />
+            <blockpin signalname="XLXN_867" name="D0" />
+            <blockpin signalname="XLXN_868" name="D1" />
+            <blockpin signalname="XLXN_869" name="D2" />
+            <blockpin signalname="XLXN_870" name="D3" />
+        </block>
+        <block symbolname="inv" name="XLXI_456">
+            <blockpin signalname="XLXN_868" name="I" />
+            <blockpin signalname="An1" name="O" />
+        </block>
+        <block symbolname="inv" name="XLXI_457">
+            <blockpin signalname="XLXN_869" name="I" />
+            <blockpin signalname="An2" name="O" />
+        </block>
+        <block symbolname="mux8bit_4x1" name="XLXI_458">
+            <blockpin signalname="XLXN_837(7:0)" name="A(7:0)" />
+            <blockpin signalname="SSD_OFF(7:0)" name="B(7:0)" />
+            <blockpin signalname="SSD_OFF(7:0)" name="C(7:0)" />
+            <blockpin signalname="SSD_num(7:0)" name="D(7:0)" />
+            <blockpin signalname="SSD_out(7:0)" name="O(7:0)" />
+            <blockpin signalname="DIVCLK(14)" name="S0" />
+            <blockpin signalname="DIVCLK(15)" name="S1" />
+        </block>
+        <block symbolname="buf" name="XLXI_459">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(0)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_460">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(1)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_461">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(2)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_462">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(3)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_463">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(4)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_464">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(5)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_465">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(6)" name="O" />
+        </block>
+        <block symbolname="buf" name="XLXI_466">
+            <blockpin signalname="XLXN_910" name="I" />
+            <blockpin signalname="SSD_OFF(7)" name="O" />
+        </block>
+        <block symbolname="vcc" name="XLXI_468">
+            <blockpin signalname="XLXN_910" name="P" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
@@ -1113,15 +1205,6 @@
         <instance x="2784" y="2512" name="XLXI_237" orien="R0" />
         <text style="fontsize:24;fontname:Arial" x="2940" y="2600">Detour</text>
         <text style="fontsize:24;fontname:Arial" x="3208" y="2600">TOP schematic (Sheet 2/2)</text>
-        <branch name="An1">
-            <wire x2="2336" y1="1168" y2="1168" x1="2048" />
-        </branch>
-        <iomarker fontsize="28" x="2336" y="1168" name="An1" orien="R0" />
-        <branch name="An2">
-            <wire x2="2336" y1="1232" y2="1232" x1="1968" />
-        </branch>
-        <iomarker fontsize="28" x="2336" y="1232" name="An2" orien="R0" />
-        <iomarker fontsize="28" x="2336" y="1296" name="An3" orien="R0" />
         <branch name="LD6">
             <wire x2="3232" y1="1088" y2="1088" x1="3056" />
         </branch>
@@ -1171,10 +1254,7 @@
         <iomarker fontsize="36" x="3248" y="1856" name="LD0" orien="R0" />
         <iomarker fontsize="36" x="3248" y="1376" name="LD4" orien="R0" />
         <iomarker fontsize="36" x="3248" y="1296" name="LD5" orien="R0" />
-        <instance x="1904" y="1232" name="XLXI_298" orien="R0" />
-        <instance x="1984" y="1168" name="XLXI_297" orien="R0" />
         <rect style="linewidth:W;linecolor:rgb(255,0,0);linestyle:Dash" width="268" x="2492" y="1208" height="796" />
-        <text style="fontsize:40;fontname:Arial;textcolor:rgb(255,0,0)" x="1908" y="1372">Change it in Part 3</text>
         <instance x="400" y="976" name="XLXI_301" orien="R0" />
         <instance x="400" y="1040" name="XLXI_302" orien="R0" />
         <instance x="400" y="1104" name="XLXI_303" orien="R0" />
@@ -1211,8 +1291,6 @@
         </branch>
         <instance x="416" y="544" name="XLXI_325" orien="R0" />
         <instance x="128" y="1520" name="XLXI_328" orien="R0" />
-        <rect style="linewidth:W;linecolor:rgb(255,0,0);linestyle:Dash" width="440" x="1852" y="856" height="580" />
-        <iomarker fontsize="28" x="2336" y="1104" name="An0" orien="R0" />
         <instance x="2912" y="704" name="XLXI_357" orien="R0" />
         <instance x="2912" y="624" name="XLXI_358" orien="R0" />
         <instance x="2912" y="544" name="XLXI_359" orien="R0" />
@@ -1284,7 +1362,6 @@
             <wire x2="720" y1="1392" y2="1392" x1="624" />
             <wire x2="752" y1="1392" y2="1392" x1="720" />
         </branch>
-        <text style="fontsize:40;fontname:Arial;textcolor:rgb(255,0,0)" x="1220" y="1360">Generate SSD_out(7:0)</text>
         <branch name="GR">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:32;fontname:Arial" attrname="Name" x="2624" y="1776" type="branch" />
             <wire x2="2624" y1="1776" y2="1776" x1="2592" />
@@ -1309,23 +1386,6 @@
             <wire x2="2704" y1="1536" y2="1616" x1="2704" />
             <wire x2="2848" y1="1616" y2="1616" x1="2704" />
         </branch>
-        <branch name="An0">
-            <wire x2="2176" y1="960" y2="960" x1="2128" />
-            <wire x2="2176" y1="960" y2="1104" x1="2176" />
-            <wire x2="2336" y1="1104" y2="1104" x1="2176" />
-        </branch>
-        <branch name="An3">
-            <wire x2="1904" y1="960" y2="1296" x1="1904" />
-            <wire x2="2336" y1="1296" y2="1296" x1="1904" />
-            <wire x2="1904" y1="1296" y2="1664" x1="1904" />
-        </branch>
-        <instance x="1904" y="992" name="XLXI_418" orien="R0" />
-        <instance x="1680" y="1696" name="XLXI_419" orien="R0" />
-        <branch name="DIVCLK(15)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:36;fontname:Arial" attrname="Name" x="1616" y="1664" type="branch" />
-            <wire x2="1616" y1="1664" y2="1664" x1="1584" />
-            <wire x2="1680" y1="1664" y2="1664" x1="1616" />
-        </branch>
         <branch name="SSD_out(7:0)">
             <attrtext style="alignment:SOFT-BCENTER;fontsize:32;fontname:Arial" attrname="Name" x="2064" y="336" type="branch" />
             <wire x2="2064" y1="336" y2="336" x1="1936" />
@@ -1340,8 +1400,6 @@
             <wire x2="2304" y1="192" y2="272" x1="2304" />
             <wire x2="2304" y1="272" y2="336" x1="2304" />
         </branch>
-        <instance x="1552" y="496" name="XLXI_420" orien="R0">
-        </instance>
         <instance x="1120" y="272" name="XLXI_414" orien="R0">
         </instance>
         <branch name="SSD_L(7:0)">
@@ -1367,19 +1425,147 @@
             <attrtext style="alignment:SOFT-RIGHT;fontsize:36;fontname:Arial" attrname="Name" x="848" y="240" type="branch" />
             <wire x2="864" y1="240" y2="240" x1="848" />
         </branch>
-        <branch name="XLXN_843">
-            <wire x2="1552" y1="464" y2="464" x1="1520" />
+        <branch name="DIVCLK(14)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1344" y="1360" type="branch" />
+            <wire x2="1344" y1="1360" y2="1360" x1="1312" />
+            <wire x2="1504" y1="1360" y2="1360" x1="1344" />
         </branch>
-        <instance x="1296" y="496" name="XLXI_421" orien="R0" />
         <branch name="DIVCLK(15)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:36;fontname:Arial" attrname="Name" x="1088" y="464" type="branch" />
-            <wire x2="1088" y1="464" y2="464" x1="1056" />
-            <wire x2="1296" y1="464" y2="464" x1="1088" />
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1344" y="1424" type="branch" />
+            <wire x2="1344" y1="1424" y2="1424" x1="1312" />
+            <wire x2="1504" y1="1424" y2="1424" x1="1344" />
         </branch>
+        <branch name="XLXN_866">
+            <wire x2="1504" y1="1552" y2="1552" x1="1120" />
+        </branch>
+        <branch name="XLXN_867">
+            <wire x2="1920" y1="1360" y2="1360" x1="1888" />
+        </branch>
+        <instance x="1920" y="1392" name="XLXI_439" orien="R0" />
+        <branch name="XLXN_868">
+            <wire x2="1920" y1="1424" y2="1424" x1="1888" />
+        </branch>
+        <branch name="XLXN_869">
+            <wire x2="1920" y1="1488" y2="1488" x1="1888" />
+        </branch>
+        <branch name="XLXN_870">
+            <wire x2="1920" y1="1552" y2="1552" x1="1888" />
+        </branch>
+        <instance x="1920" y="1584" name="XLXI_442" orien="R0" />
+        <branch name="An0">
+            <wire x2="2192" y1="1360" y2="1360" x1="2144" />
+        </branch>
+        <branch name="An3">
+            <wire x2="2192" y1="1552" y2="1552" x1="2144" />
+        </branch>
+        <instance x="1056" y="1552" name="XLXI_443" orien="R0" />
+        <instance x="1504" y="1680" name="XLXI_438" orien="R0" />
+        <iomarker fontsize="28" x="2192" y="1360" name="An0" orien="R0" />
+        <iomarker fontsize="28" x="2192" y="1552" name="An3" orien="R0" />
+        <instance x="1920" y="1520" name="XLXI_457" orien="R0" />
+        <instance x="1920" y="1456" name="XLXI_456" orien="R0" />
+        <branch name="An1">
+            <wire x2="2192" y1="1424" y2="1424" x1="2144" />
+        </branch>
+        <branch name="An2">
+            <wire x2="2192" y1="1488" y2="1488" x1="2144" />
+        </branch>
+        <iomarker fontsize="28" x="2192" y="1424" name="An1" orien="R0" />
+        <iomarker fontsize="28" x="2192" y="1488" name="An2" orien="R0" />
+        <instance x="1552" y="688" name="XLXI_458" orien="R0">
+        </instance>
         <branch name="SSD_num(7:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:36;fontname:Arial" attrname="Name" x="1408" y="400" type="branch" />
-            <wire x2="1408" y1="400" y2="400" x1="1360" />
-            <wire x2="1552" y1="400" y2="400" x1="1408" />
+            <attrtext style="alignment:SOFT-BCENTER;fontsize:36;fontname:Arial" attrname="Name" x="1376" y="528" type="branch" />
+            <wire x2="1376" y1="528" y2="528" x1="1328" />
+            <wire x2="1520" y1="528" y2="528" x1="1376" />
+            <wire x2="1552" y1="528" y2="528" x1="1520" />
+        </branch>
+        <branch name="DIVCLK(14)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1088" y="592" type="branch" />
+            <wire x2="1088" y1="592" y2="592" x1="1040" />
+            <wire x2="1552" y1="592" y2="592" x1="1088" />
+        </branch>
+        <branch name="DIVCLK(15)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1104" y="656" type="branch" />
+            <wire x2="1104" y1="656" y2="656" x1="1040" />
+            <wire x2="1552" y1="656" y2="656" x1="1104" />
+        </branch>
+        <branch name="SSD_OFF(7:0)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1152" y="400" type="branch" />
+            <wire x2="1152" y1="400" y2="400" x1="1120" />
+            <wire x2="1360" y1="400" y2="400" x1="1152" />
+            <wire x2="1552" y1="400" y2="400" x1="1360" />
+            <wire x2="1360" y1="400" y2="464" x1="1360" />
+            <wire x2="1552" y1="464" y2="464" x1="1360" />
+        </branch>
+        <instance x="992" y="2048" name="XLXI_459" orien="R0" />
+        <instance x="992" y="2112" name="XLXI_460" orien="R0" />
+        <instance x="992" y="2176" name="XLXI_461" orien="R0" />
+        <instance x="992" y="2240" name="XLXI_462" orien="R0" />
+        <instance x="992" y="2304" name="XLXI_463" orien="R0" />
+        <instance x="992" y="2368" name="XLXI_464" orien="R0" />
+        <instance x="992" y="2432" name="XLXI_465" orien="R0" />
+        <instance x="992" y="2496" name="XLXI_466" orien="R0" />
+        <instance x="880" y="2640" name="XLXI_468" orien="R0" />
+        <branch name="XLXN_910">
+            <wire x2="992" y1="2016" y2="2016" x1="864" />
+            <wire x2="864" y1="2016" y2="2080" x1="864" />
+            <wire x2="992" y1="2080" y2="2080" x1="864" />
+            <wire x2="864" y1="2080" y2="2144" x1="864" />
+            <wire x2="864" y1="2144" y2="2208" x1="864" />
+            <wire x2="992" y1="2208" y2="2208" x1="864" />
+            <wire x2="864" y1="2208" y2="2272" x1="864" />
+            <wire x2="992" y1="2272" y2="2272" x1="864" />
+            <wire x2="864" y1="2272" y2="2336" x1="864" />
+            <wire x2="992" y1="2336" y2="2336" x1="864" />
+            <wire x2="864" y1="2336" y2="2400" x1="864" />
+            <wire x2="864" y1="2400" y2="2464" x1="864" />
+            <wire x2="992" y1="2464" y2="2464" x1="864" />
+            <wire x2="864" y1="2464" y2="2656" x1="864" />
+            <wire x2="944" y1="2656" y2="2656" x1="864" />
+            <wire x2="992" y1="2400" y2="2400" x1="864" />
+            <wire x2="992" y1="2144" y2="2144" x1="864" />
+            <wire x2="944" y1="2640" y2="2656" x1="944" />
+        </branch>
+        <branch name="SSD_OFF(0)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2016" type="branch" />
+            <wire x2="1312" y1="2016" y2="2016" x1="1216" />
+            <wire x2="1344" y1="2016" y2="2016" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(1)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2080" type="branch" />
+            <wire x2="1312" y1="2080" y2="2080" x1="1216" />
+            <wire x2="1344" y1="2080" y2="2080" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(2)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2144" type="branch" />
+            <wire x2="1312" y1="2144" y2="2144" x1="1216" />
+            <wire x2="1344" y1="2144" y2="2144" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(3)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2208" type="branch" />
+            <wire x2="1312" y1="2208" y2="2208" x1="1216" />
+            <wire x2="1344" y1="2208" y2="2208" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(4)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2272" type="branch" />
+            <wire x2="1312" y1="2272" y2="2272" x1="1216" />
+            <wire x2="1344" y1="2272" y2="2272" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(5)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2336" type="branch" />
+            <wire x2="1312" y1="2336" y2="2336" x1="1216" />
+            <wire x2="1344" y1="2336" y2="2336" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(6)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2400" type="branch" />
+            <wire x2="1312" y1="2400" y2="2400" x1="1216" />
+            <wire x2="1344" y1="2400" y2="2400" x1="1312" />
+        </branch>
+        <branch name="SSD_OFF(7)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1312" y="2464" type="branch" />
+            <wire x2="1312" y1="2464" y2="2464" x1="1216" />
+            <wire x2="1344" y1="2464" y2="2464" x1="1312" />
         </branch>
     </sheet>
 </drawing>

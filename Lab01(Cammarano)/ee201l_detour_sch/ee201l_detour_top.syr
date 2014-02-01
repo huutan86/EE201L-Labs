@@ -4,13 +4,13 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: ee201l_detour_top.prj
 
@@ -106,21 +106,27 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\onehot_to_hex_16bit.vf\" into library work
+Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\onehot_to_hex_16bit.vf\" into library work
 Parsing module <OR8_HXILINX_onehot_to_hex_16bit>.
 Parsing module <onehot_to_hex_16bit>.
-Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\mux8bit_2x1.vf\" into library work
+Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\mux8bit_4x1.vf\" into library work
+Parsing module <M4_1E_HXILINX_mux8bit_4x1>.
+Parsing module <mux8bit_4x1>.
+Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\mux8bit_2x1.vf\" into library work
 Parsing module <M2_1_HXILINX_mux8bit_2x1>.
 Parsing module <mux8bit_2x1>.
-Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\hex_to_ssd.vf\" into library work
+Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\hex_to_ssd.vf\" into library work
 Parsing module <hex_to_ssd>.
-Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour.vf\" into library work
+Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour.vf\" into library work
 Parsing module <ee201l_detour>.
-Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.vf\" into library work
+Analyzing Verilog file \"C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.vf\" into library work
 Parsing module <OR8_HXILINX_ee201l_detour_top>.
 Parsing module <CB16CE_HXILINX_ee201l_detour_top>.
+Parsing module <M4_1E_HXILINX_ee201l_detour_top>.
+Parsing module <D2_4E_HXILINX_ee201l_detour_top>.
 Parsing module <CB8CE_HXILINX_ee201l_detour_top>.
 Parsing module <M2_1_HXILINX_ee201l_detour_top>.
+Parsing module <mux8bit_4x1_MUSER_ee201l_detour_top>.
 Parsing module <hex_to_ssd_MUSER_ee201l_detour_top>.
 Parsing module <onehot_to_hex_16bit_MUSER_ee201l_detour_top>.
 Parsing module <mux8bit_2x1_MUSER_ee201l_detour_top>.
@@ -148,14 +154,14 @@ Elaborating module <BUF>.
 Elaborating module <INV>.
 
 Elaborating module <AND2>.
-WARNING:HDLCompiler:1127 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.vf" Line 507: Assignment to L ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.vf" Line 511: Assignment to R ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.vf" Line 673: Assignment to L ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.vf" Line 677: Assignment to R ignored, since the identifier is never used
 
 Elaborating module <CB8CE_HXILINX_ee201l_detour_top>.
-WARNING:HDLCompiler:413 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.vf" Line 89: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.vf" Line 157: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <CB16CE_HXILINX_ee201l_detour_top>.
-WARNING:HDLCompiler:413 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.vf" Line 61: Result of 17-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.vf" Line 61: Result of 17-bit expression is truncated to fit in 16-bit target.
 
 Elaborating module <VCC>.
 
@@ -191,14 +197,20 @@ Elaborating module <ROM16X1(INIT=16'b01000010000011)>.
 
 Elaborating module <ROM16X1(INIT=16'b1111111111111111)>.
 
+Elaborating module <D2_4E_HXILINX_ee201l_detour_top>.
+
+Elaborating module <mux8bit_4x1_MUSER_ee201l_detour_top>.
+
+Elaborating module <M4_1E_HXILINX_ee201l_detour_top>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
-    Set property "HU_SET = XLXI_1_24" for instance <XLXI_1>.
-    Set property "HU_SET = XLXI_2_26" for instance <XLXI_2>.
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
+    Set property "HU_SET = XLXI_1_40" for instance <XLXI_1>.
+    Set property "HU_SET = XLXI_2_42" for instance <XLXI_2>.
     Set property "IOSTANDARD = DEFAULT" for instance <XLXI_27>.
     Set property "SLEW = SLOW" for instance <XLXI_27>.
     Set property "DRIVE = 12" for instance <XLXI_27>.
@@ -223,7 +235,7 @@ Synthesizing Unit <ee201l_detour_top>.
     Set property "IOSTANDARD = DEFAULT" for instance <XLXI_34>.
     Set property "SLEW = SLOW" for instance <XLXI_34>.
     Set property "DRIVE = 12" for instance <XLXI_34>.
-    Set property "HU_SET = XLXI_185_25" for instance <XLXI_185>.
+    Set property "HU_SET = XLXI_185_41" for instance <XLXI_185>.
     Set property "IOSTANDARD = DEFAULT" for instance <XLXI_357>.
     Set property "SLEW = SLOW" for instance <XLXI_357>.
     Set property "DRIVE = 12" for instance <XLXI_357>.
@@ -248,28 +260,29 @@ Synthesizing Unit <ee201l_detour_top>.
     Set property "IOSTANDARD = DEFAULT" for instance <XLXI_364>.
     Set property "SLEW = SLOW" for instance <XLXI_364>.
     Set property "DRIVE = 12" for instance <XLXI_364>.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 499: Output port <L> of the instance <UUT> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 499: Output port <R> of the instance <UUT> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 516: Output port <Q> of the instance <XLXI_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 516: Output port <TC> of the instance <XLXI_1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 523: Output port <TC> of the instance <XLXI_2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 612: Output port <CEO> of the instance <XLXI_185> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf" line 612: Output port <TC> of the instance <XLXI_185> is unconnected or connected to loadless signal.
+    Set property "HU_SET = XLXI_438_43" for instance <XLXI_438>.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 665: Output port <L> of the instance <UUT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 665: Output port <R> of the instance <UUT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 682: Output port <Q> of the instance <XLXI_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 682: Output port <TC> of the instance <XLXI_1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 689: Output port <TC> of the instance <XLXI_2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 778: Output port <CEO> of the instance <XLXI_185> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf" line 778: Output port <TC> of the instance <XLXI_185> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <ee201l_detour_top> synthesized.
 
 Synthesizing Unit <ee201l_detour_MUSER_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
     Summary:
 	no macro.
 Unit <ee201l_detour_MUSER_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <CB8CE_HXILINX_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
         TERMINAL_COUNT = 8'b11111111
     Found 8-bit register for signal <Q>.
-    Found 8-bit adder for signal <Q[7]_GND_10_o_add_0_OUT> created at line 89.
+    Found 8-bit adder for signal <Q[7]_GND_10_o_add_0_OUT> created at line 157.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred   8 D-type flip-flop(s).
@@ -277,7 +290,7 @@ Synthesizing Unit <CB8CE_HXILINX_ee201l_detour_top>.
 Unit <CB8CE_HXILINX_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <CB16CE_HXILINX_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
         TERMINAL_COUNT = 16'b1111111111111111
     Found 16-bit register for signal <Q>.
     Found 16-bit adder for signal <Q[15]_GND_11_o_add_0_OUT> created at line 61.
@@ -288,47 +301,74 @@ Synthesizing Unit <CB16CE_HXILINX_ee201l_detour_top>.
 Unit <CB16CE_HXILINX_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <mux8bit_2x1_MUSER_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
-    Set property "HU_SET = XLXI_1_16" for instance <XLXI_1>.
-    Set property "HU_SET = XLXI_2_17" for instance <XLXI_2>.
-    Set property "HU_SET = XLXI_3_18" for instance <XLXI_3>.
-    Set property "HU_SET = XLXI_4_19" for instance <XLXI_4>.
-    Set property "HU_SET = XLXI_5_20" for instance <XLXI_5>.
-    Set property "HU_SET = XLXI_10_21" for instance <XLXI_10>.
-    Set property "HU_SET = XLXI_14_22" for instance <XLXI_14>.
-    Set property "HU_SET = XLXI_15_23" for instance <XLXI_15>.
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
+    Set property "HU_SET = XLXI_1_32" for instance <XLXI_1>.
+    Set property "HU_SET = XLXI_2_33" for instance <XLXI_2>.
+    Set property "HU_SET = XLXI_3_34" for instance <XLXI_3>.
+    Set property "HU_SET = XLXI_4_35" for instance <XLXI_4>.
+    Set property "HU_SET = XLXI_5_36" for instance <XLXI_5>.
+    Set property "HU_SET = XLXI_10_37" for instance <XLXI_10>.
+    Set property "HU_SET = XLXI_14_38" for instance <XLXI_14>.
+    Set property "HU_SET = XLXI_15_39" for instance <XLXI_15>.
     Summary:
 	no macro.
 Unit <mux8bit_2x1_MUSER_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <M2_1_HXILINX_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <M2_1_HXILINX_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <onehot_to_hex_16bit_MUSER_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
-    Set property "HU_SET = XLXI_9_12" for instance <XLXI_9>.
-    Set property "HU_SET = XLXI_19_13" for instance <XLXI_19>.
-    Set property "HU_SET = XLXI_20_14" for instance <XLXI_20>.
-    Set property "HU_SET = XLXI_21_15" for instance <XLXI_21>.
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
+    Set property "HU_SET = XLXI_9_28" for instance <XLXI_9>.
+    Set property "HU_SET = XLXI_19_29" for instance <XLXI_19>.
+    Set property "HU_SET = XLXI_20_30" for instance <XLXI_20>.
+    Set property "HU_SET = XLXI_21_31" for instance <XLXI_21>.
 WARNING:Xst:647 - Input <one_hot<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <onehot_to_hex_16bit_MUSER_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <OR8_HXILINX_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
     Summary:
 	no macro.
 Unit <OR8_HXILINX_ee201l_detour_top> synthesized.
 
 Synthesizing Unit <hex_to_ssd_MUSER_ee201l_detour_top>.
-    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01/ee201l_detour_sch/ee201l_detour_top.vf".
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
     Summary:
 	no macro.
 Unit <hex_to_ssd_MUSER_ee201l_detour_top> synthesized.
+
+Synthesizing Unit <D2_4E_HXILINX_ee201l_detour_top>.
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
+    Summary:
+	inferred   4 Multiplexer(s).
+Unit <D2_4E_HXILINX_ee201l_detour_top> synthesized.
+
+Synthesizing Unit <mux8bit_4x1_MUSER_ee201l_detour_top>.
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
+    Set property "HU_SET = XLXI_16_21" for instance <XLXI_16>.
+    Set property "HU_SET = XLXI_17_20" for instance <XLXI_17>.
+    Set property "HU_SET = XLXI_18_22" for instance <XLXI_18>.
+    Set property "HU_SET = XLXI_19_23" for instance <XLXI_19>.
+    Set property "HU_SET = XLXI_30_24" for instance <XLXI_30>.
+    Set property "HU_SET = XLXI_31_25" for instance <XLXI_31>.
+    Set property "HU_SET = XLXI_32_26" for instance <XLXI_32>.
+    Set property "HU_SET = XLXI_33_27" for instance <XLXI_33>.
+    Summary:
+	no macro.
+Unit <mux8bit_4x1_MUSER_ee201l_detour_top> synthesized.
+
+Synthesizing Unit <M4_1E_HXILINX_ee201l_detour_top>.
+    Related source file is "c:/users/cmcammarano/workspace/ee201/ee201l-labs/lab01(cammarano)/ee201l_detour_sch/ee201l_detour_top.vf".
+    Found 1-bit 4-to-1 multiplexer for signal <S1_D3_Mux_0_o> created at line 91.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <M4_1E_HXILINX_ee201l_detour_top> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -340,8 +380,9 @@ Macro Statistics
 # Registers                                            : 3
  16-bit register                                       : 1
  8-bit register                                        : 2
-# Multiplexers                                         : 19
- 1-bit 2-to-1 multiplexer                              : 19
+# Multiplexers                                         : 31
+ 1-bit 2-to-1 multiplexer                              : 23
+ 1-bit 4-to-1 multiplexer                              : 8
 
 =========================================================================
 
@@ -367,8 +408,9 @@ Macro Statistics
  8-bit up counter                                      : 2
 # Registers                                            : 7
  Flip-Flops                                            : 7
-# Multiplexers                                         : 3
- 1-bit 2-to-1 multiplexer                              : 3
+# Multiplexers                                         : 23
+ 1-bit 2-to-1 multiplexer                              : 15
+ 1-bit 4-to-1 multiplexer                              : 8
 
 =========================================================================
 
@@ -379,6 +421,8 @@ Macro Statistics
 Optimizing unit <ee201l_detour_top> ...
 
 Optimizing unit <ee201l_detour_MUSER_ee201l_detour_top> ...
+
+Optimizing unit <mux8bit_4x1_MUSER_ee201l_detour_top> ...
 
 Optimizing unit <hex_to_ssd_MUSER_ee201l_detour_top> ...
 
@@ -403,6 +447,10 @@ Optimizing unit <XLXI_2> ...
 Optimizing unit <XLXI_1> ...
 
 Optimizing unit <mux8bit_2x1_MUSER_ee201l_detour_top> ...
+
+Optimizing unit <D2_4E_HXILINX_ee201l_detour_top> ...
+
+Optimizing unit <M4_1E_HXILINX_ee201l_detour_top> ...
 
 Optimizing unit <OR8_HXILINX_ee201l_detour_top> ...
 WARNING:Xst:2677 - Node <Q_2> of sequential type is unconnected in block <XLXI_185>.
@@ -446,16 +494,17 @@ Top Level Output File Name         : ee201l_detour_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 177
+# BELS                             : 190
 #      AND2                        : 2
-#      BUF                         : 46
+#      BUF                         : 53
 #      GND                         : 4
-#      INV                         : 7
+#      INV                         : 9
 #      LUT1                        : 22
-#      LUT3                        : 20
+#      LUT2                        : 4
+#      LUT3                        : 12
 #      LUT4                        : 2
 #      LUT5                        : 1
-#      LUT6                        : 7
+#      LUT6                        : 15
 #      MUXCY                       : 23
 #      OR2                         : 3
 #      OR4                         : 2
@@ -480,16 +529,16 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              33  out of  18224     0%  
- Number of Slice LUTs:                   67  out of   9112     0%  
-    Number used as Logic:                59  out of   9112     0%  
+ Number of Slice LUTs:                   73  out of   9112     0%  
+    Number used as Logic:                65  out of   9112     0%  
     Number used as Memory:                8  out of   2176     0%  
        Number used as ROM:                8
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    100
-   Number with an unused Flip Flop:      67  out of    100    67%  
-   Number with an unused LUT:            33  out of    100    33%  
-   Number of fully used LUT-FF pairs:     0  out of    100     0%  
+ Number of LUT Flip Flop pairs used:    106
+   Number with an unused Flip Flop:      73  out of    106    68%  
+   Number with an unused LUT:            33  out of    106    31%  
+   Number of fully used LUT-FF pairs:     0  out of    106     0%  
    Number of unique control sets:         4
 
 IO Utilization: 
@@ -535,7 +584,7 @@ Speed Grade: -3
 
    Minimum period: 4.470ns (Maximum Frequency: 223.706MHz)
    Minimum input arrival time before clock: 6.442ns
-   Maximum output required time after clock: 9.344ns
+   Maximum output required time after clock: 9.686ns
    Maximum combinational path delay: 8.859ns
 
 Timing Details:
@@ -643,33 +692,33 @@ Offset:              6.442ns (Levels of Logic = 7)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLKPORT'
-  Total number of paths / destination ports: 10 / 10
+  Total number of paths / destination ports: 24 / 12
 -------------------------------------------------------------------------
-Offset:              6.083ns (Levels of Logic = 5)
+Offset:              6.009ns (Levels of Logic = 5)
   Source:            XLXI_2/Q_7 (FF)
-  Destination:       Ca (PAD)
+  Destination:       An0 (PAD)
   Source Clock:      CLKPORT rising
 
-  Data Path: XLXI_2/Q_7 to Ca
+  Data Path: XLXI_2/Q_7 to An0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             4   0.447   0.683  Q_7 (Q_7)
+     FDCE:C->Q            14   0.447   1.062  Q_7 (Q_7)
      end scope: 'XLXI_2:Q<7>'
-     INV:I->O              8   0.568   1.031  XLXI_421 (XLXN_843)
-     begin scope: 'XLXI_420/XLXI_15:S0'
-     LUT3:I0->O            1   0.205   0.579  Mmux_O11 (O)
-     end scope: 'XLXI_420/XLXI_15:O'
-     OBUF:I->O                 2.571          XLXI_357 (Dp)
+     begin scope: 'XLXI_438:A1'
+     LUT2:I0->O            1   0.203   0.579  Mmux_D011 (D0)
+     end scope: 'XLXI_438:D0'
+     INV:I->O              1   0.568   0.579  XLXI_439 (An0_OBUF)
+     OBUF:I->O                 2.571          An0_OBUF (An0)
     ----------------------------------------
-    Total                      6.083ns (3.791ns logic, 2.292ns route)
-                                       (62.3% logic, 37.7% route)
+    Total                      6.009ns (3.789ns logic, 2.220ns route)
+                                       (63.1% logic, 36.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_185/Q_1'
   Total number of paths / destination ports: 96 / 16
 -------------------------------------------------------------------------
-Offset:              9.344ns (Levels of Logic = 8)
+Offset:              9.686ns (Levels of Logic = 8)
   Source:            UUT/XLXI_41 (FF)
   Destination:       Ca (PAD)
   Source Clock:      XLXI_185/Q_1 rising
@@ -684,14 +733,14 @@ Offset:              9.344ns (Levels of Logic = 8)
      begin scope: 'XLXI_436/XLXI_19:I6'
      LUT6:I1->O            8   0.203   0.802  O (O)
      end scope: 'XLXI_436/XLXI_19:O'
-     ROM16X1:A1->O         1   0.568   0.580  XLXI_437/Ca (SSD_num<0>)
-     begin scope: 'XLXI_420/XLXI_1:D1'
-     LUT3:I2->O            1   0.205   0.579  Mmux_O11 (O)
-     end scope: 'XLXI_420/XLXI_1:O'
+     ROM16X1:A1->O         1   0.568   0.924  XLXI_437/Ca (SSD_num<0>)
+     begin scope: 'XLXI_458/XLXI_16:D3'
+     LUT6:I1->O            1   0.203   0.579  Mmux_O11 (O)
+     end scope: 'XLXI_458/XLXI_16:O'
      OBUF:I->O                 2.571          XLXI_364 (Ca)
     ----------------------------------------
-    Total                      9.344ns (5.130ns logic, 4.214ns route)
-                                       (54.9% logic, 45.1% route)
+    Total                      9.686ns (5.128ns logic, 4.558ns route)
+                                       (52.9% logic, 47.1% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -711,9 +760,9 @@ Delay:               8.859ns (Levels of Logic = 8)
      begin scope: 'XLXI_414/XLXI_15:S0'
      LUT3:I0->O            1   0.205   0.684  Mmux_O11 (O)
      end scope: 'XLXI_414/XLXI_15:O'
-     begin scope: 'XLXI_420/XLXI_15:D0'
-     LUT3:I1->O            1   0.203   0.579  Mmux_O11 (O)
-     end scope: 'XLXI_420/XLXI_15:O'
+     begin scope: 'XLXI_458/XLXI_33:D0'
+     LUT6:I4->O            1   0.203   0.579  Mmux_O11 (O)
+     end scope: 'XLXI_458/XLXI_33:O'
      OBUF:I->O                 2.571          XLXI_357 (Dp)
     ----------------------------------------
     Total                      8.859ns (5.337ns logic, 3.522ns route)
@@ -744,11 +793,11 @@ XLXI_185/Q_1   |    2.410|         |         |         |
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.30 secs
+Total CPU time to Xst completion: 4.94 secs
  
 --> 
 
-Total memory usage is 239848 kilobytes
+Total memory usage is 242792 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

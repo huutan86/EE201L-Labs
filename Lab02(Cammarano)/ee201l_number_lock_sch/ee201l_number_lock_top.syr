@@ -1,0 +1,787 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: ee201l_number_lock_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ee201l_number_lock_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ee201l_number_lock_top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : ee201l_number_lock_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\onehot_to_hex_16bit.vf\" into library work
+Parsing module <OR8_HXILINX_onehot_to_hex_16bit>.
+Parsing module <onehot_to_hex_16bit>.
+Analyzing Verilog file \"C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\mux4bit_4x1.vf\" into library work
+Parsing module <M4_1E_HXILINX_mux4bit_4x1>.
+Parsing module <mux4bit_4x1>.
+Analyzing Verilog file \"C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\hex_to_ssd.vf\" into library work
+Parsing module <hex_to_ssd>.
+Analyzing Verilog file \"C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\ee201l_number_lock.vf\" into library work
+Parsing module <CB4CE_HXILINX_ee201l_number_lock>.
+Parsing module <ee201l_number_lock>.
+Analyzing Verilog file \"C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\clock_divider.v\" into library work
+Parsing module <clock_divider>.
+Analyzing Verilog file \"C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\ee201l_number_lock_top.vf\" into library work
+Parsing module <CB4CE_HXILINX_ee201l_number_lock_top>.
+Parsing module <OR8_HXILINX_ee201l_number_lock_top>.
+Parsing module <M4_1E_HXILINX_ee201l_number_lock_top>.
+Parsing module <M16_1E_HXILINX_ee201l_number_lock_top>.
+Parsing module <D2_4E_HXILINX_ee201l_number_lock_top>.
+Parsing module <ee201l_number_lock_MUSER_ee201l_number_lock_top>.
+Parsing module <hex_to_ssd_MUSER_ee201l_number_lock_top>.
+Parsing module <mux4bit_4x1_MUSER_ee201l_number_lock_top>.
+Parsing module <onehot_to_hex_16bit_MUSER_ee201l_number_lock_top>.
+Parsing module <ee201l_number_lock_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <ee201l_number_lock_top>.
+
+Elaborating module <BUF>.
+
+Elaborating module <VCC>.
+
+Elaborating module <OBUF>.
+
+Elaborating module <IBUF>.
+
+Elaborating module <OR2>.
+
+Elaborating module <AND2>.
+
+Elaborating module <D2_4E_HXILINX_ee201l_number_lock_top>.
+
+Elaborating module <hex_to_ssd_MUSER_ee201l_number_lock_top>.
+
+Elaborating module <ROM16X1(INIT=16'b010100000010010)>.
+
+Elaborating module <ROM16X1(INIT=16'b1101100001100000)>.
+
+Elaborating module <ROM16X1(INIT=16'b1101000000000100)>.
+
+Elaborating module <ROM16X1(INIT=16'b1000010010010010)>.
+
+Elaborating module <ROM16X1(INIT=16'b01010111010)>.
+
+Elaborating module <ROM16X1(INIT=16'b010000010001110)>.
+
+Elaborating module <ROM16X1(INIT=16'b01000010000011)>.
+
+Elaborating module <ROM16X1(INIT=16'b1111111111111111)>.
+
+Elaborating module <onehot_to_hex_16bit_MUSER_ee201l_number_lock_top>.
+
+Elaborating module <OR8_HXILINX_ee201l_number_lock_top>.
+
+Elaborating module <mux4bit_4x1_MUSER_ee201l_number_lock_top>.
+
+Elaborating module <M4_1E_HXILINX_ee201l_number_lock_top>.
+
+Elaborating module <clock_divider>.
+WARNING:HDLCompiler:413 - "C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\clock_divider.v" Line 14: Result of 27-bit expression is truncated to fit in 26-bit target.
+
+Elaborating module <ee201l_number_lock_MUSER_ee201l_number_lock_top>.
+
+Elaborating module <FDC>.
+
+Elaborating module <INV>.
+
+Elaborating module <CB4CE_HXILINX_ee201l_number_lock_top>.
+WARNING:HDLCompiler:413 - "C:\Modelsim_projects\Lab02\ee201l_number_lock_sch\ee201l_number_lock_top.vf" Line 48: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <AND3>.
+
+Elaborating module <FDP>.
+
+Elaborating module <OR4>.
+
+Elaborating module <OR3>.
+
+Elaborating module <NAND2>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <GND>.
+
+Elaborating module <M16_1E_HXILINX_ee201l_number_lock_top>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_29>.
+    Set property "SLEW = SLOW" for instance <XLXI_29>.
+    Set property "DRIVE = 12" for instance <XLXI_29>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_30>.
+    Set property "SLEW = SLOW" for instance <XLXI_30>.
+    Set property "DRIVE = 12" for instance <XLXI_30>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_31>.
+    Set property "IBUF_DELAY_VALUE = 0" for instance <XLXI_31>.
+    Set property "IFD_DELAY_VALUE = AUTO" for instance <XLXI_31>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_32>.
+    Set property "IBUF_DELAY_VALUE = 0" for instance <XLXI_32>.
+    Set property "IFD_DELAY_VALUE = AUTO" for instance <XLXI_32>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_44>.
+    Set property "SLEW = SLOW" for instance <XLXI_44>.
+    Set property "DRIVE = 12" for instance <XLXI_44>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_46>.
+    Set property "SLEW = SLOW" for instance <XLXI_46>.
+    Set property "DRIVE = 12" for instance <XLXI_46>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_48>.
+    Set property "SLEW = SLOW" for instance <XLXI_48>.
+    Set property "DRIVE = 12" for instance <XLXI_48>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_52>.
+    Set property "SLEW = SLOW" for instance <XLXI_52>.
+    Set property "DRIVE = 12" for instance <XLXI_52>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_54>.
+    Set property "SLEW = SLOW" for instance <XLXI_54>.
+    Set property "DRIVE = 12" for instance <XLXI_54>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_56>.
+    Set property "SLEW = SLOW" for instance <XLXI_56>.
+    Set property "DRIVE = 12" for instance <XLXI_56>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_58>.
+    Set property "SLEW = SLOW" for instance <XLXI_58>.
+    Set property "DRIVE = 12" for instance <XLXI_58>.
+    Set property "HU_SET = XLXI_75_15" for instance <XLXI_75>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_144>.
+    Set property "SLEW = SLOW" for instance <XLXI_144>.
+    Set property "DRIVE = 12" for instance <XLXI_144>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_145>.
+    Set property "SLEW = SLOW" for instance <XLXI_145>.
+    Set property "DRIVE = 12" for instance <XLXI_145>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_352>.
+    Set property "SLEW = SLOW" for instance <XLXI_352>.
+    Set property "DRIVE = 12" for instance <XLXI_352>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_353>.
+    Set property "SLEW = SLOW" for instance <XLXI_353>.
+    Set property "DRIVE = 12" for instance <XLXI_353>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_354>.
+    Set property "SLEW = SLOW" for instance <XLXI_354>.
+    Set property "DRIVE = 12" for instance <XLXI_354>.
+    Set property "HU_SET = XLXI_367_14" for instance <XLXI_367>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_377>.
+    Set property "SLEW = SLOW" for instance <XLXI_377>.
+    Set property "DRIVE = 12" for instance <XLXI_377>.
+    Set property "IOSTANDARD = DEFAULT" for instance <XLXI_389>.
+    Set property "IBUF_DELAY_VALUE = 0" for instance <XLXI_389>.
+    Set property "IFD_DELAY_VALUE = AUTO" for instance <XLXI_389>.
+    Summary:
+	no macro.
+Unit <ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <D2_4E_HXILINX_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Summary:
+	inferred   4 Multiplexer(s).
+Unit <D2_4E_HXILINX_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <hex_to_ssd_MUSER_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Summary:
+	no macro.
+Unit <hex_to_ssd_MUSER_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <onehot_to_hex_16bit_MUSER_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Set property "HU_SET = XLXI_9_10" for instance <XLXI_9>.
+    Set property "HU_SET = XLXI_19_11" for instance <XLXI_19>.
+    Set property "HU_SET = XLXI_20_12" for instance <XLXI_20>.
+    Set property "HU_SET = XLXI_21_13" for instance <XLXI_21>.
+WARNING:Xst:647 - Input <one_hot<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <onehot_to_hex_16bit_MUSER_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <OR8_HXILINX_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Summary:
+	no macro.
+Unit <OR8_HXILINX_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <mux4bit_4x1_MUSER_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Set property "HU_SET = XLXI_16_7" for instance <XLXI_16>.
+    Set property "HU_SET = XLXI_17_6" for instance <XLXI_17>.
+    Set property "HU_SET = XLXI_18_8" for instance <XLXI_18>.
+    Set property "HU_SET = XLXI_19_9" for instance <XLXI_19>.
+    Summary:
+	no macro.
+Unit <mux4bit_4x1_MUSER_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <M4_1E_HXILINX_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Found 1-bit 4-to-1 multiplexer for signal <S1_D3_Mux_0_o> created at line 97.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <M4_1E_HXILINX_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <clock_divider>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/clock_divider.v".
+    Found 26-bit register for signal <div_clk>.
+    Found 26-bit adder for signal <div_clk[25]_GND_22_o_add_0_OUT> created at line 14.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  26 D-type flip-flop(s).
+Unit <clock_divider> synthesized.
+
+Synthesizing Unit <ee201l_number_lock_MUSER_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Set property "HU_SET = XLXI_66_5" for instance <XLXI_66>.
+INFO:Xst:3210 - "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf" line 333: Output port <Q0> of the instance <XLXI_66> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf" line 333: Output port <Q1> of the instance <XLXI_66> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf" line 333: Output port <Q2> of the instance <XLXI_66> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf" line 333: Output port <Q3> of the instance <XLXI_66> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf" line 333: Output port <TC> of the instance <XLXI_66> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <ee201l_number_lock_MUSER_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <CB4CE_HXILINX_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+        TERMINAL_COUNT = 4'b1111
+    Found 1-bit register for signal <Q1>.
+    Found 1-bit register for signal <Q2>.
+    Found 1-bit register for signal <Q3>.
+    Found 1-bit register for signal <Q0>.
+    Found 4-bit adder for signal <Q3_GND_26_o_add_0_OUT> created at line 48.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <CB4CE_HXILINX_ee201l_number_lock_top> synthesized.
+
+Synthesizing Unit <M16_1E_HXILINX_ee201l_number_lock_top>.
+    Related source file is "c:/modelsim_projects/lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf".
+    Found 1-bit 16-to-1 multiplexer for signal <S3_D15_Mux_0_o> created at line 144.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <M16_1E_HXILINX_ee201l_number_lock_top> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 26-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 5
+ 1-bit register                                        : 4
+ 26-bit register                                       : 1
+# Multiplexers                                         : 15
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 10
+ 1-bit 4-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <clock_divider>.
+The following registers are absorbed into counter <div_clk>: 1 register on signal <div_clk>.
+Unit <clock_divider> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 15
+ Flip-Flops                                            : 15
+# Multiplexers                                         : 15
+ 1-bit 16-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 10
+ 1-bit 4-to-1 multiplexer                              : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <ee201l_number_lock_top> ...
+
+Optimizing unit <ee201l_number_lock_MUSER_ee201l_number_lock_top> ...
+
+Optimizing unit <hex_to_ssd_MUSER_ee201l_number_lock_top> ...
+
+Optimizing unit <M16_1E_HXILINX_ee201l_number_lock_top> ...
+
+Optimizing unit <CB4CE_HXILINX_ee201l_number_lock_top> ...
+
+Optimizing unit <D2_4E_HXILINX_ee201l_number_lock_top> ...
+
+Optimizing unit <M4_1E_HXILINX_ee201l_number_lock_top> ...
+
+Optimizing unit <OR8_HXILINX_ee201l_number_lock_top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ee201l_number_lock_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 41
+ Flip-Flops                                            : 41
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : ee201l_number_lock_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 177
+#      AND2                        : 16
+#      AND3                        : 8
+#      BUF                         : 13
+#      GND                         : 2
+#      INV                         : 9
+#      LUT1                        : 25
+#      LUT2                        : 5
+#      LUT3                        : 5
+#      LUT4                        : 1
+#      LUT6                        : 12
+#      MUXCY                       : 25
+#      MUXF7                       : 2
+#      MUXF8                       : 1
+#      OR2                         : 16
+#      OR3                         : 1
+#      OR4                         : 1
+#      ROM16X1                     : 8
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 41
+#      FDC                         : 36
+#      FDCE                        : 4
+#      FDP                         : 1
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 33
+#      IBUF                        : 7
+#      IBUFG                       : 1
+#      OBUF                        : 25
+# Logical                          : 1
+#      NAND2                       : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              41  out of  18224     0%  
+ Number of Slice LUTs:                   65  out of   9112     0%  
+    Number used as Logic:                57  out of   9112     0%  
+    Number used as Memory:                8  out of   2176     0%  
+       Number used as ROM:                8
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    106
+   Number with an unused Flip Flop:      65  out of    106    61%  
+   Number with an unused LUT:            41  out of    106    38%  
+   Number of fully used LUT-FF pairs:     0  out of    106     0%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    232    14%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+ClkPort                            | IBUFG+BUFG             | 26    |
+XLXI_139/div_clk_25                | NONE(XLXI_141/XLXI_150)| 15    |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 5.770ns (Maximum Frequency: 173.309MHz)
+   Minimum input arrival time before clock: 7.382ns
+   Maximum output required time after clock: 9.795ns
+   Maximum combinational path delay: 5.874ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 2.142ns (frequency: 466.886MHz)
+  Total number of paths / destination ports: 351 / 26
+-------------------------------------------------------------------------
+Delay:               2.142ns (Levels of Logic = 27)
+  Source:            XLXI_139/div_clk_0 (FF)
+  Destination:       XLXI_139/div_clk_25 (FF)
+  Source Clock:      ClkPort rising
+  Destination Clock: ClkPort rising
+
+  Data Path: XLXI_139/div_clk_0 to XLXI_139/div_clk_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.447   0.579  XLXI_139/div_clk_0 (XLXI_139/div_clk_0)
+     INV:I->O              1   0.206   0.000  XLXI_139/Mcount_div_clk_lut<0>_INV_0 (XLXI_139/Mcount_div_clk_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  XLXI_139/Mcount_div_clk_cy<0> (XLXI_139/Mcount_div_clk_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<1> (XLXI_139/Mcount_div_clk_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<2> (XLXI_139/Mcount_div_clk_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<3> (XLXI_139/Mcount_div_clk_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<4> (XLXI_139/Mcount_div_clk_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<5> (XLXI_139/Mcount_div_clk_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<6> (XLXI_139/Mcount_div_clk_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<7> (XLXI_139/Mcount_div_clk_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<8> (XLXI_139/Mcount_div_clk_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<9> (XLXI_139/Mcount_div_clk_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<10> (XLXI_139/Mcount_div_clk_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<11> (XLXI_139/Mcount_div_clk_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<12> (XLXI_139/Mcount_div_clk_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<13> (XLXI_139/Mcount_div_clk_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<14> (XLXI_139/Mcount_div_clk_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<15> (XLXI_139/Mcount_div_clk_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<16> (XLXI_139/Mcount_div_clk_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<17> (XLXI_139/Mcount_div_clk_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<18> (XLXI_139/Mcount_div_clk_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<19> (XLXI_139/Mcount_div_clk_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<20> (XLXI_139/Mcount_div_clk_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<21> (XLXI_139/Mcount_div_clk_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<22> (XLXI_139/Mcount_div_clk_cy<22>)
+     MUXCY:CI->O           1   0.019   0.000  XLXI_139/Mcount_div_clk_cy<23> (XLXI_139/Mcount_div_clk_cy<23>)
+     MUXCY:CI->O           0   0.019   0.000  XLXI_139/Mcount_div_clk_cy<24> (XLXI_139/Mcount_div_clk_cy<24>)
+     XORCY:CI->O           1   0.180   0.000  XLXI_139/Mcount_div_clk_xor<25> (Result<25>)
+     FDC:D                     0.102          XLXI_139/div_clk_25
+    ----------------------------------------
+    Total                      2.142ns (1.563ns logic, 0.579ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_139/div_clk_25'
+  Clock period: 5.770ns (frequency: 173.309MHz)
+  Total number of paths / destination ports: 48 / 19
+-------------------------------------------------------------------------
+Delay:               5.770ns (Levels of Logic = 5)
+  Source:            XLXI_141/XLXI_66/Q3 (FF)
+  Destination:       XLXI_141/XLXI_31 (FF)
+  Source Clock:      XLXI_139/div_clk_25 rising
+  Destination Clock: XLXI_139/div_clk_25 rising
+
+  Data Path: XLXI_141/XLXI_66/Q3 to XLXI_141/XLXI_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.447   0.961  Q3 (Q3)
+     LUT6:I1->O            2   0.203   0.616  CEO11 (CEO)
+     end scope: 'XLXI_141/XLXI_66:CEO'
+     INV:I->O              1   0.568   0.924  XLXI_141/XLXI_67 (XLXI_141/timerout_n)
+     AND2:I1->O            1   0.223   0.944  XLXI_141/XLXI_188 (XLXI_141/XLXN_497)
+     OR2:I0->O             1   0.203   0.579  XLXI_141/XLXI_187 (XLXI_141/opening_d)
+     FDC:D                     0.102          XLXI_141/XLXI_31
+    ----------------------------------------
+    Total                      5.770ns (1.746ns logic, 4.024ns route)
+                                       (30.3% logic, 69.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 26 / 26
+-------------------------------------------------------------------------
+Offset:              3.085ns (Levels of Logic = 1)
+  Source:            BtnC (PAD)
+  Destination:       XLXI_139/div_clk_0 (FF)
+  Destination Clock: ClkPort rising
+
+  Data Path: BtnC to XLXI_139/div_clk_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            42   1.222   1.433  XLXI_389 (reset)
+     FDC:CLR                   0.430          XLXI_139/div_clk_0
+    ----------------------------------------
+    Total                      3.085ns (1.652ns logic, 1.433ns route)
+                                       (53.5% logic, 46.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_139/div_clk_25'
+  Total number of paths / destination ports: 48 / 26
+-------------------------------------------------------------------------
+Offset:              7.382ns (Levels of Logic = 6)
+  Source:            BtnC (PAD)
+  Destination:       XLXI_141/XLXI_31 (FF)
+  Destination Clock: XLXI_139/div_clk_25 rising
+
+  Data Path: BtnC to XLXI_141/XLXI_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            42   1.222   1.798  XLXI_389 (reset)
+     begin scope: 'XLXI_141/XLXI_66:CLR'
+     LUT6:I0->O            2   0.203   0.616  CEO11 (CEO)
+     end scope: 'XLXI_141/XLXI_66:CEO'
+     INV:I->O              1   0.568   0.924  XLXI_141/XLXI_67 (XLXI_141/timerout_n)
+     AND2:I1->O            1   0.223   0.944  XLXI_141/XLXI_188 (XLXI_141/XLXN_497)
+     OR2:I0->O             1   0.203   0.579  XLXI_141/XLXI_187 (XLXI_141/opening_d)
+     FDC:D                     0.102          XLXI_141/XLXI_31
+    ----------------------------------------
+    Total                      7.382ns (2.521ns logic, 4.861ns route)
+                                       (34.2% logic, 65.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ClkPort'
+  Total number of paths / destination ports: 80 / 13
+-------------------------------------------------------------------------
+Offset:              7.717ns (Levels of Logic = 4)
+  Source:            XLXI_139/div_clk_25 (FF)
+  Destination:       ca (PAD)
+  Source Clock:      ClkPort rising
+
+  Data Path: XLXI_139/div_clk_25 to ca
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.447   0.616  XLXI_139/div_clk_25 (XLXI_139/div_clk_25)
+     BUF:I->O             17   0.568   1.392  XLXI_7 (sysclk)
+     AND2:I0->O            7   0.203   1.118  XLXI_59 (XLXN_695)
+     OR2:I1->O             1   0.223   0.579  XLXI_36 (XLXN_71)
+     OBUF:I->O                 2.571          XLXI_44 (ca)
+    ----------------------------------------
+    Total                      7.717ns (4.012ns logic, 3.705ns route)
+                                       (52.0% logic, 48.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_139/div_clk_25'
+  Total number of paths / destination ports: 259 / 13
+-------------------------------------------------------------------------
+Offset:              9.795ns (Levels of Logic = 8)
+  Source:            XLXI_141/XLXI_31 (FF)
+  Destination:       ca (PAD)
+  Source Clock:      XLXI_139/div_clk_25 rising
+
+  Data Path: XLXI_141/XLXI_31 to ca
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.447   0.802  XLXI_141/XLXI_31 (XLXI_141/opening)
+     BUF:I->O              5   0.568   1.059  XLXI_141/XLXI_62 (state<9>)
+     begin scope: 'XLXI_109/XLXI_21:I6'
+     LUT6:I1->O            2   0.203   0.845  O (O)
+     end scope: 'XLXI_109/XLXI_21:O'
+     begin scope: 'XLXI_131/XLXI_19:D3'
+     LUT6:I3->O            8   0.205   0.802  Mmux_O11 (O)
+     end scope: 'XLXI_131/XLXI_19:O'
+     ROM16X1:A3->O         1   0.568   0.944  XLXI_108/Ca (ssd_output<0>)
+     OR2:I0->O             1   0.203   0.579  XLXI_36 (XLXN_71)
+     OBUF:I->O                 2.571          XLXI_44 (ca)
+    ----------------------------------------
+    Total                      9.795ns (4.765ns logic, 5.030ns route)
+                                       (48.6% logic, 51.4% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 11 / 3
+-------------------------------------------------------------------------
+Delay:               5.874ns (Levels of Logic = 6)
+  Source:            sw1 (PAD)
+  Destination:       ld3 (PAD)
+
+  Data Path: sw1 to ld3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.222   1.015  sw1_IBUF (sw1_IBUF)
+     begin scope: 'XLXI_367:S1'
+     LUT6:I0->O            1   0.203   0.000  Mmux_S3_D15_Mux_0_o_51 (Mmux_S3_D15_Mux_0_o_51)
+     MUXF7:I1->O           1   0.140   0.000  Mmux_S3_D15_Mux_0_o_4_f7 (Mmux_S3_D15_Mux_0_o_4_f7)
+     MUXF8:I0->O           1   0.144   0.579  Mmux_S3_D15_Mux_0_o_2_f8 (O)
+     end scope: 'XLXI_367:O'
+     OBUF:I->O                 2.571          ld3_OBUF (ld3)
+    ----------------------------------------
+    Total                      5.874ns (4.280ns logic, 1.594ns route)
+                                       (72.9% logic, 27.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |    2.142|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock XLXI_139/div_clk_25
+-------------------+---------+---------+---------+---------+
+                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------+---------+---------+---------+---------+
+XLXI_139/div_clk_25|    5.770|         |         |         |
+-------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.48 secs
+ 
+--> 
+
+Total memory usage is 242856 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-01-30T23:57:05</DateModified>
+  <DateModified>2014-01-31T15:19:10</DateModified>
   <ModuleName>ee201l_detour_top</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/iseconfig/ee201l_detour_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2014-01-31T15:17:15</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/iseconfig/ee201l_detour_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch\</ImplementationReportsDirectory>
   <DateInitialized>2014-01-24T14:33:58</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

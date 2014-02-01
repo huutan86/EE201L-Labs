@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock_top.xst" -ofn "C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_number_lock_top.ucf -p xc6slx16-csg324-3 ee201l_number_lock_top.ngc ee201l_number_lock_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201l_number_lock_top_map.ncd ee201l_number_lock_top.ngd ee201l_number_lock_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201l_number_lock_top_map.ncd ee201l_number_lock_top.ncd ee201l_number_lock_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201l_number_lock_top.twx ee201l_number_lock_top.ncd -o ee201l_number_lock_top.twr ee201l_number_lock_top.pcf -ucf ee201l_number_lock_top.ucf 
+bitgen -intstyle ise -f ee201l_number_lock_top.ut ee201l_number_lock_top.ncd 

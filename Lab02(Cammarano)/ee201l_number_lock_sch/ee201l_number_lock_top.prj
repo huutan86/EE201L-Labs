@@ -1,0 +1,6 @@
+verilog work "onehot_to_hex_16bit.vf"
+verilog work "mux4bit_4x1.vf"
+verilog work "hex_to_ssd.vf"
+verilog work "ee201l_number_lock.vf"
+verilog work "clock_divider.v"
+verilog work "ee201l_number_lock_top.vf"

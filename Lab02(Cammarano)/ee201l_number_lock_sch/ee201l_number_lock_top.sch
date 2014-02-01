@@ -76,10 +76,6 @@
         <signal name="ld7" />
         <signal name="hex(3)" />
         <signal name="Ground,state(10:8)" />
-        <signal name="XLXN_224" />
-        <signal name="XLXN_225" />
-        <signal name="XLXN_227" />
-        <signal name="XLXN_228" />
         <signal name="RamCS" />
         <signal name="MemOE" />
         <signal name="MemWR" />
@@ -91,6 +87,15 @@
         <signal name="div_clk(25:0)" />
         <signal name="XLXN_198" />
         <signal name="state(10:0)" />
+        <signal name="XLXN_781" />
+        <signal name="XLXN_782" />
+        <signal name="XLXN_783" />
+        <signal name="XLXN_784" />
+        <signal name="XLXN_785" />
+        <signal name="An2" />
+        <signal name="An3" />
+        <signal name="An1" />
+        <signal name="An0" />
         <port polarity="Output" name="ld1" />
         <port polarity="Input" name="BtnL" />
         <port polarity="Output" name="ld0" />
@@ -120,6 +125,10 @@
         <port polarity="Output" name="MemWR" />
         <port polarity="Output" name="FlashCS" />
         <port polarity="Output" name="QuadSpiFlashCS" />
+        <port polarity="Output" name="An2" />
+        <port polarity="Output" name="An3" />
+        <port polarity="Output" name="An1" />
+        <port polarity="Output" name="An0" />
         <blockdef name="vcc">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="64" y1="-32" y2="-64" x1="64" />
@@ -297,6 +306,15 @@
             <line x2="96" y1="-928" y2="-928" x1="0" />
             <line x2="96" y1="-736" y2="-736" x1="0" />
         </blockdef>
+        <blockdef name="inv">
+            <timestamp>2000-1-1T10:10:10</timestamp>
+            <line x2="64" y1="-32" y2="-32" x1="0" />
+            <line x2="160" y1="-32" y2="-32" x1="224" />
+            <line x2="128" y1="-64" y2="-32" x1="64" />
+            <line x2="64" y1="-32" y2="0" x1="128" />
+            <line x2="64" y1="0" y2="-64" x1="64" />
+            <circle r="16" cx="144" cy="-32" />
+        </blockdef>
         <block symbolname="obuf" name="XLXI_144">
             <blockpin signalname="sysclk" name="I" />
             <blockpin signalname="ld2" name="O" />
@@ -464,11 +482,11 @@
         <block symbolname="d2_4e" name="XLXI_75">
             <blockpin signalname="div_clk(18)" name="A0" />
             <blockpin signalname="div_clk(19)" name="A1" />
-            <blockpin name="E" />
-            <blockpin signalname="XLXN_224" name="D0" />
-            <blockpin signalname="XLXN_225" name="D1" />
-            <blockpin signalname="XLXN_227" name="D2" />
-            <blockpin signalname="XLXN_228" name="D3" />
+            <blockpin signalname="XLXN_781" name="E" />
+            <blockpin signalname="XLXN_782" name="D0" />
+            <blockpin signalname="XLXN_783" name="D1" />
+            <blockpin signalname="XLXN_784" name="D2" />
+            <blockpin signalname="XLXN_785" name="D3" />
         </block>
         <block symbolname="and2" name="XLXI_59">
             <blockpin signalname="sysclk" name="I0" />
@@ -509,6 +527,25 @@
             <blockpin signalname="u" name="u" />
             <blockpin signalname="z" name="z" />
             <blockpin signalname="state(10:0)" name="state(10:0)" />
+        </block>
+        <block symbolname="vcc" name="XLXI_390">
+            <blockpin signalname="XLXN_781" name="P" />
+        </block>
+        <block symbolname="inv" name="XLXI_391">
+            <blockpin signalname="XLXN_782" name="I" />
+            <blockpin signalname="An3" name="O" />
+        </block>
+        <block symbolname="inv" name="XLXI_392">
+            <blockpin signalname="XLXN_783" name="I" />
+            <blockpin signalname="An2" name="O" />
+        </block>
+        <block symbolname="inv" name="XLXI_393">
+            <blockpin signalname="XLXN_784" name="I" />
+            <blockpin signalname="An1" name="O" />
+        </block>
+        <block symbolname="inv" name="XLXI_394">
+            <blockpin signalname="XLXN_785" name="I" />
+            <blockpin signalname="An0" name="O" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="2720" height="1760">
@@ -652,9 +689,9 @@
         <iomarker fontsize="28" x="2128" y="640" name="ld3" orien="R0" />
         <instance x="208" y="336" name="XLXI_7" orien="R0" />
         <branch name="div_clk(25)">
-            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="130" y="304" type="branch" />
-            <wire x2="130" y1="304" y2="304" x1="80" />
-            <wire x2="208" y1="304" y2="304" x1="130" />
+            <attrtext style="alignment:SOFT-LEFT" attrname="Name" x="130" y="304" type="branch" />
+            <wire x2="128" y1="304" y2="304" x1="80" />
+            <wire x2="208" y1="304" y2="304" x1="128" />
         </branch>
         <text style="fontsize:48;fontname:Arial" x="536" y="828">U (UNO)</text>
         <text style="fontsize:48;fontname:Arial" x="496" y="1092">Z (ZERO)</text>
@@ -675,14 +712,14 @@
         <instance x="640" y="464" name="XLXI_141" orien="R0">
         </instance>
         <branch name="reset">
-            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="554" y="240" type="branch" />
-            <wire x2="554" y1="240" y2="240" x1="496" />
-            <wire x2="640" y1="240" y2="240" x1="554" />
+            <attrtext style="alignment:SOFT-LEFT" attrname="Name" x="554" y="240" type="branch" />
+            <wire x2="560" y1="240" y2="240" x1="496" />
+            <wire x2="640" y1="240" y2="240" x1="560" />
         </branch>
         <branch name="u">
-            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="552" y="368" type="branch" />
-            <wire x2="552" y1="368" y2="368" x1="496" />
-            <wire x2="640" y1="368" y2="368" x1="552" />
+            <attrtext style="alignment:SOFT-LEFT" attrname="Name" x="552" y="368" type="branch" />
+            <wire x2="560" y1="368" y2="368" x1="496" />
+            <wire x2="640" y1="368" y2="368" x1="560" />
         </branch>
         <branch name="state(10:0)">
             <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="1104" y="240" type="branch" />
@@ -695,9 +732,9 @@
             <wire x2="640" y1="432" y2="432" x1="544" />
         </branch>
         <branch name="sysclk">
-            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="491" y="304" type="branch" />
-            <wire x2="491" y1="304" y2="304" x1="432" />
-            <wire x2="640" y1="304" y2="304" x1="491" />
+            <attrtext style="alignment:SOFT-LEFT" attrname="Name" x="491" y="304" type="branch" />
+            <wire x2="496" y1="304" y2="304" x1="432" />
+            <wire x2="640" y1="304" y2="304" x1="496" />
         </branch>
         <branch name="sysclk">
             <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="544" y="720" type="branch" />
@@ -823,26 +860,56 @@
         <iomarker fontsize="28" x="2464" y="1056" name="ld7" orien="R0" />
         <text style="fontsize:20;fontname:Arial" x="2120" y="1636">Number Lock Top</text>
         <text style="fontsize:20;fontname:Arial" x="2440" y="1636">2/3</text>
+        <instance x="352" y="1696" name="XLXI_75" orien="R0" />
+        <rect style="linewidth:W;linecolor:rgb(255,0,0)" width="1716" x="44" y="1176" height="552" />
         <branch name="div_clk(18)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="256" y="1376" type="branch" />
+            <wire x2="256" y1="1376" y2="1376" x1="240" />
+            <wire x2="304" y1="1376" y2="1376" x1="256" />
             <wire x2="352" y1="1376" y2="1376" x1="304" />
         </branch>
         <branch name="div_clk(19)">
+            <attrtext style="alignment:SOFT-BCENTER" attrname="Name" x="256" y="1440" type="branch" />
+            <wire x2="256" y1="1440" y2="1440" x1="240" />
+            <wire x2="304" y1="1440" y2="1440" x1="256" />
             <wire x2="352" y1="1440" y2="1440" x1="304" />
         </branch>
-        <instance x="352" y="1696" name="XLXI_75" orien="R0" />
-        <branch name="XLXN_224">
-            <wire x2="800" y1="1376" y2="1376" x1="736" />
+        <instance x="112" y="1568" name="XLXI_390" orien="R0" />
+        <branch name="XLXN_781">
+            <wire x2="352" y1="1568" y2="1568" x1="176" />
         </branch>
-        <branch name="XLXN_225">
-            <wire x2="800" y1="1440" y2="1440" x1="736" />
+        <branch name="XLXN_782">
+            <wire x2="768" y1="1376" y2="1376" x1="736" />
         </branch>
-        <branch name="XLXN_227">
-            <wire x2="800" y1="1504" y2="1504" x1="736" />
+        <instance x="768" y="1408" name="XLXI_391" orien="R0" />
+        <branch name="XLXN_783">
+            <wire x2="768" y1="1440" y2="1440" x1="736" />
         </branch>
-        <branch name="XLXN_228">
-            <wire x2="800" y1="1568" y2="1568" x1="736" />
+        <instance x="768" y="1472" name="XLXI_392" orien="R0" />
+        <branch name="XLXN_784">
+            <wire x2="768" y1="1504" y2="1504" x1="736" />
         </branch>
-        <rect style="linewidth:W;linecolor:rgb(255,0,0)" width="1716" x="44" y="1176" height="552" />
+        <instance x="768" y="1536" name="XLXI_393" orien="R0" />
+        <branch name="XLXN_785">
+            <wire x2="768" y1="1568" y2="1568" x1="736" />
+        </branch>
+        <instance x="768" y="1600" name="XLXI_394" orien="R0" />
+        <branch name="An3">
+            <wire x2="1088" y1="1376" y2="1376" x1="992" />
+        </branch>
+        <branch name="An2">
+            <wire x2="1088" y1="1440" y2="1440" x1="992" />
+        </branch>
+        <branch name="An1">
+            <wire x2="1088" y1="1504" y2="1504" x1="992" />
+        </branch>
+        <branch name="An0">
+            <wire x2="1088" y1="1568" y2="1568" x1="992" />
+        </branch>
+        <iomarker fontsize="28" x="1088" y="1376" name="An3" orien="R0" />
+        <iomarker fontsize="28" x="1088" y="1440" name="An2" orien="R0" />
+        <iomarker fontsize="28" x="1088" y="1504" name="An1" orien="R0" />
+        <iomarker fontsize="28" x="1088" y="1568" name="An0" orien="R0" />
     </sheet>
     <sheet sheetnum="3" width="2720" height="1760">
         <branch name="cg">

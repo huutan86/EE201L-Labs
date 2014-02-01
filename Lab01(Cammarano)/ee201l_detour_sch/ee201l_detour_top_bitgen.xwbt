@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.ncd
-OUTFILE=C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch\ee201l_detour_top.bit
+INFILE=C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.ncd
+OUTFILE=C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch\ee201l_detour_top.bit
 FAMILY=Spartan6
 PART=xc6slx16-3csg324
-WORKINGDIR=C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01\ee201l_detour_sch
+WORKINGDIR=C:\Users\CMCammarano\Workspace\EE201\EE201L-Labs\Lab01(Cammarano)\ee201l_detour_sch
 LICENSE=ISE
 USER_INFO=174127445_174127446_210557391_903

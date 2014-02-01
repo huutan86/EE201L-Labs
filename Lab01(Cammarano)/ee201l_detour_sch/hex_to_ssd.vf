@@ -7,11 +7,11 @@
 // \   \   \/     Version : 13.2
 //  \   \         Application : sch2hdl
 //  /   /         Filename : hex_to_ssd.vf
-// /___/   /\     Timestamp : 01/31/2014 00:00:25
+// /___/   /\     Timestamp : 01/31/2014 15:35:05
 // \   \  /  \ 
 //  \___\/\___\ 
 //
-//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/hex_to_ssd.vf -w C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/hex_to_ssd.sch
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/hex_to_ssd.vf -w C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/hex_to_ssd.sch
 //Design Name: hex_to_ssd
 //Device: spartan6
 //Purpose:

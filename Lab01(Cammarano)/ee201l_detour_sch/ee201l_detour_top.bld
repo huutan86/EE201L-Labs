@@ -6,8 +6,8 @@ Command Line: C:\Xilinx\13.2\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 xc6slx16-csg324-3 ee201l_detour_top.ngc ee201l_detour_top.ngd
 
 Reading NGO file
-"C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/ee201l
-_detour_top.ngc" ...
+"C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour
+_sch/ee201l_detour_top.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -29,7 +29,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 141356 kilobytes
+Total memory usage is 145004 kilobytes
 
 Writing NGD file "ee201l_detour_top.ngd" ...
 Total REAL time to NGDBUILD completion:  2 sec

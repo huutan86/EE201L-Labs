@@ -1,23 +1,4 @@
-xst -intstyle ise -ifn "C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.xst" -ofn "C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_detour_top.ucf -p xc6slx16-csg324-3 ee201l_detour_top.ngc ee201l_detour_top.ngd  
-map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201l_detour_top_map.ncd ee201l_detour_top.ngd ee201l_detour_top.pcf 
-par -w -intstyle ise -ol high -mt off ee201l_detour_top_map.ncd ee201l_detour_top.ncd ee201l_detour_top.pcf 
-trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201l_detour_top.twx ee201l_detour_top.ncd -o ee201l_detour_top.twr ee201l_detour_top.pcf -ucf ee201l_detour_top.ucf 
-bitgen -intstyle ise -f ee201l_detour_top.ut ee201l_detour_top.ncd 
-xst -intstyle ise -ifn "C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.xst" -ofn "C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_detour_top.ucf -p xc6slx16-csg324-3 ee201l_detour_top.ngc ee201l_detour_top.ngd  
-map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201l_detour_top_map.ncd ee201l_detour_top.ngd ee201l_detour_top.pcf 
-par -w -intstyle ise -ol high -mt off ee201l_detour_top_map.ncd ee201l_detour_top.ncd ee201l_detour_top.pcf 
-trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201l_detour_top.twx ee201l_detour_top.ncd -o ee201l_detour_top.twr ee201l_detour_top.pcf -ucf ee201l_detour_top.ucf 
-bitgen -intstyle ise -f ee201l_detour_top.ut ee201l_detour_top.ncd 
-xst -intstyle ise -ifn "C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.xst" -ofn "C:/Xilinx_projects/ee201l_detour_sch/ee201l_detour_top.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_detour_top.ucf -p xc6slx16-csg324-3 ee201l_detour_top.ngc ee201l_detour_top.ngd  
-map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201l_detour_top_map.ncd ee201l_detour_top.ngd ee201l_detour_top.pcf 
-par -w -intstyle ise -ol high -mt off ee201l_detour_top_map.ncd ee201l_detour_top.ncd ee201l_detour_top.pcf 
-trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201l_detour_top.twx ee201l_detour_top.ncd -o ee201l_detour_top.twr ee201l_detour_top.pcf -ucf ee201l_detour_top.ucf 
-bitgen -intstyle ise -f ee201l_detour_top.ut ee201l_detour_top.ncd 
-xst -intstyle ise -ifn "C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/ee201l_detour_top.xst" -ofn "C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/ee201l_detour_top.syr" 
-xst -intstyle ise -ifn "C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/ee201l_detour_top.xst" -ofn "C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01/ee201l_detour_sch/ee201l_detour_top.syr" 
+xst -intstyle ise -ifn "C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/ee201l_detour_top.xst" -ofn "C:/Users/CMCammarano/Workspace/EE201/EE201L-Labs/Lab01(Cammarano)/ee201l_detour_sch/ee201l_detour_top.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_detour_top.ucf -p xc6slx16-csg324-3 ee201l_detour_top.ngc ee201l_detour_top.ngd  
 map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201l_detour_top_map.ncd ee201l_detour_top.ngd ee201l_detour_top.pcf 
 par -w -intstyle ise -ol high -mt off ee201l_detour_top_map.ncd ee201l_detour_top.ncd ee201l_detour_top.pcf 

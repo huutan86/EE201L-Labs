@@ -7,7 +7,7 @@
 // \   \   \/     Version : 13.2
 //  \   \         Application : sch2hdl
 //  /   /         Filename : ee201l_number_lock.vf
-// /___/   /\     Timestamp : 01/31/2014 14:04:07
+// /___/   /\     Timestamp : 01/31/2014 15:02:50
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -114,6 +114,7 @@ module ee201l_number_lock(reset,
    wire XLXN_477;
    wire XLXN_494;
    wire XLXN_496;
+   wire XLXN_497;
    wire z_n;
    
    FDC  XLXI_23 (.C(sysclk), 
@@ -272,9 +273,6 @@ module ee201l_number_lock(reset,
    AND2  XLXI_165 (.I0(z), 
                   .I1(g101), 
                   .O(XLXN_411));
-   NOR2  XLXI_169 (.I0(z), 
-                  .I1(u), 
-                  .O(XLXN_470));
    AND2  XLXI_170 (.I0(XLXN_470), 
                   .I1(bad), 
                   .O(XLXN_412));
@@ -298,9 +296,6 @@ module ee201l_number_lock(reset,
    OR2  XLXI_176 (.I0(XLXN_477), 
                  .I1(XLXN_476), 
                  .O(g10_d));
-   AND2B1  XLXI_178 (.I0(timerout), 
-                    .I1(g1011), 
-                    .O(opening_d));
    OR3  XLXI_180 (.I0(XLXN_496), 
                  .I1(XLXN_402), 
                  .I2(XLXN_403), 
@@ -308,7 +303,16 @@ module ee201l_number_lock(reset,
    AND2  XLXI_181 (.I0(XLXN_494), 
                   .I1(initial_state), 
                   .O(XLXN_496));
-   NAND2B1  XLXI_183 (.I0(z), 
-                     .I1(u), 
-                     .O(XLXN_494));
+   NAND2  XLXI_185 (.I0(z_n), 
+                   .I1(u), 
+                   .O(XLXN_494));
+   OR2  XLXI_187 (.I0(XLXN_497), 
+                 .I1(g1011), 
+                 .O(opening_d));
+   AND2  XLXI_188 (.I0(opening), 
+                  .I1(timerout_n), 
+                  .O(XLXN_497));
+   OR2  XLXI_189 (.I0(z), 
+                 .I1(u), 
+                 .O(XLXN_470));
 endmodule
