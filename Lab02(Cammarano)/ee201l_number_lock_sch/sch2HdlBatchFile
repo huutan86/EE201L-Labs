@@ -1,5 +1,0 @@
-sch2hdl,-intstyle,ise,-family,spartan6,-verilog,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock.vf,-w,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-verilog,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/onehot_to_hex_16bit.vf,-w,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/onehot_to_hex_16bit.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-verilog,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock_top.vf,-w,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/ee201l_number_lock_top.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-verilog,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/mux4bit_4x1.vf,-w,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/mux4bit_4x1.sch
-sch2hdl,-intstyle,ise,-family,spartan6,-verilog,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/hex_to_ssd.vf,-w,C:/Modelsim_projects/Lab02/ee201l_number_lock_sch/hex_to_ssd.sch

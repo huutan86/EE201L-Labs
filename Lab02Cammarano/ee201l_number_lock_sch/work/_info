@@ -1,0 +1,105 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:\Modelsim_projects\Lab02\ee201l_number_lock_sch
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+V7IR4Jh1<Q6@Je;Woc=POg3
+Z1 04 44 4 work ee201l_number_lock_ee201l_number_lock_sch_tb fast 0
+Z2 04 4 4 work glbl fast 0
+=1-001c423c5b54-52ec1dde-387-344
+Z3 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+n@_opt
+Z4 OL;O;10.2;57
+Z5 dC:\Modelsim_projects\Lab02\ee201l_number_lock_sch
+!s110 1391205855
+T_opt1
+!s110 1391798054
+Vzn2UKecP?kJ_KChQ;Y>a71
+R1
+R2
+=1-001c423c5b54-52f52725-218-e80
+R3
+n@_opt1
+R4
+vCB4CE_HXILINX_ee201l_number_lock
+Z6 !s110 1391798052
+!s100 AHiN]>^74ZeN1X@QLJh<40
+IZFC2OPai9bGj>Pneh0Vj_3
+Z7 V`JN@9S9cnhjKRR_L]QIcM3
+Z8 dC:\Xilinx_projects\EE201L-Labs\Lab02(Cammarano)\ee201l_number_lock_sch
+Z9 w1391209370
+Z10 8ee201l_number_lock.vf
+Z11 Fee201l_number_lock.vf
+L0 23
+Z12 OL;L;10.2;57
+r1
+31
+Z13 !s108 1391798052.896000
+Z14 !s107 ee201l_number_lock.vf|
+Z15 !s90 -reportprogress|300|ee201l_number_lock.vf|
+Z16 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@c@b4@c@e_@h@x@i@l@i@n@x_ee201l_number_lock
+!i10b 1
+!s85 0
+vee201l_number_lock
+R6
+IT3ke]zoJCNZRS>c^^]XNj3
+R7
+R8
+R9
+R10
+R11
+L0 57
+R12
+r1
+31
+R13
+R14
+R15
+R16
+!s100 :Z>ZLIP?mmV_26LUiXZ:O1
+!i10b 1
+!s85 0
+vee201l_number_lock_ee201l_number_lock_sch_tb
+!s100 eam]EHLh@;5SJD@M`]_zT1
+IVF=6=]PSTm24lj`K6]K9`3
+R7
+R8
+w1391199832
+8ee201l_number_lock_tb.v
+Fee201l_number_lock_tb.v
+L0 4
+R12
+r1
+31
+!s90 -reportprogress|300|ee201l_number_lock_tb.v|
+R16
+Z17 !s110 1391798053
+!s108 1391798053.021000
+!s107 ee201l_number_lock_tb.v|
+!i10b 1
+!s85 0
+vglbl
+R17
+!s100 4=LmVFjWGlXARKf5L_9V<3
+I`TOOETgQR3j1T18cAJ<`G3
+R7
+R8
+w1308630577
+8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+R12
+r1
+31
+!s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+R16
+!i10b 1
+!s85 0
+!s108 1391798053.084000
+!s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
