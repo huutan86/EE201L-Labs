@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="ee201l_number_lock_verilog.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="ee201_numlock_sm_tb.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1391983081" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1391983081">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1391983081" xil_pn:in_ck="-2437367765213437595" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1391983081">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ee201_numlock_sm.v"/>
+      <outfile xil_pn:name="ee201_numlock_sm_tb.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1391816402" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="5280663621428802624" xil_pn:start_ts="1391816402">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1391816402" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-664665698287350786" xil_pn:start_ts="1391816402">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1391816402" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="7103745994702493784" xil_pn:start_ts="1391816402">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1391983081" xil_pn:in_ck="-2437367765213437595" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1391983081">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ee201_numlock_sm.v"/>
+      <outfile xil_pn:name="ee201_numlock_sm_tb.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1391983082" xil_pn:in_ck="-2437367765213437595" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-5816657850934268641" xil_pn:start_ts="1391983081">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ee201_numlock_sm_tb.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+  </transforms>
+
+</generated_project>
