@@ -1,0 +1,41 @@
+m255
+K3
+13
+cModel Technology
+dC:\Modelsim_projects
+vdivider
+VRCieRLT2fRLm3bMT7imXD2
+r1
+!s85 0
+31
+IYmXW?W6?LA;>z=5?e<[XQ2
+Z0 dC:\Users\user\Desktop\EE201L\lab_6\ee201l_divider_lab
+w1266838808
+8divider_combined_cu_dpu.v
+Fdivider_combined_cu_dpu.v
+L0 23
+Z1 OL;L;10.1c;51
+Z2 o+acc -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 bWaoYm^nETh0@41HED9aC0
+!s108 1359864832.545000
+!s107 divider_combined_cu_dpu.v|
+!s90 -reportprogress|300|+acc|divider_combined_cu_dpu.v|
+!i10b 1
+vdivider_tb
+Vn:8kFaUNlaUBX?GzJW]M^2
+r1
+31
+IW7SO;O>V^o^9oIfkT;He51
+Z3 dC:\Users\user\Desktop\EE201L\lab_6\ee201l_divider_lab
+w1223948088
+8divider_tb_str.v
+Fdivider_tb_str.v
+L0 16
+R1
+R2
+!s85 0
+!s100 21>ZJP@ke86Oa@^PJ;3BL2
+!s90 -reportprogress|300|+acc|divider_tb_str.v|
+!i10b 1
+!s108 1359864832.847000
+!s107 divider_tb_str.v|

@@ -1,0 +1,8 @@
+Release 13.2 Drc O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Fri Feb 14 13:55:20 2014
+
+drc -z ee201_numlock_top.ncd ee201_numlock_top.pcf
+
+DRC detected 0 errors and 0 warnings.

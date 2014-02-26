@@ -78,7 +78,8 @@ module ee201_numlock_sm_tb;
 		#120;
 		reset = 0;
 	end
-			
+	
+/*	
 	//test case 1
 	initial begin
 		u = 0;
@@ -97,12 +98,12 @@ module ee201_numlock_sm_tb;
 	end
 
 	//test case 2
-	//initial begin u = 0; #520; u = 1;  #500; u = 0; #1000; u = 1; #500; u = 0; end
-	//initial begin z = 0; end
-
+	initial begin u = 0; #520; u = 1;  #500; u = 0; #1000; u = 1; #500; u = 0; end
+	initial begin z = 0; end
+*/
 	//test case 3
-	//initial begin u = 0; #520; u = 1;  #500; u = 0; #1000; u = 1; #500; u = 0; end
-	//initial begin z = 0; #1200; z = 1; #570; z = 0; #1250; z = 1; #500; z = 0;  end
+	initial begin u = 0; #520; u = 1;  #500; u = 0; #1000; u = 1; #500; u = 0; end
+	initial begin z = 0; #1200; z = 1; #570; z = 0; #1250; z = 1; #500; z = 0;  end
       
 endmodule
 

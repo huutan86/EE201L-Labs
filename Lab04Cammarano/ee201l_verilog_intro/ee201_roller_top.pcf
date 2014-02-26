@@ -1,0 +1,55 @@
+//! **************************************************************************
+// Written by: Map O.61xd on Tue Feb 25 17:26:33 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "MemWR" LOCATE = SITE "M16" LEVEL 1;
+COMP "RamCS" LOCATE = SITE "L15" LEVEL 1;
+COMP "An0" LOCATE = SITE "N16" LEVEL 1;
+COMP "An1" LOCATE = SITE "N15" LEVEL 1;
+COMP "An2" LOCATE = SITE "P18" LEVEL 1;
+COMP "An3" LOCATE = SITE "P17" LEVEL 1;
+COMP "Ca" LOCATE = SITE "T17" LEVEL 1;
+COMP "Cb" LOCATE = SITE "T18" LEVEL 1;
+COMP "Cc" LOCATE = SITE "U17" LEVEL 1;
+COMP "Cd" LOCATE = SITE "U18" LEVEL 1;
+COMP "FlashCS" LOCATE = SITE "L17" LEVEL 1;
+COMP "Ce" LOCATE = SITE "M14" LEVEL 1;
+COMP "Cf" LOCATE = SITE "N14" LEVEL 1;
+COMP "Cg" LOCATE = SITE "L14" LEVEL 1;
+COMP "Dp" LOCATE = SITE "M13" LEVEL 1;
+COMP "QuadSpiFlashCS" LOCATE = SITE "V3" LEVEL 1;
+COMP "BtnC" LOCATE = SITE "B8" LEVEL 1;
+COMP "BtnL" LOCATE = SITE "C4" LEVEL 1;
+COMP "MemOE" LOCATE = SITE "L18" LEVEL 1;
+COMP "ClkPort" LOCATE = SITE "V10" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "DR1/FastCount_0" BEL "DIV_CLK_1" BEL "DIV_CLK_2"
+        BEL "DIV_CLK_3" BEL "DIV_CLK_4" BEL "DIV_CLK_5" BEL "DIV_CLK_6" BEL
+        "DIV_CLK_7" BEL "DIV_CLK_8" BEL "DIV_CLK_9" BEL "DIV_CLK_10" BEL
+        "DIV_CLK_11" BEL "DIV_CLK_12" BEL "DIV_CLK_13" BEL "DIV_CLK_14" BEL
+        "DIV_CLK_15" BEL "DIV_CLK_16" BEL "DIV_CLK_17" BEL "BUFGP1/BUFG" BEL
+        "debouncer_L/state_FSM_FFd1" BEL "debouncer_L/state_FSM_FFd2" BEL
+        "debouncer_L/state_FSM_FFd3" BEL "debouncer_L/state_FSM_FFd4" BEL
+        "debouncer_L/state_FSM_FFd5" BEL "debouncer_L/state_FSM_FFd6" BEL
+        "debouncer_L/MCEN_count_3" BEL "debouncer_L/MCEN_count_2" BEL
+        "debouncer_L/MCEN_count_1" BEL "debouncer_L/MCEN_count_0" BEL
+        "debouncer_L/debounce_count_24" BEL "debouncer_L/debounce_count_23"
+        BEL "debouncer_L/debounce_count_22" BEL
+        "debouncer_L/debounce_count_21" BEL "debouncer_L/debounce_count_20"
+        BEL "debouncer_L/debounce_count_19" BEL
+        "debouncer_L/debounce_count_18" BEL "debouncer_L/debounce_count_17"
+        BEL "debouncer_L/debounce_count_16" BEL
+        "debouncer_L/debounce_count_15" BEL "debouncer_L/debounce_count_14"
+        BEL "debouncer_L/debounce_count_13" BEL
+        "debouncer_L/debounce_count_12" BEL "debouncer_L/debounce_count_11"
+        BEL "debouncer_L/debounce_count_10" BEL "debouncer_L/debounce_count_9"
+        BEL "debouncer_L/debounce_count_8" BEL "debouncer_L/debounce_count_7"
+        BEL "debouncer_L/debounce_count_6" BEL "debouncer_L/debounce_count_5"
+        BEL "debouncer_L/debounce_count_4" BEL "debouncer_L/debounce_count_3"
+        BEL "debouncer_L/debounce_count_2" BEL "debouncer_L/debounce_count_1"
+        BEL "debouncer_L/debounce_count_0" BEL "DR1/X1_0" BEL
+        "debouncer_L/state_FSM_FFd6_1" BEL "debouncer_L/state_FSM_FFd4_1" BEL
+        "debouncer_L/state_FSM_FFd4_2" BEL "debouncer_L/state_FSM_FFd6_2";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

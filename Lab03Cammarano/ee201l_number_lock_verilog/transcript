@@ -27,11 +27,18 @@
 # Top level modules:
 # 	glbl
 # vsim -L xilinxcorelib_ver -L unisims_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.ee201_numlock_sm_tb glbl 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# 
 # Loading work.ee201_numlock_sm_tb(fast)
 # Loading work.ee201_numlock_sm(fast)
 # Loading work.glbl(fast)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: CMCammarano  Hostname: COLINCAMMAR5F9C  ProcessID: 3976
+# 
+#           Attempting to use alternate WLF file "./wlftrkd0zr".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftrkd0zr
+# 
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree

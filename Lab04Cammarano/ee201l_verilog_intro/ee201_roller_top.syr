@@ -1,0 +1,529 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: ee201_roller_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ee201_roller_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ee201_roller_top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : ee201_roller_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v\" into library work
+Parsing module <ee201_roller>.
+WARNING:HDLCompiler:114 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 80: /* in comment
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v\" into library work
+Parsing module <ee201_debouncer>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v\" into library work
+Parsing module <ee201_roller_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <ee201_roller_top>.
+
+Elaborating module <BUFGP>.
+
+Elaborating module <ee201_debouncer(N_dc=25)>.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 142: Result of 32-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 157: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 169: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 174: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 187: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 192: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 224: Result of 26-bit expression is truncated to fit in 25-bit target.
+WARNING:HDLCompiler:1127 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 101: Assignment to BtnL_SCEN ignored, since the identifier is never used
+
+Elaborating module <ee201_roller>.
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 64: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 65: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 66: case condition never applies
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 90: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 165: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 166: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 167: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 168: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 169: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 170: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 171: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 172: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 173: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 174: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 175: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 176: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 177: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 178: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 179: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 180: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 181: case condition never applies
+WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 182: case condition never applies
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ee201_roller_top>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v".
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v" line 97: Output port <SCEN> of the instance <debouncer_L> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v" line 97: Output port <MCEN> of the instance <debouncer_L> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v" line 97: Output port <CCEN> of the instance <debouncer_L> is unconnected or connected to loadless signal.
+    Found 27-bit register for signal <DIV_CLK>.
+    Found 27-bit adder for signal <DIV_CLK[26]_GND_1_o_add_1_OUT> created at line 89.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+Unit <ee201_roller_top> synthesized.
+
+Synthesizing Unit <ee201_debouncer>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_debounce_dpb_scen_ccen_mcen.v".
+        N_dc = 25
+    Set property "fsm_encoding = user" for signal <state>.
+    Found 6-bit register for signal <state>.
+    Found 25-bit register for signal <debounce_count>.
+    Found 4-bit register for signal <MCEN_count>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 20                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 13                                             |
+    | Clock              | CLK (rising_edge)                              |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000000                                         |
+    | Encoding           | user                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 25-bit adder for signal <debounce_count[24]_GND_3_o_add_2_OUT> created at line 157.
+    Found 4-bit adder for signal <MCEN_count[3]_GND_3_o_add_5_OUT> created at line 169.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <ee201_debouncer> synthesized.
+
+Synthesizing Unit <ee201_roller>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller.v".
+    Found 1-bit register for signal <FastCount>.
+    Found 1-bit register for signal <X>.
+    Found 1-bit adder for signal <FastCount[0]_PWR_4_o_add_0_OUT<0>> created at line 90.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+Unit <ee201_roller> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 1-bit adder                                           : 1
+ 25-bit adder                                          : 1
+ 27-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 5
+ 1-bit register                                        : 2
+ 25-bit register                                       : 1
+ 27-bit register                                       : 1
+ 4-bit register                                        : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <ee201_roller>.
+The following registers are absorbed into counter <FastCount_0>: 1 register on signal <FastCount_0>.
+Unit <ee201_roller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ee201_roller_top>.
+The following registers are absorbed into counter <DIV_CLK>: 1 register on signal <DIV_CLK>.
+Unit <ee201_roller_top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 25-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 2
+ 1-bit up counter                                      : 1
+ 27-bit up counter                                     : 1
+# Registers                                            : 30
+ Flip-Flops                                            : 30
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Optimizing FSM <debouncer_L/FSM_0> on signal <state[1:6]> with user encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000000 | 000000
+ 000001 | 000001
+ 111100 | 111100
+ 100000 | 100000
+ 101100 | 101100
+ 100100 | 100100
+ 101101 | 101101
+ 100001 | 100001
+ 100010 | 100010
+--------------------
+WARNING:Xst:2677 - Node <DIV_CLK_18> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_19> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_20> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_21> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_22> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_23> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_24> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_25> of sequential type is unconnected in block <ee201_roller_top>.
+WARNING:Xst:2677 - Node <DIV_CLK_26> of sequential type is unconnected in block <ee201_roller_top>.
+
+Optimizing unit <ee201_roller_top> ...
+
+Optimizing unit <ee201_debouncer> ...
+INFO:Xst:2261 - The FF/Latch <DR1/FastCount_0> in Unit <ee201_roller_top> is equivalent to the following FF/Latch, which will be removed : <DIV_CLK_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ee201_roller_top, actual ratio is 1.
+FlipFlop debouncer_L/state_FSM_FFd4 has been replicated 2 time(s)
+FlipFlop debouncer_L/state_FSM_FFd6 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 58
+ Flip-Flops                                            : 58
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : ee201_roller_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 176
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 41
+#      LUT2                        : 2
+#      LUT3                        : 3
+#      LUT4                        : 1
+#      LUT5                        : 32
+#      LUT6                        : 9
+#      MUXCY                       : 41
+#      VCC                         : 1
+#      XORCY                       : 42
+# FlipFlops/Latches                : 58
+#      FD                          : 29
+#      FDC                         : 29
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 19
+#      IBUF                        : 2
+#      OBUF                        : 17
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              58  out of  18224     0%  
+ Number of Slice LUTs:                   91  out of   9112     0%  
+    Number used as Logic:                91  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     95
+   Number with an unused Flip Flop:      37  out of     95    38%  
+   Number with an unused LUT:             4  out of     95     4%  
+   Number of fully used LUT-FF pairs:    54  out of     95    56%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    232     8%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+ClkPort                            | BUFGP                  | 58    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.028ns (Maximum Frequency: 330.240MHz)
+   Minimum input arrival time before clock: 3.580ns
+   Maximum output required time after clock: 4.850ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 3.028ns (frequency: 330.240MHz)
+  Total number of paths / destination ports: 836 / 58
+-------------------------------------------------------------------------
+Delay:               3.028ns (Levels of Logic = 26)
+  Source:            debouncer_L/debounce_count_0 (FF)
+  Destination:       debouncer_L/debounce_count_23 (FF)
+  Source Clock:      ClkPort rising
+  Destination Clock: ClkPort rising
+
+  Data Path: debouncer_L/debounce_count_0 to debouncer_L/debounce_count_23
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.616  debouncer_L/debounce_count_0 (debouncer_L/debounce_count_0)
+     INV:I->O              1   0.206   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_lut<0>_INV_0 (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<0> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<1> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<2> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<3> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<4> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<5> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<6> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<7> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<8> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<9> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<10> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<11> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<12> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<13> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<14> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<15> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<16> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<17> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<18> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<19> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<20> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<21> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<22> (debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_cy<22>)
+     XORCY:CI->O           1   0.180   0.684  debouncer_L/Madd_debounce_count[24]_GND_3_o_add_2_OUT_xor<23> (debouncer_L/debounce_count[24]_GND_3_o_add_2_OUT<23>)
+     LUT5:I3->O            1   0.203   0.000  debouncer_L/state[5]_GND_3_o_select_29_OUT<23>1 (debouncer_L/state[5]_GND_3_o_select_29_OUT<23>)
+     FD:D                      0.102          debouncer_L/debounce_count_23
+    ----------------------------------------
+    Total                      3.028ns (1.728ns logic, 1.300ns route)
+                                       (57.1% logic, 42.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 43 / 40
+-------------------------------------------------------------------------
+Offset:              3.580ns (Levels of Logic = 3)
+  Source:            BtnL (PAD)
+  Destination:       debouncer_L/state_FSM_FFd6 (FF)
+  Destination Clock: ClkPort rising
+
+  Data Path: BtnL to debouncer_L/state_FSM_FFd6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   1.222   1.167  BtnL_IBUF (BtnL_IBUF)
+     LUT6:I0->O            1   0.203   0.684  debouncer_L/state_FSM_FFd6-In2 (debouncer_L/state_FSM_FFd6-In2)
+     LUT5:I3->O            3   0.203   0.000  debouncer_L/state_FSM_FFd6-In3 (debouncer_L/state_FSM_FFd6-In)
+     FDC:D                     0.102          debouncer_L/state_FSM_FFd6
+    ----------------------------------------
+    Total                      3.580ns (1.730ns logic, 1.850ns route)
+                                       (48.3% logic, 51.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ClkPort'
+  Total number of paths / destination ports: 18 / 9
+-------------------------------------------------------------------------
+Offset:              4.850ns (Levels of Logic = 2)
+  Source:            debouncer_L/state_FSM_FFd1 (FF)
+  Destination:       Ca (PAD)
+  Source Clock:      ClkPort rising
+
+  Data Path: debouncer_L/state_FSM_FFd1 to Ca
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             12   0.447   1.013  debouncer_L/state_FSM_FFd1 (debouncer_L/state_FSM_FFd1)
+     LUT2:I0->O            2   0.203   0.616  Ca1 (Ca_OBUF)
+     OBUF:I->O                 2.571          Ca_OBUF (Ca)
+    ----------------------------------------
+    Total                      4.850ns (3.221ns logic, 1.629ns route)
+                                       (66.4% logic, 33.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |    3.028|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.51 secs
+ 
+--> 
+
+Total memory usage is 239656 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   40 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

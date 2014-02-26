@@ -1,0 +1,41 @@
+m255
+K3
+13
+cModel Technology
+dC:\Modelsim_projects
+vff_reset
+!i10b 1
+VMV=]13`Izc@HQ7QO743R[0
+r1
+!s85 0
+31
+IR8B6FSU7[HHzUJoDz7kBR0
+Z0 dC:\Modelsim_projects\ff_reset_verilog
+w1203165424
+8ff_reset_verilog.v
+Fff_reset_verilog.v
+L0 43
+Z1 OL;L;10.1;51
+Z2 o+acc -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 PB_>X9bnC?H9hALZXhE9R0
+!s108 1359558008.607000
+!s107 ff_reset_verilog.v|
+!s90 -reportprogress|300|+acc|ff_reset_verilog.v|
+vff_reset_tb
+VZ:6W=1]@RXo;F]WCZG=<K3
+r1
+31
+Idcc4`nOER@^SVj7?i0>zo2
+Z3 dC:\Modelsim_projects\ff_reset_verilog
+w1203165756
+8ff_reset_verilog_tb.v
+Fff_reset_verilog_tb.v
+L0 11
+R1
+R2
+!i10b 1
+!s85 0
+!s100 <D7361=T6P1elZNE6<74B1
+!s108 1359558008.682000
+!s107 ff_reset_verilog_tb.v|
+!s90 -reportprogress|300|+acc|ff_reset_verilog_tb.v|

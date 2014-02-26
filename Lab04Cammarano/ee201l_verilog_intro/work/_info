@@ -1,0 +1,85 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+!s110 1393377871
+VJ2cBKkIe_9lZgS=oM@SNH3
+Z1 04 15 4 work ee201_roller_tb fast 0
+Z2 04 4 4 work glbl fast 0
+=1-001c423c5b54-530d424f-222-ab8
+Z3 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+n@_opt
+Z4 OL;O;10.2;57
+Z5 dC:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro
+T_opt1
+Z6 !s110 1393377961
+Vj4>CJ5WcO3g;0DUkbgOmh3
+R1
+R2
+=1-001c423c5b54-530d42a9-115-d58
+R3
+n@_opt1
+R4
+vee201_roller
+IBa;QS=<hTk9U<J92imHiD0
+Z7 V`JN@9S9cnhjKRR_L]QIcM3
+R5
+w1393377945
+8Roller/ee201_roller.v
+FRoller/ee201_roller.v
+L0 16
+Z8 OL;L;10.2;57
+r1
+31
+!s90 -reportprogress|300|Roller/ee201_roller.v|
+Z9 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z10 !s110 1393377960
+!s100 ]ZTU9YQDnK@fjVKiK<hQC0
+!s108 1393377960.919000
+!s107 Roller/ee201_roller.v|
+!i10b 1
+!s85 0
+vee201_roller_tb
+R10
+!s100 hliQFP?I;FVk>WDdAX6I83
+Ih[bc1_abm8=j^jd8a4QzO2
+R7
+R5
+w1393377327
+8Roller/ee201_roller_tb.v
+FRoller/ee201_roller_tb.v
+L0 16
+R8
+r1
+31
+!s90 -reportprogress|300|Roller/ee201_roller_tb.v|
+R9
+!s108 1393377960.981000
+!s107 Roller/ee201_roller_tb.v|
+!i10b 1
+!s85 0
+vglbl
+!s100 4=LmVFjWGlXARKf5L_9V<3
+I`TOOETgQR3j1T18cAJ<`G3
+R7
+R5
+w1308630577
+8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+R8
+r1
+31
+!s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+R9
+R6
+!i10b 1
+!s85 0
+!s108 1393377961.028000
+!s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|

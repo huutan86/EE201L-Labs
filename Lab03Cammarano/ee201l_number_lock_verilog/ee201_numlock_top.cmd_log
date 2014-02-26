@@ -1,0 +1,24 @@
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_number_lock_top.ucf -p xc6slx16-csg324-3 ee201_numlock_top.ngc ee201_numlock_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_numlock_top_map.ncd ee201_numlock_top.ngd ee201_numlock_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_numlock_top_map.ncd ee201_numlock_top.ncd ee201_numlock_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_numlock_top.twx ee201_numlock_top.ncd -o ee201_numlock_top.twr ee201_numlock_top.pcf -ucf ee201l_number_lock_top.ucf 
+bitgen -intstyle ise -f ee201_numlock_top.ut ee201_numlock_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_number_lock_top.ucf -p xc6slx16-csg324-3 ee201_numlock_top.ngc ee201_numlock_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_numlock_top_map.ncd ee201_numlock_top.ngd ee201_numlock_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_numlock_top_map.ncd ee201_numlock_top.ncd ee201_numlock_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_numlock_top.twx ee201_numlock_top.ncd -o ee201_numlock_top.twr ee201_numlock_top.pcf -ucf ee201l_number_lock_top.ucf 
+bitgen -intstyle ise -f ee201_numlock_top.ut ee201_numlock_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_number_lock_top.ucf -p xc6slx16-csg324-3 ee201_numlock_top.ngc ee201_numlock_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_numlock_top_map.ncd ee201_numlock_top.ngd ee201_numlock_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_numlock_top_map.ncd ee201_numlock_top.ncd ee201_numlock_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_numlock_top.twx ee201_numlock_top.ncd -o ee201_numlock_top.twr ee201_numlock_top.pcf -ucf ee201l_number_lock_top.ucf 
+bitgen -intstyle ise -f ee201_numlock_top.ut ee201_numlock_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab03Cammarano/ee201l_number_lock_verilog/ee201_numlock_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201l_number_lock_top.ucf -p xc6slx16-csg324-3 ee201_numlock_top.ngc ee201_numlock_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_numlock_top_map.ncd ee201_numlock_top.ngd ee201_numlock_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_numlock_top_map.ncd ee201_numlock_top.ncd ee201_numlock_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_numlock_top.twx ee201_numlock_top.ncd -o ee201_numlock_top.twr ee201_numlock_top.pcf -ucf ee201l_number_lock_top.ucf 
+bitgen -intstyle ise -f ee201_numlock_top.ut ee201_numlock_top.ncd 

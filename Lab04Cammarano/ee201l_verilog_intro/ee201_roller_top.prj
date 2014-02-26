@@ -1,0 +1,3 @@
+verilog work "Roller/ee201_roller.v"
+verilog work "Roller/ee201_debounce_DPB_SCEN_CCEN_MCEN.v"
+verilog work "Roller/ee201_roller_top.v"

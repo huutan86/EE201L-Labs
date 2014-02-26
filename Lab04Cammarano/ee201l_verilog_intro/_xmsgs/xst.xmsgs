@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="114" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 80: /* in comment
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 142: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">25</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 157: Result of <arg fmt="%d" index="1">26</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">25</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 169: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 174: Result of <arg fmt="%d" index="1">26</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">25</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 187: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 192: Result of <arg fmt="%d" index="1">26</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">25</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_debounce_DPB_SCEN_CCEN_MCEN.v" Line 224: Result of <arg fmt="%d" index="1">26</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">25</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 101: Assignment to <arg fmt="%s" index="1">BtnL_SCEN</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 64: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 65: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 66: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 90: Result of <arg fmt="%d" index="1">2</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 165: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 166: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 167: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 168: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 169: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 170: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 171: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 172: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 173: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 174: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 175: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 176: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 177: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 178: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 179: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 180: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 181: case condition never applies
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 182: case condition never applies
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v</arg>&quot; line <arg fmt="%s" index="2">97</arg>: Output port &lt;<arg fmt="%s" index="3">SCEN</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">debouncer_L</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v</arg>&quot; line <arg fmt="%s" index="2">97</arg>: Output port &lt;<arg fmt="%s" index="3">MCEN</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">debouncer_L</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">c:/xilinx_projects/ee201l-labs/lab04cammarano/ee201l_verilog_intro/roller/ee201_roller_top.v</arg>&quot; line <arg fmt="%s" index="2">97</arg>: Output port &lt;<arg fmt="%s" index="3">CCEN</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">debouncer_L</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">DIV_CLK_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">DR1/FastCount_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">ee201_roller_top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;DIV_CLK_0&gt; </arg>
+</msg>
+
+</messages>
+

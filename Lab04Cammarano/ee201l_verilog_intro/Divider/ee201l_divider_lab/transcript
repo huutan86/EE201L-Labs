@@ -1,0 +1,14 @@
+# Reading C:/modeltech64_10.2/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.2 Feb  2 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Divider/ee201l_divider_lab/ee201l_divider_lab.mpf 
+# Loading project ee201l_divider_lab
+# Error opening C:/Modelsim_projects/divider_combined_cu_dpu.v
+# Path name 'C:/Modelsim_projects/divider_combined_cu_dpu.v' doesn't exist.
