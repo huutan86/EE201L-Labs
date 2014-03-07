@@ -1,0 +1,87 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+Vb5d>hSb9>iWRj:i5f5Bg`2
+04 17 4 work make_A_close_to_B fast 0
+Z1 04 4 4 work glbl fast 0
+=1-001c423c5b54-531a2002-1c-c70
+Z2 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+n@_opt
+Z3 OL;O;10.2;57
+Z4 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
+!s110 1394221058
+T_opt1
+!s110 1394221223
+VB:O5=hDn[TM=o5ZEe<aWY1
+04 20 4 work make_A_close_to_B_tb fast 0
+R1
+=1-001c423c5b54-531a20a6-396-d64
+R2
+n@_opt1
+R3
+vglbl
+Z5 !s110 1394221222
+I`TOOETgQR3j1T18cAJ<`G3
+Z6 V`JN@9S9cnhjKRR_L]QIcM3
+R4
+w1308630577
+8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+Z7 OL;L;10.2;57
+r1
+31
+Z8 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 4=LmVFjWGlXARKf5L_9V<3
+!s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+!i10b 1
+!s85 0
+!s108 1394221222.606000
+!s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+vmake_A_close_to_B
+I9U]7:KQDX2j_=GXB8=TZo3
+R6
+R4
+w1394221211
+8make_A_close_to_B_sp10/make_A_close_to_B.v
+Fmake_A_close_to_B_sp10/make_A_close_to_B.v
+L0 12
+R7
+r1
+31
+R8
+nmake_@a_close_to_@b
+R5
+!s90 -reportprogress|300|make_A_close_to_B_sp10/make_A_close_to_B.v|
+!s100 d6CS?PTDXY@=oOLjFa3d23
+!s108 1394221222.450000
+!s107 make_A_close_to_B_sp10/make_A_close_to_B.v|
+!i10b 1
+!s85 0
+vmake_A_close_to_B_tb
+R5
+Ie=EUilK49dO2T2c]Jhldg1
+R6
+R4
+w1267924914
+8make_A_close_to_B_sp10/make_A_close_to_B_tb.v
+Fmake_A_close_to_B_sp10/make_A_close_to_B_tb.v
+L0 7
+R7
+r1
+31
+R8
+nmake_@a_close_to_@b_tb
+!s100 CSaBdEfE[[?lL4]HDRmj`2
+!s90 -reportprogress|300|make_A_close_to_B_sp10/make_A_close_to_B_tb.v|
+!s108 1394221222.528000
+!s107 make_A_close_to_B_sp10/make_A_close_to_B_tb.v|
+!i10b 1
+!s85 0

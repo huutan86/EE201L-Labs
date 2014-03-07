@@ -1,0 +1,77 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:\Xilinx_projects\EE201L-Labs\Lab06aCammarano
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+Z1 VEDTG>UnHjDKHGKQiMjOZM3
+Z2 04 36 4 work ee201_debounce_DPB_SCEN_CCEN_MCEN_tb fast 0
+Z3 04 4 4 work glbl fast 0
+Z4 =1-001c423c5b54-5319fc34-86-b68
+Z5 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+Z6 n@_opt
+Z7 OL;O;10.2;57
+Z8 dC:\Xilinx_projects\EE201L-Labs\Lab06aCammarano
+Z9 !s110 1394211892
+vee201_debounce_DPB_SCEN_CCEN_MCEN_tb
+Z10 !s110 1394212037
+Z11 !s100 o3n=:bI8?8:j[4[4fM<JF2
+Z12 IGTY:n8g70QOGeV^:BZ3U50
+Z13 V`JN@9S9cnhjKRR_L]QIcM3
+R8
+Z14 w1298968432
+Z15 8../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN_tb.v
+Z16 F../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN_tb.v
+L0 11
+Z17 OL;L;10.2;57
+r1
+31
+Z18 !s90 -reportprogress|300|../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN_tb.v|
+Z19 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z20 nee201_debounce_@d@p@b_@s@c@e@n_@c@c@e@n_@m@c@e@n_tb
+!i10b 1
+!s85 0
+Z21 !s108 1394212037.885000
+Z22 !s107 ../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN_tb.v|
+vee201_debouncer
+Z23 !s100 TBekZ3AeWC`8z0lSlRT[C2
+Z24 Iz^U`WQR`oHKVAa9K>R8FY0
+R13
+R8
+Z25 w1328940170
+Z26 8../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN.v
+Z27 F../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN.v
+L0 90
+R17
+r1
+31
+Z28 !s90 -reportprogress|300|../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN.v|
+R19
+R10
+Z29 !s108 1394212037.823000
+Z30 !s107 ../../../Users/CMCammarano/Desktop/lab6a_single_step/ee201_divider_with_debounce/ee201_debounce_DPB_SCEN_CCEN_MCEN.v|
+!i10b 1
+!s85 0
+vglbl
+R10
+!i10b 1
+Z31 !s100 4=LmVFjWGlXARKf5L_9V<3
+Z32 I`TOOETgQR3j1T18cAJ<`G3
+R13
+R8
+Z33 w1308630577
+Z34 8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+Z35 FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+R17
+r1
+!s85 0
+31
+!s108 1394212037.948000
+!s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+Z36 !s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+R19

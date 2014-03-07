@@ -8,7 +8,31 @@
 <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/ClkDivider/ee201_clk_60Hz.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/ClkDivider/ee201_pulse_atN.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Divider/ee201l_divider_lab/divider_combined_cu_dpu.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Divider/ee201l_divider_lab/divider_separate_cu_dpu.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Divider/ee201l_divider_lab/divider_tb_str.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/FFReset/ff_reset_verilog.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Roller/ee201_debounce_DPB_SCEN_CCEN_MCEN.v\&quot; into library work</arg>
+</msg>
+
 <msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Roller/ee201_roller.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab04Cammarano/ee201l_verilog_intro/Roller/ee201_roller_top.v\&quot; into library work</arg>
 </msg>
 
 </messages>

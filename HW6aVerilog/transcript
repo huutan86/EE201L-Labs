@@ -1,0 +1,70 @@
+# Reading C:/modeltech64_10.2/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.2 Feb  2 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {make_A_close_to_B_tb.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module make_A_close_to_B
+# 
+# Top level modules:
+# 	make_A_close_to_B
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module make_A_close_to_B_tb
+# 
+# Top level modules:
+# 	make_A_close_to_B_tb
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.make_A_close_to_B_tb glbl 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vopt-143) Recognized 1 FSM in module "make_A_close_to_B(fast)".
+# 
+# Loading work.make_A_close_to_B_tb(fast)
+# Loading work.make_A_close_to_B(fast)
+# Loading work.glbl(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# Test number   1:  
+#  Ain =  138, Bin =  312, A_result =  308 .
+#     The flag was set. 
+#            Clock taken for this test = 6. 
+# 
+# Test number   2:  
+#  Ain =  112, Bin =  312, A_result =  312 .
+#     The flag was not set. 
+#            Clock taken for this test = 3. 
+# 
+# Test number   3:  
+#  Ain =  132, Bin =  312, A_result =  312 .
+#     The flag was set. 
+#            Clock taken for this test = 5. 
+# 
+# Test number   4:  
+#  Ain =  311, Bin =  312, A_result =  311 .
+#     The flag was set. 
+#            Clock taken for this test = 12. 
+# 
+# Test number   5:  
+#  Ain =  312, Bin =  312, A_result =  312 .
+#     The flag was not set. 
+#            Clock taken for this test = 1. 
+# 
+# 
+#  All tests concluded. Inspect the text file output_results.txt. 
+#  Current Clock Count = 43 
+# Break in NamedBeginStat STIMULUS at make_A_close_to_B_sp10/make_A_close_to_B_tb.v line 149
+# Simulation Breakpoint: Break in NamedBeginStat STIMULUS at make_A_close_to_B_sp10/make_A_close_to_B_tb.v line 149
+# MACRO ./make_A_close_to_B_tb.fdo PAUSED at line 47

@@ -10,7 +10,7 @@ Total CPU time to Xst completion: 0.08 secs
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: ee201_roller_top.prj
 
@@ -137,7 +137,6 @@ WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_
 WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 65: case condition never applies
 WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 66: case condition never applies
 WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller.v" Line 90: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 165: case condition never applies
 WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 166: case condition never applies
 WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 167: case condition never applies
 WARNING:HDLCompiler:295 - "C:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Roller\ee201_roller_top.v" Line 168: case condition never applies
@@ -325,12 +324,12 @@ Top Level Output File Name         : ee201_roller_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 176
+# BELS                             : 178
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 41
 #      LUT2                        : 2
-#      LUT3                        : 3
+#      LUT3                        : 5
 #      LUT4                        : 1
 #      LUT5                        : 32
 #      LUT6                        : 9
@@ -354,14 +353,14 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              58  out of  18224     0%  
- Number of Slice LUTs:                   91  out of   9112     0%  
-    Number used as Logic:                91  out of   9112     0%  
+ Number of Slice LUTs:                   93  out of   9112     1%  
+    Number used as Logic:                93  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     95
-   Number with an unused Flip Flop:      37  out of     95    38%  
-   Number with an unused LUT:             4  out of     95     4%  
-   Number of fully used LUT-FF pairs:    54  out of     95    56%  
+ Number of LUT Flip Flop pairs used:     97
+   Number with an unused Flip Flop:      39  out of     97    40%  
+   Number with an unused LUT:             4  out of     97     4%  
+   Number of fully used LUT-FF pairs:    54  out of     97    55%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -405,7 +404,7 @@ Speed Grade: -3
 
    Minimum period: 3.028ns (Maximum Frequency: 330.240MHz)
    Minimum input arrival time before clock: 3.580ns
-   Maximum output required time after clock: 4.850ns
+   Maximum output required time after clock: 4.963ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -482,23 +481,23 @@ Offset:              3.580ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ClkPort'
-  Total number of paths / destination ports: 18 / 9
+  Total number of paths / destination ports: 21 / 9
 -------------------------------------------------------------------------
-Offset:              4.850ns (Levels of Logic = 2)
+Offset:              4.963ns (Levels of Logic = 2)
   Source:            debouncer_L/state_FSM_FFd1 (FF)
-  Destination:       Ca (PAD)
+  Destination:       Ce (PAD)
   Source Clock:      ClkPort rising
 
-  Data Path: debouncer_L/state_FSM_FFd1 to Ca
+  Data Path: debouncer_L/state_FSM_FFd1 to Ce
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             12   0.447   1.013  debouncer_L/state_FSM_FFd1 (debouncer_L/state_FSM_FFd1)
-     LUT2:I0->O            2   0.203   0.616  Ca1 (Ca_OBUF)
-     OBUF:I->O                 2.571          Ca_OBUF (Ca)
+     FDC:C->Q             13   0.447   1.161  debouncer_L/state_FSM_FFd1 (debouncer_L/state_FSM_FFd1)
+     LUT3:I0->O            1   0.205   0.579  SSD_CATHODES<2>1 (Ce_OBUF)
+     OBUF:I->O                 2.571          Ce_OBUF (Ce)
     ----------------------------------------
-    Total                      4.850ns (3.221ns logic, 1.629ns route)
-                                       (66.4% logic, 33.6% route)
+    Total                      4.963ns (3.223ns logic, 1.740ns route)
+                                       (64.9% logic, 35.1% route)
 
 =========================================================================
 
@@ -521,9 +520,9 @@ Total CPU time to Xst completion: 4.51 secs
  
 --> 
 
-Total memory usage is 239656 kilobytes
+Total memory usage is 239848 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   40 (   0 filtered)
+Number of warnings :   39 (   0 filtered)
 Number of infos    :    4 (   0 filtered)
 
