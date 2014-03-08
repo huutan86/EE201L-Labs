@@ -23,6 +23,7 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="largest_num_divisible_by_7_tb.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="make_A_close_to_B_tb.fdo"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
   </files>
@@ -32,23 +33,19 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1394311433" xil_pn:in_ck="-1927583691471041370" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1394311433">
+    <transform xil_pn:end_ts="1394312271" xil_pn:in_ck="-1927583691471041370" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1394312271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v"/>
       <outfile xil_pn:name="largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B.v"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1394309568" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5120861262200492905" xil_pn:start_ts="1394309568">
+    <transform xil_pn:end_ts="1394312271" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2427328107685306494" xil_pn:start_ts="1394312271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1394309568" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8687018041022714453" xil_pn:start_ts="1394309568">
+    <transform xil_pn:end_ts="1394312271" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="9008334008401361728" xil_pn:start_ts="1394312271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -56,28 +53,18 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1394311433" xil_pn:in_ck="-1927583691471041370" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1394311433">
+    <transform xil_pn:end_ts="1394312271" xil_pn:in_ck="-1927583691471041370" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1394312271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v"/>
       <outfile xil_pn:name="largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B.v"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1394311434" xil_pn:in_ck="-1927583691471041370" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="8074657987962806452" xil_pn:start_ts="1394311433">
+    <transform xil_pn:end_ts="1394312272" xil_pn:in_ck="-1927583691471041370" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="8074657987962806452" xil_pn:start_ts="1394312271">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="largest_num_divisible_by_7_tb.fdo"/>
+      <outfile xil_pn:name="make_A_close_to_B_tb.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>
     </transform>

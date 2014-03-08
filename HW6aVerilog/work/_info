@@ -8,7 +8,6 @@ Z0 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
 !i10e 25
 !i10f 100
 T_opt
-!s110 1394311140
 VgLA[egG8Vh_kKQN@FXjQd1
 Z1 04 29 4 work largest_num_divisible_by_7_tb fast 0
 Z2 04 4 4 work glbl fast 0
@@ -17,8 +16,8 @@ Z3 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -
 n@_opt
 Z4 OL;O;10.2;57
 Z5 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
+!s110 1394311140
 T_opt1
-!s110 1394311439
 V_flRC]L5Mz<a29NDUR@_W2
 R1
 R2
@@ -26,8 +25,19 @@ R2
 R3
 n@_opt1
 R4
+R5
+!s110 1394311439
+T_opt2
+!s110 1394312281
+Ve0E8QQncGZMG>G0:<4l;A0
+04 20 4 work make_A_close_to_B_tb fast 0
+R2
+=1-001c423c5b54-531b8459-66-f94
+R3
+n@_opt2
+R4
 vglbl
-Z6 !s110 1394311438
+Z6 !s110 1394312280
 !s100 4=LmVFjWGlXARKf5L_9V<3
 I`TOOETgQR3j1T18cAJ<`G3
 Z7 V`JN@9S9cnhjKRR_L]QIcM3
@@ -43,7 +53,7 @@ r1
 Z9 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
 !i10b 1
 !s85 0
-!s108 1394311438.662000
+!s108 1394312280.790000
 !s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
 vlargest_num_divisible_by_7
 I08:0BbBiA7L@nVjO8AlFe2
@@ -56,17 +66,16 @@ L0 11
 R8
 r1
 31
-!s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
 R9
-R6
+Z10 !s110 1394311438
+!s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
 !s100 G3JIEMa>TJSFa?2TM2Hez3
 !s108 1394311438.537000
 !s107 largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
 !i10b 1
 !s85 0
 vlargest_num_divisible_by_7_tb
-R6
-!s100 [<A[mN=_8z0XNEFG53gnI2
+R10
 I:7bJ[RQiMg<zToN6cYN8e1
 R7
 R5
@@ -77,9 +86,50 @@ L0 8
 R8
 r1
 31
-!s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|
 R9
+!s100 [<A[mN=_8z0XNEFG53gnI2
+!s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|
 !s108 1394311438.584000
 !s107 largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|
+!i10b 1
+!s85 0
+vmake_A_close_to_B
+IC:aETn6AS_?O7PnBZ]MNN0
+R7
+R5
+w1394304864
+8make_A_close_to_B_sp10/make_A_close_to_B.v
+Fmake_A_close_to_B_sp10/make_A_close_to_B.v
+L0 12
+R8
+r1
+31
+R9
+nmake_@a_close_to_@b
+R6
+!s100 Q:4N3>;acMz?i2o;YhzSc1
+!s108 1394312280.697000
+!s107 make_A_close_to_B_sp10/make_A_close_to_B.v|
+!s90 -reportprogress|300|make_A_close_to_B_sp10/make_A_close_to_B.v|
+!i10b 1
+!s85 0
+vmake_A_close_to_B_tb
+R6
+Ie=EUilK49dO2T2c]Jhldg1
+R7
+R5
+w1267924914
+8make_A_close_to_B_sp10/make_A_close_to_B_tb.v
+Fmake_A_close_to_B_sp10/make_A_close_to_B_tb.v
+L0 7
+R8
+r1
+31
+R9
+nmake_@a_close_to_@b_tb
+!s100 CSaBdEfE[[?lL4]HDRmj`2
+!s108 1394312280.744000
+!s107 make_A_close_to_B_sp10/make_A_close_to_B_tb.v|
+!s90 -reportprogress|300|make_A_close_to_B_sp10/make_A_close_to_B_tb.v|
 !i10b 1
 !s85 0
