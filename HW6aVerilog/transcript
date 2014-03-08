@@ -36,3 +36,18 @@
 # Test number   1: Found 147 decimal = 93 hex as the largest divisible by 7 number.
 #            Clock taken for this test = 155. 
 # 
+# Test number   2: Could not find any divisible by 7 number.  Max_tb remained as   0. 
+#            Clock taken for this test = 186. 
+# 
+# Test number   3: Could not find any divisible by 7 number.  Max_tb remained as   0. 
+#            Clock taken for this test = 185. 
+# 
+# Test number   4: Found 133 decimal = 85 hex as the largest divisible by 7 number.
+#            Clock taken for this test = 167. 
+# 
+# 
+#  All tests concluded. Inspect the text file output_results.txt. 
+#  Current Clock Count = 706 
+# Break in NamedBeginStat STIMULUS at largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v line 116
+# Simulation Breakpoint: Break in NamedBeginStat STIMULUS at largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v line 116
+# MACRO ./largest_num_divisible_by_7_tb.fdo PAUSED at line 47

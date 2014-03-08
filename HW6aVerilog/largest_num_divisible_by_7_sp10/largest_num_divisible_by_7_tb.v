@@ -81,6 +81,7 @@ initial
 
 // test #1 end
 
+
 // test #2 begin
     // This test should conclude that there is no divisible-by-7 number
 	// You should reach the DONE_NF state from LOAD_X state.
