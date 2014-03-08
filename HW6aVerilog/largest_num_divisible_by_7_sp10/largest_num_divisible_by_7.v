@@ -55,28 +55,37 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 			LD_X : begin// ** TODO **  complete RTL Operations and State Transitions
 				
 				// state transitions in the control unit
-				if(I == 4'b1111 && Max != 4'b0000 && M[I] < 7) begin
+				
+				// I is 15, we have a max value and M[I] is not greater than the current max, we can leave
+				if(I == 4'b1111 && Max != 4'b0000 && M[I] < Max) begin
 					state <= D_F;
 				end
 				
-				else if(I == 4'b1111 && Max == 4'b0000 && M[I] < 7) begin
+				// I is 15, we do not have a max, and our current value is less than the max
+				else if(I == 4'b1111 && Max == 4'b0000 && M[I] < Max) begin
 					state <= D_NF;
 				end
 				
-				else if(I != 4'b1111 && M[I] >= 7) begin
+				// If we have not incremented fully, and the new value is greater than the max, we move to the divider.
+				else if(I != 4'b1111 && M[I] > Max) begin
 					state <= DIV;
 				end
 				
+				// None of the above--let's cycle back into the current state.
 				else begin
+					I <= I + 1'b1;
 					state <= LD_X;
 				end
 	
 				// RTL operations in the Data Path
 				X <= M[I];
 				
-				if(M[I] < 7) begin   
-					I = I + 1'b1;
-				end
+				/*
+				// We want to count if we remain in this state only.
+				if(I != 4'b1111 && M[I] > Max) begin   
+					I <= I + 1'b1;
+				end\
+				*/
 				  
 			end
 	        
@@ -86,7 +95,7 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				
 				if(X <= 7) begin
 				
-					I = I + 1;
+					I <= I + 1;
 					
 					// Max is set regardless of what happens afterwards
 					if(X == 7 && Max < M[I]) begin
@@ -124,7 +133,9 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				end
 				 
 				// RTL operations in the Data Path
-				X <= X - 7;
+				if(X > 7) begin
+					X <= X - 7;
+				end
 				
 			end
 	        

@@ -66,8 +66,12 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				end
 				
 				else begin
-					if(A > B) begin
+					if(A > B && Flag == 0) begin
 						Flag <= 1'b1;
+						A <= A - 10;
+					end
+					
+					else if(A > B && Flag == 1) begin
 						A <= A - 10;
 					end
 					
