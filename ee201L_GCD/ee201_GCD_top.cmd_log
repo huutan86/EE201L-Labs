@@ -1,0 +1,72 @@
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/ee201L_GCD/ee201_GCD_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ee201_GCD_top.ucf -p xc6slx16-csg324-3 ee201_GCD_top.ngc ee201_GCD_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ee201_GCD_top_map.ncd ee201_GCD_top.ngd ee201_GCD_top.pcf 
+par -w -intstyle ise -ol high -mt off ee201_GCD_top_map.ncd ee201_GCD_top.ncd ee201_GCD_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml ee201_GCD_top.twx ee201_GCD_top.ncd -o ee201_GCD_top.twr ee201_GCD_top.pcf -ucf ee201_GCD_top.ucf 
+bitgen -intstyle ise -f ee201_GCD_top.ut ee201_GCD_top.ncd 

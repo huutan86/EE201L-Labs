@@ -31,10 +31,13 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1394221045" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1394221045">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1394221215" xil_pn:in_ck="7555548830132403129" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1394221215">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B.v"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B_tb.v"/>
     </transform>
@@ -53,12 +56,18 @@
     <transform xil_pn:end_ts="1394221215" xil_pn:in_ck="7555548830132403129" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1394221215">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B.v"/>
       <outfile xil_pn:name="make_A_close_to_B_sp10/make_A_close_to_B_tb.v"/>
     </transform>
     <transform xil_pn:end_ts="1394221216" xil_pn:in_ck="7555548830132403129" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-3622564406904091749" xil_pn:start_ts="1394221215">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="make_A_close_to_B_tb.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>

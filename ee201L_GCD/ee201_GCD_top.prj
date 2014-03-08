@@ -1,0 +1,3 @@
+verilog work "ee201_GCD.v"
+verilog work "ee201_debounce_DPB_SCEN_CCEN_MCEN_r1.v"
+verilog work "ee201_GCD_top.v"
