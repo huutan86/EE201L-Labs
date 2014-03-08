@@ -8,69 +8,78 @@ Z0 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
 !i10e 25
 !i10f 100
 T_opt
-Z1 !s110 1394311140
-Z2 VgLA[egG8Vh_kKQN@FXjQd1
-Z3 04 29 4 work largest_num_divisible_by_7_tb fast 0
-Z4 04 4 4 work glbl fast 0
-Z5 =1-001c423c5b54-531b7fe4-16c-e18
-Z6 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
-Z7 n@_opt
-Z8 OL;O;10.2;57
-Z9 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
+!s110 1394311140
+VgLA[egG8Vh_kKQN@FXjQd1
+Z1 04 29 4 work largest_num_divisible_by_7_tb fast 0
+Z2 04 4 4 work glbl fast 0
+=1-001c423c5b54-531b7fe4-16c-e18
+Z3 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+n@_opt
+Z4 OL;O;10.2;57
+Z5 dC:\Xilinx_projects\EE201L-Labs\HW6aVerilog
+T_opt1
+!s110 1394311439
+V_flRC]L5Mz<a29NDUR@_W2
+R1
+R2
+=1-001c423c5b54-531b810f-5-d70
+R3
+n@_opt1
+R4
 vglbl
-Z10 !s110 1394311269
-!i10b 1
-Z11 !s100 4=LmVFjWGlXARKf5L_9V<3
-Z12 I`TOOETgQR3j1T18cAJ<`G3
-Z13 V`JN@9S9cnhjKRR_L]QIcM3
-R9
-Z14 w1308630577
-Z15 8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
-Z16 FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+Z6 !s110 1394311438
+!s100 4=LmVFjWGlXARKf5L_9V<3
+I`TOOETgQR3j1T18cAJ<`G3
+Z7 V`JN@9S9cnhjKRR_L]QIcM3
+R5
+w1308630577
+8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
 L0 5
-Z17 OL;L;10.2;57
+Z8 OL;L;10.2;57
 r1
+31
+!s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+Z9 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
 !s85 0
-31
-!s108 1394311269.748000
+!s108 1394311438.662000
 !s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
-Z18 !s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
-Z19 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
 vlargest_num_divisible_by_7
-Z20 !s100 m9FZ47A6o@RT[fT<3j^El2
-Z21 I9l5_J7^S:3g<H2@Lf9gUU0
-R13
-R9
-Z22 w1394311119
-Z23 8largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v
-Z24 Flargest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v
+I08:0BbBiA7L@nVjO8AlFe2
+R7
+R5
+w1394311419
+8largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v
+Flargest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v
 L0 11
-R17
+R8
 r1
 31
-Z25 !s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
-R19
-R10
-Z26 !s108 1394311269.639000
-Z27 !s107 largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
+!s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
+R9
+R6
+!s100 G3JIEMa>TJSFa?2TM2Hez3
+!s108 1394311438.537000
+!s107 largest_num_divisible_by_7_sp10/largest_num_divisible_by_7.v|
 !i10b 1
 !s85 0
 vlargest_num_divisible_by_7_tb
-R10
-Z28 !s100 [<A[mN=_8z0XNEFG53gnI2
-Z29 I:7bJ[RQiMg<zToN6cYN8e1
-R13
-R9
-Z30 w1394307311
-Z31 8largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v
-Z32 Flargest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v
+R6
+!s100 [<A[mN=_8z0XNEFG53gnI2
+I:7bJ[RQiMg<zToN6cYN8e1
+R7
+R5
+w1394307311
+8largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v
+Flargest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v
 L0 8
-R17
+R8
 r1
 31
-Z33 !s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|
-R19
+!s90 -reportprogress|300|largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|
+R9
+!s108 1394311438.584000
+!s107 largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|
 !i10b 1
 !s85 0
-Z34 !s108 1394311269.701000
-Z35 !s107 largest_num_divisible_by_7_sp10/largest_num_divisible_by_7_tb.v|

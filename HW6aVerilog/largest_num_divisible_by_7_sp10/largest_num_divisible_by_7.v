@@ -160,13 +160,6 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				*/
 				if(X <= 7) begin
 
-					I <= I + 1;
-
-					// Max is set regardless of what happens afterwards
-					if(X == 7 && Max < M[I]) begin
-						Max <= M[I];
-					end
-
 					// Divisible, nothing else was, last number -> done
 					if(X == 7 && I == 4'b1111 && Max == 4'b0000) begin
 						state <= D_F;
@@ -177,6 +170,7 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 						state <= D_NF;
 					end
 
+					// I isn't at 15, we can return to the LD_X
 					else if(I != 4'b1111) begin
 						state <= LD_X;
 					end
@@ -201,6 +195,16 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				if(X > 7) begin
 					X <= X - 7;
 				end
+				
+				else begin
+					I <= I + 1;
+
+					// Max is set regardless of what happens afterwards
+					if(X == 7 && Max < M[I]) begin
+						Max <= M[I];
+					end
+				end
+				
 			end
 	        
 	        D_F	: begin  
