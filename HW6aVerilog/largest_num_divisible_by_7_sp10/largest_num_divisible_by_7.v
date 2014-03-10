@@ -114,50 +114,6 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				
 				// state transitions in the control unit
 				
-				/*
-				// Our number is not divisible by 7
-				if(X < 7) begin
-					// We are at the last count
-					if(I == 1'b1111) begin
-						state <= D_NF;
-					end
-					
-					// We are not at the last count
-					else begin
-						state <= LD_X;
-					end
-					
-				end
-					
-				// Our number is divisible by 7
-				else if(X == 7) begin
-					if(I == 1'b1111) begin
-						state <= D_F;
-					end
-					
-					else begin
-						state <= LD_X;
-					end
-				end
-				
-				else begin
-					state <= DIV;
-				end
-				
-				// RTL DPU stuff
-				if(X < 7) begin
-					I <= I + 1'b1;
-				end
-				
-				if(X == 7) begin
-					Max <= M[I];
-					I <= I + 1'b1;
-				end
-				
-				if(X > 7) begin
-					X <= X - 7;
-				end
-				*/
 				if(X <= 7) begin
 
 					// Divisible, nothing else was, last number -> done
