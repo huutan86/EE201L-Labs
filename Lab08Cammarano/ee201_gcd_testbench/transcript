@@ -1,0 +1,105 @@
+# Reading C:/modeltech64_10.2/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.2 Feb  2 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {ee201_GCD_tb_part1.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD
+# 
+# Top level modules:
+# 	ee201_GCD
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD_tb_part1
+# ** Error: ee201_GCD_tb_part1.v(135): near "initial": syntax error, unexpected initial
+# ** Error: ee201_GCD_tb_part1.v(203): near "end": syntax error, unexpected end
+# ** Error: C:/modeltech64_10.2/win64/vlog failed.
+# Error in macro ./ee201_GCD_tb_part1.fdo line 24
+# C:/modeltech64_10.2/win64/vlog failed.
+#     while executing
+# "vlog  "ee201_GCD_tb_part1.v""
+do {ee201_GCD_tb_part1.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD
+# 
+# Top level modules:
+# 	ee201_GCD
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD_tb_part1
+# ** Error: ee201_GCD_tb_part1.v(136): near "initial": syntax error, unexpected initial
+# ** Error: ee201_GCD_tb_part1.v(204): near "end": syntax error, unexpected end
+# ** Error: C:/modeltech64_10.2/win64/vlog failed.
+# Error in macro ./ee201_GCD_tb_part1.fdo line 24
+# C:/modeltech64_10.2/win64/vlog failed.
+#     while executing
+# "vlog  "ee201_GCD_tb_part1.v""
+do {ee201_GCD_tb_part1.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD
+# 
+# Top level modules:
+# 	ee201_GCD
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD_tb_part1
+# ** Error: ee201_GCD_tb_part1.v(135): near "initial": syntax error, unexpected initial
+# ** Error: ee201_GCD_tb_part1.v(205): near "$stop": syntax error, unexpected SYSTEM_IDENTIFIER, expecting ';'
+# ** Error: C:/modeltech64_10.2/win64/vlog failed.
+# Error in macro ./ee201_GCD_tb_part1.fdo line 24
+# C:/modeltech64_10.2/win64/vlog failed.
+#     while executing
+# "vlog  "ee201_GCD_tb_part1.v""
+do {ee201_GCD_tb_part1.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD
+# 
+# Top level modules:
+# 	ee201_GCD
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD_tb_part1
+# ** Error: ee201_GCD_tb_part1.v(135): near "end": syntax error, unexpected end
+# ** Error: ee201_GCD_tb_part1.v(208): near "end": syntax error, unexpected end
+# ** Error: C:/modeltech64_10.2/win64/vlog failed.
+# Error in macro ./ee201_GCD_tb_part1.fdo line 24
+# C:/modeltech64_10.2/win64/vlog failed.
+#     while executing
+# "vlog  "ee201_GCD_tb_part1.v""
+do {ee201_GCD_tb_part1.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD
+# 
+# Top level modules:
+# 	ee201_GCD
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module ee201_GCD_tb_part1
+# 
+# Top level modules:
+# 	ee201_GCD_tb_part1
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.ee201_GCD_tb_part1 glbl 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# Loading work.ee201_GCD_tb_part1(fast)
+# Loading work.ee201_GCD(fast)
+# Loading work.glbl(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
