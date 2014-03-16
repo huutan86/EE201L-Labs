@@ -8,7 +8,13 @@
 <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab08Cammarano/ee201_gcd_testbench/ee201_GCD_tb_part1.v\&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab08Cammarano/ee201_gcd_testbench/ee201_GCD.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab08Cammarano/ee201_gcd_testbench/ee201_debounce_DPB_SCEN_CCEN_MCEN_r1.v\&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/Lab08Cammarano/ee201_gcd_testbench/ee201_debounce_DPB_SCEN_CCEN_MCEN_tb_r1.v\&quot; into library work</arg>
 </msg>
 
 </messages>
