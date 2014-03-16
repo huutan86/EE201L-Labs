@@ -56,30 +56,21 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				
 				// state transitions in the control unit
 				
+				// Our current value is greater than the max, we need to divide and check.
+				if(M[I] > Max) begin
+					state <= DIV;
+				end
+					
 				// We assume I is not 15
-				if (I != 4'b1111) begin
-					
-					// If our current value is greater than the maximum, we get to progress to the divide state to ensure that it is divisible by 7.
-					if(M[I] > Max) begin
-						state <= DIV;
-					end
-					
-					// Otherwise, we increment and return to this state.
-					else begin
-						state <= LD_X;
-					end
+				if (I != 4'b1111 && M[I] <= Max) begin
+					state <= LD_X;
 				end
 				
 				// If I is at 15
-				else begin
-					
-					// Our current value is greater than the max, we need to divide and check.
-					if(M[I] > Max) begin
-						state <= DIV;
-					end
+				else if(I == 4'b1111) begin
 					
 					// Our current value is less than max, we're done.
-					else if(M[I] <= Max && Max != 0) begin
+					if(M[I] <= Max && Max != 0) begin
 						state <= D_F;
 					end
 					
