@@ -73,32 +73,24 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 				// If I is at 15
 				else begin
 					
-					// Do we have a max value? If yes, continue
-					if(Max != 0) begin
-						
-						// Our current value is greater than the max, we need to divide and check.
-						if(M[I] > Max) begin
-							state <= DIV;
-						end
-						
-						// Our current value is less than max, we're done.
-						else begin
-							state <= D_F;
-						end
+					// Our current value is greater than the max, we need to divide and check.
+					if(M[I] > Max) begin
+						state <= DIV;
+					end
+					
+					// Our current value is less than max, we're done.
+					else if(M[I] <= Max && Max != 0) begin
+						state <= D_F;
 					end
 					
 					// If we do not have a max value, we need to check to see if the current value is divisible
-					else begin
-					
-						// Our current value is greater than the max, we need to divide and check.
-						if(M[I] >= 7) begin
-							state <= DIV;
-						end
+					else if(M[I] >= 7 && Max == 0) begin
+						state <= DIV;
+					end
 						
-						// Our current value is less than max, we're done.
-						else begin
-							state <= D_NF;
-						end
+					// Our current value is less than max, we're done.
+					else if(M[I] < 7 && Max == 0) begin
+						state <= D_NF;
 					end
 				end
 				
