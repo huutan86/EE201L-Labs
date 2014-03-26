@@ -1,0 +1,116 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dC:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Divider\ee201l_divider_lab
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+Z1 VAe0J[FQ>l]BkXiz]gOgUD0
+Z2 04 18 4 work ee201_GCD_tb_part1 fast 0
+Z3 =1-001c423c5b54-5325e64b-157-268
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OL;O;10.2;57
+Z7 dC:\Xilinx_projects\EE201L-Labs\Lab04Cammarano\ee201l_verilog_intro\Divider\ee201l_divider_lab
+Z8 !s110 1394992715
+T_opt1
+Z9 VmS8]Xz^KKZN@7k1bUdNM42
+R2
+Z10 =1-001c423c5b54-53321ad9-253-95c
+R4
+Z11 n@_opt1
+R6
+R7
+Z12 !s110 1395792601
+T_opt2
+Z13 V[ZZh8b_;]UhfVfnFXhAz]2
+Z14 04 18 4 work ee201_GCD_tb_part3 fast 0
+Z15 =1-001c423c5b54-53321d60-131-cd0
+R4
+Z16 n@_opt2
+R6
+R7
+Z17 !s110 1395793248
+vee201_GCD
+Z18 !s100 NFeIl5KmRh<4?eo2VHXd@3
+Z19 IVHe`fQD=h=bf2ezGD1I=P2
+Z20 V`JN@9S9cnhjKRR_L]QIcM3
+Z21 dC:\Modelsim_projects\ee201l_gcd_testbench
+Z22 w1394236388
+Z23 8C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD.v
+Z24 FC:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD.v
+L0 16
+Z25 OL;L;10.2;57
+r1
+31
+Z26 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD.v|
+Z27 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z28 nee201_@g@c@d
+Z29 !s110 1395793380
+Z30 !s108 1395793380.421000
+Z31 !s107 C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD.v|
+!i10b 1
+!s85 0
+vee201_GCD_tb_part1
+R29
+Z32 !s100 ;ibFXm>XBflF6j;cSD?742
+Z33 I_44JlMbjFi8R8;VJPf<Qf0
+R20
+R21
+Z34 w1394991425
+Z35 8C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part1.v
+Z36 FC:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part1.v
+L0 25
+R25
+r1
+31
+Z37 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part1.v|
+R27
+Z38 nee201_@g@c@d_tb_part1
+Z39 !s108 1395793380.484000
+Z40 !s107 C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part1.v|
+!i10b 1
+!s85 0
+vee201_GCD_tb_part2
+R29
+Z41 I8WZ0SgG_Jg5H]KfkjR8X51
+R20
+R21
+Z42 w1395793357
+Z43 8C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part2.v
+Z44 FC:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part2.v
+L0 25
+R25
+r1
+31
+Z45 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part2.v|
+R27
+Z46 nee201_@g@c@d_tb_part2
+!i10b 1
+Z47 !s100 hP==AM[e]7gdd@?V@0RXA2
+!s85 0
+Z48 !s108 1395793380.640000
+Z49 !s107 C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part2.v|
+vee201_GCD_tb_part3
+R29
+!i10b 1
+!s100 L<;i:_AF8`Tf]Wodnmd[`0
+Ii;I2=>6o[RX4Z]G_`A9H31
+R20
+R21
+w1395793364
+Z50 8C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part3.v
+Z51 FC:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part3.v
+L0 25
+R25
+r1
+!s85 0
+31
+!s108 1395793380.702000
+!s107 C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part3.v|
+Z52 !s90 -reportprogress|300|-work|work|-vopt|C:/Modelsim_projects/ee201l_gcd_testbench/ee201_GCD_tb_Part3.v|
+R27
+Z53 nee201_@g@c@d_tb_part3
