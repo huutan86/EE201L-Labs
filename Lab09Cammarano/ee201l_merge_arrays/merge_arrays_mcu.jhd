@@ -1,0 +1,9 @@
+MODULE merge_arrays_mcu
+	SUBMODULE mux_2_to_1
+		INSTANCE mux_sel_P_Q
+	SUBMODULE array_P_ROM
+		INSTANCE array_P
+	SUBMODULE array_Q_ROM
+		INSTANCE array_Q
+	SUBMODULE array_R_RAM
+		INSTANCE array_R

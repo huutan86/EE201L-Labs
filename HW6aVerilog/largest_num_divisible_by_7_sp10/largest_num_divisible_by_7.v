@@ -80,7 +80,7 @@ always @(posedge Clk, posedge Reset) begin  : CU_n_DU
 					end
 						
 					// Our current value is less than max, we're done.
-					else if(M[I] < 7 && Max == 0) begin
+					else if((M[I] < 7 && Max == 0) || (M[I] < Max && Max == 0)) begin
 						state <= D_NF;
 					end
 				end
