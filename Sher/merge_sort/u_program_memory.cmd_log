@@ -1,0 +1,13 @@
+vhdtdtfi -lib work C:/Xilinx_projects/merge_sort/u_program_memory.v -lang verilog -prj ee201l_merge_arrays -o u_program_memory.spl -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 u_program_memory.spl C:/Xilinx_projects/merge_sort/u_program_memory.sym 
+vhdtdtfi -lang verilog -prj ee201l_merge_arrays -o C:/Xilinx_projects/merge_sort/u_program_memory.tfi -lib work C:/Xilinx_projects/merge_sort//u_program_memory.v -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 
+vhdtdtfi -lib work C:/Xilinx_projects/merge_sort/u_program_memory.v -lang verilog -prj ee201l_merge_arrays -o u_program_memory.spl -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 u_program_memory.spl C:/Xilinx_projects/merge_sort/u_program_memory.sym 
+vhdtdtfi -lib work C:/Xilinx_projects/merge_sort/u_program_memory.v -lang verilog -prj ee201l_merge_arrays -o u_program_memory.spl -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 u_program_memory.spl C:/Xilinx_projects/merge_sort/u_program_memory.sym 
+vhdtdtfi -lib work C:/Xilinx_projects/merge_sort/u_program_memory.v -lang verilog -prj ee201l_merge_arrays -o u_program_memory.spl -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 u_program_memory.spl C:/Xilinx_projects/merge_sort/u_program_memory.sym 
+vhdtdtfi -lib work C:/Xilinx_projects/merge_sort/u_program_memory.v -lang verilog -prj ee201l_merge_arrays -o u_program_memory.spl -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 u_program_memory.spl C:/Xilinx_projects/merge_sort/u_program_memory.sym 
+vhdtdtfi -lib work C:/Xilinx_projects/merge_sort/u_program_memory.v -lang verilog -prj ee201l_merge_arrays -o u_program_memory.spl -module u_program_memory -template C:/Xilinx/13.2/ISE_DS/ISE//data/splveri.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan6 u_program_memory.spl C:/Xilinx_projects/merge_sort/u_program_memory.sym 

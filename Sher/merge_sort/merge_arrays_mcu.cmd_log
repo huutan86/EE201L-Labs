@@ -1,0 +1,2 @@
+sch2sym -intstyle ise -family spartan6 -refsym merge_arrays_mcu C:/Xilinx_projects/merge_sort/merge_arrays_mcu.sch C:/Xilinx_projects/merge_sort/merge_arrays_mcu.sym 
+sch2sym -intstyle ise -family spartan6 -refsym merge_arrays_mcu C:/Xilinx_projects/merge_sort/merge_arrays_mcu.sch C:/Xilinx_projects/merge_sort/merge_arrays_mcu.sym 
