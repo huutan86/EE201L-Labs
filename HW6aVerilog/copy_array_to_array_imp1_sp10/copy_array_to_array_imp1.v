@@ -83,52 +83,74 @@ always @(posedge Clk, posedge Reset) //asynchronous active_high Reset
                        
                  LS2C:     // ** TODO **  complete RTL Operations and State Transitions
                     begin  // Please see the "assign Ns_of_J_Write = ..." line in the OFL
-					// state transitions
-
+						
+						// state transitions
+						if(Ms_of_I[3] == 1) begin
+							state <= C221;
+						end
 					
+						else if (I == 9 && Ms_of_I[3] == 0) begin
+							state <= C122;
+						end					
 					
+						else begin
+							state <= LS2C;						
+						end
 					
+						//RTL
+						
+						I <= I + 1;
+						
+						if(Ms_of_I[3] == 3) begin
+							J <= J + 1;
+						end
 					
-					
-					//RTL
-
-					
-					
-					
-					
-					
-					
-					
-
-					
+						else if(I == 9 && Ms_of_I[3] == 0) begin
+							J <= J + 1;
+							I <= 1;
+						end
 					end
-                 C221:      // ** TODO **  complete RTL Operations and State Transitions
+					
+                C221:      // ** TODO **  complete RTL Operations and State Transitions
 					begin   // Please see the "assign Ns_of_J_Write = ..." line in the OFL
-					// state transitions
-
 					
+						// state transitions
+						if(J == 9) begin
+							state <= DONE;
+						end
 					
+						else if(I == 9 && J != 9) begin
+							state <= C122;
+						end
 					
+						else begin
+							state <= C221;			
+						end
 					
-					
-					//RTL
-
-
-
-
-
-
+						//RTL
+						J <= J + 1;
+						I <= I + 1;
+						
+						if(I == 9) begin
+							I <= 0;
+						end				
                     end
                        
                  C122:    // ** TODO **  complete RTL Operations and State Transitions
                     begin // Please see the "assign Ns_of_J_Write = ..." line in the OFL
-					// state transitions
-
+						
+						// state transitions
+						if(J == 9) begin
+							state <= DONE;
+						end
 					
-					//RTL
-
-					
-					
+						else if(I !== 9 && J != 9) begin
+							state <= C122;
+						end
+						
+						//RTL
+						J <= J + 1;
+						I <= I + 1;
                     end
                         
                  DONE:
