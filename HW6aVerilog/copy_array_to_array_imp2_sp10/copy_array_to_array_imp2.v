@@ -82,35 +82,54 @@ always @(posedge Clk, posedge Reset) //asynchronous active_high Reset
                        
                  LS2C:       // ** TODO **  complete RTL Operations and State Transitions            
                     begin  // Please see the "assign Ns_of_J_Write = ..." line in the OFL
-					// state transitions
-
-					
-					
-					//RTL
-  
-  
-  
-  
-  
-  
-  
-  
-  
+						
+						// state transitions
+						if(I != 9 && Ms_of_I[3] == 0) begin
+							state <= LS2C;
+						end
+						
+						else if(I == 9 || Ms_of_I[3] == 1) begin
+							state <= CBC;
+						end
+						
+						//RTL
+						I <= I + 1;
+						
+						if(Ms_of_I[3] == 1) begin
+							J <= J + 1;
+						end
+						
+						if(I == 9) begin
+							I <= 0;
+						end
                     end
 					
                  CBC:       // ** TODO **  complete RTL Operations and State Transitions
 					begin // Please see the "assign Ns_of_J_Write = ..." line in the OFL
-					// state transitions
- 
- 
- 
-					//RTL
-
-					
-					
-					
-					
-					
+						
+						// state transitions
+						if(J != 9) begin
+							state <= CBC;
+						end
+						
+						else begin
+							state <= DONE;
+						end
+						
+						//RTL
+						I <= I + 1;
+						
+						if(Ms_of_I[3] == 1) begin
+							J <= J + 1;
+						end
+						
+						else begin
+							J <= J + 1;
+						end
+						
+						if(I == 9) begin
+							I <= 0;
+						end
                     end
                                                
                  DONE:
