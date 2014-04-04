@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu_top.ncd
+OUTFILE=C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu_top.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays
+LICENSE=ISE
+USER_INFO=174127445_174127446_210557391_903

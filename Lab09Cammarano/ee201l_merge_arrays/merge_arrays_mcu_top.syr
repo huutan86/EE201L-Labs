@@ -1,0 +1,806 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> Reading design: merge_arrays_mcu_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "merge_arrays_mcu_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "merge_arrays_mcu_top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : merge_arrays_mcu_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\u_program_memory.v\" into library work
+Parsing module <u_program_memory>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\mux_2_to_1.v\" into library work
+Parsing module <mux_2_to_1>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\counter_3bit.v\" into library work
+Parsing module <counter_3bit>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\array_R_RAM.v\" into library work
+Parsing module <array_R_RAM>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\array_Q_ROM.v\" into library work
+Parsing module <array_Q_ROM>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\array_P_ROM.v\" into library work
+Parsing module <array_P_ROM>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu.vf\" into library work
+Parsing module <COMPM4_HXILINX_merge_arrays_mcu>.
+Parsing module <CB4CE_HXILINX_merge_arrays_mcu>.
+Parsing module <M8_1E_HXILINX_merge_arrays_mcu>.
+Parsing module <CB2CE_HXILINX_merge_arrays_mcu>.
+Parsing module <merge_arrays_mcu>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu_top.v\" into library work
+Parsing module <merge_arrays_mcu_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu_top.v" Line 254: Port UPC_OUT is not connected to this instance
+
+Elaborating module <merge_arrays_mcu_top>.
+
+Elaborating module <BUFGP>.
+WARNING:HDLCompiler:1127 - "C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu_top.v" Line 137: Assignment to SSD2 ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu_top.v" Line 138: Assignment to SSD1 ignored, since the identifier is never used
+
+Elaborating module <merge_arrays_mcu>.
+
+Elaborating module <array_P_ROM>.
+
+Elaborating module <array_Q_ROM>.
+
+Elaborating module <array_R_RAM>.
+
+Elaborating module <mux_2_to_1>.
+
+Elaborating module <BUF>.
+
+Elaborating module <COMPM4_HXILINX_merge_arrays_mcu>.
+
+Elaborating module <CB2CE_HXILINX_merge_arrays_mcu>.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu.vf" Line 141: Result of 3-bit expression is truncated to fit in 2-bit target.
+
+Elaborating module <CB4CE_HXILINX_merge_arrays_mcu>.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\merge_arrays_mcu.vf" Line 69: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <counter_3bit>.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab09Cammarano\ee201l_merge_arrays\counter_3bit.v" Line 34: Result of 4-bit expression is truncated to fit in 3-bit target.
+
+Elaborating module <M8_1E_HXILINX_merge_arrays_mcu>.
+
+Elaborating module <INV>.
+
+Elaborating module <VCC>.
+
+Elaborating module <GND>.
+
+Elaborating module <u_program_memory>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <merge_arrays_mcu_top>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu_top.v".
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu_top.v" line 254: Output port <UPC_OUT> of the instance <UUT> is unconnected or connected to loadless signal.
+    Found 27-bit register for signal <DIV_CLK>.
+    Found 27-bit adder for signal <DIV_CLK[26]_GND_1_o_add_1_OUT> created at line 102.
+    Found 16x8-bit Read Only RAM for signal <SSD_CATHODES>
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <merge_arrays_mcu_top> synthesized.
+
+Synthesizing Unit <merge_arrays_mcu>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf".
+    Set property "HU_SET = XLXI_416_0" for instance <XLXI_416>.
+    Set property "HU_SET = XLXI_463_1" for instance <XLXI_463>.
+    Set property "HU_SET = XLXI_466_2" for instance <XLXI_466>.
+    Set property "HU_SET = XLXI_467_3" for instance <XLXI_467>.
+    Set property "HU_SET = XLXI_472_4" for instance <XLXI_472>.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf" line 223: Output port <GT> of the instance <XLXI_416> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf" line 236: Output port <CEO> of the instance <XLXI_463> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf" line 244: Output port <CEO> of the instance <XLXI_466> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf" line 252: Output port <CEO> of the instance <XLXI_467> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf" line 252: Output port <Q3> of the instance <XLXI_467> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf" line 252: Output port <TC> of the instance <XLXI_467> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <merge_arrays_mcu> synthesized.
+
+Synthesizing Unit <array_P_ROM>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/array_p_rom.v".
+    Found 4x4-bit Read Only RAM for signal <DOUT>
+    Summary:
+	inferred   1 RAM(s).
+Unit <array_P_ROM> synthesized.
+
+Synthesizing Unit <array_Q_ROM>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/array_q_rom.v".
+    Found 4x4-bit Read Only RAM for signal <DOUT>
+    Summary:
+	inferred   1 RAM(s).
+Unit <array_Q_ROM> synthesized.
+
+Synthesizing Unit <array_R_RAM>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/array_r_ram.v".
+    Found 8x4-bit dual-port RAM <Mram_array_R> for signal <array_R>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <array_R_RAM> synthesized.
+
+Synthesizing Unit <mux_2_to_1>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/mux_2_to_1.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <mux_2_to_1> synthesized.
+
+Synthesizing Unit <COMPM4_HXILINX_merge_arrays_mcu>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf".
+    Found 4-bit comparator greater for signal <GT> created at line 38
+    Found 4-bit comparator greater for signal <LT> created at line 39
+    Summary:
+	inferred   2 Comparator(s).
+Unit <COMPM4_HXILINX_merge_arrays_mcu> synthesized.
+
+Synthesizing Unit <CB2CE_HXILINX_merge_arrays_mcu>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf".
+        TERMINAL_COUNT = 2'b11
+    Found 1-bit register for signal <Q1>.
+    Found 1-bit register for signal <Q0>.
+    Found 2-bit adder for signal <Q1_GND_10_o_add_0_OUT> created at line 141.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <CB2CE_HXILINX_merge_arrays_mcu> synthesized.
+
+Synthesizing Unit <CB4CE_HXILINX_merge_arrays_mcu>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf".
+        TERMINAL_COUNT = 4'b1111
+    Found 1-bit register for signal <Q1>.
+    Found 1-bit register for signal <Q2>.
+    Found 1-bit register for signal <Q3>.
+    Found 1-bit register for signal <Q0>.
+    Found 4-bit adder for signal <Q3_GND_11_o_add_0_OUT> created at line 69.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <CB4CE_HXILINX_merge_arrays_mcu> synthesized.
+
+Synthesizing Unit <counter_3bit>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/counter_3bit.v".
+        WIDTH = 3
+    Found 3-bit register for signal <Q_OUT>.
+    Found 3-bit adder for signal <Q_OUT[2]_GND_12_o_add_0_OUT> created at line 34.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter_3bit> synthesized.
+
+Synthesizing Unit <M8_1E_HXILINX_merge_arrays_mcu>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf".
+    Found 1-bit 8-to-1 multiplexer for signal <S2_D7_Mux_0_o> created at line 104.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <M8_1E_HXILINX_merge_arrays_mcu> synthesized.
+
+Synthesizing Unit <u_program_memory>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab09cammarano/ee201l_merge_arrays/u_program_memory.v".
+    Found 8x13-bit Read Only RAM for signal <data_out>
+    Summary:
+	inferred   1 RAM(s).
+Unit <u_program_memory> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 16x8-bit single-port Read Only RAM                    : 1
+ 4x4-bit single-port Read Only RAM                     : 2
+ 8x13-bit single-port Read Only RAM                    : 1
+ 8x4-bit dual-port RAM                                 : 1
+# Adders/Subtractors                                   : 5
+ 2-bit adder                                           : 2
+ 27-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 10
+ 1-bit register                                        : 8
+ 27-bit register                                       : 1
+ 3-bit register                                        : 1
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 8
+ 1-bit 8-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <array_P_ROM>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_DOUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <I>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <DOUT>          |          |
+    -----------------------------------------------------------------------
+Unit <array_P_ROM> synthesized (advanced).
+
+Synthesizing (advanced) Unit <array_Q_ROM>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_DOUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 4-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <J>             |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <DOUT>          |          |
+    -----------------------------------------------------------------------
+Unit <array_Q_ROM> synthesized (advanced).
+
+Synthesizing (advanced) Unit <array_R_RAM>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_array_R> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 4-bit                      |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <write_EN>      | high     |
+    |     addrA          | connected to signal <write_addr>    |          |
+    |     diA            | connected to signal <input_data>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 8-word x 4-bit                      |          |
+    |     addrB          | connected to signal <read_addr>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <array_R_RAM> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter_3bit>.
+The following registers are absorbed into counter <Q_OUT>: 1 register on signal <Q_OUT>.
+Unit <counter_3bit> synthesized (advanced).
+
+Synthesizing (advanced) Unit <merge_arrays_mcu_top>.
+The following registers are absorbed into counter <DIV_CLK>: 1 register on signal <DIV_CLK>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_SSD_CATHODES> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <SSD>           |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <Dp>            |          |
+    -----------------------------------------------------------------------
+Unit <merge_arrays_mcu_top> synthesized (advanced).
+
+Synthesizing (advanced) Unit <u_program_memory>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_data_out> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 13-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <ADDR>          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <data_out>      |          |
+    -----------------------------------------------------------------------
+Unit <u_program_memory> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 5
+ 16x8-bit single-port distributed Read Only RAM        : 1
+ 4x4-bit single-port distributed Read Only RAM         : 2
+ 8x13-bit single-port distributed Read Only RAM        : 1
+ 8x4-bit dual-port distributed RAM                     : 1
+# Adders/Subtractors                                   : 3
+ 2-bit adder                                           : 2
+ 4-bit adder                                           : 1
+# Counters                                             : 2
+ 27-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
+# Comparators                                          : 2
+ 4-bit comparator greater                              : 2
+# Multiplexers                                         : 10
+ 1-bit 2-to-1 multiplexer                              : 8
+ 1-bit 8-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <DIV_CLK_26> of sequential type is unconnected in block <merge_arrays_mcu_top>.
+
+Optimizing unit <merge_arrays_mcu_top> ...
+
+Optimizing unit <merge_arrays_mcu> ...
+
+Optimizing unit <M8_1E_HXILINX_merge_arrays_mcu> ...
+
+Optimizing unit <CB2CE_HXILINX_merge_arrays_mcu> ...
+
+Optimizing unit <CB4CE_HXILINX_merge_arrays_mcu> ...
+
+Optimizing unit <COMPM4_HXILINX_merge_arrays_mcu> ...
+WARNING:Xst:2677 - Node <Q3> of sequential type is unconnected in block <UUT/XLXI_467>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block merge_arrays_mcu_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 36
+ Flip-Flops                                            : 36
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : merge_arrays_mcu_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 138
+#      BUF                         : 9
+#      GND                         : 1
+#      INV                         : 13
+#      LUT1                        : 25
+#      LUT2                        : 8
+#      LUT3                        : 11
+#      LUT5                        : 6
+#      LUT6                        : 12
+#      MUXCY                       : 25
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 36
+#      FDC                         : 29
+#      FDCE                        : 7
+# RAMS                             : 4
+#      RAM16X1D                    : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 38
+#      IBUF                        : 13
+#      OBUF                        : 25
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              36  out of  18224     0%  
+ Number of Slice LUTs:                   83  out of   9112     0%  
+    Number used as Logic:                75  out of   9112     0%  
+    Number used as Memory:                8  out of   2176     0%  
+       Number used as RAM:                8
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     88
+   Number with an unused Flip Flop:      52  out of     88    59%  
+   Number with an unused LUT:             5  out of     88     5%  
+   Number of fully used LUT-FF pairs:    31  out of     88    35%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          39
+ Number of bonded IOBs:                  39  out of    232    16%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+--------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)          | Load  |
+-----------------------------------+--------------------------------+-------+
+ClkPort                            | BUFGP                          | 26    |
+DIV_CLK_25                         | NONE(UUT/array_R/Mram_array_R3)| 14    |
+-----------------------------------+--------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 7.350ns (Maximum Frequency: 136.052MHz)
+   Minimum input arrival time before clock: 5.893ns
+   Maximum output required time after clock: 7.514ns
+   Maximum combinational path delay: 10.003ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 2.142ns (frequency: 466.886MHz)
+  Total number of paths / destination ports: 351 / 26
+-------------------------------------------------------------------------
+Delay:               2.142ns (Levels of Logic = 27)
+  Source:            DIV_CLK_0 (FF)
+  Destination:       DIV_CLK_25 (FF)
+  Source Clock:      ClkPort rising
+  Destination Clock: ClkPort rising
+
+  Data Path: DIV_CLK_0 to DIV_CLK_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.447   0.579  DIV_CLK_0 (DIV_CLK_0)
+     INV:I->O              1   0.206   0.000  Mcount_DIV_CLK_lut<0>_INV_0 (Mcount_DIV_CLK_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Mcount_DIV_CLK_cy<0> (Mcount_DIV_CLK_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<1> (Mcount_DIV_CLK_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<2> (Mcount_DIV_CLK_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<3> (Mcount_DIV_CLK_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<4> (Mcount_DIV_CLK_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<5> (Mcount_DIV_CLK_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<6> (Mcount_DIV_CLK_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<7> (Mcount_DIV_CLK_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<8> (Mcount_DIV_CLK_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<9> (Mcount_DIV_CLK_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<10> (Mcount_DIV_CLK_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<11> (Mcount_DIV_CLK_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<12> (Mcount_DIV_CLK_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<13> (Mcount_DIV_CLK_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<14> (Mcount_DIV_CLK_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<15> (Mcount_DIV_CLK_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<16> (Mcount_DIV_CLK_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<17> (Mcount_DIV_CLK_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<18> (Mcount_DIV_CLK_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<19> (Mcount_DIV_CLK_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<20> (Mcount_DIV_CLK_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<21> (Mcount_DIV_CLK_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<22> (Mcount_DIV_CLK_cy<22>)
+     MUXCY:CI->O           1   0.019   0.000  Mcount_DIV_CLK_cy<23> (Mcount_DIV_CLK_cy<23>)
+     MUXCY:CI->O           0   0.019   0.000  Mcount_DIV_CLK_cy<24> (Mcount_DIV_CLK_cy<24>)
+     XORCY:CI->O           1   0.180   0.000  Mcount_DIV_CLK_xor<25> (Result<25>)
+     FDC:D                     0.102          DIV_CLK_25
+    ----------------------------------------
+    Total                      2.142ns (1.563ns logic, 0.579ns route)
+                                       (73.0% logic, 27.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'DIV_CLK_25'
+  Clock period: 7.350ns (frequency: 136.052MHz)
+  Total number of paths / destination ports: 317 / 44
+-------------------------------------------------------------------------
+Delay:               7.350ns (Levels of Logic = 11)
+  Source:            UUT/XLXI_463/Q1 (FF)
+  Destination:       UUT/XLXI_470/Q_OUT_2 (FF)
+  Source Clock:      DIV_CLK_25 rising
+  Destination Clock: DIV_CLK_25 rising
+
+  Data Path: UUT/XLXI_463/Q1 to UUT/XLXI_470/Q_OUT_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            10   0.447   0.856  Q1 (Q1)
+     end scope: 'UUT/XLXI_463:Q1'
+     INV:I->O              1   0.206   0.580  UUT/array_P/Mram_DOUT11_INV_0 (UUT/array_P/Mram_DOUT)
+     begin scope: 'UUT/XLXI_416:A0'
+     LUT2:I1->O            1   0.205   0.580  LT1_SW0 (N01)
+     LUT6:I5->O            1   0.205   0.579  LT1 (LT)
+     end scope: 'UUT/XLXI_416:LT'
+     INV:I->O              1   0.568   0.580  UUT/XLXI_474 (UUT/XLXN_806)
+     begin scope: 'UUT/XLXI_472:D1'
+     LUT6:I5->O            1   0.205   0.000  Mmux_S2_D7_Mux_0_o_4 (Mmux_S2_D7_Mux_0_o_4)
+     MUXF7:I0->O           4   0.131   0.683  Mmux_S2_D7_Mux_0_o_2_f7 (O)
+     end scope: 'UUT/XLXI_472:O'
+     INV:I->O              3   0.568   0.651  UUT/XLXI_481 (UUT/XLXN_848)
+     LUT5:I4->O            1   0.205   0.000  UUT/XLXI_470/Q_OUT_0_rstpot (UUT/XLXI_470/Q_OUT_0_rstpot)
+     FDC:D                     0.102          UUT/XLXI_470/Q_OUT_0
+    ----------------------------------------
+    Total                      7.350ns (2.842ns logic, 4.508ns route)
+                                       (38.7% logic, 61.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 26 / 26
+-------------------------------------------------------------------------
+Offset:              2.915ns (Levels of Logic = 1)
+  Source:            BtnC (PAD)
+  Destination:       DIV_CLK_0 (FF)
+  Destination Clock: ClkPort rising
+
+  Data Path: BtnC to DIV_CLK_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            30   1.222   1.263  BtnC_IBUF (Ld0_OBUF)
+     FDC:CLR                   0.430          DIV_CLK_0
+    ----------------------------------------
+    Total                      2.915ns (1.652ns logic, 1.263ns route)
+                                       (56.7% logic, 43.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'DIV_CLK_25'
+  Total number of paths / destination ports: 27 / 18
+-------------------------------------------------------------------------
+Offset:              5.893ns (Levels of Logic = 7)
+  Source:            BtnL (PAD)
+  Destination:       UUT/XLXI_470/Q_OUT_2 (FF)
+  Destination Clock: DIV_CLK_25 rising
+
+  Data Path: BtnL to UUT/XLXI_470/Q_OUT_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.222   0.616  BtnL_IBUF (Ld4_OBUF)
+     INV:I->O              1   0.568   0.944  UUT/XLXI_473 (UUT/XLXN_805)
+     begin scope: 'UUT/XLXI_472:D0'
+     LUT6:I0->O            1   0.203   0.000  Mmux_S2_D7_Mux_0_o_4 (Mmux_S2_D7_Mux_0_o_4)
+     MUXF7:I0->O           4   0.131   0.683  Mmux_S2_D7_Mux_0_o_2_f7 (O)
+     end scope: 'UUT/XLXI_472:O'
+     INV:I->O              3   0.568   0.651  UUT/XLXI_481 (UUT/XLXN_848)
+     LUT5:I4->O            1   0.205   0.000  UUT/XLXI_470/Q_OUT_0_rstpot (UUT/XLXI_470/Q_OUT_0_rstpot)
+     FDC:D                     0.102          UUT/XLXI_470/Q_OUT_0
+    ----------------------------------------
+    Total                      5.893ns (2.999ns logic, 2.894ns route)
+                                       (50.9% logic, 49.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ClkPort'
+  Total number of paths / destination ports: 24 / 10
+-------------------------------------------------------------------------
+Offset:              6.279ns (Levels of Logic = 3)
+  Source:            DIV_CLK_19 (FF)
+  Destination:       Ca (PAD)
+  Source Clock:      ClkPort rising
+
+  Data Path: DIV_CLK_19 to Ca
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             12   0.447   1.137  DIV_CLK_19 (DIV_CLK_19)
+     LUT3:I0->O            7   0.205   1.138  Mmux_SSD<2>11 (SSD<2>)
+     LUT6:I0->O            1   0.203   0.579  Mram_SSD_CATHODES111 (Cg_OBUF)
+     OBUF:I->O                 2.571          Cg_OBUF (Cg)
+    ----------------------------------------
+    Total                      6.279ns (3.426ns logic, 2.853ns route)
+                                       (54.6% logic, 45.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DIV_CLK_25'
+  Total number of paths / destination ports: 31 / 8
+-------------------------------------------------------------------------
+Offset:              7.514ns (Levels of Logic = 4)
+  Source:            UUT/array_R/Mram_array_R2 (RAM)
+  Destination:       Ca (PAD)
+  Source Clock:      DIV_CLK_25 rising
+
+  Data Path: UUT/array_R/Mram_array_R2 to Ca
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM16X1D:WCLK->DPO    1   0.990   0.579  UUT/array_R/Mram_array_R2 (UUT/array_R_DOUT<1>)
+     BUF:I->O              1   0.568   0.684  UUT/XLXI_295 (array_R_Data<1>)
+     LUT3:I1->O            7   0.203   1.138  Mmux_SSD<1>11 (SSD<1>)
+     LUT6:I0->O            1   0.203   0.579  Mram_SSD_CATHODES31 (Ce_OBUF)
+     OBUF:I->O                 2.571          Ce_OBUF (Ce)
+    ----------------------------------------
+    Total                      7.514ns (4.535ns logic, 2.979ns route)
+                                       (60.4% logic, 39.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 115 / 13
+-------------------------------------------------------------------------
+Delay:               10.003ns (Levels of Logic = 7)
+  Source:            Sw0 (PAD)
+  Destination:       Ca (PAD)
+
+  Data Path: Sw0 to Ca
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   1.222   0.802  Sw0_IBUF (Sw0_IBUF)
+     BUF:I->O              4   0.568   0.683  UUT/XLXI_290 (UUT/read_ADDR<0>)
+     RAM16X1D:DPRA0->DPO    1   0.205   0.579  UUT/array_R/Mram_array_R2 (UUT/array_R_DOUT<1>)
+     BUF:I->O              1   0.568   0.684  UUT/XLXI_295 (array_R_Data<1>)
+     LUT3:I1->O            7   0.203   1.138  Mmux_SSD<1>11 (SSD<1>)
+     LUT6:I0->O            1   0.203   0.579  Mram_SSD_CATHODES31 (Ce_OBUF)
+     OBUF:I->O                 2.571          Ce_OBUF (Ce)
+    ----------------------------------------
+    Total                     10.003ns (5.540ns logic, 4.463ns route)
+                                       (55.4% logic, 44.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |    2.142|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock DIV_CLK_25
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+DIV_CLK_25     |    7.350|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.43 secs
+ 
+--> 
+
+Total memory usage is 242920 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

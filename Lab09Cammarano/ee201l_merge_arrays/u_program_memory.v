@@ -13,28 +13,42 @@
 //                Utilities" in the Processes pane. 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module u_program_memory(ADDR,
-								DOUT0,DOUT1);
+module u_program_memory(ADDR, DOUT);
 
-	input [1:0] ADDR;
+	input [2:0] ADDR;
 	
-	output DOUT0;
-	output DOUT1;
+	output [12:0] DOUT;
 	
-	reg [1:0] data_out;
+	reg [12:0] data_out;
 	
 		 
    always @(ADDR)
 	  begin  : u_program_memory_logic
          case (ADDR)
-            2'b00:  data_out <= 2'b00;
-            2'b01:  data_out <= 2'b00;
-            2'b10:  data_out <= 2'b00;
-            2'b11:  data_out <= 2'b00;
-            default: data_out <= 2'bXX;
+				/*
+            3'b000:  data_out <= 13'b0000000001000;
+            3'b001:  data_out <= 13'b0011010000000;
+            3'b010:  data_out <= 13'b0100011010001;
+            3'b011:  data_out <= 13'b0110110110101;
+				3'b100:  data_out <= 13'b1011110000000;
+            3'b101:  data_out <= 13'b0110010110101;
+            3'b110:  data_out <= 13'b0101101010001;
+            3'b111:  data_out <= 13'b1001110000010;
+				*/
+				
+				3'b000:  data_out <= 13'b0001000000000;
+            3'b001:  data_out <= 13'b0000000101100;
+            3'b010:  data_out <= 13'b1000101100010;
+            3'b011:  data_out <= 13'b1010110110110;
+				3'b100:  data_out <= 13'b0000000111101;
+            3'b101:  data_out <= 13'b1010110100110;
+            3'b110:  data_out <= 13'b1000101011010;
+            3'b111:  data_out <= 13'b0100000111001;
+            default: data_out <= 13'bXXXXXXXXXXXXX;
+				
          endcase	 
 	  end
 	  
-	  assign {DOUT1,DOUT0} = data_out;
+	  assign DOUT = data_out;
 
 endmodule

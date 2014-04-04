@@ -1,29 +1,18 @@
-VERSION 5
-BEGIN SYMBOL u_program_memory
-SYMBOLTYPE BLOCK
-TIMESTAMP 2008 4 1 19 33 21
-SYMATTR VeriModel "u_program_memory"
-SYMPIN 0 -96 Input ADDR(1:0)
-SYMPIN 384 -96 Output DOUT0
-SYMPIN 384 -32 Output DOUT1
-RECTANGLE N 64 -128 320 0 
-BEGIN DISPLAY 192 -136 ATTR SymbolName
-    ALIGNMENT BCENTER
-    FONT 56 "Arial"
-END DISPLAY
-BEGIN DISPLAY 72 -96 PIN ADDR(1:0) ATTR PinName
-    FONT 24 "Arial"
-END DISPLAY
-RECTANGLE N 0 -108 64 -84 
-LINE N 64 -96 0 -96 
-BEGIN DISPLAY 312 -96 PIN DOUT0 ATTR PinName
-    ALIGNMENT RIGHT
-    FONT 24 "Arial"
-END DISPLAY
-LINE N 320 -96 384 -96 
-BEGIN DISPLAY 312 -32 PIN DOUT1 ATTR PinName
-    ALIGNMENT RIGHT
-    FONT 24 "Arial"
-END DISPLAY
-LINE N 320 -32 384 -32 
-END SYMBOL
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="u_program_memory">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2014-4-4T20:42:39</timestamp>
+    <attr value="u_program_memory" name="VeriModel" />
+    <pin polarity="Input" x="0" y="-96" name="ADDR(2:0)" />
+    <pin polarity="Output" x="384" y="736" name="DOUT(12:0)" />
+    <graph>
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="192" y="-136" type="symbol" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin ADDR(2:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="312" y="736" type="pin DOUT(12:0)" />
+        <rect width="64" x="320" y="724" height="24" />
+        <line x2="384" y1="736" y2="736" x1="320" />
+        <rect width="64" x="0" y="-108" height="24" />
+        <line x2="0" y1="-96" y2="-96" x1="64" />
+        <rect width="256" x="64" y="-128" height="896" />
+    </graph>
+</symbol>

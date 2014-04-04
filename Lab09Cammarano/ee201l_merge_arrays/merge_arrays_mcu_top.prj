@@ -1,0 +1,8 @@
+verilog work "u_program_memory.v"
+verilog work "mux_2_to_1.v"
+verilog work "counter_3bit.v"
+verilog work "array_R_RAM.v"
+verilog work "array_Q_ROM.v"
+verilog work "array_P_ROM.v"
+verilog work "merge_arrays_mcu.vf"
+verilog work "merge_arrays_mcu_top.v"

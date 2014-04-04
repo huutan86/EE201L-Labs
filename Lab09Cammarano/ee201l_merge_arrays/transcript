@@ -1,0 +1,92 @@
+# Reading C:/modeltech64_10.2/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.2 Feb  2 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {merge_array_mcu_tb.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module u_program_memory
+# 
+# Top level modules:
+# 	u_program_memory
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module mux_2_to_1
+# 
+# Top level modules:
+# 	mux_2_to_1
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module counter_3bit
+# 
+# Top level modules:
+# 	counter_3bit
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module array_R_RAM
+# 
+# Top level modules:
+# 	array_R_RAM
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module array_Q_ROM
+# 
+# Top level modules:
+# 	array_Q_ROM
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module array_P_ROM
+# 
+# Top level modules:
+# 	array_P_ROM
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module COMPM4_HXILINX_merge_arrays_mcu
+# -- Compiling module CB4CE_HXILINX_merge_arrays_mcu
+# -- Compiling module M8_1E_HXILINX_merge_arrays_mcu
+# -- Compiling module CB2CE_HXILINX_merge_arrays_mcu
+# -- Compiling module merge_arrays_mcu
+# 
+# Top level modules:
+# 	merge_arrays_mcu
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module merge_array_mcu_tb
+# 
+# Top level modules:
+# 	merge_array_mcu_tb
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.merge_array_mcu_tb glbl 
+# Loading work.merge_array_mcu_tb(fast)
+# Loading work.merge_arrays_mcu(fast)
+# Loading work.array_P_ROM(fast)
+# Loading work.array_Q_ROM(fast)
+# Loading work.array_R_RAM(fast)
+# Loading work.mux_2_to_1(fast)
+# Loading unisims_ver.BUF(fast)
+# Loading work.COMPM4_HXILINX_merge_arrays_mcu(fast)
+# Loading work.CB2CE_HXILINX_merge_arrays_mcu(fast)
+# Loading work.CB4CE_HXILINX_merge_arrays_mcu(fast)
+# Loading work.counter_3bit(fast)
+# Loading work.M8_1E_HXILINX_merge_arrays_mcu(fast)
+# Loading unisims_ver.INV(fast)
+# Loading unisims_ver.VCC(fast)
+# Loading unisims_ver.GND(fast)
+# Loading work.u_program_memory(fast)
+# Loading work.glbl(fast)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: CMCammarano  Hostname: COLINCAMMAR5F9C  ProcessID: 1132
+# 
+#           Attempting to use alternate WLF file "./wlftwwyrj8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftwwyrj8
+# 
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree

@@ -7,3 +7,7 @@ MODULE merge_arrays_mcu
 		INSTANCE array_Q
 	SUBMODULE array_R_RAM
 		INSTANCE array_R
+	SUBMODULE counter_3bit
+		INSTANCE XLXI_470
+	SUBMODULE u_program_memory
+		INSTANCE XLXI_485

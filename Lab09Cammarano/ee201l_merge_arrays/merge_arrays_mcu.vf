@@ -1,0 +1,300 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 13.2
+//  \   \         Application : sch2hdl
+//  /   /         Filename : merge_arrays_mcu.vf
+// /___/   /\     Timestamp : 04/04/2014 13:45:00
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Xilinx_projects/EE201L-Labs/Lab09Cammarano/ee201l_merge_arrays/merge_arrays_mcu.vf -w C:/Xilinx_projects/EE201L-Labs/Lab09Cammarano/ee201l_merge_arrays/merge_arrays_mcu.sch
+//Design Name: merge_arrays_mcu
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module COMPM4_HXILINX_merge_arrays_mcu (GT, LT, A0, A1, A2, A3, B0, B1, B2, B3);
+    
+
+   output GT;
+   output LT;
+
+   input  A0;
+   input  A1;
+   input  A2;
+   input  A3;
+   input  B0;
+   input  B1;
+   input  B2;
+   input  B3;
+
+   assign GT = {A3, A2, A1, A0} > {B3, B2, B1, B0};
+   assign LT = {A3, A2, A1, A0} < {B3, B2, B1, B0}  ;
+
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB4CE_HXILINX_merge_arrays_mcu(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR);
+   
+   parameter TERMINAL_COUNT = 4'b1111;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (CE)
+	  {Q3, Q2, Q1,Q0} <= {Q3, Q2, Q1,Q0} + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT);
+   
+endmodule
+`timescale  100 ps / 10 ps
+
+module M8_1E_HXILINX_merge_arrays_mcu (O, D0, D1, D2, D3, D4, D5, D6, D7, E, S0, S1, S2);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  D2;
+   input  D3;
+   input  D4;
+   input  D5;
+   input  D6;
+   input  D7;
+   input  E;
+   input  S0;
+   input  S1;
+   input  S2;
+
+   reg O;
+
+   always @ ( D0 or D1 or D2 or D3 or D4 or D5 or D6 or D7 or E or S0 or S1 or S2)
+   begin
+      if(!E)
+      O <= 1'b0;
+      else 
+      begin
+        case({S2,S1,S0})
+        3'b000 : O <= D0;
+        3'b001 : O <= D1;
+        3'b010 : O <= D2;
+        3'b011 : O <= D3;
+        3'b100 : O <= D4;
+        3'b101 : O <= D5;
+        3'b110 : O <= D6;
+        3'b111 : O <= D7;
+        endcase
+      end
+   end
+    
+endmodule
+`timescale 100 ps / 10 ps
+
+module CB2CE_HXILINX_merge_arrays_mcu(CEO, Q0, Q1, TC, C, CE, CLR);
+   
+   parameter TERMINAL_COUNT = 2'b11;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg                Q0;
+   reg                Q1;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q1, Q0} <= 2'b00;
+	else if (CE)
+	  {Q1,Q0} <= {Q1,Q0} + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = CLR ? 1'b0 : ({Q1,Q0} == TERMINAL_COUNT);
+   
+endmodule
+`timescale 1ns / 1ps
+
+module merge_arrays_mcu(ACK, 
+                        RESET, 
+                        R_ADDR, 
+                        START, 
+                        SYS_CLK, 
+                        DONE, 
+                        R_DATA, 
+                        UPC_OUT);
+
+    input ACK;
+    input RESET;
+    input [2:0] R_ADDR;
+    input START;
+    input SYS_CLK;
+   output DONE;
+   output [3:0] R_DATA;
+   output [2:0] UPC_OUT;
+   
+   wire [3:0] array_P_DOUT;
+   wire [3:0] array_Q_DOUT;
+   wire [3:0] array_R_DOUT;
+   wire CLK;
+   wire [12:0] DOUT;
+   wire [1:0] I;
+   wire [1:0] J;
+   wire [2:0] K;
+   wire LOAD;
+   wire MCI;
+   wire MCJ;
+   wire P_LT_Q;
+   wire [2:0] read_ADDR;
+   wire [3:0] XLXN_149;
+   wire XLXN_805;
+   wire XLXN_806;
+   wire XLXN_807;
+   wire XLXN_808;
+   wire XLXN_809;
+   wire XLXN_811;
+   wire XLXN_822;
+   wire XLXN_823;
+   wire XLXN_848;
+   wire [2:0] UPC_OUT_DUMMY;
+   
+   assign UPC_OUT[2:0] = UPC_OUT_DUMMY[2:0];
+   array_P_ROM  array_P (.I(I[1:0]), 
+                        .DOUT(array_P_DOUT[3:0]));
+   array_Q_ROM  array_Q (.J(J[1:0]), 
+                        .DOUT(array_Q_DOUT[3:0]));
+   array_R_RAM  array_R (.clk(CLK), 
+                        .input_data(XLXN_149[3:0]), 
+                        .read_addr(read_ADDR[2:0]), 
+                        .write_addr(K[2:0]), 
+                        .write_EN(DOUT[12]), 
+                        .Output(array_R_DOUT[3:0]));
+   mux_2_to_1  mux_sel_P_Q (.input_A(array_P_DOUT[3:0]), 
+                           .input_B(array_Q_DOUT[3:0]), 
+                           .S(DOUT[10]), 
+                           .Output(XLXN_149[3:0]));
+   BUF  XLXI_290 (.I(R_ADDR[0]), 
+                 .O(read_ADDR[0]));
+   BUF  XLXI_292 (.I(R_ADDR[1]), 
+                 .O(read_ADDR[1]));
+   BUF  XLXI_293 (.I(R_ADDR[2]), 
+                 .O(read_ADDR[2]));
+   BUF  XLXI_294 (.I(array_R_DOUT[0]), 
+                 .O(R_DATA[0]));
+   BUF  XLXI_295 (.I(array_R_DOUT[1]), 
+                 .O(R_DATA[1]));
+   BUF  XLXI_296 (.I(array_R_DOUT[2]), 
+                 .O(R_DATA[2]));
+   BUF  XLXI_297 (.I(array_R_DOUT[3]), 
+                 .O(R_DATA[3]));
+   (* HU_SET = "XLXI_416_0" *) 
+   COMPM4_HXILINX_merge_arrays_mcu  XLXI_416 (.A0(array_P_DOUT[0]), 
+                                             .A1(array_P_DOUT[1]), 
+                                             .A2(array_P_DOUT[2]), 
+                                             .A3(array_P_DOUT[3]), 
+                                             .B0(array_Q_DOUT[0]), 
+                                             .B1(array_Q_DOUT[1]), 
+                                             .B2(array_Q_DOUT[2]), 
+                                             .B3(array_Q_DOUT[3]), 
+                                             .GT(), 
+                                             .LT(P_LT_Q));
+   BUF  XLXI_433 (.I(SYS_CLK), 
+                 .O(CLK));
+   (* HU_SET = "XLXI_463_1" *) 
+   CB2CE_HXILINX_merge_arrays_mcu  XLXI_463 (.C(CLK), 
+                                            .CE(DOUT[6]), 
+                                            .CLR(DOUT[9]), 
+                                            .CEO(), 
+                                            .Q0(I[0]), 
+                                            .Q1(I[1]), 
+                                            .TC(MCI));
+   (* HU_SET = "XLXI_466_2" *) 
+   CB2CE_HXILINX_merge_arrays_mcu  XLXI_466 (.C(CLK), 
+                                            .CE(DOUT[7]), 
+                                            .CLR(DOUT[9]), 
+                                            .CEO(), 
+                                            .Q0(J[0]), 
+                                            .Q1(J[1]), 
+                                            .TC(MCJ));
+   (* HU_SET = "XLXI_467_3" *) 
+   CB4CE_HXILINX_merge_arrays_mcu  XLXI_467 (.C(CLK), 
+                                            .CE(DOUT[8]), 
+                                            .CLR(DOUT[9]), 
+                                            .CEO(), 
+                                            .Q0(K[0]), 
+                                            .Q1(K[1]), 
+                                            .Q2(K[2]), 
+                                            .Q3(), 
+                                            .TC());
+   counter_3bit  XLXI_470 (.CLK(CLK), 
+                          .COUNT_EN(XLXN_848), 
+                          .LOAD_DATA({DOUT[3], DOUT[4], DOUT[5]}), 
+                          .LOAD_EN(LOAD), 
+                          .RESET(RESET), 
+                          .Q_OUT(UPC_OUT_DUMMY[2:0]));
+   (* HU_SET = "XLXI_472_4" *) 
+   M8_1E_HXILINX_merge_arrays_mcu  XLXI_472 (.D0(XLXN_805), 
+                                            .D1(XLXN_806), 
+                                            .D2(XLXN_807), 
+                                            .D3(XLXN_808), 
+                                            .D4(XLXN_809), 
+                                            .D5(XLXN_811), 
+                                            .D6(XLXN_822), 
+                                            .D7(XLXN_822), 
+                                            .E(XLXN_823), 
+                                            .S0(DOUT[2]), 
+                                            .S1(DOUT[1]), 
+                                            .S2(DOUT[0]), 
+                                            .O(LOAD));
+   INV  XLXI_473 (.I(START), 
+                 .O(XLXN_805));
+   INV  XLXI_474 (.I(P_LT_Q), 
+                 .O(XLXN_806));
+   INV  XLXI_475 (.I(MCI), 
+                 .O(XLXN_807));
+   INV  XLXI_476 (.I(MCJ), 
+                 .O(XLXN_808));
+   INV  XLXI_477 (.I(ACK), 
+                 .O(XLXN_809));
+   VCC  XLXI_478 (.P(XLXN_811));
+   GND  XLXI_479 (.G(XLXN_822));
+   VCC  XLXI_480 (.P(XLXN_823));
+   INV  XLXI_481 (.I(LOAD), 
+                 .O(XLXN_848));
+   BUF  XLXI_483 (.I(DOUT[11]), 
+                 .O(DONE));
+   u_program_memory  XLXI_485 (.ADDR(UPC_OUT_DUMMY[2:0]), 
+                              .DOUT(DOUT[12:0]));
+endmodule

@@ -12,6 +12,7 @@ module merge_array_mcu_tb();
 
 // Output
 	wire[3:0] array_R_Data;
+	wire[2:0] UPC_OUT;
 	wire done_tb;
 
 // Instantiate the UUT
@@ -22,7 +23,8 @@ module merge_array_mcu_tb();
 		.ACK(Ack_tb), 
 		.R_ADDR(array_R_Index), 
 		.R_DATA(array_R_Data),
-		.DONE (done_tb)
+		.DONE (done_tb),
+		.UPC_OUT(UPC_OUT)
    );
 	
 	
