@@ -85,15 +85,15 @@ always @(posedge Clk, posedge Reset) //asynchronous active_high Reset
                     begin  // Please see the "assign Ns_of_J_Write = ..." line in the OFL
 						
 						// state transitions
-						if(Ms_of_I[3] == 1) begin
+						if(Ms_of_I[3] == 1 && I != 9) begin
 							state <= C221;
 						end
 					
-						else if (I == 9 && Ms_of_I[3] == 0) begin
+						else if (I == 9) begin
 							state <= C122;
 						end					
 					
-						else begin
+						else if(I != 9 && Ms_of_I[3] == 0) begin
 							state <= LS2C;						
 						end
 					
@@ -101,13 +101,12 @@ always @(posedge Clk, posedge Reset) //asynchronous active_high Reset
 						
 						I <= I + 1;
 						
-						if(Ms_of_I[3] == 3) begin
+						if(Ms_of_I[3] == 1) begin
 							J <= J + 1;
 						end
-					
-						else if(I == 9 && Ms_of_I[3] == 0) begin
-							J <= J + 1;
-							I <= 1;
+						
+						if(I == 9) begin
+							I <= 0;
 						end
 					end
 					
@@ -123,7 +122,7 @@ always @(posedge Clk, posedge Reset) //asynchronous active_high Reset
 							state <= C122;
 						end
 					
-						else begin
+						else if(I != 9 && J != 9) begin
 							state <= C221;			
 						end
 					
