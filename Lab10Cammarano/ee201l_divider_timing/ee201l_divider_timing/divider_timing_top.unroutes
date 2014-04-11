@@ -1,0 +1,14 @@
+Release 13.2 - par O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Fri Apr 11 09:55:27 2014
+
+All signals are completely routed.
+
+WARNING:ParHelpers:361 - There are 2 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   BtnD_IBUF
+   BtnU_IBUF
+
+

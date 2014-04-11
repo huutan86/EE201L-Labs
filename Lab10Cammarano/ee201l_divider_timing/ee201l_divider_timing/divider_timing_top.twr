@@ -1,0 +1,883 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\13.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o
+divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf
+
+Design file:              divider_timing_top.ncd
+Physical constraint file: divider_timing_top.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.19 2011-06-20)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: NET "ClkPort_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+
+ 17892869 paths analyzed, 64 endpoints analyzed, 25 failing endpoints
+ 25 timing errors detected. (25 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  11.788ns.
+--------------------------------------------------------------------------------
+
+Paths for end point divider/x_0_1 (SLICE_X13Y14.BX), 1842261 paths
+--------------------------------------------------------------------------------
+Slack:                  -1.788ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/x_0_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.745ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.008ns (0.155 - 0.163)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/x_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X15Y14.A6      net (fanout=15)       0.369   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X15Y14.A       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111
+    SLICE_X13Y14.D6      net (fanout=12)       0.363   divider/x[3]_x[3]_mux_6_OUT<2>
+    SLICE_X13Y14.D       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW0
+    SLICE_X15Y14.C4      net (fanout=3)        0.492   N156
+    SLICE_X15Y14.C       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_2
+    SLICE_X14Y16.C5      net (fanout=3)        0.386   divider/Mmux_x[3]_x[3]_mux_11_OUT111
+    SLICE_X14Y16.C       Tilo                  0.204   N182
+                                                       divider/y[3]_x[3]_LessThan_14_o12_SW51
+    SLICE_X11Y16.A3      net (fanout=1)        0.518   N102
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X9Y13.B3       net (fanout=13)       0.544   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X9Y13.B        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>_SW3
+    SLICE_X9Y13.A5       net (fanout=1)        0.187   N530
+    SLICE_X9Y13.A        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X13Y14.BX      net (fanout=2)        0.789   divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X13Y14.CLK     Tdick                 0.063   divider/x_0_1
+                                                       divider/x_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.745ns (3.986ns logic, 7.759ns route)
+                                                       (33.9% logic, 66.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -1.748ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/x_0_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.705ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.008ns (0.155 - 0.163)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/x_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X12Y14.D4      net (fanout=15)       0.288   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X12Y14.D       Tilo                  0.205   divider/y_2_2
+                                                       divider/x[3]_y[3]_LessThan_2_o12_1
+    SLICE_X15Y15.A3      net (fanout=2)        0.501   divider/x[3]_y[3]_LessThan_2_o12
+    SLICE_X15Y15.A       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW1
+    SLICE_X13Y14.C4      net (fanout=3)        0.515   N157
+    SLICE_X13Y14.C       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_1
+    SLICE_X11Y16.B6      net (fanout=2)        0.540   divider/Mmux_x[3]_x[3]_mux_11_OUT11
+    SLICE_X11Y16.B       Tilo                  0.259   N68
+                                                       divider/y[3]_x[3]_LessThan_14_o11
+    SLICE_X11Y16.A5      net (fanout=19)       0.243   divider/y[3]_x[3]_LessThan_14_o1
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X9Y13.B3       net (fanout=13)       0.544   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X9Y13.B        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>_SW3
+    SLICE_X9Y13.A5       net (fanout=1)        0.187   N530
+    SLICE_X9Y13.A        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X13Y14.BX      net (fanout=2)        0.789   divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X13Y14.CLK     Tdick                 0.063   divider/x_0_1
+                                                       divider/x_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.705ns (3.987ns logic, 7.718ns route)
+                                                       (34.1% logic, 65.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -1.742ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_1_1 (FF)
+  Destination:          divider/x_0_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.689ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.018ns (0.256 - 0.274)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_1_1 to divider/x_0_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y14.AQ      Tcko                  0.447   divider/y_1_1
+                                                       divider/y_1_1
+    SLICE_X13Y14.B3      net (fanout=1)        0.510   divider/y_1_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X15Y14.A6      net (fanout=15)       0.369   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X15Y14.A       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111
+    SLICE_X13Y14.D6      net (fanout=12)       0.363   divider/x[3]_x[3]_mux_6_OUT<2>
+    SLICE_X13Y14.D       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW0
+    SLICE_X15Y14.C4      net (fanout=3)        0.492   N156
+    SLICE_X15Y14.C       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_2
+    SLICE_X14Y16.C5      net (fanout=3)        0.386   divider/Mmux_x[3]_x[3]_mux_11_OUT111
+    SLICE_X14Y16.C       Tilo                  0.204   N182
+                                                       divider/y[3]_x[3]_LessThan_14_o12_SW51
+    SLICE_X11Y16.A3      net (fanout=1)        0.518   N102
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X9Y13.B3       net (fanout=13)       0.544   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X9Y13.B        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>_SW3
+    SLICE_X9Y13.A5       net (fanout=1)        0.187   N530
+    SLICE_X9Y13.A        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X13Y14.BX      net (fanout=2)        0.789   divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X13Y14.CLK     Tdick                 0.063   divider/x_0_1
+                                                       divider/x_0_1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.689ns (4.025ns logic, 7.664ns route)
+                                                       (34.4% logic, 65.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point divider/x_0 (SLICE_X11Y14.AX), 1842261 paths
+--------------------------------------------------------------------------------
+Slack:                  -1.429ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/x_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.385ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.009ns (0.260 - 0.269)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/x_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X15Y14.A6      net (fanout=15)       0.369   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X15Y14.A       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111
+    SLICE_X13Y14.D6      net (fanout=12)       0.363   divider/x[3]_x[3]_mux_6_OUT<2>
+    SLICE_X13Y14.D       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW0
+    SLICE_X15Y14.C4      net (fanout=3)        0.492   N156
+    SLICE_X15Y14.C       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_2
+    SLICE_X14Y16.C5      net (fanout=3)        0.386   divider/Mmux_x[3]_x[3]_mux_11_OUT111
+    SLICE_X14Y16.C       Tilo                  0.204   N182
+                                                       divider/y[3]_x[3]_LessThan_14_o12_SW51
+    SLICE_X11Y16.A3      net (fanout=1)        0.518   N102
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X9Y13.B3       net (fanout=13)       0.544   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X9Y13.B        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>_SW3
+    SLICE_X9Y13.A5       net (fanout=1)        0.187   N530
+    SLICE_X9Y13.A        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X11Y14.AX      net (fanout=2)        0.429   divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X11Y14.CLK     Tdick                 0.063   divider/x<0>
+                                                       divider/x_0
+    -------------------------------------------------  ---------------------------
+    Total                                     11.385ns (3.986ns logic, 7.399ns route)
+                                                       (35.0% logic, 65.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -1.389ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/x_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.345ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.009ns (0.260 - 0.269)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/x_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X12Y14.D4      net (fanout=15)       0.288   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X12Y14.D       Tilo                  0.205   divider/y_2_2
+                                                       divider/x[3]_y[3]_LessThan_2_o12_1
+    SLICE_X15Y15.A3      net (fanout=2)        0.501   divider/x[3]_y[3]_LessThan_2_o12
+    SLICE_X15Y15.A       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW1
+    SLICE_X13Y14.C4      net (fanout=3)        0.515   N157
+    SLICE_X13Y14.C       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_1
+    SLICE_X11Y16.B6      net (fanout=2)        0.540   divider/Mmux_x[3]_x[3]_mux_11_OUT11
+    SLICE_X11Y16.B       Tilo                  0.259   N68
+                                                       divider/y[3]_x[3]_LessThan_14_o11
+    SLICE_X11Y16.A5      net (fanout=19)       0.243   divider/y[3]_x[3]_LessThan_14_o1
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X9Y13.B3       net (fanout=13)       0.544   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X9Y13.B        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>_SW3
+    SLICE_X9Y13.A5       net (fanout=1)        0.187   N530
+    SLICE_X9Y13.A        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X11Y14.AX      net (fanout=2)        0.429   divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X11Y14.CLK     Tdick                 0.063   divider/x<0>
+                                                       divider/x_0
+    -------------------------------------------------  ---------------------------
+    Total                                     11.345ns (3.987ns logic, 7.358ns route)
+                                                       (35.1% logic, 64.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -1.378ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/x_0 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.334ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.009ns (0.260 - 0.269)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/x_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X15Y14.A6      net (fanout=15)       0.369   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X15Y14.A       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111
+    SLICE_X13Y14.D6      net (fanout=12)       0.363   divider/x[3]_x[3]_mux_6_OUT<2>
+    SLICE_X13Y14.D       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW0
+    SLICE_X15Y14.C4      net (fanout=3)        0.492   N156
+    SLICE_X15Y14.C       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_2
+    SLICE_X14Y16.C5      net (fanout=3)        0.386   divider/Mmux_x[3]_x[3]_mux_11_OUT111
+    SLICE_X14Y16.C       Tilo                  0.204   N182
+                                                       divider/y[3]_x[3]_LessThan_14_o12_SW51
+    SLICE_X11Y16.A3      net (fanout=1)        0.518   N102
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y17.D3       net (fanout=6)        0.543   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y17.D        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW4_SW4
+    SLICE_X9Y15.C1       net (fanout=1)        0.609   N568
+    SLICE_X9Y15.C        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW4
+    SLICE_X9Y15.D6       net (fanout=1)        0.340   N487
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X9Y13.B3       net (fanout=13)       0.544   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X9Y13.B        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>_SW3
+    SLICE_X9Y13.A5       net (fanout=1)        0.187   N530
+    SLICE_X9Y13.A        Tilo                  0.259   N529
+                                                       divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X11Y14.AX      net (fanout=2)        0.429   divider/state[2]_Xin[3]_select_43_OUT<0>
+    SLICE_X11Y14.CLK     Tdick                 0.063   divider/x<0>
+                                                       divider/x_0
+    -------------------------------------------------  ---------------------------
+    Total                                     11.334ns (3.986ns logic, 7.348ns route)
+                                                       (35.2% logic, 64.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point divider/Quotient_2 (SLICE_X7Y16.B5), 1006993 paths
+--------------------------------------------------------------------------------
+Slack:                  -1.348ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/Quotient_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.317ns (Levels of Logic = 14)
+  Clock Path Skew:      0.004ns (0.368 - 0.364)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/Quotient_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X15Y14.A6      net (fanout=15)       0.369   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X15Y14.A       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111
+    SLICE_X13Y14.D6      net (fanout=12)       0.363   divider/x[3]_x[3]_mux_6_OUT<2>
+    SLICE_X13Y14.D       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW0
+    SLICE_X15Y14.C4      net (fanout=3)        0.492   N156
+    SLICE_X15Y14.C       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_2
+    SLICE_X14Y16.C5      net (fanout=3)        0.386   divider/Mmux_x[3]_x[3]_mux_11_OUT111
+    SLICE_X14Y16.C       Tilo                  0.204   N182
+                                                       divider/y[3]_x[3]_LessThan_14_o12_SW51
+    SLICE_X11Y16.A3      net (fanout=1)        0.518   N102
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X7Y16.A4       net (fanout=13)       0.734   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X7Y16.A        Tilo                  0.259   divider/Quotient<2>
+                                                       divider/state[2]_GND_3_o_select_45_OUT<2>_SW3
+    SLICE_X7Y16.B5       net (fanout=1)        0.358   N523
+    SLICE_X7Y16.CLK      Tas                   0.322   divider/Quotient<2>
+                                                       divider/state[2]_GND_3_o_select_45_OUT<2>
+                                                       divider/Quotient_2
+    -------------------------------------------------  ---------------------------
+    Total                                     11.317ns (3.986ns logic, 7.331ns route)
+                                                       (35.2% logic, 64.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -1.308ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_0_1 (FF)
+  Destination:          divider/Quotient_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.277ns (Levels of Logic = 14)
+  Clock Path Skew:      0.004ns (0.368 - 0.364)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_0_1 to divider/Quotient_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y13.DQ      Tcko                  0.408   divider/y_0_1
+                                                       divider/y_0_1
+    SLICE_X13Y14.B2      net (fanout=2)        0.605   divider/y_0_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X12Y14.D4      net (fanout=15)       0.288   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X12Y14.D       Tilo                  0.205   divider/y_2_2
+                                                       divider/x[3]_y[3]_LessThan_2_o12_1
+    SLICE_X15Y15.A3      net (fanout=2)        0.501   divider/x[3]_y[3]_LessThan_2_o12
+    SLICE_X15Y15.A       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW1
+    SLICE_X13Y14.C4      net (fanout=3)        0.515   N157
+    SLICE_X13Y14.C       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_1
+    SLICE_X11Y16.B6      net (fanout=2)        0.540   divider/Mmux_x[3]_x[3]_mux_11_OUT11
+    SLICE_X11Y16.B       Tilo                  0.259   N68
+                                                       divider/y[3]_x[3]_LessThan_14_o11
+    SLICE_X11Y16.A5      net (fanout=19)       0.243   divider/y[3]_x[3]_LessThan_14_o1
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X7Y16.A4       net (fanout=13)       0.734   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X7Y16.A        Tilo                  0.259   divider/Quotient<2>
+                                                       divider/state[2]_GND_3_o_select_45_OUT<2>_SW3
+    SLICE_X7Y16.B5       net (fanout=1)        0.358   N523
+    SLICE_X7Y16.CLK      Tas                   0.322   divider/Quotient<2>
+                                                       divider/state[2]_GND_3_o_select_45_OUT<2>
+                                                       divider/Quotient_2
+    -------------------------------------------------  ---------------------------
+    Total                                     11.277ns (3.987ns logic, 7.290ns route)
+                                                       (35.4% logic, 64.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -1.297ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               divider/y_1_1 (FF)
+  Destination:          divider/Quotient_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      11.261ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.001ns (0.368 - 0.369)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+  Destination Clock:    ClkPort_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/y_1_1 to divider/Quotient_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y14.AQ      Tcko                  0.447   divider/y_1_1
+                                                       divider/y_1_1
+    SLICE_X13Y14.B3      net (fanout=1)        0.510   divider/y_1_1
+    SLICE_X13Y14.B       Tilo                  0.259   divider/x_0_1
+                                                       divider/x[3]_y[3]_LessThan_2_o11
+    SLICE_X15Y14.A6      net (fanout=15)       0.369   divider/x[3]_y[3]_LessThan_2_o1
+    SLICE_X15Y14.A       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111
+    SLICE_X13Y14.D6      net (fanout=12)       0.363   divider/x[3]_x[3]_mux_6_OUT<2>
+    SLICE_X13Y14.D       Tilo                  0.259   divider/x_0_1
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW0
+    SLICE_X15Y14.C4      net (fanout=3)        0.492   N156
+    SLICE_X15Y14.C       Tilo                  0.259   N101
+                                                       divider/Mmux_x[3]_x[3]_mux_11_OUT11_2
+    SLICE_X14Y16.C5      net (fanout=3)        0.386   divider/Mmux_x[3]_x[3]_mux_11_OUT111
+    SLICE_X14Y16.C       Tilo                  0.204   N182
+                                                       divider/y[3]_x[3]_LessThan_14_o12_SW51
+    SLICE_X11Y16.A3      net (fanout=1)        0.518   N102
+    SLICE_X11Y16.A       Tilo                  0.259   N68
+                                                       divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>1
+    SLICE_X15Y15.C3      net (fanout=11)       0.758   divider/Msub_x[3]_y[3]_sub_20_OUT_cy<0>
+    SLICE_X15Y15.C       Tilo                  0.259   divider/x[3]_x[3]_mux_6_OUT<3>
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1_SW0
+    SLICE_X15Y16.C5      net (fanout=1)        0.325   N254
+    SLICE_X15Y16.C       Tilo                  0.259   N255
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>1
+    SLICE_X10Y16.B2      net (fanout=12)       0.880   divider/Msub_x[3]_y[3]_sub_25_OUT_lut<1>
+    SLICE_X10Y16.B       Tilo                  0.203   N151
+                                                       divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11
+    SLICE_X9Y18.A6       net (fanout=6)        0.556   divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>
+    SLICE_X9Y18.A        Tilo                  0.259   N566
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5
+    SLICE_X9Y17.C2       net (fanout=1)        0.588   N565
+    SLICE_X9Y17.C        Tilo                  0.259   N568
+                                                       divider/y[3]_x[3]_LessThan_29_o1_SW1
+    SLICE_X9Y15.D5       net (fanout=1)        0.399   N484
+    SLICE_X9Y15.D        Tilo                  0.259   divider/x[3]_x[3]_mux_31_OUT<3>
+                                                       divider/Mmux_x[3]_x[3]_mux_31_OUT41
+    SLICE_X7Y16.A4       net (fanout=13)       0.734   divider/x[3]_x[3]_mux_31_OUT<3>
+    SLICE_X7Y16.A        Tilo                  0.259   divider/Quotient<2>
+                                                       divider/state[2]_GND_3_o_select_45_OUT<2>_SW3
+    SLICE_X7Y16.B5       net (fanout=1)        0.358   N523
+    SLICE_X7Y16.CLK      Tas                   0.322   divider/Quotient<2>
+                                                       divider/state[2]_GND_3_o_select_45_OUT<2>
+                                                       divider/Quotient_2
+    -------------------------------------------------  ---------------------------
+    Total                                     11.261ns (4.025ns logic, 7.236ns route)
+                                                       (35.7% logic, 64.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "ClkPort_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 8.270ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: ClkPort_BUFGP/BUFG/I0
+  Logical resource: ClkPort_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: ClkPort_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: divider/Quotient<1>/CLK
+  Logical resource: divider/Quotient_0/CK
+  Location pin: SLICE_X8Y15.CLK
+  Clock network: ClkPort_BUFGP
+--------------------------------------------------------------------------------
+Slack: 9.570ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: divider/Quotient<1>/CLK
+  Logical resource: divider/Quotient_1/CK
+  Location pin: SLICE_X8Y15.CLK
+  Clock network: ClkPort_BUFGP
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_LD_path" TIG;
+
+ 8 paths analyzed, 8 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+Paths for end point Ld7 (T11.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay:                  6.735ns (data path)
+  Source:               divider/Quotient_3 (FF)
+  Destination:          Ld7 (PAD)
+  Data Path Delay:      6.735ns (Levels of Logic = 1)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/Quotient_3 to Ld7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y15.CQ       Tcko                  0.391   divider/Quotient<3>
+                                                       divider/Quotient_3
+    T11.O                net (fanout=3)        3.963   divider/Quotient<3>
+    T11.PAD              Tioop                 2.381   Ld7
+                                                       Ld7_OBUF
+                                                       Ld7
+    -------------------------------------------------  ---------------------------
+    Total                                      6.735ns (2.772ns logic, 3.963ns route)
+                                                       (41.2% logic, 58.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Ld6 (R11.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay:                  6.708ns (data path)
+  Source:               divider/Quotient_2 (FF)
+  Destination:          Ld6 (PAD)
+  Data Path Delay:      6.708ns (Levels of Logic = 1)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/Quotient_2 to Ld6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y16.BQ       Tcko                  0.391   divider/Quotient<2>
+                                                       divider/Quotient_2
+    R11.O                net (fanout=5)        3.936   divider/Quotient<2>
+    R11.PAD              Tioop                 2.381   Ld6
+                                                       Ld6_OBUF
+                                                       Ld6
+    -------------------------------------------------  ---------------------------
+    Total                                      6.708ns (2.772ns logic, 3.936ns route)
+                                                       (41.3% logic, 58.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point Ld1 (V16.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay:                  6.464ns (data path)
+  Source:               divider/x_1 (FF)
+  Destination:          Ld1 (PAD)
+  Data Path Delay:      6.464ns (Levels of Logic = 1)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/x_1 to Ld1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y15.BQ      Tcko                  0.447   divider/x<1>
+                                                       divider/x_1
+    V16.O                net (fanout=19)       3.636   divider/x<1>
+    V16.PAD              Tioop                 2.381   Ld1
+                                                       Ld1_OBUF
+                                                       Ld1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.464ns (2.828ns logic, 3.636ns route)
+                                                       (43.8% logic, 56.3% route)
+
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: PATH "TS_SSD_path" TIG;
+
+ 1 path analyzed, 1 endpoint analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+--------------------------------------------------------------------------------
+
+Paths for end point Cg (L14.PAD), 1 path
+--------------------------------------------------------------------------------
+Delay:                  7.832ns (data path)
+  Source:               divider/state_FSM_FFd1 (FF)
+  Destination:          Cg (PAD)
+  Data Path Delay:      7.832ns (Levels of Logic = 2)
+  Source Clock:         ClkPort_BUFGP rising at 0.000ns
+
+  Maximum Data Path at Slow Process Corner: divider/state_FSM_FFd1 to Cg
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y20.AQ       Tcko                  0.408   divider/state_FSM_FFd1
+                                                       divider/state_FSM_FFd1
+    SLICE_X36Y3.D6       net (fanout=10)       3.401   divider/state_FSM_FFd1
+    SLICE_X36Y3.D        Tilo                  0.205   Cg_OBUF
+                                                       _n00221_INV_0
+    L14.O                net (fanout=1)        1.437   Cg_OBUF
+    L14.PAD              Tioop                 2.381   Cg
+                                                       Cg_OBUF
+                                                       Cg
+    -------------------------------------------------  ---------------------------
+    Total                                      7.832ns (2.994ns logic, 4.838ns route)
+                                                       (38.2% logic, 61.8% route)
+
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock ClkPort to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+Cg          |        11.060(R)|      SLOW  |         6.414(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld0         |         9.485(R)|      SLOW  |         5.496(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld1         |         9.692(R)|      SLOW  |         5.661(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld2         |         9.586(R)|      SLOW  |         5.577(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld3         |         9.468(R)|      SLOW  |         5.518(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld4         |         9.185(R)|      SLOW  |         5.263(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld5         |         9.437(R)|      SLOW  |         5.389(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld6         |         9.953(R)|      SLOW  |         5.863(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+Ld7         |         9.981(R)|      SLOW  |         5.797(R)|      FAST  |ClkPort_BUFGP     |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |   11.788|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 25  Score: 19710  (Setup/Max: 19710, Hold: 0)
+
+Constraints cover 17892878 paths, 0 nets, and 1655 connections
+
+Design statistics:
+   Minimum period:  11.788ns{1}   (Maximum frequency:  84.832MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Apr 11 09:55:32 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 207 MB
+
+
+

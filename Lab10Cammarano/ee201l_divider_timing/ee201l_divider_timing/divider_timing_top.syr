@@ -1,0 +1,478 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: divider_timing_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "divider_timing_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "divider_timing_top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : divider_timing_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab10Cammarano\ee201l_divider_timing\ee201l_divider_timing\divider_timing_part3.v\" into library work
+Parsing module <divider_timing>.
+Analyzing Verilog file \"C:\Xilinx_projects\EE201L-Labs\Lab10Cammarano\ee201l_divider_timing\ee201l_divider_timing\divider_timing_top.v\" into library work
+Parsing module <divider_timing_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <divider_timing_top>.
+
+Elaborating module <BUF>.
+
+Elaborating module <divider_timing>.
+WARNING:HDLCompiler:413 - "C:\Xilinx_projects\EE201L-Labs\Lab10Cammarano\ee201l_divider_timing\ee201l_divider_timing\divider_timing_part3.v" Line 69: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1308 - "C:\Xilinx_projects\EE201L-Labs\Lab10Cammarano\ee201l_divider_timing\ee201l_divider_timing\divider_timing_part3.v" Line 43: Found full_case directive in module divider_timing. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <divider_timing_top>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab10cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.v".
+WARNING:Xst:647 - Input <BtnU> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <BtnD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <divider_timing_top> synthesized.
+
+Synthesizing Unit <divider_timing>.
+    Related source file is "c:/xilinx_projects/ee201l-labs/lab10cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_part3.v".
+    Found 3-bit register for signal <state>.
+    Found 4-bit register for signal <x>.
+    Found 4-bit register for signal <y>.
+    Found 4-bit register for signal <Quotient>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | Clk (rising_edge)                              |
+    | Reset              | Reset (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 001                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_5_OUT> created at line 68.
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_10_OUT> created at line 68.
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_15_OUT> created at line 68.
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_20_OUT> created at line 68.
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_25_OUT> created at line 68.
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_30_OUT> created at line 68.
+    Found 4-bit subtractor for signal <x[3]_y[3]_sub_35_OUT> created at line 68.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_5_OUT> created at line 69.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_10_OUT> created at line 69.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_15_OUT> created at line 69.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_20_OUT> created at line 69.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_25_OUT> created at line 69.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_30_OUT> created at line 69.
+    Found 4-bit adder for signal <Quotient[3]_GND_3_o_add_35_OUT> created at line 69.
+    Found 4-bit comparator greater for signal <x[3]_y[3]_LessThan_2_o> created at line 57
+    Found 4-bit comparator lessequal for signal <n0009> created at line 66
+    Found 4-bit comparator lessequal for signal <n0015> created at line 66
+    Found 4-bit comparator lessequal for signal <n0021> created at line 66
+    Found 4-bit comparator lessequal for signal <n0027> created at line 66
+    Found 4-bit comparator lessequal for signal <n0033> created at line 66
+    Found 4-bit comparator lessequal for signal <n0039> created at line 66
+    Summary:
+	inferred  14 Adder/Subtractor(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   7 Comparator(s).
+	inferred  14 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <divider_timing> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 14
+ 4-bit adder                                           : 7
+ 4-bit subtractor                                      : 7
+# Registers                                            : 3
+ 4-bit register                                        : 3
+# Comparators                                          : 7
+ 4-bit comparator greater                              : 1
+ 4-bit comparator lessequal                            : 6
+# Multiplexers                                         : 14
+ 4-bit 2-to-1 multiplexer                              : 14
+# FSMs                                                 : 1
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 14
+ 4-bit adder                                           : 7
+ 4-bit subtractor                                      : 7
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Comparators                                          : 7
+ 4-bit comparator greater                              : 1
+ 4-bit comparator lessequal                            : 6
+# Multiplexers                                         : 14
+ 4-bit 2-to-1 multiplexer                              : 14
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <divider/FSM_0> on signal <state[1:2]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 00
+ 010   | 01
+ 100   | 10
+-------------------
+
+Optimizing unit <divider_timing_top> ...
+
+Optimizing unit <divider_timing> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block divider_timing_top, actual ratio is 1.
+FlipFlop divider/x_0 has been replicated 1 time(s)
+FlipFlop divider/y_0 has been replicated 3 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop divider/y_0 connected to a primary input has been replicated
+FlipFlop divider/y_1 has been replicated 3 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop divider/y_1 connected to a primary input has been replicated
+FlipFlop divider/y_2 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop divider/y_2 connected to a primary input has been replicated
+FlipFlop divider/y_3 has been replicated 2 time(s)
+INFO:Xst:1843 - HDL ADVISOR - FlipFlop divider/y_3 connected to a primary input has been replicated
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 25
+ Flip-Flops                                            : 25
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : divider_timing_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 312
+#      BUF                         : 1
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 7
+#      LUT4                        : 24
+#      LUT5                        : 73
+#      LUT6                        : 189
+#      MUXF7                       : 11
+#      VCC                         : 1
+# FlipFlops/Latches                : 25
+#      FD                          : 9
+#      FDC                         : 2
+#      FDE                         : 14
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 36
+#      IBUF                        : 11
+#      OBUF                        : 25
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              25  out of  18224     0%  
+ Number of Slice LUTs:                  298  out of   9112     3%  
+    Number used as Logic:               298  out of   9112     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    312
+   Number with an unused Flip Flop:     287  out of    312    91%  
+   Number with an unused LUT:            14  out of    312     4%  
+   Number of fully used LUT-FF pairs:    11  out of    312     3%  
+   Number of unique control sets:         3
+
+IO Utilization: 
+ Number of IOs:                          39
+ Number of bonded IOBs:                  37  out of    232    15%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+ClkPort                            | BUFGP                  | 25    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 15.595ns (Maximum Frequency: 64.121MHz)
+   Minimum input arrival time before clock: 3.464ns
+   Maximum output required time after clock: 4.735ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'ClkPort'
+  Clock period: 15.595ns (frequency: 64.121MHz)
+  Total number of paths / destination ports: 17892869 / 25
+-------------------------------------------------------------------------
+Delay:               15.595ns (Levels of Logic = 15)
+  Source:            divider/x_1 (FF)
+  Destination:       divider/Quotient_2 (FF)
+  Source Clock:      ClkPort rising
+  Destination Clock: ClkPort rising
+
+  Data Path: divider/x_1 to divider/Quotient_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              19   0.447   1.072  divider/x_1 (divider/x_1)
+     LUT4:I3->O           15   0.205   0.982  divider/x[3]_y[3]_LessThan_2_o11 (divider/x[3]_y[3]_LessThan_2_o1)
+     LUT5:I4->O           12   0.205   0.909  divider/Mmux_x[3]_x[3]_mux_6_OUT_rs_xor<2>111 (divider/x[3]_x[3]_mux_6_OUT<2>)
+     LUT6:I5->O            3   0.205   0.755  divider/Mmux_x[3]_x[3]_mux_11_OUT11_SW1 (N157)
+     LUT6:I4->O            2   0.203   0.617  divider/Mmux_x[3]_x[3]_mux_11_OUT11_1 (divider/Mmux_x[3]_x[3]_mux_11_OUT11)
+     LUT6:I5->O            2   0.205   0.617  divider/y[3]_x[3]_LessThan_14_o11_1 (divider/y[3]_x[3]_LessThan_14_o11)
+     LUT6:I5->O           18   0.205   1.154  divider/Mmux_x[3]_x[3]_mux_16_OUT21 (divider/x[3]_x[3]_mux_16_OUT<1>)
+     LUT5:I3->O            9   0.203   1.077  divider/y[3]_x[3]_LessThan_19_o1_SW0_1 (divider/y[3]_x[3]_LessThan_19_o1_SW0)
+     LUT6:I2->O            1   0.203   0.000  divider/Msub_x[3]_y[3]_sub_25_OUT_lut<2>1_F (N600)
+     MUXF7:I0->O           7   0.131   1.002  divider/Msub_x[3]_y[3]_sub_25_OUT_lut<2>1 (divider/Msub_x[3]_y[3]_sub_25_OUT_lut<2>)
+     LUT5:I2->O            6   0.205   0.745  divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>11 (divider/Msub_x[3]_y[3]_sub_25_OUT_cy<2>)
+     LUT5:I4->O            1   0.205   0.827  divider/y[3]_x[3]_LessThan_29_o1_SW1_SW5 (N565)
+     LUT5:I1->O            1   0.203   0.684  divider/y[3]_x[3]_LessThan_29_o1_SW1 (N484)
+     LUT6:I4->O           13   0.203   0.933  divider/Mmux_x[3]_x[3]_mux_31_OUT41 (divider/x[3]_x[3]_mux_31_OUT<3>)
+     LUT6:I5->O            1   0.205   0.684  divider/state[2]_Xin[3]_select_43_OUT<1>2_SW0 (N520)
+     LUT6:I4->O            1   0.203   0.000  divider/state[2]_Xin[3]_select_43_OUT<1>2 (divider/state[2]_Xin[3]_select_43_OUT<1>)
+     FD:D                      0.102          divider/x_1
+    ----------------------------------------
+    Total                     15.595ns (3.538ns logic, 12.058ns route)
+                                       (22.7% logic, 77.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'ClkPort'
+  Total number of paths / destination ports: 23 / 23
+-------------------------------------------------------------------------
+Offset:              3.464ns (Levels of Logic = 3)
+  Source:            Sw6 (PAD)
+  Destination:       divider/x_2 (FF)
+  Destination Clock: ClkPort rising
+
+  Data Path: Sw6 to divider/x_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.808  Sw6_IBUF (Sw6_IBUF)
+     LUT4:I1->O            1   0.205   0.924  divider/state[2]_Xin[3]_select_43_OUT<2>1 (divider/state[2]_Xin[3]_select_43_OUT<2>1)
+     LUT6:I1->O            1   0.203   0.000  divider/state[2]_Xin[3]_select_43_OUT<2>3 (divider/state[2]_Xin[3]_select_43_OUT<2>)
+     FD:D                      0.102          divider/x_2
+    ----------------------------------------
+    Total                      3.464ns (1.732ns logic, 1.732ns route)
+                                       (50.0% logic, 50.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ClkPort'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              4.735ns (Levels of Logic = 2)
+  Source:            divider/state_FSM_FFd1 (FF)
+  Destination:       Cg (PAD)
+  Source Clock:      ClkPort rising
+
+  Data Path: divider/state_FSM_FFd1 to Cg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             13   0.447   0.932  divider/state_FSM_FFd1 (divider/state_FSM_FFd1)
+     INV:I->O              1   0.206   0.579  _n00221_INV_0 (Cg_OBUF)
+     OBUF:I->O                 2.571          Cg_OBUF (Cg)
+    ----------------------------------------
+    Total                      4.735ns (3.224ns logic, 1.511ns route)
+                                       (68.1% logic, 31.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock ClkPort
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+ClkPort        |   15.595|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.57 secs
+ 
+--> 
+
+Total memory usage is 240424 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
+

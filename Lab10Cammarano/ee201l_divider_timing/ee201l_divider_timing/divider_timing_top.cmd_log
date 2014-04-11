@@ -1,0 +1,53 @@
+xst -intstyle ise -ifn "C:/Xilinx_projects/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+bitgen -intstyle ise -f divider_timing_top.ut divider_timing_top.ncd 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
+xst -intstyle ise -ifn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.xst" -ofn "C:/Xilinx_projects/EE201L-Labs/Lab10Cammarano/ee201l_divider_timing/ee201l_divider_timing/divider_timing_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc divider_timing_top.ucf -p xc6slx16-csg324-3 divider_timing_top.ngc divider_timing_top.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o divider_timing_top_map.ncd divider_timing_top.ngd divider_timing_top.pcf 
+par -w -intstyle ise -ol high -mt off divider_timing_top_map.ncd divider_timing_top.ncd divider_timing_top.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -xml divider_timing_top.twx divider_timing_top.ncd -o divider_timing_top.twr divider_timing_top.pcf -ucf divider_timing_top.ucf 
