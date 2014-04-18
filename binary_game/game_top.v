@@ -63,11 +63,12 @@ module game_top
 	wire q_I, q_Sub, q_Mult, q_Done;
 	
 	//!!! Modify variables !!!
+	reg [7:0] userInput;
 	wire [7:0] A, B, AB_GCD, i_count;
 	reg A_bar_slash_B;
 	reg [3:0]	SSD;
-	wire [3:0]	SSD3, SSD2, SSD1, SSD0; // ****** TODO  in Part 2 ******  reg or wire?
-	reg [7:0]  SSD_CATHODES; // ****** TODO  in Part 2 ******  reg or wire?
+	wire [3:0]	SSD3, SSD2, SSD1, SSD0;
+	reg [7:0]  SSD_CATHODES;
 	
 //------------	
 // Disable the three memories so that they do not interfere with the rest of the design.
@@ -90,8 +91,8 @@ module game_top
 // The BUFGPs buffer these input ports and connect them to the global 
 // routing resources in the FPGA.
 
-	// BUFGP BUFGP2 (Reset, BtnC); In the case of Spartan 3E (on Nexys-2 board), we were using BUFGP to provide global routing for the reset signal. But Spartan 6 (on Nexys-3) does not allow this.
-	assign Reset = BtnC;
+
+	assign Reset = BtnU;
 	
 //------------
 	// Our clock is too fast (100MHz) for SSD scanning
@@ -122,15 +123,13 @@ module game_top
 	begin
 		if(Reset)
 		 begin			// ****** TODO  in Part 2 ******
-			Ain <=  8'b00000000;  	// Is it necessary or desirable to initiate
-			Bin <=  8'b00000000;	//  Ain and Bin to zero? 
+			userInput <=  8'b00000000;  	// Is it necessary or desirable to initiate
 			// When you download the TA's .bit file or when you reset the Nexys-2 
 			// do you see "0000" on the SSDs or some random combination?
 			// When you go from DONE state to INITIAL state after working on a set
 			// Ain and Bin, do you see "0000" again in the INITIAL state?
 			// If not, what do you see?
 			
-			A_bar_slash_B <= 0;
 		 end
 		else
 		 begin
