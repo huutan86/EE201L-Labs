@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Author:			Shideh Shahidi, Bilal Zafar, Gandhi Puvvada
+// Author:			Colin "Studmuffin" Cammarano and Stephen "Studly" Sher
 // Create Date:   02/25/08, 10/13/08
 // File Name:		ee201_GCD.v 
 // Description: 
@@ -14,54 +14,321 @@
 `timescale 1ns / 1ps
 
 module binary_game(
-
-
-// Arguments
-
-
+	Clk,
+	Reset,
+	Select,
+	Quit,
+	selectRight,
+	selectLeft,
+	userNumber,
+	outputNumber,
+	q_Initiial,
+	q_MenuPlay,
+	q_MenuPractice,
+	q_MenuScores,
+	q_MenuQuit,
+	q_PlayInitial,
+	q_Play,
+	q_PlayDone,
+	q_PracticeInitial,
+	q_Practice,
+	q_PracticeDone,
+	q_Scores,
+	q_Done
 );
 
-	/*  INPUTS */
-	input	Clk, Reset, Start, Ack;		//Standard stuff
+	/*  INPUTS  */
+	input	Clk, Reset;						// Standard stuff. In this case, reset can be BtnU
+	input Select;							// Input for center "do everything" button.
+	input Quit;								// Input for down button to end the game.
+	input selectLeft, selectRight;	// Specific inputs for left and right buttons.
+	input [7:0] userNumber;
 	
-	//Other stuff (binary numbers(
-
+	/*  OUTPUTS  */
+	output outputNumber;
 	
-	/*  OUTPUTS */
-
-	// store current state
-	output q_I, q_Sub, q_Mult, q_Done;		//!!! Modify the states !!!
-	reg [3:0] state;								//!!! Modify the size !!!
-	assign {q_Done, q_Mult, q_Sub, q_I} = state;		//!!! Modify the assign !!!
+	/*  INTERMEDIATE STATE VARIABLES  */
+	
+	// Regs
+	reg [7:0] generatedNumber;
+	reg [7:0] fastCount;
+	reg wrong;
+	reg newNumber;
+	
+	/*  STATE MACHINE  */
+	output q_Initiial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
+	reg [4:0] state;								
+	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = state;
 		
-	localparam 	//!!! Modify the parameters
-	I = 4'b0001, SUB = 4'b0010, MULT = 4'b0100, DONE = 4'b1000, UNK = 4'bXXXX;
+	// Definitions for state labels. Concatanated for ease of reading.
+	localparam
+		Initial = 13'b0000000000001,
+		Menu_Play = 13'b0000000000010,
+		Menu_Practice = 13'b0000000000100,
+		Menu_Scores = 13'b0000000001000,
+		Menu_Quit = 13'b0000000010000,
+		Play_Initial = 13'b0000000100000,
+		Play = 13'b0000001000000,
+		Play_Done = 13'b0000010000000,
+		Practice_Initial = 13'b0000100000000,
+		Practice = 13'b0001000000000,
+		Practice_Done = 13'b0010000000000,
+		Scores = 13'b0100000000000,
+		Done = 13'b1000000000000,
+		UNK = 13'bXXXXXXXXXXXXX;
+	
+	always @ (posedge Clk, posedge Reset) begin : BIN_COUNTER
+		if(Reset) begin
+			
+			// Reset registers
+			generatedNumber <= 0;
+			fastCount <= 0;
+		end
+		
+		else begin
+			
+			fastCount <= (fastCount == 255) ? (0) : (FastCount + 1'b1); 
+			
+			// New number flag, called once
+			if(newNumber) begin
+				
+				// Store our random number in the generated number register.
+				generatedNumber <= FastCount;
+			end
+		end
+	end
+	
+	// Assigning the value of wrong
+	always @ (posedge Clk, posedge userNumber) begin : COMPARING_NUMBERS
+		if(userNumber == generatedNumber) begin
+			wrong = 1'b0;
+		end
+		
+		else begin
+			wrong = 1'b1;
+		end
+	end
 	
 	// NSL AND SM
-	always @ (posedge Clk, posedge Reset)
-	begin 
-		if(Reset) begin
+	always @ (posedge Clk, posedge Reset) begin : STATE_MACHINE
 		
-		//reset stuff
+		if(Reset) begin
+			// Initialize the state machine to the initial state.
+			state <= Initial;
+			
+			// Initialize our variables.
+			newNumber <= X;
 		
 		end
 		
-		else
-				case(state)		//!!! Complete !!!
-					Case1:
-					begin
-
-
-					end		
-					
-					Case2: 
-					begin
-					
+		else begin
+			case(state)
+			
+				// Initial state--presets some things, then transitions to Menu_play
+				Initial: begin
+					// State transitions:
+					if(Select) begin
+						state <= Menu_Play;
 					end
+					
+					// RTL Logic (None here)
+					newNumber <= 1;
+					
+				end		
+					
+				// Menu Play state--waits for input, moves to Menu Practice state, Menu Quit state, or Play Initial state.
+				Menu_Play: begin
+					// State transitions:
+					if(Select && !selectLeft && !selectRight) begin
+						state <= Play_Initial;
+					end
+					
+					else if(!Select && selectLeft && !selectRight) begin
+						state <= Menu_Quit;
+					end
+					
+					else if(!Select && !selectLeft && selectRight) begin
+						state <= Menu_Practice;
+					end
+					
+					// RTL Logic
+					newNumber <= 0;	// We want to begin generating new random numbers on this and subsequent states.
+					
+				end
+				
+				// Menu Practice state--waits for input, moves to Menu Play, Menu Scores, and Practice Initial states.
+				Menu_Practice: begin
+					// State transitions:
+					if(Select && !selectLeft && !selectRight) begin
+						state <= Practice_Initial;
+					end
+					
+					else if(!Select && selectLeft && !selectRight) begin
+						state <= Menu_Play;
+					end
+					
+					else if(!Select && !selectLeft && selectRight) begin
+						state <= Menu_Scores;
+					end
+					
+					// RTL Logic
+					newNumber <= 0;	// We want to begin generating new random numbers on this and subsequent states.
+					
+				end
+				
+				// Menu Scores state--waits for input, moves to Menu Practice, Menu Quit and Scores states.
+				Menu_Scores: begin
+					// State transitions:
+					if(Select && !selectLeft && !selectRight) begin
+						state <= Scores;
+					end
+					
+					else if(!Select && selectLeft && !selectRight) begin
+						state <= Menu_Practice;
+					end
+					
+					else if(!Select && !selectLeft && selectRight) begin
+						state <= Menu_Quit;
+					end
+					
+					// RTL Logic
+					newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
+					
+				end
+				
+				// Menu Quit state--waits for input, moves to Menu Scores, Menu Play and Done states.
+				Menu_Quit: begin
+					// State transitions:
+					if(Select && !selectLeft && !selectRight) begin
+						state <= Done;
+					end
+					
+					else if(!Select && selectLeft && !selectRight) begin
+						state <= Menu_Scores;
+					end
+					
+					else if(!Select && !selectLeft && selectRight) begin
+						state <= Menu_Play;
+					end
+					
+					// RTL Logic
+					newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
+					
+				end
+				
+				// Play Initial state--generates a random binary number between 0 and 255, then unconditionally transitions to Play.
+				Play_Initial: begin
+					// State transitions:
+					if(Select) begin
+						state <= Play;
+					end
+					
+					// RTL Logic
+					if(Select) begin
+						newNumber <= 1;	// We stop generating once the state transitions.
+					end
+					
+				end
+				
+				// Play state--waits for input, and moves to Play Initial if the input is correct, otherwise, it moves to Play Done
+				Play: begin
+					// State transitions:
+					if((Select && !wrong) && (!Quit)) begin
+						state <= Play_Initial;
+					end
+					
+					else if((Select && wrong) || Quit) begin
+						state <= Play_Done;
+					end
+					
+					// RTL Logic
+					if((Select && !wrong) && (!Quit)) begin
+						newNumber <= 0;	// We start generating once the state transitions.
+					end
+					
+				end
+				
+				// Play Done state--waits for input, then moves to Scores state
+				Play_Done: begin
+					// State transitions:
+					if(Select) begin
+						state <= Scores;
+					end
+					
+					// RTL Logic (none)
+					
+				end
+				
+				// Practice Initial state--generates a random binary number between 0 and 255, then unconditionally transitions to Practice.
+				Practice_Initial: begin
+					// State transitions:
+					if(Select) begin
+						state <= Practice;
+					end
+					
+					// RTL Logic
+					if(Select) begin
+						newNumber <= 1;	// We stop generating once the state transitions.
+					end
+					
+				end
+				
+				// Practice state--waits for input, and moves to Practice Initial when the input is correct, otherwise, it moves to Practice Done when the user quits
+				Practice: begin
+					// State transitions:
+					if((Select && !wrong) && (!Quit)) begin
+						state <= Practice_Initial;
+					end
+					
+					else if((Select && wrong) || Quit) begin
+						state <= Practice_Done;
+					end
+					
+					// RTL Logic
+					if((Select && !wrong) && (!Quit)) begin
+						newNumber <= 0;	// We start generating once the state transitions.
+					end
+					
+				end
+				
+				// Practice Done state--waits for input, then moves to Scores state
+				Practice_Done: begin
+					// State transitions:
+					if(Select) begin
+						state <= Scores;
+					end
+					
+					// RTL Logic (none)
+					
+				end
+				
+				// Scores state--waits for input, then moves to Menu Scores state
+				Scores: begin
+					// State transitions:
+					if(Quit) begin
+						state <= Menu_Scores;
+					end
+					
+					// RTL Logic (none now)
+					
+				end
+				
+				// Done state--waits for input, then moves to Initial
+				Done: begin
+					// State transitions:
+					if(Select) begin
+						state <= Initial;
+					end;
+					
+					// RTL Logic (none)
+					
+				end
 	
-					default:		
-						state <= UNK;
-				endcase
+				default:		
+					state <= UNK;
+					
+			endcase
+		end
 	end
 
 	
