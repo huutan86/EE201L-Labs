@@ -117,7 +117,7 @@ module binary_game(
 			state <= Initial;
 			
 			// Initialize our variables.
-			newNumber <= X;
+			newNumber <= 8'bxxxxxxxx;
 		
 		end
 		
