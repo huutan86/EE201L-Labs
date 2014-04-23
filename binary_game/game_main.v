@@ -68,13 +68,13 @@ module binary_game(
 		Menu_Scores			= 13'b0000000001000,
 		Menu_Quit			= 13'b0000000010000,
 		Play_Initial		= 13'b0000000100000,
-		Play					= 13'b0000001000000,
+		Play				= 13'b0000001000000,
 		Play_Done			= 13'b0000010000000,
 		Practice_Initial	= 13'b0000100000000,
-		Practice				= 13'b0001000000000,
+		Practice			= 13'b0001000000000,
 		Practice_Done		= 13'b0010000000000,
 		Scores				= 13'b0100000000000,
-		Done					= 13'b1000000000000,
+		Done				= 13'b1000000000000,
 		UNK					= 13'bXXXXXXXXXXXXX;
 	
 	always @ (posedge Clk, posedge Reset) begin : BIN_COUNTER
@@ -87,13 +87,13 @@ module binary_game(
 		
 		else begin
 			
-			fastCount <= (fastCount == 255) ? (0) : (FastCount + 1'b1); 
+			fastCount <= (fastCount == 255) ? (0) : (fastCount + 1'b1); 
 			
 			// New number flag, called once
 			if(newNumber) begin
 				
 				// Store our random number in the generated number register.
-				generatedNumber <= FastCount;
+				generatedNumber <= fastCount;
 			end
 		end
 	end
