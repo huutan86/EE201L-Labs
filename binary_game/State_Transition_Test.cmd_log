@@ -1,1 +1,0 @@
-xst -intstyle ise -ifn "C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/State_Transition_Test.xst" -ofn "C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/State_Transition_Test.syr" 
