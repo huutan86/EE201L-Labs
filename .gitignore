@@ -1,2 +1,7 @@
 #Ignore OS Specific Files
 .DS_Store
+*.xise
+*.gise
+*.projectmgr
+*.xreport
+*.html
