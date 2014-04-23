@@ -47,8 +47,7 @@ module game_top
 	output An0, An1, An2, An3;	
 
 	
-	/*  LOCAL SIGNALS */
-	//!!! Modify as needed !!!
+	/*  LOCAL SIGNALS  */
 
 	wire Reset, ClkPort;
 	wire board_clk, sys_clk;
@@ -182,7 +181,7 @@ module game_top
 // OUTPUT: LEDS
 	
 	//assign {} = {q_I, q_Sub, q_Mult, q_Done};
-	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = userNumber;
+	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { userNumber };
 	// Here
 		//BtnL = Start/Ack
 		//BtnU = Single-Step
