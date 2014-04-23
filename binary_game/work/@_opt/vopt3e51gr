@@ -1,0 +1,68 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Stephen Sher\Documents\GitHub\EE201L-Labs\binary_game
+T_opt
+Vh03eR3LUYXL>ki3]1K2I43
+04 21 4 work State_Transition_Test fast 0
+04 4 4 work glbl fast 0
+=1-3c075411862c-535759a9-1e7-1480
+o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+n@_opt
+OE;O;10.1c;51
+vbinary_game
+IEkof385h_7iSaiK0Q9KYk1
+Vace@VQj7VGYlz@M77PC<Q2
+Z1 dC:\Users\Stephen Sher\Documents\GitHub\EE201L-Labs\binary_game
+w1398232579
+8game_main.v
+Fgame_main.v
+L0 16
+Z2 OE;L;10.1c;51
+r1
+31
+Z3 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 >9@:gS?]d[S^XAiWDk4SC2
+!s90 -reportprogress|300|game_main.v|
+!s108 1398233512.573000
+!s107 game_main.v|
+!i10b 1
+!s85 0
+vglbl
+I_HnChG<D0B6oX2@hOo5Bb0
+VM[9mS]S:KA1i4VeCMX35[3
+R1
+w1308634178
+8C:/Xilinx/13.2/ISE_DS/ISE//verilog/src/glbl.v
+FC:/Xilinx/13.2/ISE_DS/ISE//verilog/src/glbl.v
+L0 5
+R2
+r1
+31
+R3
+!s100 iU?KY@Vm^ibNkUiOGIChA3
+!s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE//verilog/src/glbl.v|
+!i10b 1
+!s85 0
+!s108 1398233512.917000
+!s107 C:/Xilinx/13.2/ISE_DS/ISE//verilog/src/glbl.v|
+vState_Transition_Test
+IoliUFJ5iFm;YeS326B;9<2
+VHUU:VHUT5nd5O?0lIl6aO2
+R1
+w1398233492
+8State_Transition_Test.v
+FState_Transition_Test.v
+L0 25
+R2
+r1
+31
+R3
+n@state_@transition_@test
+!s90 -reportprogress|300|State_Transition_Test.v|
+!s100 m0<zdz^>FiaX@;k[A;k_71
+!s108 1398233512.753000
+!s107 State_Transition_Test.v|
+!i10b 1
+!s85 0
