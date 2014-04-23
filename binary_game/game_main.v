@@ -40,13 +40,13 @@ module binary_game(
 
 	/*  INPUTS  */
 	input Clk, CEN, Reset;						// Standard stuff. In this case, reset can be BtnU
-	input Select;							// Input for CENter "do everything" button.
-	input Quit;								// Input for down button to end the game.
+	input Select;									// Input for CENter "do everything" button.
+	input Quit;										// Input for down button to end the game.
 	input selectLeft, selectRight;			// Specific inputs for left and right buttons.
 	input [7:0] userNumber;
 	
 	/*  OUTPUTS  */
-	output outputNumber;
+	output [7:0] outputNumber;
 	
 	/*  INTERMEDIATE STATE VARIABLES  */
 	
@@ -69,13 +69,13 @@ module binary_game(
 		Menu_Scores			= 13'b0000000001000,
 		Menu_Quit			= 13'b0000000010000,
 		Play_Initial		= 13'b0000000100000,
-		Play				= 13'b0000001000000,
+		Play					= 13'b0000001000000,
 		Play_Done			= 13'b0000010000000,
 		Practice_Initial	= 13'b0000100000000,
-		Practice			= 13'b0001000000000,
+		Practice				= 13'b0001000000000,
 		Practice_Done		= 13'b0010000000000,
 		Scores				= 13'b0100000000000,
-		Done				= 13'b1000000000000,
+		Done					= 13'b1000000000000,
 		UNK					= 13'bXXXXXXXXXXXXX;
 	
 	// Random number generator
@@ -233,6 +233,7 @@ module binary_game(
 						// RTL Logic
 						if(Select) begin
 							newNumber <= 1;	// We stop generating once the state transitions.
+							outputNumber <= generatedNumber;
 						end
 					end
 				end
@@ -279,6 +280,7 @@ module binary_game(
 						// RTL Logic
 						if(Select) begin
 							newNumber <= 1;	// We stop generating once the state transitions.
+							outputNumber <= generatedNumber;
 						end
 					end
 				end

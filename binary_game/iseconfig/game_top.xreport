@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <ImplementationReportsDirectory>C:/Xilinx_projects/EE201L-Labs/binary_game</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Xilinx_projects/EE201L-Labs/binary_game\</ImplementationReportsDirectory>
   <ModuleName>game_top</ModuleName>
-  <DateModified>2014-04-22T20:58:50</DateModified>
+  <DateModified>2014-04-22T21:04:37</DateModified>
   <SavedFilePath>C:/Xilinx_projects/EE201L-Labs/binary_game/iseconfig/game_top.xreport</SavedFilePath>
   <DateInitialized>2014-04-22T20:58:43</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
