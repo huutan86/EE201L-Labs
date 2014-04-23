@@ -100,43 +100,108 @@ module State_Transition_Test;
 		// Wait 100 ns for global reset to finish
 		#100;
 		Reset = 1;
-		#50;
+		#25;
 		Reset = 0;
-		#50;
+		#25;
 		
 		//Reset finished
 		
 		//Select Initial, go to Menu Play
 		CEN = 1;
 		Select = 1;
-		#50;
+		#25;
 		CEN = 0;
 		Select = 0;
-		#50;
+		#25;
 		
-		//Go to Play_Initial
+		//Go to Menu_Practice
+		CEN = 1;
+		selectRight = 1;
+		#25;
+		CEN = 0;
+		selectRight = 0;
+		#25;
+		
+		//Now at Menu Practice, go to practice Init
 		CEN = 1;
 		Select = 1;
-		#50;
+		#25;
 		CEN = 0;
 		Select = 0;
-		#50;
+		#25;
 		
-		//Go to Play
+		//Go to Practice
 		CEN = 1;
 		Select = 1;
-		#50;
+		#25;
 		CEN = 0;
 		Select = 0;
-		#50;
+		#25;
 		
-		//Go to Play_Done
+		//Go back to Practice_init
 		CEN = 1;
 		Select = 1;
-		#50;
+		#25;
 		CEN = 0;
 		Select = 0;
-		#50;
+		#25;
+		
+		//Go to Practice
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Quit, go to Practice_Done
+		CEN = 1;
+		Quit = 1;
+		#25;
+		CEN = 0;
+		Quit = 0;
+		#25;
+		
+		//Go to scores
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Go to Menu_Scores
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Go to Menu Quit
+		CEN = 1;
+		selectRight = 1;
+		#25;
+		CEN = 0;
+		selectRight = 0;
+		#25;
+		
+		//Go to Done
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Go back to Initial
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
 		
         
 		// Add stimulus here

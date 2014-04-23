@@ -102,6 +102,7 @@ module binary_game(
 	
 	// Assigning the value of wrong
 	always @ (posedge Clk, posedge userNumber) begin : COMPARING_NUMBERS
+
 		if(userNumber == generatedNumber) begin
 			wrong = 1'b0;
 		end
@@ -110,6 +111,7 @@ module binary_game(
 			wrong = 1'b1;
 		end
 	end
+	
 	
 	// NSL AND SM
 	always @ (posedge Clk, posedge Reset) begin : STATE_MACHINE
