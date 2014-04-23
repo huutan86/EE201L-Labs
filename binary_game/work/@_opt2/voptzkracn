@@ -1,4 +1,0 @@
-library verilog;
-use verilog.vl_types.all;
-entity State_Transition_Test is
-end State_Transition_Test;
