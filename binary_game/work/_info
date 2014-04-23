@@ -1,4 +1,5 @@
 m255
+<<<<<<< HEAD
 K3
 13
 cModel Technology
@@ -84,3 +85,81 @@ n@state_@transition_@test
 !s107 State_Transition_Test.v|
 !i10b 1
 !s85 0
+=======
+K4
+z2
+13
+cModel Technology
+Z0 dC:\Xilinx_projects\EE201L-Labs\binary_game
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+Z1 !s110 1398225590
+Z2 VOPa3Izd;gCO4__fLJ_]N[1
+Z3 04 11 4 work binary_game fast 0
+Z4 04 4 4 work glbl fast 0
+Z5 =1-001c42d9d871-53573ab6-1d7-51c
+Z6 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L secureip +acc
+Z7 n@_opt
+Z8 OL;O;10.2;57
+Z9 dC:\Xilinx_projects\EE201L-Labs\binary_game
+vbinary_game
+Z10 !s100 5O7fNERH:9IdZb7@D728;3
+Z11 I<cSzUDaij;h3kI?ZM`45o2
+Z12 V`JN@9S9cnhjKRR_L]QIcM3
+R9
+Z13 w1398225473
+Z14 8game_main.v
+Z15 Fgame_main.v
+L0 16
+Z16 OL;L;10.2;57
+r1
+31
+Z17 !s90 -reportprogress|300|game_main.v|
+Z18 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z19 !s110 1398225656
+Z20 !s108 1398225656.271000
+Z21 !s107 game_main.v|
+!i10b 1
+!s85 0
+vglbl
+R19
+!i10b 1
+Z22 !s100 4=LmVFjWGlXARKf5L_9V<3
+Z23 I`TOOETgQR3j1T18cAJ<`G3
+R12
+R9
+Z24 w1308634177
+Z25 8C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+Z26 FC:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+R16
+r1
+!s85 0
+31
+!s108 1398225656.390000
+!s107 C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+Z27 !s90 -reportprogress|300|C:/Xilinx/13.2/ISE_DS/ISE/verilog/src/glbl.v|
+R18
+vState_Transition_Test
+R19
+Z28 I5>5eVEO?W:YBMC=a>=z;H1
+R12
+R9
+Z29 w1398223368
+Z30 8State_Transition_Test.v
+Z31 FState_Transition_Test.v
+L0 25
+R16
+r1
+31
+R18
+Z32 n@state_@transition_@test
+!i10b 1
+Z33 !s100 X>=V0K8QJT[2`0AfSjIDT2
+!s85 0
+Z34 !s108 1398225656.333000
+Z35 !s107 State_Transition_Test.v|
+Z36 !s90 -reportprogress|300|State_Transition_Test.v|
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa

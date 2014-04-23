@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 # Reading C:/modeltech_10.1c/tcl/vsim/pref.tcl 
 # //  ModelSim SE 10.1c Jul 27 2012 
 # //
 # //  Copyright 1991-2012 Mentor Graphics Corporation
+=======
+# Reading C:/modeltech64_10.2/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.2 Feb  2 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 # //  All Rights Reserved.
 # //
 # //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
@@ -11,22 +18,35 @@
 # do {State_Transition_Test.fdo} 
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
+<<<<<<< HEAD
 # Model Technology ModelSim SE vlog 10.1c Compiler 2012.07 Jul 27 2012
+=======
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 # -- Compiling module binary_game
 # 
 # Top level modules:
 # 	binary_game
+<<<<<<< HEAD
 # Model Technology ModelSim SE vlog 10.1c Compiler 2012.07 Jul 27 2012
+=======
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 # -- Compiling module State_Transition_Test
 # 
 # Top level modules:
 # 	State_Transition_Test
+<<<<<<< HEAD
 # Model Technology ModelSim SE vlog 10.1c Compiler 2012.07 Jul 27 2012
+=======
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 # -- Compiling module glbl
 # 
 # Top level modules:
 # 	glbl
 # vsim -L xilinxcorelib_ver -L unisims_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.State_Transition_Test glbl 
+<<<<<<< HEAD
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # 
 # Loading work.State_Transition_Test(fast)
@@ -35,3 +55,14 @@
 # .main_pane.wave.interior.cs.body.pw.wf
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
+=======
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Error: State_Transition_Test.v(75): (vopt-2912) Port 'q_Initiial' not found in module 'binary_game' (9th connection).
+# 
+# Optimization failed
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./State_Transition_Test.fdo PAUSED at line 29
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa

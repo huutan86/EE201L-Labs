@@ -15,6 +15,7 @@
 
 module binary_game(
 	Clk,
+	CEN,
 	Reset,
 	Select,
 	Quit,
@@ -38,14 +39,14 @@ module binary_game(
 );
 
 	/*  INPUTS  */
-	input	Clk, Reset;						// Standard stuff. In this case, reset can be BtnU
-	input Select;							// Input for center "do everything" button.
-	input Quit;								// Input for down button to end the game.
-	input selectLeft, selectRight;	// Specific inputs for left and right buttons.
+	input Clk, CEN, Reset;						// Standard stuff. In this case, reset can be BtnU
+	input Select;									// Input for CENter "do everything" button.
+	input Quit;										// Input for down button to end the game.
+	input selectLeft, selectRight;			// Specific inputs for left and right buttons.
 	input [7:0] userNumber;
 	
 	/*  OUTPUTS  */
-	output outputNumber;
+	output [7:0] outputNumber;
 	
 	/*  INTERMEDIATE STATE VARIABLES  */
 	
@@ -57,7 +58,11 @@ module binary_game(
 	
 	/*  STATE MACHINE  */
 	output q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
+<<<<<<< HEAD
 	reg [12:0] state;								
+=======
+	reg [4:0] state;								
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = state;
 		
 	// Definitions for state labels. Concatanated for ease of reading.
@@ -77,6 +82,7 @@ module binary_game(
 		Done					= 13'b1000000000000,
 		UNK					= 13'bXXXXXXXXXXXXX;
 	
+	// Random number generator
 	always @ (posedge Clk, posedge Reset) begin : BIN_COUNTER
 		if(Reset) begin
 			
@@ -117,7 +123,11 @@ module binary_game(
 			state <= Initial;
 			
 			// Initialize our variables.
+<<<<<<< HEAD
 			newNumber <= 8'bXXXXXXXX;
+=======
+			newNumber <= 8'bxxxxxxxx;
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 		
 		end
 		
@@ -138,143 +148,154 @@ module binary_game(
 					
 				// Menu Play state--waits for input, moves to Menu Practice state, Menu Quit state, or Play Initial state.
 				Menu_Play: begin
-					// State transitions:
-					if(Select && !selectLeft && !selectRight) begin
-						state <= Play_Initial;
+					if(CEN) begin
+						// State transitions:
+						if(Select && !selectLeft && !selectRight) begin
+							state <= Play_Initial;
+						end
+						
+						else if(!Select && selectLeft && !selectRight) begin
+							state <= Menu_Quit;
+						end
+						
+						else if(!Select && !selectLeft && selectRight) begin
+							state <= Menu_Practice;
+						end
+						
+						// RTL Logic
+						newNumber <= 0;	// We want to begin generating new random numbers on this and subsequent states.
 					end
-					
-					else if(!Select && selectLeft && !selectRight) begin
-						state <= Menu_Quit;
-					end
-					
-					else if(!Select && !selectLeft && selectRight) begin
-						state <= Menu_Practice;
-					end
-					
-					// RTL Logic
-					newNumber <= 0;	// We want to begin generating new random numbers on this and subsequent states.
-					
 				end
 				
 				// Menu Practice state--waits for input, moves to Menu Play, Menu Scores, and Practice Initial states.
 				Menu_Practice: begin
-					// State transitions:
-					if(Select && !selectLeft && !selectRight) begin
-						state <= Practice_Initial;
+					if(CEN) begin
+						// State transitions:
+						if(Select && !selectLeft && !selectRight) begin
+							state <= Practice_Initial;
+						end
+						
+						else if(!Select && selectLeft && !selectRight) begin
+							state <= Menu_Play;
+						end
+						
+						else if(!Select && !selectLeft && selectRight) begin
+							state <= Menu_Scores;
+						end
+						
+						// RTL Logic
+						newNumber <= 0;	// We want to begin generating new random numbers on this and subsequent states.
 					end
-					
-					else if(!Select && selectLeft && !selectRight) begin
-						state <= Menu_Play;
-					end
-					
-					else if(!Select && !selectLeft && selectRight) begin
-						state <= Menu_Scores;
-					end
-					
-					// RTL Logic
-					newNumber <= 0;	// We want to begin generating new random numbers on this and subsequent states.
-					
 				end
 				
 				// Menu Scores state--waits for input, moves to Menu Practice, Menu Quit and Scores states.
 				Menu_Scores: begin
-					// State transitions:
-					if(Select && !selectLeft && !selectRight) begin
-						state <= Scores;
+					if(CEN) begin
+						// State transitions:
+						if(Select && !selectLeft && !selectRight) begin
+							state <= Scores;
+						end
+						
+						else if(!Select && selectLeft && !selectRight) begin
+							state <= Menu_Practice;
+						end
+						
+						else if(!Select && !selectLeft && selectRight) begin
+							state <= Menu_Quit;
+						end
+						
+						// RTL Logic
+						newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
 					end
-					
-					else if(!Select && selectLeft && !selectRight) begin
-						state <= Menu_Practice;
-					end
-					
-					else if(!Select && !selectLeft && selectRight) begin
-						state <= Menu_Quit;
-					end
-					
-					// RTL Logic
-					newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
-					
 				end
 				
 				// Menu Quit state--waits for input, moves to Menu Scores, Menu Play and Done states.
 				Menu_Quit: begin
-					// State transitions:
-					if(Select && !selectLeft && !selectRight) begin
-						state <= Done;
+					if(CEN) begin
+						// State transitions:
+						if(Select && !selectLeft && !selectRight) begin
+							state <= Done;
+						end
+						
+						else if(!Select && selectLeft && !selectRight) begin
+							state <= Menu_Scores;
+						end
+						
+						else if(!Select && !selectLeft && selectRight) begin
+							state <= Menu_Play;
+						end
+						
+						// RTL Logic
+						newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
 					end
-					
-					else if(!Select && selectLeft && !selectRight) begin
-						state <= Menu_Scores;
-					end
-					
-					else if(!Select && !selectLeft && selectRight) begin
-						state <= Menu_Play;
-					end
-					
-					// RTL Logic
-					newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
-					
 				end
 				
 				// Play Initial state--generates a random binary number between 0 and 255, then unconditionally transitions to Play.
 				Play_Initial: begin
-					// State transitions:
-					if(Select) begin
-						state <= Play;
+					if(CEN) begin
+						// State transitions:
+						if(Select) begin
+							state <= Play;
+						end
+						
+						// RTL Logic
+						if(Select) begin
+							newNumber <= 1;	// We stop generating once the state transitions.
+							outputNumber <= generatedNumber;
+						end
 					end
-					
-					// RTL Logic
-					if(Select) begin
-						newNumber <= 1;	// We stop generating once the state transitions.
-					end
-					
 				end
 				
 				// Play state--waits for input, and moves to Play Initial if the input is correct, otherwise, it moves to Play Done
 				Play: begin
-					// State transitions:
-					if((Select && !wrong) && (!Quit)) begin
-						state <= Play_Initial;
+					if(CEN) begin
+						// State transitions:
+						if((Select && !wrong) && (!Quit)) begin
+							state <= Play_Initial;
+						end
+						
+						else if((Select && wrong) || Quit) begin
+							state <= Play_Done;
+						end
+						
+						// RTL Logic
+						if((Select && !wrong) && (!Quit)) begin
+							newNumber <= 0;	// We start generating once the state transitions.
+						end
 					end
-					
-					else if((Select && wrong) || Quit) begin
-						state <= Play_Done;
-					end
-					
-					// RTL Logic
-					if((Select && !wrong) && (!Quit)) begin
-						newNumber <= 0;	// We start generating once the state transitions.
-					end
-					
 				end
 				
 				// Play Done state--waits for input, then moves to Scores state
 				Play_Done: begin
-					// State transitions:
-					if(Select) begin
-						state <= Scores;
+					if(CEN) begin
+						// State transitions:
+						if(Select) begin
+							state <= Scores;
+						end
+						
+						// RTL Logic (none)
 					end
-					
-					// RTL Logic (none)
-					
 				end
 				
 				// Practice Initial state--generates a random binary number between 0 and 255, then unconditionally transitions to Practice.
 				Practice_Initial: begin
-					// State transitions:
-					if(Select) begin
-						state <= Practice;
+					if(CEN) begin
+						// State transitions:
+						if(Select) begin
+							state <= Practice;
+						end
+						
+						// RTL Logic
+						if(Select) begin
+							newNumber <= 1;	// We stop generating once the state transitions.
+							outputNumber <= generatedNumber;
+						end
 					end
-					
-					// RTL Logic
-					if(Select) begin
-						newNumber <= 1;	// We stop generating once the state transitions.
-					end
-					
 				end
 				
 				// Practice state--waits for input, and moves to Practice Initial when the input is correct, otherwise, it moves to Practice Done when the user quits
 				Practice: begin
+<<<<<<< HEAD
 					// State transitions:
 					if(Select && (!Quit)) begin
 						state <= Practice_Initial;
@@ -289,32 +310,58 @@ module binary_game(
 						newNumber <= 0;	// We start generating once the state transitions.
 					end
 					
+=======
+					if(CEN) begin
+						// State transitions:
+						if((Select && !wrong) && (!Quit)) begin
+							state <= Practice_Initial;
+						end
+						
+						else if((Select && wrong) || Quit) begin
+							state <= Practice_Done;
+						end
+						
+						// RTL Logic
+						if((Select && !wrong) && (!Quit)) begin
+							newNumber <= 0;	// We start generating once the state transitions.
+						end
+					end
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 				end
 				
 				// Practice Done state--waits for input, then moves to Scores state
 				Practice_Done: begin
-					// State transitions:
-					if(Select) begin
-						state <= Scores;
+					if(CEN) begin
+						// State transitions:
+						if(Select) begin
+							state <= Scores;
+						end
+						
+						// RTL Logic (none)
 					end
-					
-					// RTL Logic (none)
-					
 				end
 				
 				// Scores state--waits for input, then moves to Menu Scores state
 				Scores: begin
+<<<<<<< HEAD
 					// State transitions:
 					if(Quit || Select) begin
 						state <= Menu_Scores;
+=======
+					if(CEN) begin
+						// State transitions:
+						if(Quit) begin
+							state <= Menu_Scores;
+						end
+						
+						// RTL Logic (none now)
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 					end
-					
-					// RTL Logic (none now)
-					
 				end
 				
 				// Done state--waits for input, then moves to Initial
 				Done: begin
+<<<<<<< HEAD
 					// State transitions:
 					if(Select) begin
 						state <= Initial;
@@ -322,6 +369,16 @@ module binary_game(
 					
 					// RTL Logic (none)
 					
+=======
+					if(CEN) begin
+						// State transitions:
+						if(Select) begin
+							state <= Initial;
+						end
+						
+						// RTL Logic (none)
+					end
+>>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
 				end
 	
 				default:		

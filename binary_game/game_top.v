@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Author:			Shideh Shahidi, Bilal Zafar, Gandhi Puvvada
+// Author:			Colin "Studmuffin" Cammarano and Stephen "Studly" Sher
 // Create Date:		02/25/08
 // File Name:		ee201_GCD_top.v 
 // Description: 
@@ -17,58 +17,63 @@
 `timescale 1ns / 1ps
 
 module game_top
-		(MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS, // Disable the three memory chips
-
-        ClkPort,                           // the 100 MHz incoming clock signal
-		
-		BtnL, BtnU, BtnD, BtnR,            // the Left, Up, Down, and the Right buttons BtnL, BtnR,
-		BtnC,                              // the center button (this is our reset in most of our designs)
-		Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0, // 8 switches
-		Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
-		An3, An2, An1, An0,			       // 4 anodes
-		Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
-		Dp                                 // Dot Point Cathode on SSDs
-	  );
+	(MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS, // Disable the three memory chips
+	ClkPort,                           // the 100 MHz incoming clock signal
+	BtnL, BtnU, BtnD, BtnR,            // the Left, Up, Down, and the Right buttons BtnL, BtnR,
+	BtnC,                              // the center button (this is our reset in most of our designs)
+	Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0, // 8 switches
+	Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
+	An3, An2, An1, An0,			       // 4 anodes
+	Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
+	Dp                                 // Dot Point Cathode on SSDs
+);
 
 	/*  INPUTS */
 	// Clock & Reset I/O
-	input		ClkPort;	
+	input ClkPort;	
 	// Project Specific Inputs
-	input		BtnL, BtnU, BtnD, BtnR, BtnC;	
-	input		Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0;
+	input BtnL, BtnU, BtnD, BtnR, BtnC;	
+	input Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0;
 	
 	
 	/*  OUTPUTS */
 	// Control signals on Memory chips 	(to disable them)
-	output 	MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS;
+	output MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS;
 	// Project Specific Outputs
 	// LEDs
-	output 	Ld0, Ld1, Ld2, Ld3, Ld4, Ld5, Ld6, Ld7;
+	output Ld0, Ld1, Ld2, Ld3, Ld4, Ld5, Ld6, Ld7;
 	// SSD Outputs
-	output 	Cg, Cf, Ce, Cd, Cc, Cb, Ca, Dp;
-	output 	An0, An1, An2, An3;	
+	output Cg, Cf, Ce, Cd, Cc, Cb, Ca, Dp;
+	output An0, An1, An2, An3;	
 
 	
 	/*  LOCAL SIGNALS */
 	//!!! Modify as needed !!!
 
-	wire		Reset, ClkPort;
-	wire		board_clk, sys_clk;
-	wire [1:0] 	ssdscan_clk;
-	reg [26:0]	DIV_CLK;
+	wire Reset, ClkPort;
+	wire board_clk, sys_clk;
+	wire [1:0] ssdscan_clk;
+	reg [26:0] DIV_CLK;
 	
-	wire Start_Ack_Pulse;
+	wire Select_Pulse;
+	wire Reset_Pulse;
+	wire Right_Pulse;
+	wire Left_Pulse;
+	wire Quit_Pulse;
 	
-	//!!! Modify states !!!
-	wire q_I, q_Sub, q_Mult, q_Done;
+	// State wires
+	wire q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
 	
-	//!!! Modify variables !!!
-	reg [7:0] userInput;
+	// Data wires
+	reg [7:0] userNumber;
+	wire [7:0] outputNumber;
 	wire [7:0] A, B, AB_GCD, i_count;
 	reg A_bar_slash_B;
-	reg [3:0]	SSD;
-	wire [3:0]	SSD3, SSD2, SSD1, SSD0;
-	reg [7:0]  SSD_CATHODES;
+	
+	// SSD Control signals
+	reg [3:0] SSD;
+	wire [3:0] SSD3, SSD2, SSD1, SSD0;
+	reg [7:0] SSD_CATHODES;
 	
 //------------	
 // Disable the three memories so that they do not interfere with the rest of the design.
