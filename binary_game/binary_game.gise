@@ -21,6 +21,7 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="binary_game.xise"/>
 
+<<<<<<< HEAD
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="State_Transition_Test.fdo"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="binary_game.fdo"/>
@@ -124,5 +125,10 @@
       <outfile xil_pn:name="work"/>
     </transform>
   </transforms>
+=======
+  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+>>>>>>> parent of bc0482a... Started testing state transitions with testbench
 
 </generated_project>

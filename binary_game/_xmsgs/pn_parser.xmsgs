@@ -9,10 +9,14 @@
 
 <messages>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game/State_Transition_Test.v\&quot; into library work</arg>
 =======
 <msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/binary_game/game_main.v\&quot; into library work</arg>
 >>>>>>> 2200929ef734f22d18e2ba6586972bd7cebc98fa
+=======
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game/game_main.v\&quot; into library work</arg>
+>>>>>>> parent of bc0482a... Started testing state transitions with testbench
 </msg>
 
 </messages>
