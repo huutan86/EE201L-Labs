@@ -235,10 +235,10 @@ module game_top
 	always @ (ssdscan_clk, SSD0, SSD1, SSD2, SSD3)
 	begin : SSD_SCAN_OUT
 		case (ssdscan_clk) 
-				  2'b00: SSD = SSD3     ;	// ****** TODO  in Part 2 ******
-				  2'b01: SSD = SSD2     ;  	// Complete the four lines
-				  2'b10: SSD = SSD1    ;
-				  2'b11: SSD = SSD0    ;
+				  2'b00: SSD = SSD3;	// ****** TODO  in Part 2 ******
+				  2'b01: SSD = SSD2;  	// Complete the four lines
+				  2'b10: SSD = SSD1;	
+				  2'b11: SSD = SSD0;
 		endcase 
 	end
 	
