@@ -22,7 +22,7 @@ module binary_game(
 	selectLeft,
 	userNumber,
 	outputNumber,
-	q_Initiial,
+	q_Initial,
 	q_MenuPlay,
 	q_MenuPractice,
 	q_MenuScores,
@@ -56,8 +56,8 @@ module binary_game(
 	reg newNumber;
 	
 	/*  STATE MACHINE  */
-	output q_Initiial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
-	reg [4:0] state;								
+	output q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
+	reg [12:0] state;								
 	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = state;
 		
 	// Definitions for state labels. Concatanated for ease of reading.
@@ -87,13 +87,13 @@ module binary_game(
 		
 		else begin
 			
-			fastCount <= (fastCount == 255) ? (0) : (FastCount + 1'b1); 
+			fastCount <= (fastCount == 255) ? (0) : (fastCount + 1'b1); 
 			
 			// New number flag, called once
 			if(newNumber) begin
 				
 				// Store our random number in the generated number register.
-				generatedNumber <= FastCount;
+				generatedNumber <= fastCount;
 			end
 		end
 	end
@@ -117,7 +117,7 @@ module binary_game(
 			state <= Initial;
 			
 			// Initialize our variables.
-			newNumber <= X;
+			newNumber <= 8'bXXXXXXXX;
 		
 		end
 		
@@ -127,9 +127,9 @@ module binary_game(
 				// Initial state--presets some things, then transitions to Menu_play
 				Initial: begin
 					// State transitions:
-					if(Select) begin
+					//if(Select) begin
 						state <= Menu_Play;
-					end
+					//end
 					
 					// RTL Logic (None here)
 					newNumber <= 1;
@@ -276,11 +276,11 @@ module binary_game(
 				// Practice state--waits for input, and moves to Practice Initial when the input is correct, otherwise, it moves to Practice Done when the user quits
 				Practice: begin
 					// State transitions:
-					if((Select && !wrong) && (!Quit)) begin
+					if(Select && (!Quit)) begin
 						state <= Practice_Initial;
 					end
 					
-					else if((Select && wrong) || Quit) begin
+					else if( Quit ) begin
 						state <= Practice_Done;
 					end
 					
@@ -305,7 +305,7 @@ module binary_game(
 				// Scores state--waits for input, then moves to Menu Scores state
 				Scores: begin
 					// State transitions:
-					if(Quit) begin
+					if(Quit || Select) begin
 						state <= Menu_Scores;
 					end
 					
@@ -318,7 +318,7 @@ module binary_game(
 					// State transitions:
 					if(Select) begin
 						state <= Initial;
-					end;
+					end
 					
 					// RTL Logic (none)
 					
