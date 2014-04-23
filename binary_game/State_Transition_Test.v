@@ -49,6 +49,8 @@ module State_Transition_Test;
 	wire q_Scores;
 	wire q_Done;
 
+	parameter CLK_PERIOD = 20;
+
 	// Instantiate the Unit Under Test (UUT)
 	binary_game uut (
 		.Clk(Clk), 
@@ -73,6 +75,14 @@ module State_Transition_Test;
 		.q_Scores(q_Scores), 
 		.q_Done(q_Done)
 	);
+	
+	//clock generator
+	initial begin: CLOCK_GENERATOR
+		Clk = 0;
+		forever begin
+			#(CLK_PERIOD/2) Clk = ~Clk;
+		end
+	end
 
 	initial begin
 		// Initialize Inputs
