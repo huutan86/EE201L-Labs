@@ -21,8 +21,67 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="binary_game.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="State_Transition_Test.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="binary_game.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1398225576" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1398225576">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398225576" xil_pn:in_ck="-1862166758305322274" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1398225576">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="State_Transition_Test.v"/>
+      <outfile xil_pn:name="ee201_debounce_DPB_SCEN_CCEN_MCEN_r1.v"/>
+      <outfile xil_pn:name="game_main.v"/>
+      <outfile xil_pn:name="game_top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398225647" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8248306579473994081" xil_pn:start_ts="1398225647">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398225647" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4525814576299947233" xil_pn:start_ts="1398225647">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398225576" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5830145385947877104" xil_pn:start_ts="1398225576">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398225576" xil_pn:in_ck="-1862166758305322274" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1398225576">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="State_Transition_Test.v"/>
+      <outfile xil_pn:name="ee201_debounce_DPB_SCEN_CCEN_MCEN_r1.v"/>
+      <outfile xil_pn:name="game_main.v"/>
+      <outfile xil_pn:name="game_top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398225648" xil_pn:in_ck="-1862166758305322274" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-3622564406904091749" xil_pn:start_ts="1398225647">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="State_Transition_Test.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+  </transforms>
 
 </generated_project>

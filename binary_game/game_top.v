@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Author:			Shideh Shahidi, Bilal Zafar, Gandhi Puvvada
+// Author:			Colin "Studmuffin" Cammarano and Stephen "Studly" Sher
 // Create Date:		02/25/08
 // File Name:		ee201_GCD_top.v 
 // Description: 
@@ -17,18 +17,16 @@
 `timescale 1ns / 1ps
 
 module game_top
-		(MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS, // Disable the three memory chips
-
-        ClkPort,                           // the 100 MHz incoming clock signal
-		
-		BtnL, BtnU, BtnD, BtnR,            // the Left, Up, Down, and the Right buttons BtnL, BtnR,
-		BtnC,                              // the center button (this is our reset in most of our designs)
-		Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0, // 8 switches
-		Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
-		An3, An2, An1, An0,			       // 4 anodes
-		Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
-		Dp                                 // Dot Point Cathode on SSDs
-	  );
+	(MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS, // Disable the three memory chips
+	ClkPort,                           // the 100 MHz incoming clock signal
+	BtnL, BtnU, BtnD, BtnR,            // the Left, Up, Down, and the Right buttons BtnL, BtnR,
+	BtnC,                              // the center button (this is our reset in most of our designs)
+	Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0, // 8 switches
+	Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
+	An3, An2, An1, An0,			       // 4 anodes
+	Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
+	Dp                                 // Dot Point Cathode on SSDs
+);
 
 	/*  INPUTS */
 	// Clock & Reset I/O
@@ -52,8 +50,8 @@ module game_top
 	/*  LOCAL SIGNALS */
 	//!!! Modify as needed !!!
 
-	wire		Reset, ClkPort;
-	wire		board_clk, sys_clk;
+	wire Reset, ClkPort;
+	wire board_clk, sys_clk;
 	wire [1:0] 	ssdscan_clk;
 	reg [26:0]	DIV_CLK;
 	

@@ -1,0 +1,38 @@
+# Reading C:/modeltech64_10.2/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.2 Feb  2 2013 
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {State_Transition_Test.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module binary_game
+# 
+# Top level modules:
+# 	binary_game
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module State_Transition_Test
+# 
+# Top level modules:
+# 	State_Transition_Test
+# Model Technology ModelSim SE-64 vlog 10.2 Compiler 2013.02 Feb  2 2013
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.State_Transition_Test glbl 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# ** Error: State_Transition_Test.v(75): (vopt-2912) Port 'q_Initiial' not found in module 'binary_game' (9th connection).
+# 
+# Optimization failed
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./State_Transition_Test.fdo PAUSED at line 29

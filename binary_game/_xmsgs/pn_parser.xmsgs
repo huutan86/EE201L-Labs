@@ -8,11 +8,7 @@
 <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<<<<<<< HEAD
-<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/binary_game/game_main.v\&quot; into library work</arg>
-=======
-<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game/game_main.v\&quot; into library work</arg>
->>>>>>> 7276b0ce8579f0f90fcca2dbb514e0f9fb3af684
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Xilinx_projects/EE201L-Labs/binary_game/game_top.v\&quot; into library work</arg>
 </msg>
 
 </messages>
