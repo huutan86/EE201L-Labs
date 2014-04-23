@@ -8,6 +8,7 @@
 <!-- Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Users/Stephen Sher/Documents/GitHub/EE201L-Labs/binary_game/State_Transition_Test.v\&quot; into library work</arg>
 </msg>
 
@@ -66,6 +67,9 @@
 </msg>
 
 <msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Users/Stephen Sher/Documents/GitHub/EE201L-Labs/binary_game/game_top.v\&quot; into library work</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1769" ><arg fmt="%s" index="1">Analyzing Verilog file \&quot;C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/game_main.v\&quot; into library work</arg>
+>>>>>>> a85f2f23f0512575571682291efb856c480aba17
 </msg>
 
 </messages>
