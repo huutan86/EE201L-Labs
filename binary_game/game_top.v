@@ -124,7 +124,7 @@ module game_top
 	// BtnR is used to generate in_AB_Pulse to record the values of 
 	// the inputs A and B as set on the switches.
 	// BtnU is used as CEN_Pulse to allow single-stepping
-	assign {in_AB_Pulse, CEN_Pulse} = {BtnR_Pulse, BtnU_Pulse};
+	assign { CEN_Pulse } = { BtnR_Pulse || BtnU_Pulse || BtnL_Pulse || BtnC_Pulse || BtnD_Pulse };
 
 //------------
 // DESIGN
