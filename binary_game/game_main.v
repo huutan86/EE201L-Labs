@@ -46,7 +46,7 @@ module binary_game(
 	input [7:0] userNumber;
 	
 	/*  OUTPUTS  */
-	output [7:0] outputNumber;
+	output reg [7:0] outputNumber;
 	
 	/*  INTERMEDIATE STATE VARIABLES  */
 	
@@ -117,7 +117,6 @@ module binary_game(
 		if(Reset) begin
 			// Initialize the state machine to the initial state.
 			state <= Initial;
-			
 			// Initialize our variables.
 			newNumber <= 8'bXXXXXXXX;
 		
@@ -129,9 +128,9 @@ module binary_game(
 				// Initial state--presets some things, then transitions to Menu_play
 				Initial: begin
 					// State transitions:
-					//if(Select) begin
+					if(CEN) begin
 						state <= Menu_Play;
-					//end
+					end
 					
 					// RTL Logic (None here)
 					newNumber <= 1;

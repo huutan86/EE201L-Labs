@@ -26,6 +26,7 @@ module State_Transition_Test;
 
 	// Inputs
 	reg Clk;
+	reg CEN;
 	reg Reset;
 	reg Select;
 	reg Quit;
@@ -35,7 +36,7 @@ module State_Transition_Test;
 
 	// Outputs
 	wire outputNumber;
-	wire q_Initiial;
+	wire q_Initial;
 	wire q_MenuPlay;
 	wire q_MenuPractice;
 	wire q_MenuScores;
@@ -48,10 +49,13 @@ module State_Transition_Test;
 	wire q_PracticeDone;
 	wire q_Scores;
 	wire q_Done;
+	
+	parameter CLK_PERIOD = 15;
 
 	// Instantiate the Unit Under Test (UUT)
 	binary_game uut (
 		.Clk(Clk), 
+		.CEN(CEN),
 		.Reset(Reset), 
 		.Select(Select), 
 		.Quit(Quit), 
@@ -74,6 +78,15 @@ module State_Transition_Test;
 		.q_Done(q_Done)
 	);
 
+	//clock generator
+	initial begin: CLK_GENERATOR
+		Clk = 0;
+		# (0.6 * CLK_PERIOD);
+		forever begin
+			#(CLK_PERIOD) Clk = ~Clk;
+		end
+	end
+	
 	initial begin
 		// Initialize Inputs
 		Clk = 0;
@@ -87,6 +100,42 @@ module State_Transition_Test;
 		// Wait 100 ns for global reset to finish
 		#100;
 		Reset = 1;
+		#50;
+		Reset = 0;
+		#50;
+		
+		//Reset finished
+		
+		//Select Initial, go to Menu Play
+		CEN = 1;
+		Select = 1;
+		#50;
+		CEN = 0;
+		Select = 0;
+		#50;
+		
+		//Go to Play_Initial
+		CEN = 1;
+		Select = 1;
+		#50;
+		CEN = 0;
+		Select = 0;
+		#50;
+		
+		//Go to Play
+		CEN = 1;
+		Select = 1;
+		#50;
+		CEN = 0;
+		Select = 0;
+		#50;
+		
+		//Go to Play_Done
+		CEN = 1;
+		Select = 1;
+		#50;
+		CEN = 0;
+		Select = 0;
 		#50;
 		
         
