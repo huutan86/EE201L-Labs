@@ -21,8 +21,52 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="binary_game.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="State_Transition_Test.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="binary_game.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="game_top.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1398223270" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1398223270">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398226485" xil_pn:in_ck="2873966851588985504" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1398226485">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="State_Transition_Test.v"/>
+      <outfile xil_pn:name="game_main.v"/>
+      <outfile xil_pn:name="game_top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398223537" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8248306579473994081" xil_pn:start_ts="1398223537">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398223537" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-4525814576299947233" xil_pn:start_ts="1398223537">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398223271" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5830145385947877104" xil_pn:start_ts="1398223271">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1398226485" xil_pn:in_ck="2873966851588985504" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1398226485">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="State_Transition_Test.v"/>
+      <outfile xil_pn:name="game_main.v"/>
+      <outfile xil_pn:name="game_top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1398226486" xil_pn:in_ck="2873966851588985504" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="-3622564406904091749" xil_pn:start_ts="1398226485">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="State_Transition_Test.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+  </transforms>
 
 </generated_project>

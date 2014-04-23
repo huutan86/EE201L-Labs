@@ -35,7 +35,7 @@ module State_Transition_Test;
 
 	// Outputs
 	wire outputNumber;
-	wire q_Initiial;
+	wire q_Initial;
 	wire q_MenuPlay;
 	wire q_MenuPractice;
 	wire q_MenuScores;
@@ -49,6 +49,21 @@ module State_Transition_Test;
 	wire q_Scores;
 	wire q_Done;
 
+	parameter CLK_PERIOD = 20;
+
+
+	//clock counter 
+	initial
+		begin: CLK_COUNTER
+			Clk = 0;
+			# (0.6 * CLK_PERIOD);
+		forever
+			begin
+				#(CLK_PERIOD) Clk = Clk + 1;
+			end
+		end
+
+
 	// Instantiate the Unit Under Test (UUT)
 	binary_game uut (
 		.Clk(Clk), 
@@ -59,7 +74,7 @@ module State_Transition_Test;
 		.selectLeft(selectLeft), 
 		.userNumber(userNumber), 
 		.outputNumber(outputNumber), 
-		.q_Initiial(q_Initiial), 
+		.q_Initial(q_Initial), 
 		.q_MenuPlay(q_MenuPlay), 
 		.q_MenuPractice(q_MenuPractice), 
 		.q_MenuScores(q_MenuScores), 
@@ -87,9 +102,39 @@ module State_Transition_Test;
 		// Wait 100 ns for global reset to finish
 		#100;
 		Reset = 1;
-		#50;
+		#20;
+		Reset = 0;
+		#20;
 		
-        
+		//Reset should have finished. 
+		
+		//Go to Menu Play
+		Select = 1;
+		#20;
+		Select = 0;
+		#20;
+		
+		//Go to Play_Initial
+		Select = 1;
+		#20;
+		Select = 0;
+		#20;
+		
+		//Go to Play
+		Select = 1;
+		#20;
+		Select = 0;
+		#20;
+		
+		//Go back to Initial
+		Select = 1;
+		#20;
+		Select = 0;
+		#20;
+		
+		
+      
+		
 		// Add stimulus here
 
 	end
