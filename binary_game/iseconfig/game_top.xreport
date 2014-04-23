@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
+<<<<<<< HEAD
   <DateModified>2014-04-23T11:11:11</DateModified>
   <ModuleName>game_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game/iseconfig/game_top.xreport</SavedFilePath>
   <ImplementationReportsDirectory>C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game\</ImplementationReportsDirectory>
+=======
+  <DateModified>2014-04-18T15:17:52</DateModified>
+  <ModuleName>game_top</ModuleName>
+  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SavedFilePath>C:/Xilinx_projects/EE201L-Labs/binary_game/iseconfig/game_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Xilinx_projects/EE201L-Labs/binary_game\</ImplementationReportsDirectory>
+>>>>>>> 9055616ceb18ab2a0e9f22867c8541c734c3e56d
   <DateInitialized>2014-04-19T04:55:54</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
