@@ -22,7 +22,7 @@ module binary_game(
 	selectLeft,
 	userNumber,
 	outputNumber,
-	q_Initiial,
+	q_Initial,
 	q_MenuPlay,
 	q_MenuPractice,
 	q_MenuScores,
@@ -38,10 +38,10 @@ module binary_game(
 );
 
 	/*  INPUTS  */
-	input	Clk, Reset;						// Standard stuff. In this case, reset can be BtnU
+	input Clk, Reset;						// Standard stuff. In this case, reset can be BtnU
 	input Select;							// Input for center "do everything" button.
 	input Quit;								// Input for down button to end the game.
-	input selectLeft, selectRight;	// Specific inputs for left and right buttons.
+	input selectLeft, selectRight;			// Specific inputs for left and right buttons.
 	input [7:0] userNumber;
 	
 	/*  OUTPUTS  */
@@ -56,7 +56,7 @@ module binary_game(
 	reg newNumber;
 	
 	/*  STATE MACHINE  */
-	output q_Initiial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
+	output q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
 	reg [4:0] state;								
 	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = state;
 		
@@ -77,6 +77,7 @@ module binary_game(
 		Done				= 13'b1000000000000,
 		UNK					= 13'bXXXXXXXXXXXXX;
 	
+	// Random number generator
 	always @ (posedge Clk, posedge Reset) begin : BIN_COUNTER
 		if(Reset) begin
 			
@@ -318,7 +319,7 @@ module binary_game(
 					// State transitions:
 					if(Select) begin
 						state <= Initial;
-					end;
+					end
 					
 					// RTL Logic (none)
 					
