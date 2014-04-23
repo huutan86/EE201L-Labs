@@ -67,8 +67,6 @@ module game_top
 	// Data wires
 	reg [7:0] userNumber;
 	wire [7:0] outputNumber;
-	wire [7:0] A, B, AB_GCD, i_count;
-	reg A_bar_slash_B;
 	
 	// SSD Control signals
 	reg [3:0] SSD;
@@ -119,6 +117,17 @@ module game_top
 // INPUT: SWITCHES & BUTTONS
 	// BtnL is used as both Start and Acknowledge. 
 	// To make this possible, we need a single clock producing  circuit.
+	
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_2 (.CLK(sys_clk), .RESET(Reset), .PB(BtnL), .DPB( ), .SCEN(BtnL_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_1 (.CLK(sys_clk), .RESET(Reset), .PB(BtnR), .DPB( ), .SCEN(BtnR_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_0 (.CLK(sys_clk), .RESET(Reset), .PB(BtnU), .DPB( ), .SCEN(BtnU_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_1 (.CLK(sys_clk), .RESET(Reset), .PB(BtnC), .DPB( ), .SCEN(BtnC_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_0 (.CLK(sys_clk), .RESET(Reset), .PB(BtnD), .DPB( ), .SCEN(BtnD_Pulse), .MCEN( ), .CCEN( ));
+	
+	// BtnR is used to generate in_AB_Pulse to record the values of 
+	// the inputs A and B as set on the switches.
+	// BtnU is used as CEN_Pulse to allow single-stepping
+	assign {in_AB_Pulse, CEN_Pulse} = {BtnR_Pulse, BtnU_Pulse};
 
 //------------
 // DESIGN
@@ -138,33 +147,42 @@ module game_top
 		 end
 		else
 		 begin
-			if (in_AB_Pulse)  	// Note: in_AB_Pulse is same as BtnR_Pulse.
-								// ****** TODO  in Part 2 ******
-								// Complete the lines below so that you deposit the value on switches
-								// either in Ain or in Bin based on the value of the flag A_bar_slash_B. 
-								// Also you need to toggle the value of the flag A_bar_slash_B.
-				begin
-					A_bar_slash_B <= ~ A_bar_slash_B;  	// should this line be "before" (as shown) 
-														// or "after" the "if" statement?
-														// Please discuss with your TA.
-														// Recall aspects of the non-blocking assignment, and how delta-T 
-														// avoids race condition in real (physical) registers operation
-					if (!(A_bar_slash_B))  // complete this line
-						Ain <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
-					else
-						Bin <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0}         ; // complete this line
-				end
+			if (q_Play || q_Practice) begin  	// Note: in_AB_Pulse is same as BtnR_Pulse.
+				userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
+			end
 		 end
 	end
 	
 	// the state machine module
-	binary_game game_instance();
+	binary_game game_instance(
+		.Clk(sys_clk), 
+		.Reset(Reset_Pulse), 
+		.Select(Select_Pulse), 
+		.Quit(Quit_Pulse), 
+		.selectRight(Right_Pulse), 
+		.selectLeft(Left_Pulse), 
+		.userNumber(userNumber), 
+		.outputNumber(outputNumber), 
+		.q_Initial(q_Initial), 
+		.q_MenuPlay(q_MenuPlay), 
+		.q_MenuPractice(q_MenuPractice), 
+		.q_MenuScores(q_MenuScores), 
+		.q_MenuQuit(q_MenuQuit), 
+		.q_PlayInitial(q_PlayInitial), 
+		.q_Play(q_Play), 
+		.q_PlayDone(q_PlayDone), 
+		.q_PracticeInitial(q_PracticeInitial), 
+		.q_Practice(q_Practice), 
+		.q_PracticeDone(q_PracticeDone), 
+		.q_Scores(q_Scores), 
+		.q_Done(q_Done)
+	);
 
 //------------
 // OUTPUT: LEDS
 	
-	assign {Ld7, Ld6, Ld5, Ld4} = {q_I, q_Sub, q_Mult, q_Done};
-	assign {Ld3, Ld2, Ld1, Ld0} = {BtnL, BtnU, BtnR, BtnD}; // Reset is driven by BtnC
+	//assign {} = {q_I, q_Sub, q_Mult, q_Done};
+	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = userNumber;
 	// Here
 		//BtnL = Start/Ack
 		//BtnU = Single-Step
@@ -178,11 +196,12 @@ module game_top
 	// ****** TODO  in Part 2 ******
 	// assign y = s ? i1 : i0;  // an example of a 2-to-1 mux coding
 	// assign y = s1 ? (s0 ? i3: i2): (s0 ? i1: i0); // an example of a 4-to-1 mux coding
+	/*
 	assign SSD3 = (q_Mult | q_Done) ? AB_GCD[7:4]  : q_I ? Ain[7:4] : A[7:4];
 	assign SSD2 = (q_Mult | q_Done) ? AB_GCD[3:0]  : q_I ? Ain[3:0] : A[3:0];
 	assign SSD1 = (q_Mult | q_Done) ? i_count[7:4]  : q_I ? Bin[7:4] : B[7:4];
 	assign SSD0 = (q_Mult | q_Done) ? i_count[3:0]  : q_I ? Bin[3:0] : B[3:0];
-
+	*/
 
 	// need a scan clk for the seven segment display 
 	
