@@ -59,7 +59,7 @@ module State_Transition_Test;
 		.selectLeft(selectLeft), 
 		.userNumber(userNumber), 
 		.outputNumber(outputNumber), 
-		.q_Initiial(q_Initiial), 
+		.q_Initial(q_Initial), 
 		.q_MenuPlay(q_MenuPlay), 
 		.q_MenuPractice(q_MenuPractice), 
 		.q_MenuScores(q_MenuScores), 
