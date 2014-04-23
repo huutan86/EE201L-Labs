@@ -62,20 +62,20 @@ module binary_game(
 		
 	// Definitions for state labels. Concatanated for ease of reading.
 	localparam
-		Initial = 13'b0000000000001,
-		Menu_Play = 13'b0000000000010,
-		Menu_Practice = 13'b0000000000100,
-		Menu_Scores = 13'b0000000001000,
-		Menu_Quit = 13'b0000000010000,
-		Play_Initial = 13'b0000000100000,
-		Play = 13'b0000001000000,
-		Play_Done = 13'b0000010000000,
-		Practice_Initial = 13'b0000100000000,
-		Practice = 13'b0001000000000,
-		Practice_Done = 13'b0010000000000,
-		Scores = 13'b0100000000000,
-		Done = 13'b1000000000000,
-		UNK = 13'bXXXXXXXXXXXXX;
+		Initial				= 13'b0000000000001,
+		Menu_Play			= 13'b0000000000010,
+		Menu_Practice		= 13'b0000000000100,
+		Menu_Scores			= 13'b0000000001000,
+		Menu_Quit			= 13'b0000000010000,
+		Play_Initial		= 13'b0000000100000,
+		Play					= 13'b0000001000000,
+		Play_Done			= 13'b0000010000000,
+		Practice_Initial	= 13'b0000100000000,
+		Practice				= 13'b0001000000000,
+		Practice_Done		= 13'b0010000000000,
+		Scores				= 13'b0100000000000,
+		Done					= 13'b1000000000000,
+		UNK					= 13'bXXXXXXXXXXXXX;
 	
 	always @ (posedge Clk, posedge Reset) begin : BIN_COUNTER
 		if(Reset) begin

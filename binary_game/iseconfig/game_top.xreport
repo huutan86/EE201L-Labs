@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
+<<<<<<< HEAD
   <ImplementationReportsDirectory>C:/Xilinx_projects/EE201L-Labs/binary_game</ImplementationReportsDirectory>
   <ModuleName>game_top</ModuleName>
   <DateModified>2014-04-22T20:16:13</DateModified>
   <SavedFilePath>C:/Xilinx_projects/EE201L-Labs/binary_game/iseconfig/game_top.xreport</SavedFilePath>
   <DateInitialized>2014-04-22T20:16:13</DateInitialized>
+=======
+  <ImplementationReportsDirectory>C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game</ImplementationReportsDirectory>
+  <ModuleName>game_top</ModuleName>
+  <DateModified>2014-04-23T11:15:44</DateModified>
+  <SavedFilePath>C:/Users/Stephen Sher/Desktop/EE201_github/EE201L-Labs/binary_game/iseconfig/game_top.xreport</SavedFilePath>
+  <DateInitialized>2014-04-23T11:15:44</DateInitialized>
+>>>>>>> 7276b0ce8579f0f90fcca2dbb514e0f9fb3af684
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
 </report-views>
