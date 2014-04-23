@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-04-04T13:42:47</DateModified>
+  <DateModified>2014-04-22T23:11:44</DateModified>
   <ModuleName>merge_arrays_mcu_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Xilinx_projects/EE201L-Labs/Lab09Cammarano/ee201l_merge_arrays/iseconfig/merge_arrays_mcu_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Xilinx_projects/EE201L-Labs/Lab09Cammarano/ee201l_merge_arrays\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/Lab09Cammarano/ee201l_merge_arrays/iseconfig/merge_arrays_mcu_top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/Lab09Cammarano/ee201l_merge_arrays\</ImplementationReportsDirectory>
   <DateInitialized>2012-03-09T08:23:28</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

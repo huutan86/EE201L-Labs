@@ -1,0 +1,2 @@
+verilog work "game_main.v"
+verilog work "State_Transition_Test.v"

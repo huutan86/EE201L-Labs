@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/game_top.xst" -ofn "C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/game_top.syr" 
+xst -intstyle ise -ifn "C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/game_top.xst" -ofn "C:/Users/CMCammarano/Documents/GitHub/EE201L-Labs/binary_game/game_top.syr" 
