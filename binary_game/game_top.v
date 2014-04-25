@@ -16,16 +16,18 @@
 
 `timescale 1ns / 1ps
 
-module game_top
-	(MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS, // Disable the three memory chips
-	ClkPort,                           // the 100 MHz incoming clock signal
-	BtnL, BtnU, BtnD, BtnR,            // the Left, Up, Down, and the Right buttons BtnL, BtnR,
-	BtnC,                              // the center button (this is our reset in most of our designs)
-	Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0, // 8 switches
-	Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0, // 8 LEDs
-	An3, An2, An1, An0,			       // 4 anodes
-	Ca, Cb, Cc, Cd, Ce, Cf, Cg,        // 7 cathodes
-	Dp                                 // Dot Point Cathode on SSDs
+module game_top (
+
+	vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b,	// FPGA VGA signals
+	MemOE, MemWR, RamCS, FlashCS, QuadSpiFlashCS,	// Disable the three memory chips
+	ClkPort,                          				// the 100 MHz incoming clock signal
+	BtnL, BtnU, BtnD, BtnR,							// the Left, Up, Down, and the Right buttons BtnL, BtnR,
+	BtnC,											// the center button (this is our reset in most of our designs)
+	Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0,			// 8 switches
+	Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0,			// 8 LEDs
+	An3, An2, An1, An0,								// 4 anodes
+	Ca, Cb, Cc, Cd, Ce, Cf, Cg,						// 7 cathodes
+	Dp												// Dot Point Cathode on SSDs
 );
 
 	/*  INPUTS */
@@ -50,7 +52,7 @@ module game_top
 	/*  LOCAL SIGNALS  */
 
 	wire Reset, ClkPort;
-	wire board_clk, sys_clk;
+	wire board_clk, sys_clk, vga_clk;
 	wire [1:0] ssdscan_clk;
 	reg [26:0] DIV_CLK;
 	
@@ -87,10 +89,10 @@ module game_top
 	
 	BUFGP BUFGP1 (board_clk, ClkPort); 	
 
-// As the ClkPort signal travels throughout our design,
-// it is necessary to provide global routing to this signal. 
-// The BUFGPs buffer these input ports and connect them to the global 
-// routing resources in the FPGA.
+	// As the ClkPort signal travels throughout our design,
+	// it is necessary to provide global routing to this signal. 
+	// The BUFGPs buffer these input ports and connect them to the global 
+	// routing resources in the FPGA.
 
 
 	assign Reset = BtnD;
@@ -166,6 +168,17 @@ module game_top
 		.q_Scores(q_Scores), 
 		.q_Done(q_Done)
 	);
+
+//------------
+// OUTPUT: VGA
+
+	wire inDisplayArea;
+	wire [9:0] CounterX;
+	wire [9:0] CounterY;
+
+	assign vga_clk = DIV_CLK[1];
+
+	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
 
 //------------
 // OUTPUT: LEDS
