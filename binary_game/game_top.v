@@ -57,6 +57,8 @@ module game_top (
 	wire [1:0] ssdscan_clk;
 	reg [26:0] DIV_CLK;
 	
+	reg [7:0] SSD_Output;
+	
 	wire Select_Pulse;
 	wire Reset_Pulse;
 	wire Right_Pulse;
@@ -148,6 +150,16 @@ module game_top (
 			if (q_Play || q_Practice) begin
 				userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 			end
+		end
+		
+		//convert SDD display number
+		if (q_Practice) begin
+			//user output is the SSD output
+			SSD_Output <= userNumber;
+		end
+		else begin
+			//otherwise it should be the random number
+			SSD_Output <= outputNumber;
 		end
 	end
 	
