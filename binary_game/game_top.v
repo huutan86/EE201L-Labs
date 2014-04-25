@@ -47,6 +47,7 @@ module game_top (
 	// SSD Outputs
 	output Cg, Cf, Ce, Cd, Cc, Cb, Ca, Dp;
 	output An0, An1, An2, An3;	
+	output vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b;
 
 	
 	/*  LOCAL SIGNALS  */
@@ -73,6 +74,7 @@ module game_top (
 	reg [3:0] SSD;
 	wire [3:0] SSD3, SSD2, SSD1, SSD0;
 	reg [7:0] SSD_CATHODES;
+	reg vga_r, vga_g, vga_b;
 	
 //------------	
 // Disable the three memories so that they do not interfere with the rest of the design.
@@ -135,7 +137,7 @@ module game_top (
 	always @ (posedge sys_clk, posedge Reset) begin
 		if(Reset) begin			// ****** TODO  in Part 2 ******
 			userNumber <=  8'b00000000;
-			outputNumber <= 8'b00000000;
+			//outputNumber <= 8'b00000000;
 		end
 		
 		else begin
@@ -178,8 +180,21 @@ module game_top (
 	wire [9:0] CounterY;
 
 	assign vga_clk = DIV_CLK[1];
-
+	
 	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
+
+//------------
+// VGA Signal driving!
+	wire R = CounterY >= 120 && CounterY <= 240 && CounterX[7:2] == 6'b111111;
+	wire G = CounterY >= 120 && CounterY <= 240 && CounterY[7:2] == 6'b111111;
+	wire B = CounterY >= 120 && CounterY <= 240 && CounterY[7:2] == 6'b111111;
+	
+	always @(posedge vga_clk)
+	begin
+		vga_r <= R & inDisplayArea;
+		vga_g <= G & inDisplayArea;
+		vga_b <= B & inDisplayArea;
+	end
 
 //------------
 // OUTPUT: LEDS
