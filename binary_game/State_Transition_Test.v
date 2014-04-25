@@ -35,7 +35,7 @@ module State_Transition_Test;
 	reg [7:0] userNumber;
 
 	// Outputs
-	wire outputNumber;
+	wire [7:0] outputNumber;
 	wire q_Initial;
 	wire q_MenuPlay;
 	wire q_MenuPractice;
@@ -114,15 +114,7 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Go to Menu_Practice
-		CEN = 1;
-		selectRight = 1;
-		#25;
-		CEN = 0;
-		selectRight = 0;
-		#25;
-		
-		//Now at Menu Practice, go to practice Init
+		//Go to Play Initial
 		CEN = 1;
 		Select = 1;
 		#25;
@@ -130,7 +122,9 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Go to Practice
+		//Now at Play Initial, wait for a bit before proceeding
+		
+		#250;
 		CEN = 1;
 		Select = 1;
 		#25;
@@ -138,7 +132,47 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Go back to Practice_init
+		//Now at Play state, look at random number.
+		
+		//Go to play Done
+		CEN = 1;
+		Select = 1;
+		#25
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//now at scores, go to menu
+		CEN = 1;
+		Select = 1;
+		#25
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		CEN = 1;
+		Select = 1;
+		#25
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Go left twice
+		CEN = 1;
+		selectLeft = 1;
+		#25
+		CEN = 0;
+		selectLeft = 0;
+		#25;
+		
+		CEN = 1;
+		selectLeft = 1;
+		#25
+		CEN = 0;
+		selectLeft = 0;
+		#25;
+		
+		//Now so the same thing
 		CEN = 1;
 		Select = 1;
 		#25;
@@ -146,7 +180,8 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Go to Practice
+		//Go to Play Initial
+		#150;
 		CEN = 1;
 		Select = 1;
 		#25;
@@ -154,54 +189,14 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Quit, go to Practice_Done
-		CEN = 1;
-		Quit = 1;
-		#25;
-		CEN = 0;
-		Quit = 0;
-		#25;
+		//Now at Play Initial, wait for a bit before proceeding
 		
-		//Go to scores
 		CEN = 1;
 		Select = 1;
 		#25;
 		CEN = 0;
 		Select = 0;
 		#25;
-		
-		//Go to Menu_Scores
-		CEN = 1;
-		Select = 1;
-		#25;
-		CEN = 0;
-		Select = 0;
-		#25;
-		
-		//Go to Menu Quit
-		CEN = 1;
-		selectRight = 1;
-		#25;
-		CEN = 0;
-		selectRight = 0;
-		#25;
-		
-		//Go to Done
-		CEN = 1;
-		Select = 1;
-		#25;
-		CEN = 0;
-		Select = 0;
-		#25;
-		
-		//Go back to Initial
-		CEN = 1;
-		Select = 1;
-		#25;
-		CEN = 0;
-		Select = 0;
-		#25;
-		
 		
         
 		// Add stimulus here

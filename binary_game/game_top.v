@@ -135,6 +135,7 @@ module game_top (
 	always @ (posedge sys_clk, posedge Reset) begin
 		if(Reset) begin			// ****** TODO  in Part 2 ******
 			userNumber <=  8'b00000000;
+			outputNumber <= 8'b00000000;
 		end
 		
 		else begin
