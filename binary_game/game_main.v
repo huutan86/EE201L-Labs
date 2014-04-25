@@ -233,7 +233,7 @@ module binary_game(
 						
 						// RTL Logic
 						if(Select) begin
-							newNumber <= 1;	// We stop generating once the state transitions.
+							newNumber <= 0;	// We stop generating once the state transitions.
 							outputNumber <= generatedNumber;
 						end
 					end
@@ -253,7 +253,7 @@ module binary_game(
 						
 						// RTL Logic
 						if((Select && !wrong) && (!Quit)) begin
-							newNumber <= 0;	// We start generating once the state transitions.
+							newNumber <= 1;	// We start generating once the state transitions.
 						end
 					end
 				end
@@ -280,7 +280,7 @@ module binary_game(
 						
 						// RTL Logic
 						if(Select) begin
-							newNumber <= 1;	// We stop generating once the state transitions.
+							newNumber <= 0;	// We stop generating once the state transitions.
 							outputNumber <= generatedNumber;
 						end
 					end
@@ -300,7 +300,7 @@ module binary_game(
 						
 						// RTL Logic
 						if(Select && (!Quit)) begin
-							newNumber <= 0;	// We start generating once the state transitions.
+							newNumber <= 1;	// We start generating once the state transitions.
 						end
 					end
 				end
