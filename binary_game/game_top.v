@@ -68,6 +68,10 @@ module game_top (
 	// Data wires
 	reg [7:0] userNumber;
 	wire [7:0] outputNumber;
+	wire [7:0] playerScore;
+	
+	
+
 	
 	// SSD Control signals
 	reg [3:0] SSD;
@@ -155,6 +159,7 @@ module game_top (
 		.selectLeft(Left_Pulse), 
 		.userNumber(userNumber), 
 		.outputNumber(outputNumber), 
+		.playerScore(playerScore),
 		.q_Initial(q_Initial), 
 		.q_MenuPlay(q_MenuPlay), 
 		.q_MenuPractice(q_MenuPractice), 

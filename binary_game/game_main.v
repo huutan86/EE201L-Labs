@@ -23,6 +23,8 @@ module binary_game(
 	selectLeft,
 	userNumber,
 	outputNumber,
+	playerScore,
+	isWrong,
 	q_Initial,
 	q_MenuPlay,
 	q_MenuPractice,
@@ -47,6 +49,8 @@ module binary_game(
 	
 	/*  OUTPUTS  */
 	output reg [7:0] outputNumber;
+	output reg [7:0] playerScore;
+	output reg isWrong;
 	
 	/*  INTERMEDIATE STATE VARIABLES  */
 	
@@ -103,13 +107,15 @@ module binary_game(
 	// Assigning the value of wrong
 	always @ (posedge Clk, posedge userNumber) begin : COMPARING_NUMBERS
 
-		if(userNumber == generatedNumber) begin
+		if(userNumber == outputNumber) begin
 			wrong = 1'b0;
 		end
 		
 		else begin
 			wrong = 1'b1;
 		end
+		
+		isWrong <= wrong;
 	end
 	
 	
@@ -121,6 +127,7 @@ module binary_game(
 			state <= Initial;
 			// Initialize our variables.
 			newNumber <= 8'bXXXXXXXX;
+			playerScore <= 8'b00000000;
 		
 		end
 		
@@ -232,9 +239,12 @@ module binary_game(
 						end
 						
 						// RTL Logic
+						
+						
 						if(Select) begin
 							newNumber <= 0;	// We stop generating once the state transitions.
 							outputNumber <= generatedNumber;
+
 						end
 					end
 				end
@@ -254,6 +264,12 @@ module binary_game(
 						// RTL Logic
 						if((Select && !wrong) && (!Quit)) begin
 							newNumber <= 1;	// We start generating once the state transitions.
+							
+						if((Select && !wrong) && (!Quit)) begin
+							//increment score
+							playerScore <= playerScore + 1'b1;
+						end
+	
 						end
 					end
 				end
