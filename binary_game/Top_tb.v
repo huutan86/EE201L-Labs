@@ -41,6 +41,7 @@ module Top_tb;
 	reg Sw0;
 
 	// Outputs
+	wire [12:0] stateOut;	
 	wire vga_h_sync;
 	wire vga_v_sync;
 	wire vga_r;
@@ -120,7 +121,8 @@ module Top_tb;
 		.Ce(Ce), 
 		.Cf(Cf), 
 		.Cg(Cg), 
-		.Dp(Dp)
+		.Dp(Dp),
+		.stateOut(stateOut)
 	);
 	
 	//clock generator

@@ -27,7 +27,8 @@ module game_top (
 	Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0,			// 8 LEDs
 	An3, An2, An1, An0,								// 4 anodes
 	Ca, Cb, Cc, Cd, Ce, Cf, Cg,						// 7 cathodes
-	Dp												// Dot Point Cathode on SSDs
+	Dp,												// Dot Point Cathode on SSDs
+	stateOut
 );
 
 	/*  INPUTS */
@@ -48,6 +49,7 @@ module game_top (
 	output Cg, Cf, Ce, Cd, Cc, Cb, Ca, Dp;
 	output An0, An1, An2, An3;	
 	output vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b;
+	
 
 	
 	/*  LOCAL SIGNALS  */
@@ -67,6 +69,11 @@ module game_top (
 	
 	// State wires
 	wire q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
+	
+	//testing
+	output reg [12:0] stateOut;
+	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = stateOut;
+
 	
 	// Data wires
 	reg [7:0] userNumber;
@@ -168,7 +175,7 @@ module game_top (
 		end
 	end
 	
-	// the state machine module
+	// the  machine module
 	binary_game game_instance(
 		.Clk(sys_clk), 
 		.Reset(Reset_Pulse), 

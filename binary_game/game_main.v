@@ -51,7 +51,7 @@ module binary_game(
 	output reg [7:0] outputNumber;
 	output reg [7:0] playerScore;
 	output reg isWrong;
-	
+		
 	/*  INTERMEDIATE STATE VARIABLES  */
 	
 	// Regs
