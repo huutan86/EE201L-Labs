@@ -376,9 +376,9 @@ module game_top (
 	assign ssdscan_clk = DIV_CLK[19:18];
 	//assign An3	= !(~(ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 00
 	assign An3 = 1'b1;
-	assign An2	= !(~(ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 01
-	assign An1	=  !((ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 10
-	assign An0	=  !((ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 11
+	assign An2 = !(~(ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 01
+	assign An1 = !((ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 10
+	assign An0 = !((ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 11
 	
 	
 	always @ (ssdscan_clk, SSD0, SSD1, SSD2, SSD3) begin : SSD_SCAN_OUT
@@ -411,12 +411,12 @@ module game_top (
 			4'b0111: SSD_CATHODES = 8'b00011111; // 7
 			4'b1000: SSD_CATHODES = 8'b00000001; // 8
 			4'b1001: SSD_CATHODES = 8'b00001001; // 9
-			//4'b1010: SSD_CATHODES = 8'b00010001; // A
-			//4'b1011: SSD_CATHODES = 8'b11000001; // B
-			//4'b1100: SSD_CATHODES = 8'b01100011; // C
-			//4'b1101: SSD_CATHODES = 8'b10000101; // D
-			//4'b1110: SSD_CATHODES = 8'b01100001; // E
-			//4'b1111: SSD_CATHODES = 8'b01110001; // F    
+			4'b1010: SSD_CATHODES = 8'b00010001; // A
+			4'b1011: SSD_CATHODES = 8'b11000001; // B
+			4'b1100: SSD_CATHODES = 8'b01100011; // C
+			4'b1101: SSD_CATHODES = 8'b10000101; // D
+			4'b1110: SSD_CATHODES = 8'b01100001; // E
+			4'b1111: SSD_CATHODES = 8'b01110001; // F    
 			default: SSD_CATHODES = 8'bXXXXXXXX; // default is not needed as we covered all cases
 		endcase
 	end	
