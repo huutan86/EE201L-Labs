@@ -133,10 +133,7 @@ module game_top (
 			DIV_CLK <= DIV_CLK + 1'b1;
 	end
 	
-	always @ (posedge board_clk, posedge Reset_Pulse) begin
-		//if (Reset_Pulse) begin
-			
-		//end
+	always @ (posedge board_clk) begin
 		userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 	end
 	
@@ -168,23 +165,13 @@ module game_top (
 // DESIGN
 	// On two pushes of BtnR, numbers A and B are recorded in Ain and Bin
     // (registers of the TOP) respectively
-	always @ (posedge sys_clk, posedge Reset_Pulse) begin
-		if(Reset_Pulse) begin			// ****** TODO  in Part 2 ******
-			//userNumber <=  8'b00000000;
-			//outputNumber <= 8'b00000000;
-		end
+	always @ (posedge sys_clk) begin
 		
-		else begin
-			if (q_Play || q_Practice) begin
-				//userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
-			end
-		end
-		
-		//convert SDD display number
 		if (q_Practice) begin
 			//user output is the SSD output
 			SSD_Output <= userNumber;
 		end
+		
 		else begin
 			//otherwise it should be the random number
 			SSD_Output <= outputNumber;
