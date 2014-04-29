@@ -342,8 +342,7 @@ module binary_game(
 						end
 
 						// RTL Logic
-						//Just translate the user input into decimal
-						//This is done in the top file...?
+						outputNumber <= userNumber;
 					end
 				end
 				
