@@ -43,6 +43,7 @@ begin
    else if(CounterX==10'h320)    //800
       CounterY <= CounterY + 1;
 end
+
 //generate synchronization signal for both vertical and horizontal
 always @(posedge clk)
 begin

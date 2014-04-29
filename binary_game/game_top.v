@@ -52,7 +52,7 @@ module game_top (
 	
 	/*  LOCAL SIGNALS  */
 
-	wire Reset, ClkPort;
+	wire ClkPort;
 	wire board_clk, sys_clk, vga_clk;
 	wire [1:0] ssdscan_clk;
 	reg [26:0] DIV_CLK;
@@ -89,7 +89,7 @@ module game_top (
 	// board_clk ---> [clock dividing counter] ---> DIV_CLK
 	// DIV_CLK ---> [constant assignment] ---> sys_clk;
 	
-	BUFGP BUFGP1 (board_clk, ClkPort); 	
+	BUFGP BUFGP1 (board_clk, ClkPort);	
 
 	// As the ClkPort signal travels throughout our design,
 	// it is necessary to provide global routing to this signal. 
@@ -97,14 +97,18 @@ module game_top (
 	// routing resources in the FPGA.
 
 
-	assign Reset = BtnD;
+	assign Reset_Pulse = BtnU;
+	assign Select_Pulse = BtnC;
+	assign Quit_Pulse = BtnD;
+	assign Left_Pulse = BtnL;
+	assign Right_Pulse = BtnR;
 	
 //------------
 	// Our clock is too fast (100MHz) for SSD scanning
 	// create a series of slower "divided" clocks
 	// each successive bit is 1/2 frequency
-	always @(posedge board_clk, posedge Reset) begin							
-		if (Reset)
+	always @(posedge board_clk, posedge Reset_Pulse) begin							
+		if (Reset_Pulse)
 			DIV_CLK <= 0;
 		else
 			DIV_CLK <= DIV_CLK + 1'b1;
@@ -119,11 +123,11 @@ module game_top (
 	// BtnL is used as both Start and Acknowledge. 
 	// To make this possible, we need a single clock producing  circuit.
 	
-	ee201_debouncer #(.N_dc(28)) ee201_debouncer_0 (.CLK(sys_clk), .RESET(Reset), .PB(BtnL), .DPB( ), .SCEN(BtnL_Pulse), .MCEN( ), .CCEN( ));
-	ee201_debouncer #(.N_dc(28)) ee201_debouncer_1 (.CLK(sys_clk), .RESET(Reset), .PB(BtnR), .DPB( ), .SCEN(BtnR_Pulse), .MCEN( ), .CCEN( ));
-	ee201_debouncer #(.N_dc(28)) ee201_debouncer_2 (.CLK(sys_clk), .RESET(Reset), .PB(BtnU), .DPB( ), .SCEN(BtnU_Pulse), .MCEN( ), .CCEN( ));
-	ee201_debouncer #(.N_dc(28)) ee201_debouncer_3 (.CLK(sys_clk), .RESET(Reset), .PB(BtnC), .DPB( ), .SCEN(BtnC_Pulse), .MCEN( ), .CCEN( ));
-	ee201_debouncer #(.N_dc(28)) ee201_debouncer_4 (.CLK(sys_clk), .RESET(Reset), .PB(BtnD), .DPB( ), .SCEN(BtnD_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_0 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnL), .DPB( ), .SCEN(BtnL_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_1 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnR), .DPB( ), .SCEN(BtnR_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_2 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnU), .DPB( ), .SCEN(BtnU_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_3 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnC), .DPB( ), .SCEN(BtnC_Pulse), .MCEN( ), .CCEN( ));
+	ee201_debouncer #(.N_dc(28)) ee201_debouncer_4 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnD), .DPB( ), .SCEN(BtnD_Pulse), .MCEN( ), .CCEN( ));
 	
 	// BtnR is used to generate in_AB_Pulse to record the values of 
 	// the inputs A and B as set on the switches.
@@ -134,8 +138,8 @@ module game_top (
 // DESIGN
 	// On two pushes of BtnR, numbers A and B are recorded in Ain and Bin
     // (registers of the TOP) respectively
-	always @ (posedge sys_clk, posedge Reset) begin
-		if(Reset) begin			// ****** TODO  in Part 2 ******
+	always @ (posedge sys_clk, posedge Reset_Pulse) begin
+		if(Reset_Pulse) begin			// ****** TODO  in Part 2 ******
 			userNumber <=  8'b00000000;
 			//outputNumber <= 8'b00000000;
 		end
@@ -150,6 +154,7 @@ module game_top (
 	// the state machine module
 	binary_game game_instance(
 		.Clk(sys_clk), 
+		.CEN(CEN_Pulse),
 		.Reset(Reset_Pulse), 
 		.Select(Select_Pulse), 
 		.Quit(Quit_Pulse), 
@@ -181,20 +186,27 @@ module game_top (
 
 	assign vga_clk = DIV_CLK[1];
 	
-	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
+	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset_Pulse), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
 
 //------------
 // VGA Signal driving!
-	wire R = CounterY >= 120 && CounterY <= 240 && CounterX[7:2] == 6'b111111;
-	wire G = CounterY >= 120 && CounterY <= 240 && CounterY[7:2] == 6'b111111;
-	wire B = CounterY >= 120 && CounterY <= 240 && CounterY[7:2] == 6'b111111;
-	
-	always @(posedge vga_clk)
+	/////////////////////////////////////////////////////////////////
+	///////////////		VGA control starts here		/////////////////
+	/////////////////////////////////////////////////////////////////
+
+	parameter BLACK = 8'b00000000;
+	parameter WHITE = 8'b11111111;
+	parameter RED = 8'b11100000;
+	parameter GREEN = 8'b00011100;
+	parameter BLUE = 8'b00000011;
+
+	always @(*)
 	begin
 		vga_r <= R & inDisplayArea;
 		vga_g <= G & inDisplayArea;
 		vga_b <= B & inDisplayArea;
 	end
+		
 
 //------------
 // OUTPUT: LEDS
