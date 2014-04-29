@@ -369,6 +369,39 @@ module game_top (
 	// We convert the output of our 4-bit 4x1 mux
 
 	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = { SSD_CATHODES };
+	
+	reg [7:0] binaryNumberOutput;
+	reg [3:0] hundreds;
+	reg [3:0] tens;
+	reg [3:0] ones;
+	integer i;
+	
+	always @(binaryNumberOutput) : BCD_GENERATOR begin
+		hundreds = 4'd0;
+		tens = 4'd0;
+		ones = 4'd0;
+		
+		for(i = 7; i >= 0; i = i - 1) begin
+			if(hundreds >= 5) begin
+				hundreds = hundreds + 3;
+			end
+			
+			if(tens >= 5) begin
+				tens = tens + 3;
+			end
+			
+			if(ones >= 5) begin
+				ones = ones + 3;
+			end
+			
+			hundreds = hundreds << 1;
+			hundreds[0] = tens[3];
+			tens = tens << 1;
+			tens[0] = ones[3];
+			ones = ones << 1;
+			ones = binary[i]
+		end
+	end
 
 	// Following is Hex-to-SSD conversion
 	always @ (SSD) begin : HEX_TO_SSD
