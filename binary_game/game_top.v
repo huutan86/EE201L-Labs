@@ -115,6 +115,11 @@ module game_top (
 		else
 			DIV_CLK <= DIV_CLK + 1'b1;
 	end
+	
+	always @ (posedge board_clk, posedge Reset) begin
+		userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
+	end
+	
 //-------------------	
 	// In this design, we run the core design at full 50MHz clock!
 	assign sys_clk = board_clk;
@@ -148,7 +153,7 @@ module game_top (
 		
 		else begin
 			if (q_Play || q_Practice) begin
-				userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
+				//userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 			end
 		end
 		
