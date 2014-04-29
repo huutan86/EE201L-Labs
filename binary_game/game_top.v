@@ -195,62 +195,6 @@ module game_top (
 		end
 	end
 	
-	//every clock see how many digits the input has
-	
-	//Hundreds
-	always @ (posedge sys_clk) begin
-	
-		if ((SSD_Output / 100) > 0) begin
-			triple <= 1'b1;
-			hundreds <= (SSD_Output / 100);
-		end
-		else begin
-			triple <= 1'b0;
-			hundreds <= 1'b0;
-		end
-	end
-	
-	
-	
-	
-	//Double signal
-	always @ (posedge sys_clk) begin
-		//triple signal is updated
-		if (triple == 1'b1) begin
-			if (    (((SSD_Output - 100) / 10) > 0) || (((SSD_Output - 200) / 10) > 0)  ) begin
-				double <= 1'b1;
-				//tens <= ((SSD_Output - hundreds) / 10);
-				if (  ( (SSD_Output - 200) / 10) > 0  ) begin
-					//value is two hundred
-					tens <= ((SSD_Output - 200) / 10);
-				end
-				else begin // one hundred
-					tens <= ((SSD_Output - 100) / 10);
-				end
-			end
-			else begin
-				double <= 1'b0;
-				tens <= 4'b0000;
-			end
-		end
-		
-		else begin // no triple digit
-			if ((SSD_Output / 10) > 0) begin
-				double <= 1'b1;
-				tens <= (SSD_Output / 10);
-			end
-			else begin
-				double <= 1'b0;
-				tens <= 4'b0000;
-			end
-		end
-	end
-	
-		
-		
-		
-	
-	
 	// the  machine module
 	binary_game game_instance(
 		.Clk(sys_clk), 
@@ -397,9 +341,9 @@ module game_top (
 	// assign y = s ? i1 : i0;  // an example of a 2-to-1 mux coding
 	// assign y = s1 ? (s0 ? i3: i2): (s0 ? i1: i0); // an example of a 4-to-1 mux coding
 	
-	assign SSD0 = {0, 0, 0, 0};
-	assign SSD1 = (double) ? tens[3:0] : {0,0,0,0};
-	assign SSD2 = (triple) ? {0,0,0,hundreds} : {0,0,0,0};
+	assign SSD0 = ones;
+	assign SSD1 = tens;
+	assign SSD2 = hundreds;
 	assign SSD3 = {0,0,0,0};
 	
 	
@@ -452,13 +396,12 @@ module game_top (
 
 	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = { SSD_CATHODES };
 	
-	reg [7:0] binaryNumberOutput;
 	reg [3:0] hundreds;
 	reg [3:0] tens;
 	reg [3:0] ones;
 	integer i;
 	
-	always @(binaryNumberOutput) : BCD_GENERATOR begin
+	always @(SSD_Output) : BCD_GENERATOR begin
 		hundreds = 4'd0;
 		tens = 4'd0;
 		ones = 4'd0;
@@ -481,7 +424,7 @@ module game_top (
 			tens = tens << 1;
 			tens[0] = ones[3];
 			ones = ones << 1;
-			ones = binary[i]
+			ones = SSD_Output[i]
 		end
 	end
 
