@@ -65,7 +65,8 @@ module game_top (
 	wire [1:0] ssdscan_clk;
 	reg [26:0] DIV_CLK;
 	
-	reg [7:0] SSD_Output;
+	
+
 	
 	wire Select_Pulse;
 	wire Reset_Pulse;
@@ -93,6 +94,16 @@ module game_top (
 	reg [3:0] SSD;
 	wire [3:0] SSD3, SSD2, SSD1, SSD0;
 	reg [7:0] SSD_CATHODES;
+	reg [7:0] SSD_Output;
+	
+	reg single;
+	reg double;
+	reg triple;
+	reg [3:0] ones;
+	reg [3:0] tens;
+	reg hundreds;
+
+
 	reg vga_r, vga_g, vga_b;
 	
 //------------	
@@ -133,12 +144,11 @@ module game_top (
 			DIV_CLK <= DIV_CLK + 1'b1;
 	end
 	
+	//every clock input switch into user number
 	always @ (posedge board_clk, posedge Reset_Pulse) begin
-		//if (Reset_Pulse) begin
-			
-		//end
 		userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 	end
+	
 	
 //-------------------	
 	// In this design, we run the core design at full 50MHz clock!
@@ -191,6 +201,60 @@ module game_top (
 		end
 	end
 	
+	//every clock see how many digits the input has
+	
+	//Hundreds
+	always @ (posedge sys_clk) begin
+	
+		if ((SSD_Output / 100) > 0) begin
+			triple <= 1'b1;
+			hundreds <= (SSD_Output / 100);
+		end
+		else begin
+			triple <= 1'b0;
+			hundreds <= 1'b0;
+		end
+	end
+	
+	
+	
+	
+	//Double signal
+	always @ (posedge sys_clk) begin
+		//triple signal is updated
+		if (triple == 1'b1) begin
+			if (    (((SSD_Output - 100) / 10) > 0) || (((SSD_Output - 200) / 10) > 0)  ) begin
+				double <= 1'b1;
+				//tens <= ((SSD_Output - hundreds) / 10);
+				if (  ( (SSD_Output - 200) / 10) > 0  ) begin
+					//value is two hundred
+					tens <= ((SSD_Output - 200) / 10);
+				end
+				else begin // one hundred
+					tens <= ((SSD_Output - 100) / 10);
+				end
+			end
+			else begin
+				double <= 1'b0;
+				tens <= 4'b0000;
+			end
+		end
+		
+		else begin // no triple digit
+			if ((SSD_Output / 10) > 0) begin
+				double <= 1'b1;
+				tens <= (SSD_Output / 10);
+			end
+			else begin
+				double <= 1'b0;
+				tens <= 4'b0000;
+			end
+		end
+	end
+	
+		
+		
+		
 	
 	
 	// the  machine module
@@ -258,9 +322,9 @@ module game_top (
 	//assign {} = {q_I, q_Sub, q_Mult, q_Done};
 	
 	
-	//assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { userNumber };
+	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { userNumber };
 	//Assign states
-	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial };
+	//assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { q_PracticeDone, q_Practice, q_PracticeInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial };
 	
 	// Here
 		//BtnL = Start/Ack
@@ -275,12 +339,18 @@ module game_top (
 	// ****** TODO  in Part 2 ******
 	// assign y = s ? i1 : i0;  // an example of a 2-to-1 mux coding
 	// assign y = s1 ? (s0 ? i3: i2): (s0 ? i1: i0); // an example of a 4-to-1 mux coding
-	/*
-	assign SSD3 = (q_Mult | q_Done) ? AB_GCD[7:4]  : q_I ? Ain[7:4] : A[7:4];
-	assign SSD2 = (q_Mult | q_Done) ? AB_GCD[3:0]  : q_I ? Ain[3:0] : A[3:0];
-	assign SSD1 = (q_Mult | q_Done) ? i_count[7:4]  : q_I ? Bin[7:4] : B[7:4];
-	assign SSD0 = (q_Mult | q_Done) ? i_count[3:0]  : q_I ? Bin[3:0] : B[3:0];
-	*/
+	
+	assign SSD0 = {0, 0, 0, 0};
+	assign SSD1 = (double) ? tens[3:0] : {0,0,0,0};
+	assign SSD2 = (triple) ? {0,0,0,hundreds} : {0,0,0,0};
+	assign SSD3 = {0,0,0,0};
+	
+	
+	//assign SSD3 = (q_Practice | q_Play) ? AB_GCD[7:4]  : q_I ? Ain[7:4] : A[7:4];
+	//assign SSD2 = (q_Practice | q_Play) ? AB_GCD[3:0]  : q_I ? Ain[3:0] : A[3:0];
+	//assign SSD1 = (q_Practice | q_Play) ? i_count[7:4]  : q_I ? Bin[7:4] : B[7:4];
+	//assign SSD0 = (q_Practice | q_Play) ? i_count[3:0]  : q_I ? Bin[3:0] : B[3:0];
+	
 
 	// need a scan clk for the seven segment display 
 	
@@ -304,7 +374,8 @@ module game_top (
 	//
 	
 	assign ssdscan_clk = DIV_CLK[19:18];
-	assign An3	= !(~(ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 00
+	//assign An3	= !(~(ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 00
+	assign An3 = 1'b1;
 	assign An2	= !(~(ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 01
 	assign An1	=  !((ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 10
 	assign An0	=  !((ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 11
@@ -340,12 +411,12 @@ module game_top (
 			4'b0111: SSD_CATHODES = 8'b00011111; // 7
 			4'b1000: SSD_CATHODES = 8'b00000001; // 8
 			4'b1001: SSD_CATHODES = 8'b00001001; // 9
-			4'b1010: SSD_CATHODES = 8'b00010001; // A
-			4'b1011: SSD_CATHODES = 8'b11000001; // B
-			4'b1100: SSD_CATHODES = 8'b01100011; // C
-			4'b1101: SSD_CATHODES = 8'b10000101; // D
-			4'b1110: SSD_CATHODES = 8'b01100001; // E
-			4'b1111: SSD_CATHODES = 8'b01110001; // F    
+			//4'b1010: SSD_CATHODES = 8'b00010001; // A
+			//4'b1011: SSD_CATHODES = 8'b11000001; // B
+			//4'b1100: SSD_CATHODES = 8'b01100011; // C
+			//4'b1101: SSD_CATHODES = 8'b10000101; // D
+			//4'b1110: SSD_CATHODES = 8'b01100001; // E
+			//4'b1111: SSD_CATHODES = 8'b01110001; // F    
 			default: SSD_CATHODES = 8'bXXXXXXXX; // default is not needed as we covered all cases
 		endcase
 	end	
