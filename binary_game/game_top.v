@@ -237,7 +237,7 @@ module game_top (
 	/////////////////////////////////////////////////////////////////
 	///////////////		VGA control starts here		/////////////////
 	/////////////////////////////////////////////////////////////////
-
+/*
 	parameter BLACK = 8'b00000000;
 	parameter WHITE = 8'b11111111;
 	parameter RED = 8'b11100000;
@@ -250,7 +250,7 @@ module game_top (
 		vga_g <= G & inDisplayArea;
 		vga_b <= B & inDisplayArea;
 	end
-
+*/
 
 //------------
 // OUTPUT: LEDS
