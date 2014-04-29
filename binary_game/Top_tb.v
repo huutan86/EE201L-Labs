@@ -72,6 +72,8 @@ module Top_tb;
 	wire Cf;
 	wire Cg;
 	wire Dp;
+	wire isWrong;
+	wire CEN_Out;
 
 	parameter CLK_PERIOD = 15;
 
@@ -122,7 +124,9 @@ module Top_tb;
 		.Cf(Cf), 
 		.Cg(Cg), 
 		.Dp(Dp),
-		.stateOut(stateOut)
+		.stateOut(stateOut),
+		.isWrong(isWrong),
+		.CEN_Out(CEN_Out)
 	);
 	
 	//clock generator
@@ -153,15 +157,26 @@ module Top_tb;
 		Sw0 = 0;
 		
 		//Reset
-		#50;
+		#30;
 		BtnU = 1;
 		#30;
 		BtnU = 0;
 		
 		// Wait 100 ns for global reset to finish
 		#100;
+		
+		//Try select
+		BtnC = 1;
+		#50000;
+		BtnC = 0;
+		#50000;
+		
+		#50000;
+		BtnC = 1;
+		#50000;
+		BtnC = 0;
+		#30;
         
-		// Add stimulus here
 
 	end
       

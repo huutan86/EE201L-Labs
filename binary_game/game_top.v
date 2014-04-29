@@ -28,7 +28,9 @@ module game_top (
 	An3, An2, An1, An0,								// 4 anodes
 	Ca, Cb, Cc, Cd, Ce, Cf, Cg,						// 7 cathodes
 	Dp,												// Dot Point Cathode on SSDs
-	stateOut
+	stateOut,
+	isWrong,
+	CEN_Out
 );
 
 	/*  INPUTS */
@@ -50,8 +52,12 @@ module game_top (
 	output An0, An1, An2, An3;	
 	output vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b;
 	
-
+	output isWrong;
 	
+	//test
+	output CEN_Out;
+	
+
 	/*  LOCAL SIGNALS  */
 
 	wire ClkPort;
@@ -71,8 +77,8 @@ module game_top (
 	wire q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
 	
 	//testing
-	output reg [12:0] stateOut;
-	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = stateOut;
+	output wire [12:0] stateOut;
+	assign stateOut = { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial };
 
 	
 	// Data wires
@@ -127,7 +133,10 @@ module game_top (
 			DIV_CLK <= DIV_CLK + 1'b1;
 	end
 	
-	always @ (posedge board_clk, posedge Reset) begin
+	always @ (posedge board_clk, posedge Reset_Pulse) begin
+		//if (Reset_Pulse) begin
+			
+		//end
 		userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 	end
 	
@@ -152,13 +161,16 @@ module game_top (
 	// BtnU is used as CEN_Pulse to allow single-stepping
 	assign { CEN_Pulse } = { BtnR_Pulse || BtnU_Pulse || BtnL_Pulse || BtnC_Pulse || BtnD_Pulse };
 
+	assign { CEN_Out } = { CEN_Pulse };
+
+
 //------------
 // DESIGN
 	// On two pushes of BtnR, numbers A and B are recorded in Ain and Bin
     // (registers of the TOP) respectively
 	always @ (posedge sys_clk, posedge Reset_Pulse) begin
 		if(Reset_Pulse) begin			// ****** TODO  in Part 2 ******
-			userNumber <=  8'b00000000;
+			//userNumber <=  8'b00000000;
 			//outputNumber <= 8'b00000000;
 		end
 		
@@ -179,6 +191,8 @@ module game_top (
 		end
 	end
 	
+	
+	
 	// the  machine module
 	binary_game game_instance(
 		.Clk(sys_clk), 
@@ -191,6 +205,7 @@ module game_top (
 		.userNumber(userNumber), 
 		.outputNumber(outputNumber), 
 		.playerScore(playerScore),
+		.isWrong(isWrong),
 		.q_Initial(q_Initial), 
 		.q_MenuPlay(q_MenuPlay), 
 		.q_MenuPractice(q_MenuPractice), 
@@ -235,13 +250,18 @@ module game_top (
 		vga_g <= G & inDisplayArea;
 		vga_b <= B & inDisplayArea;
 	end
-		
+
 
 //------------
 // OUTPUT: LEDS
 	
 	//assign {} = {q_I, q_Sub, q_Mult, q_Done};
-	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { userNumber };
+	
+	
+	//assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { userNumber };
+	//Assign states
+	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial };
+	
 	// Here
 		//BtnL = Start/Ack
 		//BtnU = Single-Step
