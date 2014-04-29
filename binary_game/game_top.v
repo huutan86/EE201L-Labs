@@ -27,7 +27,8 @@ module game_top (
 	Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0,			// 8 LEDs
 	An3, An2, An1, An0,								// 4 anodes
 	Ca, Cb, Cc, Cd, Ce, Cf, Cg,						// 7 cathodes
-	Dp												// Dot Point Cathode on SSDs
+	Dp,												// Dot Point Cathode on SSDs
+	stateOut
 );
 
 	/*  INPUTS */
@@ -48,6 +49,7 @@ module game_top (
 	output Cg, Cf, Ce, Cd, Cc, Cb, Ca, Dp;
 	output An0, An1, An2, An3;	
 	output vga_h_sync, vga_v_sync, vga_r, vga_g, vga_b;
+	
 
 	
 	/*  LOCAL SIGNALS  */
@@ -56,6 +58,8 @@ module game_top (
 	wire board_clk, sys_clk, vga_clk;
 	wire [1:0] ssdscan_clk;
 	reg [26:0] DIV_CLK;
+	
+	reg [7:0] SSD_Output;
 	
 	wire Select_Pulse;
 	wire Reset_Pulse;
@@ -66,9 +70,18 @@ module game_top (
 	// State wires
 	wire q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
 	
+	//testing
+	output reg [12:0] stateOut;
+	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = stateOut;
+
+	
 	// Data wires
 	reg [7:0] userNumber;
 	wire [7:0] outputNumber;
+	wire [7:0] playerScore;
+	
+	
+
 	
 	// SSD Control signals
 	reg [3:0] SSD;
@@ -113,6 +126,11 @@ module game_top (
 		else
 			DIV_CLK <= DIV_CLK + 1'b1;
 	end
+	
+	always @ (posedge board_clk, posedge Reset) begin
+		userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
+	end
+	
 //-------------------	
 	// In this design, we run the core design at full 50MHz clock!
 	assign sys_clk = board_clk;
@@ -146,12 +164,22 @@ module game_top (
 		
 		else begin
 			if (q_Play || q_Practice) begin
-				userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
+				//userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 			end
+		end
+		
+		//convert SDD display number
+		if (q_Practice) begin
+			//user output is the SSD output
+			SSD_Output <= userNumber;
+		end
+		else begin
+			//otherwise it should be the random number
+			SSD_Output <= outputNumber;
 		end
 	end
 	
-	// the state machine module
+	// the  machine module
 	binary_game game_instance(
 		.Clk(sys_clk), 
 		.CEN(CEN_Pulse),
@@ -162,6 +190,7 @@ module game_top (
 		.selectLeft(Left_Pulse), 
 		.userNumber(userNumber), 
 		.outputNumber(outputNumber), 
+		.playerScore(playerScore),
 		.q_Initial(q_Initial), 
 		.q_MenuPlay(q_MenuPlay), 
 		.q_MenuPractice(q_MenuPractice), 

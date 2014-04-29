@@ -36,6 +36,8 @@ module State_Transition_Test;
 
 	// Outputs
 	wire [7:0] outputNumber;
+	wire [7:0] playerScore;
+	wire isWrong;
 	wire q_Initial;
 	wire q_MenuPlay;
 	wire q_MenuPractice;
@@ -52,6 +54,9 @@ module State_Transition_Test;
 	
 	parameter CLK_PERIOD = 15;
 
+
+
+
 	// Instantiate the Unit Under Test (UUT)
 	binary_game uut (
 		.Clk(Clk), 
@@ -63,6 +68,8 @@ module State_Transition_Test;
 		.selectLeft(selectLeft), 
 		.userNumber(userNumber), 
 		.outputNumber(outputNumber), 
+		.playerScore(playerScore),
+		.isWrong(isWrong),
 		.q_Initial(q_Initial), 
 		.q_MenuPlay(q_MenuPlay), 
 		.q_MenuPractice(q_MenuPractice), 
@@ -84,6 +91,8 @@ module State_Transition_Test;
 		# (0.6 * CLK_PERIOD);
 		forever begin
 			#(CLK_PERIOD) Clk = ~Clk;
+			userNumber = outputNumber;
+
 		end
 	end
 	
@@ -112,7 +121,10 @@ module State_Transition_Test;
 		#25;
 		CEN = 0;
 		Select = 0;
-		#25;
+		#100;
+		
+		
+		
 		
 		//Go to Play Initial
 		CEN = 1;
@@ -121,6 +133,8 @@ module State_Transition_Test;
 		CEN = 0;
 		Select = 0;
 		#25;
+		
+		
 		
 		//Now at Play Initial, wait for a bit before proceeding
 		
@@ -134,7 +148,28 @@ module State_Transition_Test;
 		
 		//Now at Play state, look at random number.
 		
-		//Go to play Done
+		
+		//Go back to play initial
+		CEN = 1;
+		Select = 1;
+		#25
+		CEN = 0;
+		Select = 0;
+		#25;
+
+		//In initial, wait a bit and repeat
+		#250;
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
 		CEN = 1;
 		Select = 1;
 		#25
@@ -142,7 +177,18 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//now at scores, go to menu
+		#250;
+		CEN = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
 		CEN = 1;
 		Select = 1;
 		#25
@@ -150,6 +196,10 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
+				//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
 		CEN = 1;
 		Select = 1;
 		#25
@@ -157,22 +207,37 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Go left twice
+		#250;
 		CEN = 1;
-		selectLeft = 1;
+		Select = 1;
+		#25;
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
+		CEN = 1;
+		Select = 1;
 		#25
 		CEN = 0;
-		selectLeft = 0;
+		Select = 0;
 		#25;
 		
+				//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
 		CEN = 1;
-		selectLeft = 1;
+		Select = 1;
 		#25
 		CEN = 0;
-		selectLeft = 0;
+		Select = 0;
 		#25;
 		
-		//Now so the same thing
+		#250;
 		CEN = 1;
 		Select = 1;
 		#25;
@@ -180,8 +245,29 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Go to Play Initial
-		#150;
+		//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
+		CEN = 1;
+		Select = 1;
+		#25
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+				//Now at Play state, look at random number.
+		
+		
+		//Go back to play initial
+		CEN = 1;
+		Select = 1;
+		#25
+		CEN = 0;
+		Select = 0;
+		#25;
+		
+		#250;
 		CEN = 1;
 		Select = 1;
 		#25;
@@ -189,17 +275,18 @@ module State_Transition_Test;
 		Select = 0;
 		#25;
 		
-		//Now at Play Initial, wait for a bit before proceeding
+		//Now at Play state, look at random number.
+		
+	
+		
+		//now quit
 		
 		CEN = 1;
-		Select = 1;
-		#25;
+		Quit = 1;
+		#30;
 		CEN = 0;
-		Select = 0;
-		#25;
-		
-        
-		// Add stimulus here
+		Quit = 0;
+		#100;
 
 	end
       

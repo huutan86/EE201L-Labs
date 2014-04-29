@@ -23,6 +23,8 @@ module binary_game(
 	selectLeft,
 	userNumber,
 	outputNumber,
+	playerScore,
+	isWrong,
 	q_Initial,
 	q_MenuPlay,
 	q_MenuPractice,
@@ -47,7 +49,9 @@ module binary_game(
 	
 	/*  OUTPUTS  */
 	output reg [7:0] outputNumber;
-	
+	output reg [7:0] playerScore;
+	output reg isWrong;
+		
 	/*  INTERMEDIATE STATE VARIABLES  */
 	
 	// Regs
@@ -60,7 +64,8 @@ module binary_game(
 	output q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
 	reg [12:0] state;
 	assign { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial } = state;
-		
+
+
 	// Definitions for state labels. Concatanated for ease of reading.
 	localparam
 		Initial				= 13'b0000000000001,
@@ -103,13 +108,15 @@ module binary_game(
 	// Assigning the value of wrong
 	always @ (posedge Clk, posedge userNumber) begin : COMPARING_NUMBERS
 
-		if(userNumber == generatedNumber) begin
+		if(userNumber == outputNumber) begin
 			wrong = 1'b0;
 		end
 		
 		else begin
 			wrong = 1'b1;
 		end
+		
+		isWrong <= wrong;
 	end
 	
 	
@@ -121,6 +128,7 @@ module binary_game(
 			state <= Initial;
 			// Initialize our variables.
 			newNumber <= 8'bXXXXXXXX;
+			playerScore <= 8'b00000000;
 		
 		end
 		
@@ -164,10 +172,14 @@ module binary_game(
 				Menu_Practice: begin
 					if(CEN) begin
 						// State transitions:
+						/*
 						if(Select && !selectLeft && !selectRight) begin
 							state <= Practice_Initial;
 						end
-						
+						*/
+						if (Select && !selectLeft && !selectRight) begin
+							state <= Practice;
+						end
 						else if(!Select && selectLeft && !selectRight) begin
 							state <= Menu_Play;
 						end
@@ -232,9 +244,12 @@ module binary_game(
 						end
 						
 						// RTL Logic
+						
+						
 						if(Select) begin
 							newNumber <= 0;	// We stop generating once the state transitions.
 							outputNumber <= generatedNumber;
+
 						end
 					end
 				end
@@ -254,6 +269,12 @@ module binary_game(
 						// RTL Logic
 						if((Select && !wrong) && (!Quit)) begin
 							newNumber <= 1;	// We start generating once the state transitions.
+							
+						if((Select && !wrong) && (!Quit)) begin
+							//increment score
+							playerScore <= playerScore + 1'b1;
+						end
+	
 						end
 					end
 				end
@@ -287,7 +308,8 @@ module binary_game(
 				end
 				
 				// Practice state--waits for input, and moves to Practice Initial when the input is correct, otherwise, it moves to Practice Done when the user quits
-				Practice: begin
+				
+				/*Practice: begin
 					if(CEN) begin
 						// State transitions:
 						if(Select && (!Quit)) begin
@@ -302,6 +324,20 @@ module binary_game(
 						if(Select && (!Quit)) begin
 							newNumber <= 1;	// We start generating once the state transitions.
 						end
+					end
+				end
+				*/
+				
+					Practice: begin
+					if(CEN) begin
+						// State transitions:
+						if(Select || !Quit) begin
+							state <= Menu_Practice;
+						end
+
+						// RTL Logic
+						//Just translate the user input into decimal
+						//This is done in the top file...?
 					end
 				end
 				
