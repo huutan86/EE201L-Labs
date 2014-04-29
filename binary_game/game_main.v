@@ -94,7 +94,13 @@ module binary_game(
 		
 		else begin
 			
-			fastCount <= (fastCount == 255) ? (0) : (fastCount + 1'b1); 
+			if(fastCount == 8'b11111111) begin
+				fastCount <= 0;
+			end
+			
+			else begin
+				fastCount <= fastCount + 1'b1; 
+			end
 			
 			// New number flag, called once
 			if(newNumber) begin
@@ -106,7 +112,7 @@ module binary_game(
 	end
 	
 	// Assigning the value of wrong
-	always @ (posedge Clk, posedge userNumber) begin : COMPARING_NUMBERS
+	always @ (posedge Clk) begin : COMPARING_NUMBERS
 
 		if(userNumber == outputNumber) begin
 			wrong = 1'b0;
@@ -127,7 +133,7 @@ module binary_game(
 			// Initialize the state machine to the initial state.
 			state <= Initial;
 			// Initialize our variables.
-			newNumber <= 8'bXXXXXXXX;
+			newNumber <= 1'bX;
 			playerScore <= 8'b00000000;
 		
 		end
