@@ -91,7 +91,6 @@ module game_top (
 	reg [3:0] SSD;
 	wire [3:0] SSD3, SSD2, SSD1, SSD0;
 	reg [7:0] SSD_CATHODES;
-<<<<<<< HEAD
 	reg [7:0] SSD_Output;
 	
 	reg single;
@@ -101,11 +100,7 @@ module game_top (
 	reg [3:0] tens;
 	reg [3:0] hundreds;
 
-
-	reg vga_r, vga_g, vga_b;
-=======
 	reg vgaRed, vgaGreen, vgaBlue;
->>>>>>> origin/VGA
 	
 //------------	
 // Disable the three memories so that they do not interfere with the rest of the design.
@@ -145,12 +140,8 @@ module game_top (
 			DIV_CLK <= DIV_CLK + 1'b1;
 	end
 	
-<<<<<<< HEAD
-	//every clock input switch into user number
-	always @ (posedge board_clk, posedge Reset_Pulse) begin
-=======
+//every clock input switch into user number
 	always @ (posedge board_clk) begin
->>>>>>> origin/VGA
 		userNumber <= {Sw7, Sw6, Sw5, Sw4, Sw3, Sw2, Sw1, Sw0};
 	end
 	
@@ -213,7 +204,6 @@ module game_top (
 			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0001;	
 		end
 
-<<<<<<< HEAD
 		if (SSD_Output == 8'b00000010) begin
 			// 2
 			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0010;	
@@ -228,94 +218,6 @@ module game_top (
 			// 4
 			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0100;	
 		end
-=======
-	assign vga_clk = DIV_CLK[1];
-	
-	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset_Pulse), .vga_h_sync(Hsync), .vga_v_sync(Vsync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
-
-//------------
-// VGA Signal driving!
-	/////////////////////////////////////////////////////////////////
-	///////////////		VGA control starts here		/////////////////
-	/////////////////////////////////////////////////////////////////
-
-	reg rReg;
-	reg gReg;
-	reg bReg;
-	
-	always @(posedge sys_clk, posedge Reset_Pulse) begin : VGA_STATE_CHECK
-		if(Reset_Pulse) begin
-			rReg <= 0;
-			gReg <= 0;
-			bReg <= 0;
-		end
-		
-		if(q_MenuPlay) begin
-			rReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-		end
-		
-		else if(q_MenuPractice) begin
-			rReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-			gReg <= 1;
-			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-		end
-		
-		else if(q_MenuScores) begin
-			rReg <= 1;
-			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-			bReg <= 1;
-		end
-		
-		else if(q_MenuQuit) begin
-			rReg <= 1;
-			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
-		end
-		
-		else if(q_PlayInitial) begin
-			rReg <= 0;
-			gReg <= 0;
-			bReg <= 1;
-		end
-		
-		else if(q_PracticeInitial) begin
-			rReg <= 0;
-			gReg <= 1;
-			bReg <= 0;
-		end
-		
-		else if(q_Scores) begin
-			rReg <= 1;
-			gReg <= 0;
-			bReg <= 1;
-		end
-		
-		else if(q_Initial) begin
-			rReg <= 1;
-			gReg <= 1;
-			bReg <= 1;
-		end
-		
-		else if(q_Done) begin
-			rReg <= 0;
-			gReg <= 0;
-			bReg <= 0;
-		end
-	end
-	
-	wire R = rReg;
-	wire G = gReg;
-	wire B = bReg;
-	
-	always @(vga_clk)
-	begin
-		vgaRed <= R & inDisplayArea;
-		vgaGreen <= G & inDisplayArea;
-		vgaBlue <= B & inDisplayArea;
-	end
->>>>>>> origin/VGA
 
 		if (SSD_Output == 8'b00000101) begin
 			// 5
@@ -1625,27 +1527,90 @@ module game_top (
 
 	assign vga_clk = DIV_CLK[1];
 	
-	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset_Pulse), .vga_h_sync(vga_h_sync), .vga_v_sync(vga_v_sync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
+	hvsync_generator syncgen(.clk(vga_clk), .reset(Reset_Pulse), .vga_h_sync(Hsync), .vga_v_sync(Vsync), .inDisplayArea(inDisplayArea), .CounterX(CounterX), .CounterY(CounterY));
 
 //------------
 // VGA Signal driving!
 	/////////////////////////////////////////////////////////////////
 	///////////////		VGA control starts here		/////////////////
 	/////////////////////////////////////////////////////////////////
-/*
-	parameter BLACK = 8'b00000000;
-	parameter WHITE = 8'b11111111;
-	parameter RED = 8'b11100000;
-	parameter GREEN = 8'b00011100;
-	parameter BLUE = 8'b00000011;
 
-	always @(*)
-	begin
-		vga_r <= R & inDisplayArea;
-		vga_g <= G & inDisplayArea;
-		vga_b <= B & inDisplayArea;
+	reg rReg;
+	reg gReg;
+	reg bReg;
+	
+	always @(posedge sys_clk, posedge Reset_Pulse) begin : VGA_STATE_CHECK
+		if(Reset_Pulse) begin
+			rReg <= 0;
+			gReg <= 0;
+			bReg <= 0;
+		end
+		
+		if(q_MenuPlay) begin
+			rReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+		end
+		
+		else if(q_MenuPractice) begin
+			rReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+			gReg <= 1;
+			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+		end
+		
+		else if(q_MenuScores) begin
+			rReg <= 1;
+			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+			bReg <= 1;
+		end
+		
+		else if(q_MenuQuit) begin
+			rReg <= 1;
+			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
+		end
+		
+		else if(q_PlayInitial) begin
+			rReg <= 0;
+			gReg <= 0;
+			bReg <= 1;
+		end
+		
+		else if(q_PracticeInitial) begin
+			rReg <= 0;
+			gReg <= 1;
+			bReg <= 0;
+		end
+		
+		else if(q_Scores) begin
+			rReg <= 1;
+			gReg <= 0;
+			bReg <= 1;
+		end
+		
+		else if(q_Initial) begin
+			rReg <= 1;
+			gReg <= 1;
+			bReg <= 1;
+		end
+		
+		else if(q_Done) begin
+			rReg <= 0;
+			gReg <= 0;
+			bReg <= 0;
+		end
 	end
-*/
+	
+	wire R = rReg;
+	wire G = gReg;
+	wire B = bReg;
+	
+	always @(vga_clk)
+	begin
+		vgaRed <= R & inDisplayArea;
+		vgaGreen <= G & inDisplayArea;
+		vgaBlue <= B & inDisplayArea;
+	end
 
 //------------
 // OUTPUT: LEDS
@@ -1726,40 +1691,7 @@ module game_top (
 
 	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = { SSD_CATHODES };
 	
-	reg [7:0] binaryNumberOutput;
-	reg [3:0] hundreds;
-	reg [3:0] tens;
-	reg [3:0] ones;
-	integer i;
-	
-	always @(binaryNumberOutput) : BCD_GENERATOR begin
-		hundreds = 4'd0;
-		tens = 4'd0;
-		ones = 4'd0;
-		
-		for(i = 7; i >= 0; i = i - 1) begin
-			if(hundreds >= 5) begin
-				hundreds = hundreds + 3;
-			end
-			
-			if(tens >= 5) begin
-				tens = tens + 3;
-			end
-			
-			if(ones >= 5) begin
-				ones = ones + 3;
-			end
-			
-			hundreds = hundreds << 1;
-			hundreds[0] = tens[3];
-			tens = tens << 1;
-			tens[0] = ones[3];
-			ones = ones << 1;
-			ones = binary[i]
-		end
-	end
-
-	// Following is Hex-to-SSD conversion
+// Following is Hex-to-SSD conversion
 	always @ (SSD) begin : HEX_TO_SSD
 		case (SSD) // in this solution file the dot points are made to glow by making Dp = 0
 		    //                                                                abcdefg,Dp
