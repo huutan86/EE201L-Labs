@@ -1588,9 +1588,9 @@ module game_top (
 	// assign y = s ? i1 : i0;  // an example of a 2-to-1 mux coding
 	// assign y = s1 ? (s0 ? i3: i2): (s0 ? i1: i0); // an example of a 4-to-1 mux coding
 	
-	assign SSD0 = {0, 0, 0, 0};
-	assign SSD1 = (double) ? tens[3:0] : {0,0,0,0};
-	assign SSD2 = (triple) ? {0,0,0,hundreds} : {0,0,0,0};
+	assign SSD0 = (q_Play || q_Practice) ? ones : {0,0,0,0};
+	assign SSD1 = (q_Play || q_Practice) ? ((double) ? tens[3:0] : {0,0,0,0}) : {0,0,0,0};
+	assign SSD2 = (q_Play || q_Practice) ? ((triple) ? {0,0,0,hundreds} : {0,0,0,0}) : {0,0,0,0};
 	assign SSD3 = {0,0,0,0};
 	
 	
