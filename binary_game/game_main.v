@@ -217,6 +217,7 @@ module binary_game(
 						
 						// RTL Logic
 						newNumber <= 1;	// We want to stop generating new random numbers on this and subsequent states.
+						playerScore <= 0;
 					end
 				end
 				
@@ -255,7 +256,6 @@ module binary_game(
 						if(Select) begin
 							newNumber <= 0;	// We stop generating once the state transitions.
 							outputNumber <= generatedNumber;
-
 						end
 					end
 				end
@@ -276,10 +276,10 @@ module binary_game(
 						if((Select && !wrong) && (!Quit)) begin
 							newNumber <= 1;	// We start generating once the state transitions.
 							
-						if((Select && !wrong) && (!Quit)) begin
-							//increment score
-							playerScore <= playerScore + 1'b1;
-						end
+							if((Select && !wrong) && (!Quit)) begin
+								//increment score
+								playerScore <= playerScore + 1'b1;
+							end
 	
 						end
 					end
