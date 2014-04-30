@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////////
+ //////////////////////////////////////////////////////////////////////////////////
 // Author:			Colin "Studmuffin" Cammarano and Stephen "Studly" Sher
 // Create Date:		02/25/08
 // File Name:		ee201_GCD_top.v 
@@ -101,7 +101,7 @@ module game_top (
 	reg triple;
 	reg [3:0] ones;
 	reg [3:0] tens;
-	reg hundreds;
+	reg [3:0] hundreds;
 
 
 	reg vga_r, vga_g, vga_b;
@@ -201,57 +201,1305 @@ module game_top (
 		end
 	end
 	
-	//every clock see how many digits the input has
-	
-	//Hundreds
-	always @ (posedge sys_clk) begin
-	
-		if ((SSD_Output / 100) > 0) begin
-			triple <= 1'b1;
-			hundreds <= (SSD_Output / 100);
-		end
-		else begin
-			triple <= 1'b0;
-			hundreds <= 1'b0;
-		end
-	end
-	
-	
-	
-	
-	//Double signal
-	always @ (posedge sys_clk) begin
-		//triple signal is updated
-		if (triple == 1'b1) begin
-			if (    (((SSD_Output - 100) / 10) > 0) || (((SSD_Output - 200) / 10) > 0)  ) begin
-				double <= 1'b1;
-				//tens <= ((SSD_Output - hundreds) / 10);
-				if (  ( (SSD_Output - 200) / 10) > 0  ) begin
-					//value is two hundred
-					tens <= ((SSD_Output - 200) / 10);
-				end
-				else begin // one hundred
-					tens <= ((SSD_Output - 100) / 10);
-				end
-			end
-			else begin
-				double <= 1'b0;
-				tens <= 4'b0000;
-			end
-		end
+	//*********************************************************************************************************
+	//
+	//			every clock see how many digits the input has
+	//
+	//*********************************************************************************************************
 		
-		else begin // no triple digit
-			if ((SSD_Output / 10) > 0) begin
-				double <= 1'b1;
-				tens <= (SSD_Output / 10);
-			end
-			else begin
-				double <= 1'b0;
-				tens <= 4'b0000;
-			end
+	always @ (posedge sys_clk) begin
+
+		if (SSD_Output == 8'b00000000) begin
+			// 0
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0000;	
 		end
+
+		if (SSD_Output == 8'b00000001) begin
+			// 1
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00000010) begin
+			// 2
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00000011) begin
+			// 3
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b00000100) begin
+			// 4
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b00000101) begin
+			// 5
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b00000110) begin
+			// 6
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b00000111) begin
+			// 7
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b00001000) begin
+			// 8
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b00001001) begin
+			// 9
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b00001010) begin
+			// 10
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b00001011) begin
+			// 11
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00001100) begin
+			// 12
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00001101) begin
+			// 13
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b00001110) begin
+			// 14
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b00001111) begin
+			// 15
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b00010000) begin
+			// 16
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b00010001) begin
+			// 17
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b00010010) begin
+			// 18
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b00010011) begin
+			// 19
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b00010100) begin
+			// 20
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b00010101) begin
+			// 21
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00010110) begin
+			// 22
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00010111) begin
+			// 23
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b00011000) begin
+			// 24
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b00011001) begin
+			// 25
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b00011010) begin
+			// 26
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b00011011) begin
+			// 27
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b00011100) begin
+			// 28
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b00011101) begin
+			// 29
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b00011110) begin
+			// 30
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b00011111) begin
+			// 31
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00100000) begin
+			// 32
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00100001) begin
+			// 33
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b00100010) begin
+			// 34
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b00100011) begin
+			// 35
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b00100100) begin
+			// 36
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b00100101) begin
+			// 37
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b00100110) begin
+			// 38
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b00100111) begin
+			// 39
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b00101000) begin
+			// 40
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b00101001) begin
+			// 41
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00101010) begin
+			// 42
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00101011) begin
+			// 43
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b00101100) begin
+			// 44
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b00101101) begin
+			// 45
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b00101110) begin
+			// 46
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b00101111) begin
+			// 47
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b00110000) begin
+			// 48
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b00110001) begin
+			// 49
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b00110010) begin
+			// 50
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b00110011) begin
+			// 51
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00110100) begin
+			// 52
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00110101) begin
+			// 53
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b00110110) begin
+			// 54
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b00110111) begin
+			// 55
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b00111000) begin
+			// 56
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b00111001) begin
+			// 57
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b00111010) begin
+			// 58
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b00111011) begin
+			// 59
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b00111100) begin
+			// 60
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b00111101) begin
+			// 61
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b00111110) begin
+			// 62
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b00111111) begin
+			// 63
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01000000) begin
+			// 64
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01000001) begin
+			// 65
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01000010) begin
+			// 66
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01000011) begin
+			// 67
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b01000100) begin
+			// 68
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b01000101) begin
+			// 69
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b01000110) begin
+			// 70
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b01000111) begin
+			// 71
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b01001000) begin
+			// 72
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b01001001) begin
+			// 73
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01001010) begin
+			// 74
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01001011) begin
+			// 75
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01001100) begin
+			// 76
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01001101) begin
+			// 77
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b01001110) begin
+			// 78
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b01001111) begin
+			// 79
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b01010000) begin
+			// 80
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b01010001) begin
+			// 81
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b01010010) begin
+			// 82
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b01010011) begin
+			// 83
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01010100) begin
+			// 84
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01010101) begin
+			// 85
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01010110) begin
+			// 86
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01010111) begin
+			// 87
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b01011000) begin
+			// 88
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b01011001) begin
+			// 89
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b01011010) begin
+			// 90
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b01011011) begin
+			// 91
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b01011100) begin
+			// 92
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b01011101) begin
+			// 93
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01011110) begin
+			// 94
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01011111) begin
+			// 95
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01100000) begin
+			// 96
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01100001) begin
+			// 97
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b01100010) begin
+			// 98
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b01100011) begin
+			// 99
+			triple <= 1'b0;	hundreds <= 4'b0000;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b01100100) begin
+			// 100
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b01100101) begin
+			// 101
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b01100110) begin
+			// 102
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b01100111) begin
+			// 103
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01101000) begin
+			// 104
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01101001) begin
+			// 105
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01101010) begin
+			// 106
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01101011) begin
+			// 107
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b01101100) begin
+			// 108
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b01101101) begin
+			// 109
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b01101110) begin
+			// 110
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b01101111) begin
+			// 111
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b01110000) begin
+			// 112
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b01110001) begin
+			// 113
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01110010) begin
+			// 114
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01110011) begin
+			// 115
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01110100) begin
+			// 116
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01110101) begin
+			// 117
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b01110110) begin
+			// 118
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b01110111) begin
+			// 119
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b01111000) begin
+			// 120
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b01111001) begin
+			// 121
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b01111010) begin
+			// 122
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b01111011) begin
+			// 123
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b01111100) begin
+			// 124
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b01111101) begin
+			// 125
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b01111110) begin
+			// 126
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b01111111) begin
+			// 127
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10000000) begin
+			// 128
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10000001) begin
+			// 129
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10000010) begin
+			// 130
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10000011) begin
+			// 131
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b10000100) begin
+			// 132
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b10000101) begin
+			// 133
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b10000110) begin
+			// 134
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b10000111) begin
+			// 135
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b10001000) begin
+			// 136
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b10001001) begin
+			// 137
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10001010) begin
+			// 138
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10001011) begin
+			// 139
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10001100) begin
+			// 140
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10001101) begin
+			// 141
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b10001110) begin
+			// 142
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b10001111) begin
+			// 143
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b10010000) begin
+			// 144
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b10010001) begin
+			// 145
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b10010010) begin
+			// 146
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b10010011) begin
+			// 147
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10010100) begin
+			// 148
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10010101) begin
+			// 149
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10010110) begin
+			// 150
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10010111) begin
+			// 151
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b10011000) begin
+			// 152
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b10011001) begin
+			// 153
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b10011010) begin
+			// 154
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b10011011) begin
+			// 155
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b10011100) begin
+			// 156
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b10011101) begin
+			// 157
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10011110) begin
+			// 158
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10011111) begin
+			// 159
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10100000) begin
+			// 160
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10100001) begin
+			// 161
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b10100010) begin
+			// 162
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b10100011) begin
+			// 163
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b10100100) begin
+			// 164
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b10100101) begin
+			// 165
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b10100110) begin
+			// 166
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b10100111) begin
+			// 167
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10101000) begin
+			// 168
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10101001) begin
+			// 169
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0110;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10101010) begin
+			// 170
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10101011) begin
+			// 171
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b10101100) begin
+			// 172
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b10101101) begin
+			// 173
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b10101110) begin
+			// 174
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b10101111) begin
+			// 175
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b10110000) begin
+			// 176
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b10110001) begin
+			// 177
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10110010) begin
+			// 178
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10110011) begin
+			// 179
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b0111;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10110100) begin
+			// 180
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10110101) begin
+			// 181
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b10110110) begin
+			// 182
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b10110111) begin
+			// 183
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b10111000) begin
+			// 184
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b10111001) begin
+			// 185
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b10111010) begin
+			// 186
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b10111011) begin
+			// 187
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b10111100) begin
+			// 188
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b10111101) begin
+			// 189
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1000;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b10111110) begin
+			// 190
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b10111111) begin
+			// 191
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11000000) begin
+			// 192
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11000001) begin
+			// 193
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11000010) begin
+			// 194
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11000011) begin
+			// 195
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b11000100) begin
+			// 196
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b11000101) begin
+			// 197
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b11000110) begin
+			// 198
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b11000111) begin
+			// 199
+			triple <= 1'b1;	hundreds <= 4'b0001;	double <= 1'b1;	tens <= 4'b1001;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b11001000) begin
+			// 200
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b11001001) begin
+			// 201
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11001010) begin
+			// 202
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11001011) begin
+			// 203
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11001100) begin
+			// 204
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11001101) begin
+			// 205
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b11001110) begin
+			// 206
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b11001111) begin
+			// 207
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b11010000) begin
+			// 208
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b11010001) begin
+			// 209
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b0;	tens <= 4'b0000;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b11010010) begin
+			// 210
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b11010011) begin
+			// 211
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11010100) begin
+			// 212
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11010101) begin
+			// 213
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11010110) begin
+			// 214
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11010111) begin
+			// 215
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b11011000) begin
+			// 216
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b11011001) begin
+			// 217
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b11011010) begin
+			// 218
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b11011011) begin
+			// 219
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0001;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b11011100) begin
+			// 220
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b11011101) begin
+			// 221
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11011110) begin
+			// 222
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11011111) begin
+			// 223
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11100000) begin
+			// 224
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11100001) begin
+			// 225
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b11100010) begin
+			// 226
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b11100011) begin
+			// 227
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b11100100) begin
+			// 228
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b11100101) begin
+			// 229
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0010;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b11100110) begin
+			// 230
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b11100111) begin
+			// 231
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11101000) begin
+			// 232
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11101001) begin
+			// 233
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11101010) begin
+			// 234
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11101011) begin
+			// 235
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b11101100) begin
+			// 236
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b11101101) begin
+			// 237
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b11101110) begin
+			// 238
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b11101111) begin
+			// 239
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0011;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b11110000) begin
+			// 240
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b11110001) begin
+			// 241
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11110010) begin
+			// 242
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11110011) begin
+			// 243
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11110100) begin
+			// 244
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11110101) begin
+			// 245
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0101;	
+		end
+
+		if (SSD_Output == 8'b11110110) begin
+			// 246
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0110;	
+		end
+
+		if (SSD_Output == 8'b11110111) begin
+			// 247
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b0111;	
+		end
+
+		if (SSD_Output == 8'b11111000) begin
+			// 248
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b1000;	
+		end
+
+		if (SSD_Output == 8'b11111001) begin
+			// 249
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0100;	ones <= 4'b1001;	
+		end
+
+		if (SSD_Output == 8'b11111010) begin
+			// 250
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0000;	
+		end
+
+		if (SSD_Output == 8'b11111011) begin
+			// 251
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0001;	
+		end
+
+		if (SSD_Output == 8'b11111100) begin
+			// 252
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0010;	
+		end
+
+		if (SSD_Output == 8'b11111101) begin
+			// 253
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0011;	
+		end
+
+		if (SSD_Output == 8'b11111110) begin
+			// 254
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0100;	
+		end
+
+		if (SSD_Output == 8'b11111111) begin
+			// 255
+			triple <= 1'b1;	hundreds <= 4'b0010;	double <= 1'b1;	tens <= 4'b0101;	ones <= 4'b0101;	
+		end
+
 	end
 	
+	
+
+
+
+
+
+
+
+
 		
 		
 		
