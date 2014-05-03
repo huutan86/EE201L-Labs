@@ -74,7 +74,7 @@ module game_top (
 	// State wires
 	wire q_Initial, q_MenuPlay, q_MenuPractice, q_MenuScores, q_MenuQuit, q_PlayInitial, q_Play, q_PlayDone, q_PracticeInitial, q_Practice, q_PracticeDone, q_Scores, q_Done;
 	
-	//testing
+	//testing variables
 	output wire [12:0] stateOut;
 	assign stateOut = { q_Done, q_Scores, q_PracticeDone, q_Practice, q_PracticeInitial, q_PlayDone, q_Play, q_PlayInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial };
 
@@ -97,6 +97,7 @@ module game_top (
 	reg [7:0] SSD_CATHODES;
 	reg [7:0] SSD_Output;
 	
+	//VGA signals
 	reg single;
 	reg double;
 	reg triple;
@@ -141,9 +142,7 @@ module game_top (
 	assign Right_Pulse = BtnR;
 	
 //------------
-	// Our clock is too fast (100MHz) for SSD scanning
-	// create a series of slower "divided" clocks
-	// each successive bit is 1/2 frequency
+	// Generating Reset Pulse
 	always @(posedge board_clk, posedge Reset_Pulse) begin							
 		if (Reset_Pulse)
 			DIV_CLK <= 0;
@@ -163,9 +162,8 @@ module game_top (
 
 //------------
 // INPUT: SWITCHES & BUTTONS
-	// BtnL is used as both Start and Acknowledge. 
-	// To make this possible, we need a single clock producing  circuit.
-	
+
+	// Debouncing button pushes	
 	ee201_debouncer #(.N_dc(28)) ee201_debouncer_0 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnL), .DPB( ), .SCEN(BtnL_Pulse), .MCEN( ), .CCEN( ));
 	ee201_debouncer #(.N_dc(28)) ee201_debouncer_1 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnR), .DPB( ), .SCEN(BtnR_Pulse), .MCEN( ), .CCEN( ));
 	ee201_debouncer #(.N_dc(28)) ee201_debouncer_2 (.CLK(sys_clk), .RESET(Reset_Pulse), .PB(BtnU), .DPB( ), .SCEN(BtnU_Pulse), .MCEN( ), .CCEN( ));
@@ -202,17 +200,9 @@ module game_top (
 			scoresOut <= playerScore;
 		end
 	end
-	/*
-	array_Scores_RAM RAM (
-		.clk(sys_clk),
-		.write_EN(writeEnable),
-		.input_data(playerScore),
-		.read_addr(ramCounterRead),
-		.write_addr(ramCounterWrite),
-		.Output(scoresOut)
-	);
-	*/
-		//*********************************************************************************************************
+
+
+	//*********************************************************************************************************
 	//
 	//			every clock see how many digits the scores have
 	//
@@ -2792,12 +2782,14 @@ module game_top (
 
 	end
 	
+	//Reset stuff
 	always @ (posedge Reset_Pulse) begin
 		if(Reset_Pulse) begin
 			ramCounterRead <= 0;
 		end
 	end
 	
+	//Write condition
 	always @ (posedge sys_clk) begin		
 		if(writeEnable == 1) begin
 			ramCounterWrite <= ramCounterWrite + 1;
@@ -2862,12 +2854,14 @@ module game_top (
 			bReg <= 0;
 		end
 		
+		//All the messy stuff draws the M character
 		if(q_MenuPlay) begin
 			rReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
 			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
 			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
 		end
 		
+		//Draws M chacter here too
 		else if(q_MenuPractice) begin
 			rReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
 			gReg <= 1;
@@ -2885,6 +2879,8 @@ module game_top (
 			gReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
 			bReg <= (CounterY >= 100 && CounterY <= 280 && CounterX >= 240 && CounterX <= 270) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 305 && CounterX <= 335) || (CounterY >= 100 && CounterY <= 280 && CounterX >= 370 && CounterX <= 400) || (CounterY >= 100 && CounterY <= 140 && CounterX >= 240 && CounterX <= 400);
 		end
+
+		//other states just fills the screen with a different hue
 		
 		else if(q_PlayInitial) begin
 			rReg <= 0;
@@ -2930,61 +2926,25 @@ module game_top (
 
 //------------
 // OUTPUT: LEDS
-	
-	//assign {} = {q_I, q_Sub, q_Mult, q_Done};
-	
-	
+		
+	//LED corrensponds to userNumber
 	assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { userNumber };
-	//Assign states
-	//assign {Ld7, Ld6, Ld5, Ld4, Ld3, Ld2, Ld1, Ld0} = { q_PracticeDone, q_Practice, q_PracticeInitial, q_MenuQuit, q_MenuScores, q_MenuPractice, q_MenuPlay, q_Initial };
-	
-	// Here
-		//BtnL = Start/Ack
-		//BtnU = Single-Step
-		//BtnR = in_A_in_B
-		//BtnD = not used here
-	
+		
 //------------
 // SSD (Seven Segment Display)
 	
 	//SSDs show Ain and Bin in initial state, A and B in subtract state, and GCD and i_count in multiply and done states.
-	// ****** TODO  in Part 2 ******
 	// assign y = s ? i1 : i0;  // an example of a 2-to-1 mux coding
 	// assign y = s1 ? (s0 ? i3: i2): (s0 ? i1: i0); // an example of a 4-to-1 mux coding
 	
+	//Anode multiplexers
+
 	assign SSD0 = q_Scores ? onesScore : ((q_Play || q_Practice) ? ones : {0,0,0,0});
 	assign SSD1 = q_Scores ? ((doubleScore) ? tensScore[3:0] : {0,0,0,0}) : ((q_Play || q_Practice) ? ((double) ? tens[3:0] : {0,0,0,0}) : {0,0,0,0});
 	assign SSD2 = q_Scores ? ((tripleScore) ? {0,0,0,hundredScores} : {0,0,0,0}) : (q_Play || q_Practice) ? ((triple) ? {0,0,0,hundreds} : {0,0,0,0}) : {0,0,0,0};
 	assign SSD3 = {0,0,0,0};
 	
-	
-	//assign SSD3 = (q_Practice | q_Play) ? AB_GCD[7:4]  : q_I ? Ain[7:4] : A[7:4];
-	//assign SSD2 = (q_Practice | q_Play) ? AB_GCD[3:0]  : q_I ? Ain[3:0] : A[3:0];
-	//assign SSD1 = (q_Practice | q_Play) ? i_count[7:4]  : q_I ? Bin[7:4] : B[7:4];
-	//assign SSD0 = (q_Practice | q_Play) ? i_count[3:0]  : q_I ? Bin[3:0] : B[3:0];
-	
-
-	// need a scan clk for the seven segment display 
-	
-	// 100 MHz / 2^18 = 381.5 cycles/sec ==> frequency of DIV_CLK[17]
-	// 100 MHz / 2^19 = 190.7 cycles/sec ==> frequency of DIV_CLK[18]
-	// 100 MHz / 2^20 =  95.4 cycles/sec ==> frequency of DIV_CLK[19]
-	
-	// 381.5 cycles/sec (2.62 ms per digit) [which means all 4 digits are lit once every 10.5 ms (reciprocal of 95.4 cycles/sec)] works well.
-	
-	//                  --|  |--|  |--|  |--|  |--|  |--|  |--|  |--|  |   
-    //                   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
-	//  DIV_CLK[17]       |__|  |__|  |__|  |__|  |__|  |__|  |__|  |__|
-	//
-	//               -----|     |-----|     |-----|     |-----|     |
-    //                   |  0  |  1  |  0  |  1  |     |     |     |     
-	//  DIV_CLK[18]       |_____|     |_____|     |_____|     |_____|
-	//
-	//         -----------|           |-----------|           |
-    //                   |  0     0  |  1     1  |           |           
-	//  DIV_CLK[19]       |___________|           |___________|
-	//
-	
+	//Scanning for SSD	
 	assign ssdscan_clk = DIV_CLK[19:18];
 	//assign An3	= !(~(ssdscan_clk[1]) && ~(ssdscan_clk[0]));  // when ssdscan_clk = 00
 	assign An3 = 1'b1;
@@ -2993,21 +2953,22 @@ module game_top (
 	assign An0	=  !((ssdscan_clk[1]) &&  (ssdscan_clk[0]));  // when ssdscan_clk = 11
 	
 	
+	//SSD assignment
 	always @ (ssdscan_clk, SSD0, SSD1, SSD2, SSD3) begin : SSD_SCAN_OUT
 		case (ssdscan_clk) 
-			2'b00: SSD = SSD3;	// ****** TODO  in Part 2 ******
-			2'b01: SSD = SSD2;  	// Complete the four lines
+			2'b00: SSD = SSD3;
+			2'b01: SSD = SSD2;  
 			2'b10: SSD = SSD1;	
 			2'b11: SSD = SSD0;
 		endcase 
 	end
 	
 	// and finally convert SSD_num to ssd
-	// We convert the output of our 4-bit 4x1 mux
 
+	//Cathode assignment
 	assign {Ca, Cb, Cc, Cd, Ce, Cf, Cg, Dp} = { SSD_CATHODES };
 	
-// Following is Hex-to-SSD conversion
+// Following is Decimal-to-SSD conversion
 	always @ (SSD) begin : HEX_TO_SSD
 		case (SSD) // in this solution file the dot points are made to glow by making Dp = 0
 		    //                                                                abcdefg,Dp
@@ -3023,12 +2984,6 @@ module game_top (
 			4'b0111: SSD_CATHODES = 8'b00011111; // 7
 			4'b1000: SSD_CATHODES = 8'b00000001; // 8
 			4'b1001: SSD_CATHODES = 8'b00001001; // 9
-			//4'b1010: SSD_CATHODES = 8'b00010001; // A
-			//4'b1011: SSD_CATHODES = 8'b11000001; // B
-			//4'b1100: SSD_CATHODES = 8'b01100011; // C
-			//4'b1101: SSD_CATHODES = 8'b10000101; // D
-			//4'b1110: SSD_CATHODES = 8'b01100001; // E
-			//4'b1111: SSD_CATHODES = 8'b01110001; // F    
 			default: SSD_CATHODES = 8'bXXXXXXXX; // default is not needed as we covered all cases
 		endcase
 	end	
